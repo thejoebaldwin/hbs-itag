@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="@string/surveyDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DStextView7"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp" />
+  <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:background="#c0c0c0"
+         android:layout_marginTop="10dp"/>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout1"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:text="State :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView2"
+            android:gravity="left"
+            android:layout_marginLeft="50dp" />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DSspinner1"
+            android:layout_toRightOf="@id/DStextView2"
+            android:entries="@array/States"
+            android:layout_marginLeft="100dp"
+            android:gravity="center" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout2"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:text="Age :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView3"
+            android:layout_marginLeft="50dp" />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DSspinner2"
+            android:layout_toRightOf="@id/DStextView3"
+            android:layout_marginLeft="100dp"
+            android:entries="@array/Age"
+            android:gravity="center" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout3"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:text="Gender :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView4"
+            android:layout_marginLeft="50dp" />
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:id="@+id/DSspinner3"
+            android:layout_toRightOf="@id/DStextView4"
+            android:layout_marginLeft="30dp"
+            android:entries="@array/Gender"
+            android:gravity="center" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout4"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/DSedittext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#ff808080"
+            android:width="300dp" />
+        <TextView
+            android:text="Position/Job Title (Optional)"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView5"
+            android:layout_below="@id/DSedittext"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout5"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/DSedittext2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:drawable/editbox_background"
+            android:backgroundTint="#ff808080"
+            android:width="300dp" />
+        <TextView
+            android:text="Email (Optional)"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView6"
+            android:layout_below="@id/DSedittext2"
+            android:layout_marginTop="5dp" />
+    </RelativeLayout>
+    <CheckBox
+        android:text="Send Me Email Notifications on Upcoming Events"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DScheckBox1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="50dp" />
+    <Button
+        android:text="Done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSbutton1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+</LinearLayout>
