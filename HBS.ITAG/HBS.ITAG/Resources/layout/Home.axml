@@ -4,167 +4,167 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-  <LinearLayout
-      android:orientation="horizontal"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/itag_icon"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ITAG"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginLeft="115dp" />
-    <ImageView
-        android:id="@+id/app_features"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="right"
-        android:src="@drawable/app_features"
-        android:background="#FFFFFF"
-        android:layout_marginLeft="70dp" />
-  </LinearLayout>
-  <TextView
-      android:id="@+id/favorites_header"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:textColor="@android:color/black"
-      android:text="Favorites"
-      android:paddingBottom="5dp"
-      android:textStyle="bold" />
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/inProgress"
-      android:orientation="horizontal">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/itag_icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ITAG"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginLeft="115dp" />
+        <ImageView
+            android:id="@+id/app_features"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:src="@drawable/app_features"
+            android:background="#FFFFFF"
+            android:layout_marginLeft="70dp" />
+    </LinearLayout>
     <TextView
-        android:id="@+id/first_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:textColor="@android:color/black"
-        android:maxLines="2"
-        android:lines="2"
-        android:text="First Session Name\nTime of Session"
-        android:paddingLeft="10dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
-    <TextView
-        android:id="@+id/first_status"
+        android:id="@+id/favorites_header"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="center"
         android:textColor="@android:color/black"
-        android:text="In Progress..."
-        android:paddingBottom="20dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp" />
-  </LinearLayout>
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/Upcoming"
-      android:orientation="horizontal">
-    <TextView
-        android:id="@+id/second_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:textColor="@android:color/black"
-        android:maxLines="2"
-        android:lines="2"
-        android:text="Second Session Name\nTime of Session"
-        android:paddingLeft="10dp"
+        android:text="Favorites"
         android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/inProgress"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/first_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:lines="2"
+            android:text="First Session Name\nTime of Session"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+        <TextView
+            android:id="@+id/first_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@android:color/black"
+            android:text="In Progress..."
+            android:paddingBottom="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/Upcoming"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/second_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:lines="2"
+            android:text="Second Session Name\nTime of Session"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+        <TextView
+            android:id="@+id/second_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@android:color/black"
+            android:text="Upcoming"
+            android:paddingBottom="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/Upcoming"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/third_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:lines="2"
+            android:text="Third Session Name\nTime of Session"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+        <TextView
+            android:id="@+id/third_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@android:color/black"
+            android:text="Upcoming"
+            android:paddingBottom="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/Upcoming"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fourth_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:maxLines="2"
+            android:lines="2"
+            android:text="Fourth Session Name\nTime of Session"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" />
+        <TextView
+            android:id="@+id/fourth_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textColor="@android:color/black"
+            android:text="Upcoming"
+            android:paddingBottom="20dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
     <TextView
-        android:id="@+id/second_status"
+        android:id="@+id/conference_details"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
+        android:gravity="center"
         android:textColor="@android:color/black"
-        android:text="Upcoming"
-        android:paddingBottom="20dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp" />
-  </LinearLayout>
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/Upcoming"
-      android:orientation="horizontal">
-    <TextView
-        android:id="@+id/third_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:textColor="@android:color/black"
-        android:maxLines="2"
-        android:lines="2"
-        android:text="Third Session Name\nTime of Session"
-        android:paddingLeft="10dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
-    <TextView
-        android:id="@+id/third_status"
+        android:paddingTop="20dp"
+        android:text="@string/conferenceDetails" />
+    <Button
+        android:id="@+id/tempToSchedule"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:textColor="@android:color/black"
-        android:text="Upcoming"
-        android:paddingBottom="20dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp" />
-  </LinearLayout>
-  <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:background="@drawable/Upcoming"
-      android:orientation="horizontal">
-    <TextView
-        android:id="@+id/fourth_favorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:textColor="@android:color/black"
-        android:maxLines="2"
-        android:lines="2"
-        android:text="Fourth Session Name\nTime of Session"
-        android:paddingLeft="10dp"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp" />
-    <TextView
-        android:id="@+id/fourth_status"
+        android:text="Schedule"
+        android:gravity="center" />
+    <Button
+        android:id="@+id/tempToMyEvents"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="right"
-        android:textColor="@android:color/black"
-        android:text="Upcoming"
-        android:paddingBottom="20dp"
-        android:paddingTop="5dp"
-        android:paddingRight="10dp" />
-  </LinearLayout>
-  <TextView
-      android:id="@+id/conference_details"
-      android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:gravity="center"
-      android:textColor="@android:color/black"
-      android:paddingTop="20dp"
-      android:text="@string/conferenceDetails" />
-  <Button
-     android:id="@+id/tempToSchedule"
-     android:layout_width="fill_parent"
-     android:layout_height="wrap_content"
-     android:text="Schedule"
-     android:gravity="center"/>
-  <Button
-     android:id="@+id/tempToMyEvents"
-     android:layout_width="fill_parent"
-     android:layout_height="wrap_content"
-     android:text="My Events"
-     android:gravity="center"/>
+        android:text="My Events"
+        android:gravity="center" />
 </LinearLayout>

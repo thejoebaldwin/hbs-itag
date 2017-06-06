@@ -229,6 +229,60 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06000c
 			public const int Info2 = 2131099660;
 			
+			// aapt resource value: 0x7f06003e
+			public const int MElinearLayout1 = 2131099710;
+			
+			// aapt resource value: 0x7f060047
+			public const int MElinearLayout2 = 2131099719;
+			
+			// aapt resource value: 0x7f06003d
+			public const int MEscrollView1 = 2131099709;
+			
+			// aapt resource value: 0x7f060046
+			public const int MEscrollView2 = 2131099718;
+			
+			// aapt resource value: 0x7f060042
+			public const int MEtextView10 = 2131099714;
+			
+			// aapt resource value: 0x7f060043
+			public const int MEtextView11 = 2131099715;
+			
+			// aapt resource value: 0x7f060044
+			public const int MEtextView12 = 2131099716;
+			
+			// aapt resource value: 0x7f06004b
+			public const int MEtextView13 = 2131099723;
+			
+			// aapt resource value: 0x7f06004c
+			public const int MEtextView14 = 2131099724;
+			
+			// aapt resource value: 0x7f06004d
+			public const int MEtextView15 = 2131099725;
+			
+			// aapt resource value: 0x7f06003c
+			public const int MEtextView2 = 2131099708;
+			
+			// aapt resource value: 0x7f06003f
+			public const int MEtextView3 = 2131099711;
+			
+			// aapt resource value: 0x7f060040
+			public const int MEtextView4 = 2131099712;
+			
+			// aapt resource value: 0x7f060041
+			public const int MEtextView5 = 2131099713;
+			
+			// aapt resource value: 0x7f060045
+			public const int MEtextView6 = 2131099717;
+			
+			// aapt resource value: 0x7f060048
+			public const int MEtextView7 = 2131099720;
+			
+			// aapt resource value: 0x7f060049
+			public const int MEtextView8 = 2131099721;
+			
+			// aapt resource value: 0x7f06004a
+			public const int MEtextView9 = 2131099722;
+			
 			// aapt resource value: 0x7f060004
 			public const int Title = 2131099652;
 			
@@ -280,8 +334,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
 			
-			// aapt resource value: 0x7f06003d
-			public const int tempToEventDetails = 2131099709;
+			// aapt resource value: 0x7f06004f
+			public const int tempToEventDetails = 2131099727;
 			
 			// aapt resource value: 0x7f06003b
 			public const int tempToMyEvents = 2131099707;
@@ -289,11 +343,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06003a
 			public const int tempToSchedule = 2131099706;
 			
-			// aapt resource value: 0x7f06003c
-			public const int textView1 = 2131099708;
+			// aapt resource value: 0x7f06004e
+			public const int textView1 = 2131099726;
 			
-			// aapt resource value: 0x7f06003e
-			public const int textView2 = 2131099710;
+			// aapt resource value: 0x7f060050
+			public const int textView2 = 2131099728;
 			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;

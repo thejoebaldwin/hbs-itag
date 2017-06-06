@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:background="#ffffff">
     <TextView
         android:text="@string/surveyDescription"
         android:layout_width="match_parent"
@@ -13,12 +14,13 @@
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp" />
-  <View
+        android:layout_marginRight="5dp"
+        android:textColor="#0e1d52" />
+    <View
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:background="#c0c0c0"
-         android:layout_marginTop="10dp"/>
+        android:background="#bf1e2d"
+        android:layout_marginTop="10dp" />
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -33,7 +35,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/DStextView2"
             android:gravity="left"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="50dp"
+            android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,7 +44,8 @@
             android:layout_toRightOf="@id/DStextView2"
             android:entries="@array/States"
             android:layout_marginLeft="100dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="#99a1ac" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -56,7 +60,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView3"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="50dp"
+            android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -64,7 +69,8 @@
             android:layout_toRightOf="@id/DStextView3"
             android:layout_marginLeft="100dp"
             android:entries="@array/Age"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="#99a1ac" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -79,7 +85,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView4"
-            android:layout_marginLeft="50dp" />
+            android:layout_marginLeft="50dp"
+            android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,7 +95,8 @@
             android:layout_toRightOf="@id/DStextView4"
             android:layout_marginLeft="30dp"
             android:entries="@array/Gender"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="#99a1ac" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -113,7 +121,8 @@
             android:id="@+id/DStextView5"
             android:layout_below="@id/DSedittext"
             android:gravity="center_horizontal"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textColor="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -137,7 +146,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/DStextView6"
             android:layout_below="@id/DSedittext2"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textColor="#0e1d52" />
     </RelativeLayout>
     <CheckBox
         android:text="Send Me Email Notifications on Upcoming Events"
@@ -145,7 +155,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/DScheckBox1"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp" />
+        android:layout_marginLeft="50dp"
+        android:backgroundTint="#00000000"
+        android:textColor="#0e1d52"
+        android:buttonTint="#ffbf1e2d" />
     <Button
         android:text="Done"
         android:layout_width="match_parent"
@@ -153,5 +166,6 @@
         android:id="@+id/DSbutton1"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:background="#0e1d52" />
 </LinearLayout>
