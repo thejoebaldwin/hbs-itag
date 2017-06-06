@@ -229,6 +229,9 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06002e
 			public const int textView1 = 2131099694;
 			
+			// aapt resource value: 0x7f06002f
+			public const int textView2 = 2131099695;
+			
 			static Id()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
