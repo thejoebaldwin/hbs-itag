@@ -67,13 +67,25 @@ namespace HBS.ITAG
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int blueprintexample = 2130837504;
+			public const int app_features = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int bluetooth = 2130837505;
+			public const int blueprintexample = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int Icon = 2130837506;
+			public const int bluetooth = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int Icon = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int inProgress = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int ITAG = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int Upcoming = 2130837510;
 			
 			static Drawable()
 			{
@@ -208,11 +220,32 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060004
 			public const int Title = 2131099652;
 			
+			// aapt resource value: 0x7f06002f
+			public const int app_features = 2131099695;
+			
 			// aapt resource value: 0x7f06000a
 			public const int blueprintexample = 2131099658;
 			
 			// aapt resource value: 0x7f060001
 			public const int bluetoothimage = 2131099649;
+			
+			// aapt resource value: 0x7f060039
+			public const int conference_details = 2131099705;
+			
+			// aapt resource value: 0x7f060030
+			public const int favorites_header = 2131099696;
+			
+			// aapt resource value: 0x7f060031
+			public const int first_favorite = 2131099697;
+			
+			// aapt resource value: 0x7f060032
+			public const int first_status = 2131099698;
+			
+			// aapt resource value: 0x7f060037
+			public const int fourth_favorite = 2131099703;
+			
+			// aapt resource value: 0x7f060038
+			public const int fourth_status = 2131099704;
 			
 			// aapt resource value: 0x7f060005
 			public const int gridLayout1 = 2131099653;
@@ -227,7 +260,31 @@ namespace HBS.ITAG
 			public const int gridLayout7 = 2131099648;
 			
 			// aapt resource value: 0x7f06002e
-			public const int textView1 = 2131099694;
+			public const int itag_icon = 2131099694;
+			
+			// aapt resource value: 0x7f060033
+			public const int second_favorite = 2131099699;
+			
+			// aapt resource value: 0x7f060034
+			public const int second_status = 2131099700;
+			
+			// aapt resource value: 0x7f06003d
+			public const int tempToEventDetails = 2131099709;
+			
+			// aapt resource value: 0x7f06003b
+			public const int tempToMyEvents = 2131099707;
+			
+			// aapt resource value: 0x7f06003a
+			public const int tempToSchedule = 2131099706;
+			
+			// aapt resource value: 0x7f06003c
+			public const int textView1 = 2131099708;
+			
+			// aapt resource value: 0x7f060035
+			public const int third_favorite = 2131099701;
+			
+			// aapt resource value: 0x7f060036
+			public const int third_status = 2131099702;
 			
 			static Id()
 			{
@@ -252,10 +309,16 @@ namespace HBS.ITAG
 			public const int EventDetails = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int Main = 2130903043;
+			public const int Home = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int Schedule = 2130903044;
+			public const int Main = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int MyEvents = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int Schedule = 2130903046;
 			
 			static Layout()
 			{
@@ -281,6 +344,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f040004
 			public const int Info2 = 2130968580;
+			
+			// aapt resource value: 0x7f040005
+			public const int conferenceDetails = 2130968581;
 			
 			// aapt resource value: 0x7f040002
 			public const int surveyDescription = 2130968578;

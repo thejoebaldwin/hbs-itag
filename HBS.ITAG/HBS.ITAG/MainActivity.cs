@@ -19,10 +19,7 @@ namespace HBS.ITAG
 
             button.Click += (object sender, EventArgs e) =>
             {
-                // Link to the homepage for demo
-
-                // StartActivity(typeof(homepage));
-
+                StartActivity(typeof(Home));
             };
         }
     }

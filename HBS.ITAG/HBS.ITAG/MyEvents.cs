@@ -12,19 +12,13 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "Schedule")]
-    public class Schedule : Activity
+    [Activity(Label = "MyEvents")]
+    public class MyEvents : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.Schedule);
-
-            Button toEventDetails = FindViewById<Button>(Resource.Id.tempToEventDetails);
-            toEventDetails.Click += (sender, e) =>
-            {
-                StartActivity(typeof(EventDetails));
-            };
+            SetContentView(Resource.Layout.MyEvents);
         }
     }
 }
