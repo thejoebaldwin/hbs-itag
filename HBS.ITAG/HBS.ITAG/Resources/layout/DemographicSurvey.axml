@@ -34,18 +34,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView2"
-            android:gravity="left"
-            android:layout_marginLeft="50dp"
-            android:textColor="#0e1d52" />
+            android:layout_marginLeft="100dp"
+            android:textColor="#0e1d52"
+            android:gravity="right" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DSspinner1"
             android:layout_toRightOf="@id/DStextView2"
             android:entries="@array/States"
-            android:layout_marginLeft="100dp"
-            android:gravity="center"
-            android:background="#0e1d52"/>
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:background="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -60,14 +60,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView3"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="109dp"
             android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DSspinner2"
             android:layout_toRightOf="@id/DStextView3"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="10dp"
             android:entries="@array/Age"
             android:gravity="center"
             android:background="#0e1d52" />
@@ -85,7 +85,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView4"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="82dp"
             android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="wrap_content"
@@ -93,7 +93,7 @@
             android:textAlignment="center"
             android:id="@+id/DSspinner3"
             android:layout_toRightOf="@id/DStextView4"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:entries="@array/Gender"
             android:gravity="center"
             android:background="#0e1d52" />

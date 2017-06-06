@@ -33,7 +33,7 @@ namespace HBS.ITAG
 
              TextView textView = FindViewById<TextView>(Resource.Id.EDtextView9);
              textView.TextFormatted = Html.FromHtml("" +
-                             "<a href=https://iowacountiesit.org/itag-conference/schedule/tuesday/#rdv-calendar\">Click Here</a> " +
+                             "<a href=https://iowacountiesit.org/itag-conference/schedule/tuesday/#event-166\">Click Here</a> " +
                              "");
 
              textView.MovementMethod = LinkMovementMethod.Instance;
