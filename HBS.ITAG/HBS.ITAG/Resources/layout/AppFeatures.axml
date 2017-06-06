@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="@android:color/white">
+    <GridLayout
+        android:background="#bf1e2d"
+        android:id="@+id/gridLayout7"
+        android:layout_marginBottom="0.0dp"
+        android:minWidth="400dp">
+        <ImageView
+            android:id="@+id/bluetoothimage"
+            android:src="@drawable/bluetooth"
+            android:scaleX="0.15"
+            android:scaleY="0.15"
+            android:layout_marginBottom="-85dp"
+            android:layout_marginLeft="-80dp"
+            android:layout_marginRight="-85dp"
+            android:layout_marginTop="-85dp" />
+        <Button
+            android:id="@+id/BluetoothMsg"
+            android:text="Turn on Bluetooth for improved functionality"
+            android:textColor="@android:color/white"
+            android:textSize="25px"
+            android:gravity="center"
+            android:layout_marginTop="-10.0dp"
+            android:layout_marginRight="0.0dp"
+            android:background="#bf1e2d"
+            android:layout_marginBottom="-10.0dp" />
+    </GridLayout>
+    <GridLayout
+        android:layout_marginRight="0.0dp"
+        android:layout_marginTop="-5.0dp"
+        android:layout_marginBottom="0.0dp"
+        android:layout_marginLeft="13.5dp"
+        android:minWidth="750px"
+        android:minHeight="55px"
+        android:id="@+id/gridLayout3">
+        <TextView
+            android:text="App Features"
+            android:id="@+id/Title"
+            android:textStyle="bold"
+            android:textSize="55px"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginLeft="88.5dp"
+            android:layout_marginBottom="0.0dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="1000dp" />
+    <GridLayout
+        android:layout_marginRight="0.0dp"
+        android:layout_marginTop="0.0dp"
+        android:layout_marginBottom="0.0dp"
+        android:layout_marginLeft="0.0dp"
+        android:minWidth="375px"
+        android:id="@+id/gridLayout1"
+        android:minHeight="10dp">
+        <TextView
+            android:text="How does it work?"
+            android:id="@+id/Header1"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </GridLayout>
+    <GridLayout
+        android:id="@+id/gridLayout5"
+        android:minWidth="25px"
+        android:minHeight="25px">
+        <TextView
+            android:id="@+id/Info1"
+            android:text="@string/Info1"
+            android:textSize="29px"
+            android:textColor="@android:color/black"
+            android:gravity="left"
+            android:layout_marginLeft="5.0dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="20px"
+        android:minHeight="20px">
+        <TextView
+            android:id="@+id/Header2"
+            android:text="Where are the beacons?"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </GridLayout>
+    <GridLayout>
+        <ImageView
+            android:id="@+id/blueprintexample"
+            android:src="@drawable/blueprintexample"
+            android:scaleX="0.95"
+            android:scaleY="0.35"
+            android:layout_marginTop="-110dp"
+            android:layout_marginBottom="-110dp" />
+    </GridLayout>
+    <GridLayout>
+        <TextView
+            android:id="@+id/Header3"
+            android:text="Why it's helpful"
+            android:textStyle="bold"
+            android:textSize="40px"
+            android:textColor="@android:color/black"
+            android:gravity="center" />
+    </GridLayout>
+    <GridLayout>
+        <TextView
+            android:id="@+id/Info2"
+            android:text="@string/Info2"
+            android:textSize="29px"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="5.0dp" />
+    </GridLayout>
+</GridLayout>
