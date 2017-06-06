@@ -91,13 +91,16 @@ namespace HBS.ITAG
 			public const int ITAG = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int profile = 2130837512;
+			public const int navigation_bar = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int Upcoming = 2130837513;
+			public const int profile = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int wrench = 2130837514;
+			public const int Upcoming = 2130837514;
+			
+			// aapt resource value: 0x7f02000b
+			public const int wrench = 2130837515;
 			
 			static Drawable()
 			{
