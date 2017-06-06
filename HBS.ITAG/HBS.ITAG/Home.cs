@@ -72,7 +72,14 @@ namespace HBS.ITAG
                 StartActivity(typeof(AppFeatures));
             };
 
-          
+            String beaconMessage = "                     You are near: " + System.Environment.NewLine + " Building Apps with Web AppBuilder." + System.Environment.NewLine + "                 (9:00 AM Session) ";
+            itagIcon.Click += (object sender, EventArgs e) =>
+            {
+                Toast toast = Toast.MakeText(this, beaconMessage, ToastLength.Long);
+                toast.Show();
+                
+            };
+
         }
     }
 }
