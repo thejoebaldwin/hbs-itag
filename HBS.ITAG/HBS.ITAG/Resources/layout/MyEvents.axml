@@ -13,7 +13,7 @@
       android:id="@+id/MEtextView2"
       android:layout_marginTop="20dp"
       android:layout_marginBottom="20dp"
-      android:layout_gravity="center_horizontal" />
+      android:layout_gravity="center_horizontal"/>
   <ScrollView
       android:layout_width="fill_parent"
       android:layout_height="150dp"
@@ -21,7 +21,9 @@
       android:scrollbarAlwaysDrawVerticalTrack="true"
       android:background="#99a1ac"
       android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp">
+      android:layout_marginRight="20dp"
+      android:scrollbarSize="20dp"
+      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
@@ -87,7 +89,7 @@
       android:layout_height="wrap_content"
       android:id="@+id/MEtextView6"
       android:layout_marginTop="20dp"
-      android:layout_gravity="center_horizontal" />
+      android:layout_gravity="center_horizontal"/>
   <ScrollView
       android:layout_width="fill_parent"
       android:layout_height="150dp"
@@ -95,7 +97,9 @@
       android:scrollbarAlwaysDrawVerticalTrack="true"
       android:background="#99a1ac"
       android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp">
+      android:layout_marginRight="20dp"
+      android:scrollbarSize="20dp"
+      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
     <LinearLayout
         android:orientation="vertical"
         android:textColor="@android:color/black"

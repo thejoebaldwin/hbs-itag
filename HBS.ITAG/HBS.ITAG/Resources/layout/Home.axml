@@ -8,23 +8,23 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageView
-            android:id="@+id/itag_icon"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_gravity="center"
-            android:src="@drawable/ITAG"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginLeft="115dp" />
-        <ImageView
-            android:id="@+id/app_features"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:src="@drawable/app_features"
-            android:background="#FFFFFF"
-            android:layout_marginLeft="70dp" />
+    <ImageView
+        android:id="@+id/itag_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ITAG"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginLeft="115dp" /> 
+    <ImageView
+        android:id="@+id/app_features"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="right"
+        android:src="@drawable/app_features"
+        android:background="#FFFFFF"
+        android:layout_marginLeft="70dp" />
     </LinearLayout>
     <TextView
         android:id="@+id/favorites_header"

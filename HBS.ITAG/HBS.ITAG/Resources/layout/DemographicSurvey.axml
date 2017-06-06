@@ -45,7 +45,7 @@
             android:entries="@array/States"
             android:layout_marginLeft="100dp"
             android:gravity="center"
-            android:background="#99a1ac" />
+            android:background="#0e1d52"/>
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -70,7 +70,7 @@
             android:layout_marginLeft="100dp"
             android:entries="@array/Age"
             android:gravity="center"
-            android:background="#99a1ac" />
+            android:background="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -96,7 +96,7 @@
             android:layout_marginLeft="30dp"
             android:entries="@array/Gender"
             android:gravity="center"
-            android:background="#99a1ac" />
+            android:background="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
-            android:backgroundTint="#ff808080"
+            android:backgroundTint="#99a1ac"
             android:width="300dp" />
         <TextView
             android:text="Position/Job Title (Optional)"
@@ -137,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:drawable/editbox_background"
-            android:backgroundTint="#ff808080"
+            android:backgroundTint="#99a1ac"
             android:width="300dp" />
         <TextView
             android:text="Email (Optional)"
