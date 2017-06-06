@@ -105,13 +105,17 @@
     <AndroidResource Include="Resources\drawable\app_features.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\inProgress.xml" />
+    <AndroidResource Include="Resources\drawable\inProgress.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ITAG.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Upcoming.xml" />
+    <AndroidResource Include="Resources\drawable\Upcoming.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\calendar.png" />
