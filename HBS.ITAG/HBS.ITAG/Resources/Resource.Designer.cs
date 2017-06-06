@@ -244,6 +244,9 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060001
 			public const int bluetoothimage = 2131099649;
 			
+			// aapt resource value: 0x7f06003c
+			public const int calendar = 2131099708;
+			
 			// aapt resource value: 0x7f060039
 			public const int conference_details = 2131099705;
 			
@@ -274,11 +277,20 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060000
 			public const int gridLayout7 = 2131099648;
 			
+			// aapt resource value: 0x7f06003b
+			public const int house = 2131099707;
+			
 			// aapt resource value: 0x7f06002e
 			public const int itag_icon = 2131099694;
 			
+			// aapt resource value: 0x7f06003a
+			public const int linearLayout1 = 2131099706;
+			
 			// aapt resource value: 0x7f06003d
-			public const int schedule = 2131099709;
+			public const int profileimage = 2131099709;
+			
+			// aapt resource value: 0x7f060040
+			public const int schedule = 2131099712;
 			
 			// aapt resource value: 0x7f060033
 			public const int second_favorite = 2131099699;
@@ -286,20 +298,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
 			
-			// aapt resource value: 0x7f06003c
-			public const int tempToEventDetails = 2131099708;
-			
-			// aapt resource value: 0x7f06003b
-			public const int tempToMyEvents = 2131099707;
-			
-			// aapt resource value: 0x7f06003a
-			public const int tempToSchedule = 2131099706;
+			// aapt resource value: 0x7f06003f
+			public const int tempToEventDetails = 2131099711;
 			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
 			
 			// aapt resource value: 0x7f060036
 			public const int third_status = 2131099702;
+			
+			// aapt resource value: 0x7f06003e
+			public const int wrenchimage = 2131099710;
 			
 			static Id()
 			{
