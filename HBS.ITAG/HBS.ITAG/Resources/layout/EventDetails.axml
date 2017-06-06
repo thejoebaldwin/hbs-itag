@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView1"
             android:layout_marginLeft="20dp"
-             android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
         <ImageButton
             android:src="@android:drawable/btn_star_big_off"
             android:layout_width="wrap_content"
@@ -51,9 +51,9 @@
             android:id="@+id/EDtextView2"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
-             android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
         <TextView
-            android:text="(Sample Name)"
+            android:text="Building Apps with Web AppBuilder"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             android:layout_below="@id/EDtextView2"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -78,9 +78,9 @@
             android:id="@+id/EDtextView4"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
         <TextView
-            android:text="(Sample Time)"
+            android:text="9:00am to 10:30am"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,7 +88,7 @@
             android:layout_below="@id/EDtextView4"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -105,9 +105,9 @@
             android:id="@+id/EDtextView6"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
         <TextView
-            android:text="(Sample Location)"
+            android:text="Room 110"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -115,7 +115,7 @@
             android:layout_below="@id/EDtextView6"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -132,7 +132,7 @@
             android:id="@+id/EDtextView8"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
-            android:textColor="#0e1d52"/>
+            android:textColor="#0e1d52" />
         <TextView
             android:text=""
             android:linksClickable="true"

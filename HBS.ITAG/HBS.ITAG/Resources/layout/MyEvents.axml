@@ -31,7 +31,7 @@
         android:id="@+id/MElinearLayout1"
         android:layout_marginLeft="20dp">
       <TextView
-          android:text="Sample Text"
+          android:text="Building Apps with Web AppBuilder"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
           android:id="@+id/MEtextView3"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="What’s New in vSphere 6.5"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
           android:id="@+id/MEtextView4"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Basic Python Workshop"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
           android:id="@+id/MEtextView5"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Drones! - The Process"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -63,7 +63,7 @@
           android:id="@+id/MEtextView10"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Intermediate Python Workshop"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
           android:id="@+id/MEtextView11"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="The Dark Web"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
         android:id="@+id/MElinearLayout2"
         android:layout_marginLeft="20dp">
       <TextView
-          android:text="Sample Text"
+          android:text="Collector for ArcGIS"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -116,7 +116,7 @@
           android:id="@+id/MEtextView7"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Bodycams - Let's Talk!"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -124,7 +124,7 @@
           android:id="@+id/MEtextView8"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Building Apps with Web AppBuilder"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -132,7 +132,7 @@
           android:id="@+id/MEtextView9"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Intermediate Python Workshop"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
           android:id="@+id/MEtextView13"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="What’s New in vSphere 6.5"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
           android:id="@+id/MEtextView14"
           android:layout_marginTop="20dp" />
       <TextView
-          android:text="Sample Text"
+          android:text="Basic Python Workshop"
           android:textColor="@android:color/black"
           android:textAppearance="?android:attr/textAppearanceSmall"
           android:layout_width="wrap_content"
