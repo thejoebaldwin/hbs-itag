@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -19,6 +18,8 @@ namespace HBS.ITAG
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Schedule);
+
+            //ScrollView schedule = FindViewById<ScrollView>(Resource.Id.schedule);
 
             Button toEventDetails = FindViewById<Button>(Resource.Id.tempToEventDetails);
             toEventDetails.Click += (sender, e) =>
