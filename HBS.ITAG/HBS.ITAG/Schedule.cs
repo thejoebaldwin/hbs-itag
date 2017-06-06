@@ -16,10 +16,19 @@ namespace HBS.ITAG
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Schedule);
 
-            //ScrollView schedule = FindViewById<ScrollView>(Resource.Id.schedule);
+            ImageView leftArrow = FindViewById<ImageView>(Resource.Id.left_arrow);
+            ImageView rightArrow = FindViewById<ImageView>(Resource.Id.right_arrow);
+
+            Button day1btn = FindViewById<Button>(Resource.Id.day_one);
+            Button day2btn = FindViewById<Button>(Resource.Id.day_two);
+            Button day3btn = FindViewById<Button>(Resource.Id.day_three);
+            Button day4btn = FindViewById<Button>(Resource.Id.day_four);
+
+            TextView TrackTitle = FindViewById<TextView>(Resource.Id.track_title);
 
             Button toEventDetails = FindViewById<Button>(Resource.Id.tempToEventDetails);
             toEventDetails.Click += (sender, e) =>
