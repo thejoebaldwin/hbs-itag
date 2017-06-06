@@ -105,13 +105,17 @@
     <AndroidResource Include="Resources\drawable\app_features.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\inProgress.xml" />
+    <AndroidResource Include="Resources\drawable\inProgress.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ITAG.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\Upcoming.xml" />
+    <AndroidResource Include="Resources\drawable\Upcoming.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\navigation_bar.png" />
@@ -128,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\profile.png" />
+    <AndroidResource Include="Resources\drawable\left_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\right_arrow.png" />
+    <AndroidResource Include="Resources\drawable\navigation_bar.png" />
+    <AndroidResource Include="Resources\drawable\custom_scroll_style.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

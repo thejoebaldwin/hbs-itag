@@ -94,16 +94,22 @@ namespace HBS.ITAG
 			public const int ITAG = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int navigation_bar = 2130837513;
+			public const int left_arrow = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int profile = 2130837514;
+			public const int navigation_bar = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int Upcoming = 2130837515;
+			public const int profile = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int wrench = 2130837516;
+			public const int right_arrow = 2130837516;
+			
+			// aapt resource value: 0x7f02000d
+			public const int Upcoming = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int wrench = 2130837518;
 			
 			static Drawable()
 			{
@@ -307,6 +313,18 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060039
 			public const int conference_details = 2131099705;
 			
+			// aapt resource value: 0x7f060054
+			public const int day_four = 2131099732;
+			
+			// aapt resource value: 0x7f060051
+			public const int day_one = 2131099729;
+			
+			// aapt resource value: 0x7f060053
+			public const int day_three = 2131099731;
+			
+			// aapt resource value: 0x7f060052
+			public const int day_two = 2131099730;
+			
 			// aapt resource value: 0x7f060030
 			public const int favorites_header = 2131099696;
 			
@@ -340,14 +358,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06002e
 			public const int itag_icon = 2131099694;
 			
+			// aapt resource value: 0x7f060055
+			public const int left_arrow = 2131099733;
+			
 			// aapt resource value: 0x7f06003a
 			public const int linearLayout1 = 2131099706;
 			
 			// aapt resource value: 0x7f06003d
 			public const int profileimage = 2131099709;
 			
-			// aapt resource value: 0x7f060052
-			public const int schedule = 2131099730;
+			// aapt resource value: 0x7f060057
+			public const int right_arrow = 2131099735;
 			
 			// aapt resource value: 0x7f060033
 			public const int second_favorite = 2131099699;
@@ -355,14 +376,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
 			
-			// aapt resource value: 0x7f060051
-			public const int tempToEventDetails = 2131099729;
+			// aapt resource value: 0x7f060058
+			public const int tempToEventDetails = 2131099736;
 			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
 			
 			// aapt resource value: 0x7f060036
 			public const int third_status = 2131099702;
+			
+			// aapt resource value: 0x7f060056
+			public const int track_title = 2131099734;
 			
 			// aapt resource value: 0x7f06003e
 			public const int wrenchimage = 2131099710;
