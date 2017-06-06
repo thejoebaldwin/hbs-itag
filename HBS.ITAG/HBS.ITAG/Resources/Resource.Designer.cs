@@ -328,26 +328,23 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06002e
 			public const int itag_icon = 2131099694;
 			
+			// aapt resource value: 0x7f06004f
+			public const int schedule = 2131099727;
+			
 			// aapt resource value: 0x7f060033
 			public const int second_favorite = 2131099699;
 			
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
 			
-			// aapt resource value: 0x7f06004f
-			public const int tempToEventDetails = 2131099727;
+			// aapt resource value: 0x7f06004e
+			public const int tempToEventDetails = 2131099726;
 			
 			// aapt resource value: 0x7f06003b
 			public const int tempToMyEvents = 2131099707;
 			
 			// aapt resource value: 0x7f06003a
 			public const int tempToSchedule = 2131099706;
-			
-			// aapt resource value: 0x7f06004e
-			public const int textView1 = 2131099726;
-			
-			// aapt resource value: 0x7f060050
-			public const int textView2 = 2131099728;
 			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
