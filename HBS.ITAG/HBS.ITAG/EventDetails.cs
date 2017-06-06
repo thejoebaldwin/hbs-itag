@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using System;
+using Android.Text;
+using Android.Text.Method;
+using Android.Graphics.Drawables;
+using Android;
+
+namespace HBS.ITAG
+{
+    [Activity(Label = "EventDetails")]
+    public class EventDetails : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.EventDetails);
+            // Create your application here
+
+
+            //TextView t2 = (TextView)FindViewById(Resource.Id.EDtextView9);
+            //t2.MovementMethod = LinkMovementMethod.Instance;
+
+             TextView textView = FindViewById<TextView>(Resource.Id.EDtextView9);
+             textView.TextFormatted = Html.FromHtml("" +
+                             "<a href=https://iowacountiesit.org/itag-conference/schedule/tuesday/#rdv-calendar\">Click Here</a> " +
+                             "");
+
+             textView.MovementMethod = LinkMovementMethod.Instance;
+
+            var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
+
+            button.Click += (object sender, EventArgs e) =>
+            {
+                Toast toast = Toast.MakeText(this, "It worked!", ToastLength.Short);
+                toast.Show();
+                button.SetImageDrawable(GetDrawable(17301516));
+                 
+
+            };
+            
+        }
+    }
+}
