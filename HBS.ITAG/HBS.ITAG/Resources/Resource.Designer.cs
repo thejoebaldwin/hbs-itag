@@ -76,29 +76,28 @@ namespace HBS.ITAG
 			public const int bluetooth = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int calendar = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int inProgress = 2130837508;
+			public const int house = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int ITAG = 2130837509;
+			public const int Icon = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int Upcoming = 2130837510;
-			public const int calendar = 2130837506;
+			public const int inProgress = 2130837510;
 			
-			// aapt resource value: 0x7f020003
-			public const int house = 2130837507;
+			// aapt resource value: 0x7f020007
+			public const int ITAG = 2130837511;
 			
-			// aapt resource value: 0x7f020004
-			public const int Icon = 2130837508;
+			// aapt resource value: 0x7f020008
+			public const int profile = 2130837512;
 			
-			// aapt resource value: 0x7f020005
-			public const int profile = 2130837509;
+			// aapt resource value: 0x7f020009
+			public const int Upcoming = 2130837513;
 			
-			// aapt resource value: 0x7f020006
-			public const int wrench = 2130837510;
+			// aapt resource value: 0x7f02000a
+			public const int wrench = 2130837514;
 			
 			static Drawable()
 			{
@@ -293,14 +292,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f06003c
 			public const int textView1 = 2131099708;
 			
+			// aapt resource value: 0x7f06003e
+			public const int textView2 = 2131099710;
+			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
 			
 			// aapt resource value: 0x7f060036
 			public const int third_status = 2131099702;
-			
-			// aapt resource value: 0x7f06002f
-			public const int textView2 = 2131099695;
 			
 			static Id()
 			{

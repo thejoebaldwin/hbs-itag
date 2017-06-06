@@ -113,6 +113,7 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Upcoming.xml" />
   </ItemGroup>
+  <ItemGroup>
     <AndroidResource Include="Resources\drawable\calendar.png" />
   </ItemGroup>
   <ItemGroup>
