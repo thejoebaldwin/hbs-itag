@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
-    android:minHeight="25px">
+    android:minHeight="25px"
+    android:background="@android:color/white">
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
@@ -18,21 +19,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView1"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+             android:textColor="#0e1d52"/>
         <ImageButton
             android:src="@android:drawable/btn_star_big_off"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/EDimageButton1"
             android:layout_toRightOf="@id/EDtextView1"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="175dp"
             android:layout_centerVertical="true"
             android:background="#00ffffff" />
     </RelativeLayout>
     <View
         android:layout_width="fill_parent"
         android:layout_height="2dp"
-        android:background="#c0c0c0"
+        android:background="#bf1e2d"
         android:layout_marginTop="10dp" />
     <RelativeLayout
         android:minWidth="25px"
@@ -48,7 +50,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView2"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+             android:textColor="#0e1d52"/>
         <TextView
             android:text="(Sample Name)"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -57,7 +60,8 @@
             android:id="@+id/EDtextView3"
             android:layout_below="@id/EDtextView2"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:textColor="#0e1d52"/>
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -73,7 +77,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView4"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="#0e1d52"/>
         <TextView
             android:text="(Sample Time)"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -82,7 +87,8 @@
             android:id="@+id/EDtextView5"
             android:layout_below="@id/EDtextView4"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:textColor="#0e1d52"/>
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -98,7 +104,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView6"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="#0e1d52"/>
         <TextView
             android:text="(Sample Location)"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -107,7 +114,8 @@
             android:id="@+id/EDtextView7"
             android:layout_below="@id/EDtextView6"
             android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp" />
+            android:layout_marginRight="20dp"
+            android:textColor="#0e1d52"/>
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -123,7 +131,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView8"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp" />
+            android:layout_marginBottom="10dp"
+            android:textColor="#0e1d52"/>
         <TextView
             android:text=""
             android:linksClickable="true"
