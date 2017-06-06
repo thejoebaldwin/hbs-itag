@@ -2,6 +2,7 @@
 using Android.Widget;
 using Android.OS;
 using System;
+using Android.Views;
 
 namespace HBS.ITAG
 {
@@ -13,6 +14,7 @@ namespace HBS.ITAG
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
+            RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView (Resource.Layout.DemographicSurvey);
 
             var button = FindViewById<Button>(Resource.Id.DSbutton1);

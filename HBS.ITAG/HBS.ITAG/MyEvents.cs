@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "MyEvents")]
+    [Activity(Label = "My Events")]
     public class MyEvents : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

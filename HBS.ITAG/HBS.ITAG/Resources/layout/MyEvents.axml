@@ -2,4 +2,159 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" />
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+  <TextView
+      android:text="Favorite Events"
+      android:textColor="#0e1d52"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/MEtextView2"
+      android:layout_marginTop="20dp"
+      android:layout_marginBottom="20dp"
+      android:layout_gravity="center_horizontal"/>
+  <ScrollView
+      android:layout_width="fill_parent"
+      android:layout_height="150dp"
+      android:id="@+id/MEscrollView1"
+      android:scrollbarAlwaysDrawVerticalTrack="true"
+      android:background="#99a1ac"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:scrollbarSize="20dp"
+      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MElinearLayout1"
+        android:layout_marginLeft="20dp">
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView3"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView4"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView5"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView10"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView11"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView12"
+          android:layout_marginTop="20dp" />
+    </LinearLayout>
+  </ScrollView>
+  <TextView
+      android:text="Previous Events"
+      android:layout_marginBottom="20dp"
+      android:textColor="#0e1d52"
+      android:textAppearance="?android:attr/textAppearanceMedium"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/MEtextView6"
+      android:layout_marginTop="20dp"
+      android:layout_gravity="center_horizontal"/>
+  <ScrollView
+      android:layout_width="fill_parent"
+      android:layout_height="150dp"
+      android:id="@+id/MEscrollView2"
+      android:scrollbarAlwaysDrawVerticalTrack="true"
+      android:background="#99a1ac"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:scrollbarSize="20dp"
+      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
+    <LinearLayout
+        android:orientation="vertical"
+        android:textColor="@android:color/black"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/MElinearLayout2"
+        android:layout_marginLeft="20dp">
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView7"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView8"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView9"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView13"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView14"
+          android:layout_marginTop="20dp" />
+      <TextView
+          android:text="Sample Text"
+          android:textColor="@android:color/black"
+          android:textAppearance="?android:attr/textAppearanceSmall"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/MEtextView15"
+          android:layout_marginTop="20dp" />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>
