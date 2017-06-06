@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView1"
             android:layout_marginLeft="20dp" />
-      <ImageButton
+        <ImageButton
             android:src="@android:drawable/btn_star_big_off"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -124,8 +124,8 @@
             android:id="@+id/EDtextView8"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp" />
-      <TextView
-            android:text="https://iowacountiesit.org/itag-conference/schedule/tuesday/#rdv-calendar"
+        <TextView
+            android:text=""
             android:linksClickable="true"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"

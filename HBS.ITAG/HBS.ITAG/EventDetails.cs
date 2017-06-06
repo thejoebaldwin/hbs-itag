@@ -42,7 +42,7 @@ namespace HBS.ITAG
 
             button.Click += (object sender, EventArgs e) =>
             {
-                Toast toast = Toast.MakeText(this, "It worked!", ToastLength.Short);
+                Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
                 toast.Show();
                 button.SetImageDrawable(GetDrawable(17301516));
                  
