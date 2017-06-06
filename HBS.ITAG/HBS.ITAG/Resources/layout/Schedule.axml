@@ -15,22 +15,82 @@
             android:minWidth="400dp" />
     </GridLayout>
     <GridLayout
-        android:minWidth="50dp"
+        android:minWidth="400dp"
         android:layout_marginRight="0.0dp"
         android:layout_marginBottom="0.0dp">
         <TextView
-            android:text="8:00AM"
-            android:layout_marginBottom="467.5dp"
-            android:layout_marginRight="0.0dp"
+            android:text="Time"
+            android:layout_marginBottom="0dp"
+            android:layout_marginRight="103.0dp"
             android:id="@+id/textView1" />
         <Button
             android:id="@+id/tempToEventDetails"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:text="Event Details"/>
-    </GridLayout>
-    <GridLayout>
         <TextView
-            android:text="This is where sessions go" />
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="54.0dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="0.0dp">
+        <TextView
+            android:text="8:00 AM"
+            android:layout_marginRight="103.0dp" />
+        <TextView
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="34.5dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="0.0dp">
+        <TextView
+            android:text="9:00 AM"
+            android:layout_marginRight="103.0dp" />
+        <TextView
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="35.5dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="0.0dp">
+        <TextView
+            android:text="10:00 AM"
+            android:layout_marginRight="103.0dp" />
+        <TextView
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="24.5dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="0.0dp">
+        <TextView
+            android:text="11:00 AM"
+            android:layout_marginRight="103.0dp" />
+        <TextView
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="25.5dp" />
+    </GridLayout>
+    <GridLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_marginRight="0.0dp">
+        <TextView
+            android:text="12:00 PM"
+            android:layout_marginRight="103.0dp" />
+        <TextView
+            android:text="Sessions"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="26.0dp" />
     </GridLayout>
 </GridLayout>

@@ -86,6 +86,19 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f020006
 			public const int Upcoming = 2130837510;
+			public const int calendar = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int house = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int Icon = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int profile = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int wrench = 2130837510;
 			
 			static Drawable()
 			{
@@ -285,6 +298,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f060036
 			public const int third_status = 2131099702;
+			
+			// aapt resource value: 0x7f06002f
+			public const int textView2 = 2131099695;
 			
 			static Id()
 			{
