@@ -18,7 +18,7 @@ namespace HBS.ITAG
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.AppFeatures);
             Button BluetoothMsg = FindViewById<Button>(Resource.Id.BluetoothMsg);
 

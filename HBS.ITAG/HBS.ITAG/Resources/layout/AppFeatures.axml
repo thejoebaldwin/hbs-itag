@@ -6,32 +6,19 @@
     android:minWidth="25px"
     android:minHeight="25px"
     android:background="@android:color/white">
-    <GridLayout>
-        <ImageView
-            android:id="@+id/arrowbutton"
-            android:src="@drawable/left_arrow"
-            android:scaleX="0.85"
-            android:scaleY="0.85" />
-        <TextView
-            android:text="  Home"
-            android:id="@+id/backhomebutton"
-            android:textColor="#0e1d52"
-            android:gravity="center" />
-    </GridLayout>
     <GridLayout
         android:background="#bf1e2d"
         android:id="@+id/gridLayout7"
-        android:layout_marginBottom="0.0dp"
         android:minWidth="400dp">
         <ImageView
             android:id="@+id/bluetoothimage"
             android:src="@drawable/bluetooth"
-            android:scaleX="0.15"
-            android:scaleY="0.15"
-            android:layout_marginBottom="-85dp"
+            android:scaleX="0.12"
+            android:scaleY="0.12"
+            android:layout_marginBottom="-87dp"
             android:layout_marginLeft="-80dp"
-            android:layout_marginRight="-85dp"
-            android:layout_marginTop="-85dp" />
+            android:layout_marginRight="-87dp"
+            android:layout_marginTop="-87dp" />
         <Button
             android:id="@+id/BluetoothMsg"
             android:text="Turn on Bluetooth for improved functionality"
@@ -41,7 +28,21 @@
             android:layout_marginTop="-10.0dp"
             android:layout_marginRight="0.0dp"
             android:background="#bf1e2d"
-            android:layout_marginBottom="-10.0dp" />
+            android:layout_marginBottom="-15.0dp" />
+    </GridLayout>
+    <GridLayout>
+        <ImageView
+            android:id="@+id/arrowbutton"
+            android:src="@drawable/left_arrow"
+            android:scaleX="0.85"
+            android:scaleY="0.85"
+            android:layout_marginTop="2dp" />
+        <TextView
+            android:text="  Home"
+            android:id="@+id/backhomebutton"
+            android:textColor="#0e1d52"
+            android:gravity="center"
+            android:layout_marginTop="3.0dp" />
     </GridLayout>
     <GridLayout
         android:layout_marginRight="0.0dp"
@@ -120,25 +121,12 @@
             android:textColor="@android:color/black"
             android:gravity="center" />
     </GridLayout>
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="150.0dp"
-        android:id="@+id/MEscrollView2"
-        android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:background="#99a1ac"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:scrollbarSize="20dp"
-        android:scrollbarThumbVertical="@drawable/custom_scroll_style">
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:id="@+id/Info2"
-                android:text="@string/Info2"
-                android:textSize="29px"
-                android:textColor="@android:color/black"
-                android:layout_marginLeft="5.0dp" />
-        </GridLayout>
-    </ScrollView>
+    <GridLayout>
+        <TextView
+            android:id="@+id/Info2"
+            android:text="@string/Info2"
+            android:textSize="29px"
+            android:textColor="@android:color/black"
+            android:layout_marginLeft="5.0dp" />
+    </GridLayout>
 </GridLayout>
