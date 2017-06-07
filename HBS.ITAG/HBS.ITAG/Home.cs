@@ -75,6 +75,11 @@ namespace HBS.ITAG
                 
             };
 
+            firstFavorite.Click += (object sender, EventArgs e) =>
+            {
+                StartActivity(typeof(EventDetails));
+            };
+
         }
     }
 }
