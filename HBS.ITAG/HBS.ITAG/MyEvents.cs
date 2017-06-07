@@ -46,7 +46,13 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(Schedule));
             };
+            
+            TextView firstInScrollBar = FindViewById<TextView>(Resource.Id.MEtextView3);
 
+            firstInScrollBar.Click += (object sender, EventArgs e) =>
+            {
+                StartActivity(typeof(EventDetails));
+            };
         }
     }
 }
