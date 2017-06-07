@@ -28,6 +28,38 @@ namespace HBS.ITAG
             Button day3btn = FindViewById<Button>(Resource.Id.day_three);
             Button day4btn = FindViewById<Button>(Resource.Id.day_four);
 
+            day1btn.Click += delegate 
+            {
+                day1btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.selected_ripple));
+                day2btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day3btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day4btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+            };
+
+            day2btn.Click += delegate
+            {
+                day1btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day2btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.selected_ripple));
+                day3btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day4btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+            };
+
+            day3btn.Click += delegate
+            {
+                day1btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day2btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day3btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.selected_ripple));
+                day4btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+            };
+
+            day4btn.Click += delegate
+            {
+                day1btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day2btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day3btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.unselected_ripple));
+                day4btn.SetBackgroundDrawable(Resources.GetDrawable(Resource.Drawable.selected_ripple));
+            };
+
             //TextView TrackTitle = FindViewById<TextView>(Resource.Id.track_title);
 
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);

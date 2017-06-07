@@ -21,21 +21,13 @@ namespace HBS.ITAG
             SetContentView(Resource.Layout.Home);
 
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
-
             ImageView itagIcon = FindViewById<ImageView>(Resource.Id.itag_icon);
-
             TextView favoritesHeader = FindViewById<TextView>(Resource.Id.favorites_header);
 
-            TextView firstFavorite = FindViewById<TextView>(Resource.Id.first_favorite);
-            
-            TextView secondFavorite = FindViewById<TextView>(Resource.Id.second_favorite);
-            TextView thirdFavorite = FindViewById<TextView>(Resource.Id.third_favorite);
-            TextView fourthFavorite = FindViewById<TextView>(Resource.Id.fourth_favorite);
-
-            TextView firstStatus = FindViewById<TextView>(Resource.Id.first_status);
-            TextView secondStatus = FindViewById<TextView>(Resource.Id.second_status);
-            TextView thirdStatus = FindViewById<TextView>(Resource.Id.third_status);
-            TextView fourthStatus = FindViewById<TextView>(Resource.Id.fourth_status);
+            LinearLayout firstFavorite = FindViewById<LinearLayout>(Resource.Id.first_favorite);
+            LinearLayout secondFavorite = FindViewById<LinearLayout>(Resource.Id.second_favorite);
+            LinearLayout thirdFavorite = FindViewById<LinearLayout>(Resource.Id.third_favorite);
+            LinearLayout fourthFavorite = FindViewById<LinearLayout>(Resource.Id.fourth_favorite);
 
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
 
