@@ -108,9 +108,9 @@
             android:id="@+id/blueprintexample"
             android:src="@drawable/blueprintexample"
             android:scaleX="0.95"
-            android:scaleY="0.35"
-            android:layout_marginTop="-110dp"
-            android:layout_marginBottom="-110dp" />
+            android:scaleY="0.45"
+            android:layout_marginTop="-100dp"
+            android:layout_marginBottom="-100dp" />
     </GridLayout>
     <GridLayout>
         <TextView
