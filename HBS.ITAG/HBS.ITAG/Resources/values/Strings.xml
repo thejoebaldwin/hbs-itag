@@ -73,8 +73,6 @@
   <string-array name="Gender">
     <item>Male</item>
     <item>Female</item>
-    <item>Homosexual Male</item>
-    <item>Homosexual Female</item>
     <item>Other</item>
     <item>Prefer Not to Respond</item>
   </string-array>
