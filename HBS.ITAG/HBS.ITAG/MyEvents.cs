@@ -40,12 +40,6 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(MyEvents));
             };
-            ImageButton Toolsimagebutton = FindViewById<ImageButton>(Resource.Id.wrenchimage);
-
-            Toolsimagebutton.Click += (sender, e) =>
-            {
-                StartActivity(typeof(Schedule));
-            };
             
             TextView firstInScrollBar = FindViewById<TextView>(Resource.Id.MEtextView3);
 
