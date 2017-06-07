@@ -38,15 +38,28 @@ namespace HBS.ITAG
              textView.MovementMethod = LinkMovementMethod.Instance;
 
             var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
-
+            int count = 0;
             button.Click += (object sender, EventArgs e) =>
-            {
-                Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
-                toast.Show();
-                button.SetImageDrawable(GetDrawable(17301516));
-                 
+                {
 
-            };
+                    if (count % 2 == 0)
+                    {
+                        Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
+                        toast.Show();
+                        button.SetImageDrawable(GetDrawable(17301516));
+                        count++;
+                    }
+                    else
+                    {
+                        Toast toast = Toast.MakeText(this, "Removed from Favorites", ToastLength.Short);
+                        toast.Show();
+                        button.SetImageDrawable(GetDrawable(17301515));
+                        count++;
+                    }
+                     
+                };
+           
+           
             
         }
     }
