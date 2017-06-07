@@ -382,9 +382,6 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
 			
-			// aapt resource value: 0x7f060058
-			public const int tempToEventDetails = 2131099736;
-			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
 			
