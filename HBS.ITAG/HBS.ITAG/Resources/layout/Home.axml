@@ -160,7 +160,7 @@
         android:textColor="@android:color/black"
         android:paddingTop="20dp"
         android:text="@string/conferenceDetails"
-        android:layout_marginBottom="20.0dp"
+        android:layout_marginBottom="26.0dp"
         android:layout_marginTop="0.0dp" />
     <GridLayout
         android:layout_width="match_parent"
