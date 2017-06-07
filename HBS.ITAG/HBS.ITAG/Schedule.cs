@@ -30,12 +30,6 @@ namespace HBS.ITAG
 
             //TextView TrackTitle = FindViewById<TextView>(Resource.Id.track_title);
 
-            Button toEventDetails = FindViewById<Button>(Resource.Id.tempToEventDetails);
-            toEventDetails.Click += (sender, e) =>
-            {
-                StartActivity(typeof(EventDetails));
-            };
-
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 
             Homeimagebutton.Click += (sender, e) =>
