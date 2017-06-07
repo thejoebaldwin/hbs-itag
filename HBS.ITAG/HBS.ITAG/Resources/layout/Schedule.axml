@@ -131,7 +131,7 @@
         android:layout_height="80.0dp"
         android:orientation="horizontal"
         android:id="@+id/linearLayout1"
-        android:background="#0054a5">
+        android:background="#0E1D52">
     <ImageButton
         android:src="@drawable/house"
         android:id="@+id/house"
