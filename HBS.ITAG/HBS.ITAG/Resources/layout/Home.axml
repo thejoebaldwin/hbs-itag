@@ -48,7 +48,7 @@
             android:textColor="@android:color/white"
             android:maxLines="2"
             android:lines="2"
-            android:text="First Session Name\nTime of Session"
+            android:text="Building Apps with Web AppBuilder\n9:00 am - 10:30 am"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -81,7 +81,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Second Session Name\nTime of Session"
+            android:text="Basic Python Workshop\n10:45 am - 12:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -109,7 +109,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Third Session Name\nTime of Session"
+            android:text="Drones! - The Process\n11:30 am - 12:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -137,7 +137,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Fourth Session Name\nTime of Session"
+            android:text="The Dark Web\n1:30 pm - 3:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
