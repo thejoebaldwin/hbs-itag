@@ -48,7 +48,7 @@
             android:textColor="@android:color/white"
             android:maxLines="2"
             android:lines="2"
-            android:text="First Session Name\nTime of Session"
+            android:text="Building Apps with Web AppBuilder\n9:00 am - 10:30 am"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -76,7 +76,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Second Session Name\nTime of Session"
+            android:text="Basic Python Workshop\n10:45 am - 12:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -104,7 +104,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Third Session Name\nTime of Session"
+            android:text="Drones! - The Process\n11:30 am - 12:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -132,7 +132,7 @@
             android:textColor="@android:color/black"
             android:maxLines="2"
             android:lines="2"
-            android:text="Fourth Session Name\nTime of Session"
+            android:text="The Dark Web\n1:30 pm - 3:00 pm"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:paddingTop="5dp" />
@@ -159,17 +159,17 @@
         android:layout_marginTop="0.0dp" />
     <GridLayout
         android:layout_width="match_parent"
-        android:background="@drawable/secondaryBox"
         android:layout_height="80.0dp"
         android:orientation="horizontal"
-        android:id="@+id/linearLayout1">
+        android:id="@+id/linearLayout1"
+        android:background="#0054a5">
         <ImageButton
             android:src="@drawable/house"
             android:id="@+id/house"
             android:layout_width="200.0dp"
             android:layout_height="126.0dp"
-            android:layout_marginRight="-65.0dp"
-            android:layout_marginLeft="-60.0dp"
+            android:layout_marginRight="-70.0dp"
+            android:layout_marginLeft="-40.0dp"
             android:background="#0054a5"
             android:layout_marginTop="-23dp"
             android:scaleType="fitCenter"
@@ -179,34 +179,22 @@
             android:id="@+id/calendar"
             android:layout_width="134dp"
             android:layout_height="121.5dp"
-            android:layout_marginLeft="-10.0dp"
+            android:layout_marginLeft="34.5dp"
             android:layout_marginTop="-20.0dp"
             android:background="#0054a5"
             android:scaleType="fitCenter"
-            android:padding="20dp" />
+            android:padding="20dp"
+            android:layout_marginRight="0.0dp" />
         <ImageButton
             android:src="@drawable/profile"
             android:id="@+id/profileimage"
             android:layout_width="124.5dp"
             android:layout_height="121.5dp"
-            android:layout_marginRight="10.0dp"
-            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="0.0dp"
             android:layout_marginTop="-20.0dp"
             android:background="#0054a5"
             android:scaleType="fitCenter"
             android:padding="20dp" />
-        <ImageButton
-            android:src="@drawable/wrench"
-            android:id="@+id/wrenchimage"
-            android:layout_width="124.5dp"
-            android:layout_height="121.5dp"
-            android:layout_marginRight="-30.0dp"
-            android:layout_marginLeft="-30dp"
-            android:layout_marginTop="-20.0dp"
-            android:background="#0054a5"
-            android:scaleType="fitCenter"
-            android:padding="20dp"
-            android:maxWidth="10dp"
-            android:maxHeight="10dp" />
     </GridLayout>
 </LinearLayout>
