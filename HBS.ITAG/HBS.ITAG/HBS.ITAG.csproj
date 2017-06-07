@@ -118,18 +118,20 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\calendar.png" />
+    <AndroidResource Include="Resources\drawable\navigation_bar.png" />
+    <AndroidResource Include="Resources\drawable\custom_scroll_style.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\house.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\profile.png" />
+    <AndroidResource Include="Resources\drawable\calendar.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\wrench.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\profile.png" />
     <AndroidResource Include="Resources\drawable\left_arrow.png" />
   </ItemGroup>
   <ItemGroup>

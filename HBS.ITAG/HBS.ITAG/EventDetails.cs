@@ -9,7 +9,6 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using System;
 using Android.Text;
 using Android.Text.Method;
 using Android.Graphics.Drawables;
