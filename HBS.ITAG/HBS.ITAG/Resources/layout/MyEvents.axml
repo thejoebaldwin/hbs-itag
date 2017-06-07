@@ -4,157 +4,209 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-  <TextView
-      android:text="Favorite Events"
-      android:textColor="#0e1d52"
-      android:textAppearance="?android:attr/textAppearanceMedium"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:id="@+id/MEtextView2"
-      android:layout_marginTop="20dp"
-      android:layout_marginBottom="20dp"
-      android:layout_gravity="center_horizontal"/>
-  <ScrollView
-      android:layout_width="fill_parent"
-      android:layout_height="150dp"
-      android:id="@+id/MEscrollView1"
-      android:scrollbarAlwaysDrawVerticalTrack="true"
-      android:background="#99a1ac"
-      android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp"
-      android:scrollbarSize="20dp"
-      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
+    <TextView
+        android:text="Favorite Events"
+        android:textColor="#0e1d52"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/MElinearLayout1"
-        android:layout_marginLeft="20dp">
-      <TextView
-          android:text="Building Apps with Web AppBuilder"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView3"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="What’s New in vSphere 6.5"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView4"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Basic Python Workshop"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView5"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Drones! - The Process"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView10"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Intermediate Python Workshop"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView11"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="The Dark Web"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView12"
-          android:layout_marginTop="20dp" />
-    </LinearLayout>
-  </ScrollView>
-  <TextView
-      android:text="Previous Events"
-      android:layout_marginBottom="20dp"
-      android:textColor="#0e1d52"
-      android:textAppearance="?android:attr/textAppearanceMedium"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:id="@+id/MEtextView6"
-      android:layout_marginTop="20dp"
-      android:layout_gravity="center_horizontal"/>
-  <ScrollView
-      android:layout_width="fill_parent"
-      android:layout_height="150dp"
-      android:id="@+id/MEscrollView2"
-      android:scrollbarAlwaysDrawVerticalTrack="true"
-      android:background="#99a1ac"
-      android:layout_marginLeft="20dp"
-      android:layout_marginRight="20dp"
-      android:scrollbarSize="20dp"
-      android:scrollbarThumbVertical="@drawable/custom_scroll_style">
-    <LinearLayout
-        android:orientation="vertical"
-        android:textColor="@android:color/black"
+        android:id="@+id/MEtextView2"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center_horizontal" />
+    <ScrollView
         android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:id="@+id/MEscrollView1"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:background="#99a1ac"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scrollbarSize="20dp"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/MElinearLayout1"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:text="Building Apps with Web AppBuilder"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView3"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="What’s New in vSphere 6.5"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView4"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Basic Python Workshop"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView5"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Drones! - The Process"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView10"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Intermediate Python Workshop"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView11"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="The Dark Web"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView12"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+    <TextView
+        android:text="Previous Events"
+        android:layout_marginBottom="20dp"
+        android:textColor="#0e1d52"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/MElinearLayout2"
-        android:layout_marginLeft="20dp">
-      <TextView
-          android:text="Collector for ArcGIS"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView7"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Bodycams - Let's Talk!"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView8"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Building Apps with Web AppBuilder"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView9"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Intermediate Python Workshop"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView13"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="What’s New in vSphere 6.5"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView14"
-          android:layout_marginTop="20dp" />
-      <TextView
-          android:text="Basic Python Workshop"
-          android:textColor="@android:color/black"
-          android:textAppearance="?android:attr/textAppearanceSmall"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:id="@+id/MEtextView15"
-          android:layout_marginTop="20dp" />
-    </LinearLayout>
-  </ScrollView>
+        android:id="@+id/MEtextView6"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal" />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="150.0dp"
+        android:id="@+id/MEscrollView2"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:background="#99a1ac"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scrollbarSize="20dp"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style">
+        <LinearLayout
+            android:orientation="vertical"
+            android:textColor="@android:color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/MElinearLayout2"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:text="Collector for ArcGIS"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView7"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Bodycams - Let's Talk!"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView8"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Building Apps with Web AppBuilder"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView9"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Intermediate Python Workshop"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView13"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="What’s New in vSphere 6.5"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView14"
+                android:layout_marginTop="20dp" />
+            <TextView
+                android:text="Basic Python Workshop"
+                android:textColor="@android:color/black"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/MEtextView15"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="80.0dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout1">
+        <ImageButton
+            android:src="@drawable/house"
+            android:id="@+id/house"
+            android:layout_width="200.0dp"
+            android:layout_height="126.0dp"
+            android:layout_marginRight="-65.0dp"
+            android:layout_marginLeft="-60.0dp"
+            android:background="#0054a5"
+            android:layout_marginTop="-23dp"
+            android:scaleType="fitCenter"
+            android:padding="20dp" />
+        <ImageButton
+            android:src="@drawable/calendar"
+            android:id="@+id/calendar"
+            android:layout_width="134dp"
+            android:layout_height="121.5dp"
+            android:layout_marginLeft="-10.0dp"
+            android:layout_marginTop="-20.0dp"
+            android:background="#0054a5"
+            android:scaleType="fitCenter"
+            android:padding="20dp" />
+        <ImageButton
+            android:src="@drawable/profile"
+            android:id="@+id/profileimage"
+            android:layout_width="124.5dp"
+            android:layout_height="121.5dp"
+            android:layout_marginRight="10.0dp"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginTop="-20.0dp"
+            android:background="#0054a5"
+            android:scaleType="fitCenter"
+            android:padding="20dp" />
+        <ImageButton
+            android:src="@drawable/wrench"
+            android:id="@+id/wrenchimage"
+            android:layout_width="124.5dp"
+            android:layout_height="121.5dp"
+            android:layout_marginRight="-30.0dp"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginTop="-20.0dp"
+            android:background="#0054a5"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
+            android:maxWidth="10dp"
+            android:maxHeight="10dp" />
+    </GridLayout>
 </LinearLayout>
