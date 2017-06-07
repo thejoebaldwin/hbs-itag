@@ -112,7 +112,10 @@ namespace HBS.ITAG
 			public const int tertiaryBox = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int wrench = 2130837519;
+			public const int whiteBox = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int wrench = 2130837520;
 			
 			static Drawable()
 			{
@@ -381,9 +384,6 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f060034
 			public const int second_status = 2131099700;
-			
-			// aapt resource value: 0x7f060058
-			public const int tempToEventDetails = 2131099736;
 			
 			// aapt resource value: 0x7f060035
 			public const int third_favorite = 2131099701;
