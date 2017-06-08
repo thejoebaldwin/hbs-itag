@@ -42,494 +42,1518 @@
       android:layout_height="920px"
       android:visibility="visible"
       android:layout_width="match_parent">
-    <LinearLayout
+    <FrameLayout
+      android:id="@+id/dayoneTrack1"
+      android:layout_height="match_parent"
+      android:visibility="visible"
+      android:layout_width="match_parent">
+      <LinearLayout
         android:orientation="horizontal"
         android:layout_height="50px"
         android:layout_width="match_parent"
         android:background="@drawable/whiteBox">
-      <ImageView
-          android:id="@+id/left_arrow"
-          android:src="@drawable/left_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="0.0dp"
-          android:layout_marginLeft="5.0dp"
-          android:layout_marginTop="5px" />
-      <TextView
-          android:layout_width="335.5dp"
-          android:layout_height="wrap_content"
-          android:id="@+id/track_title"
-          android:text="Track 2"
-          android:background="@android:color/white"
-          android:textColor="@android:color/black"
-          android:gravity="center"
-          android:layout_marginTop="7px"
-          android:layout_marginBottom="10px" />
-      <ImageView
-          android:id="@+id/right_arrow"
-          android:src="@drawable/right_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:gravity="right"
-          android:layout_marginRight="5dp"
-          android:layout_marginLeft="-5dp"
-          android:layout_marginTop="5px" />
-    </LinearLayout>
-    <ScrollView
-        android:layout_height="865px"
-        android:layout_width="match_parent"
-        android:layout_marginTop="60px">
+        <ImageView
+            android:id="@+id/d1t1left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Track 1"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d1t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/dayoneTrack2"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
       <LinearLayout
           android:orientation="horizontal"
-          android:layout_height="match_parent"
+          android:layout_height="50px"
           android:layout_width="match_parent"
-          android:layout_marginTop="20px"
-          android:paddingBottom="50px">
-        <TextView
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d1t2left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
             android:layout_height="wrap_content"
-            android:layout_width="150px"
-            android:maxLines="50"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Track 2"
+            android:background="@android:color/white"
             android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d1t2right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
-            android:includeFontPadding="true"
-            android:lineSpacingExtra="50px"
-            android:paddingRight="20px" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-          <TextView
-              android:layout_height="83px"
-              android:layout_width="fill_parent"
-              android:text="Registration"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:layout_marginTop="20px"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="First Session Title\n9:00 am - 10:30 am"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="Second Session Title\n10:45 am - 12:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="172px"
-              android:layout_width="fill_parent"
-              android:text="Lunch"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="Third Session Title\n1:00 pm - 2:15 pm"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-        </LinearLayout>
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
       </LinearLayout>
-    </ScrollView>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/dayoneTrack3"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d1t3left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Track 3"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d1t3right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:visibility="invisible"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
   </FrameLayout>
   <FrameLayout
         android:id="@+id/day_two"
         android:layout_height="920px"
         android:visibility="gone"
         android:layout_width="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="50px"
-        android:layout_width="match_parent"
-        android:background="@drawable/whiteBox">
-      <ImageView
-          android:id="@+id/left_arrow"
-          android:src="@drawable/left_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="0.0dp"
-          android:layout_marginLeft="5.0dp"
-          android:visibility="invisible"
-          android:layout_marginTop="5px" />
-      <TextView
-          android:layout_width="335.5dp"
-          android:layout_height="wrap_content"
-          android:id="@+id/track_title"
-          android:text="GIS Track 1"
-          android:background="@android:color/white"
-          android:textColor="@android:color/black"
-          android:gravity="center"
-          android:layout_marginTop="7px"
-          android:layout_marginBottom="10px" />
-      <ImageView
-          android:id="@+id/right_arrow"
-          android:src="@drawable/right_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:gravity="right"
-          android:layout_marginRight="5dp"
-          android:layout_marginLeft="-5dp"
-          android:layout_marginTop="5px" />
-    </LinearLayout>
-    <ScrollView
-        android:layout_height="865px"
-        android:layout_width="match_parent"
-        android:layout_marginTop="60px">
+    <FrameLayout
+      android:id="@+id/daytwoTrack1"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="visible">
       <LinearLayout
           android:orientation="horizontal"
-          android:layout_height="match_parent"
+          android:layout_height="50px"
           android:layout_width="match_parent"
-          android:layout_marginTop="20px"
-          android:paddingBottom="50px">
-        <TextView
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d2t1left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
             android:layout_height="wrap_content"
-            android:layout_width="150px"
-            android:maxLines="50"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:visibility="invisible"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="GIS Track 1"
+            android:background="@android:color/white"
             android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d2t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm\n4:30 pm\n5:00 pm\n5:30 pm\n6:00 pm\n6:30 pm"
-            android:includeFontPadding="true"
-            android:lineSpacingExtra="50px"
-            android:paddingRight="20px" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Registration\n8:30 am - 10:00 am"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:layout_marginTop="20px"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="83px"
-              android:layout_width="fill_parent"
-              android:text="Welcome to ITAG!\n10:00 am - 10:30 am"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="124px"
-              android:layout_width="fill_parent"
-              android:text="ArcGIS for Local Government:\nThe Road Ahead\n10:30 am - 11:15 am"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="124px"
-              android:layout_width="fill_parent"
-              android:text="Collector for ArcGIS\n11:15 am - 12:00 pm"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="124px"
-              android:layout_width="fill_parent"
-              android:text="Lunch\n12:00 pm - 12:45 pm"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="291px"
-              android:layout_width="fill_parent"
-              android:text="First Afternoon Session\n12:45 pm - 2:30 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-        </LinearLayout>
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
       </LinearLayout>
-    </ScrollView>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm\n4:30 pm\n5:00 pm\n5:30 pm\n6:00 pm\n6:30 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Registration\n8:30 am - 10:00 am"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n10:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="ArcGIS for Local Government:\nThe Road Ahead\n10:30 am - 11:15 am"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Collector for ArcGIS\n11:15 am - 12:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Lunch\n12:00 pm - 12:45 pm"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="291px"
+                android:layout_width="fill_parent"
+                android:text="First Afternoon Session\n12:45 pm - 2:30 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/daytwoTrack2"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d2t2left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:visibility="visible"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="GIS Track 2"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d2t2right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm\n4:30 pm\n5:00 pm\n5:30 pm\n6:00 pm\n6:30 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Registration\n8:30 am - 10:00 am"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n10:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="ArcGIS for Local Government:\nThe Road Ahead\n10:30 am - 11:15 am"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Collector for ArcGIS\n11:15 am - 12:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Lunch\n12:00 pm - 12:45 pm"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="291px"
+                android:layout_width="fill_parent"
+                android:text="First Afternoon Session\n12:45 pm - 2:30 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/daytwoTrack3"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d2t3left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:visibility="visible"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="GIS Track 3"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d2t3right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:visibility="invisible"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm\n4:30 pm\n5:00 pm\n5:30 pm\n6:00 pm\n6:30 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Registration\n8:30 am - 10:00 am"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n10:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="ArcGIS for Local Government:\nThe Road Ahead\n10:30 am - 11:15 am"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Collector for ArcGIS\n11:15 am - 12:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="124px"
+                android:layout_width="fill_parent"
+                android:text="Lunch\n12:00 pm - 12:45 pm"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="291px"
+                android:layout_width="fill_parent"
+                android:text="First Afternoon Session\n12:45 pm - 2:30 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
   </FrameLayout>
   <FrameLayout
         android:id="@+id/day_three"
         android:layout_height="920px"
         android:visibility="gone"
         android:layout_width="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="50px"
-        android:layout_width="match_parent"
-        android:background="@drawable/whiteBox">
-      <ImageView
-          android:id="@+id/left_arrow"
-          android:src="@drawable/left_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="0.0dp"
-          android:layout_marginLeft="5.0dp"
-          android:layout_marginTop="5px" />
-      <TextView
-          android:layout_width="335.5dp"
-          android:layout_height="wrap_content"
-          android:id="@+id/track_title"
-          android:text="Track 3"
-          android:background="@android:color/white"
-          android:textColor="@android:color/black"
-          android:gravity="center"
-          android:layout_marginTop="7px"
-          android:layout_marginBottom="10px" />
-      <ImageView
-          android:id="@+id/right_arrow"
-          android:src="@drawable/right_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:gravity="right"
-          android:layout_marginRight="5dp"
-          android:layout_marginLeft="-5dp"
-          android:layout_marginTop="5px"
-          android:visibility="invisible"/>
-    </LinearLayout>
-    <ScrollView
-        android:layout_height="865px"
-        android:layout_width="match_parent"
-        android:layout_marginTop="60px">
+    <FrameLayout
+    android:id="@+id/daythreeTrack1"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:visibility="visible">
       <LinearLayout
           android:orientation="horizontal"
-          android:layout_height="match_parent"
+          android:layout_height="50px"
           android:layout_width="match_parent"
-          android:layout_marginTop="20px"
-          android:paddingBottom="50px">
-        <TextView
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d3t1left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
             android:layout_height="wrap_content"
-            android:layout_width="150px"
-            android:maxLines="50"
+            android:visibility="invisible"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 3 Track 1"
+            android:background="@android:color/white"
             android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d3t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
-            android:includeFontPadding="true"
-            android:lineSpacingExtra="50px"
-            android:paddingRight="20px" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-          <TextView
-              android:layout_height="83px"
-              android:layout_width="fill_parent"
-              android:text="Registration"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:layout_marginTop="20px"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Welcome to ITAG!\n9:00 am - 10:30 am"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="Drones! - The Process\n10:45 am - 12:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="172px"
-              android:layout_width="fill_parent"
-              android:text="Lunch"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="The Dark Web\n1:00 pm - 2:15 pm"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Bodycams - Let\'s Talk\n2:30 pm - 4:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-        </LinearLayout>
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px"
+            android:visibility="visible"/>
       </LinearLayout>
-    </ScrollView>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Drones! - The Process\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="The Dark Web\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Bodycams - Let\'s Talk\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+    android:id="@+id/daythreeTrack2"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d3t2left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 3 Track 2"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d3t2right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px"
+            android:visibility="visible"/>
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Drones! - The Process\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="The Dark Web\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Bodycams - Let\'s Talk\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+    android:id="@+id/daythreeTrack3"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d3t3left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 3 Track 3"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d3t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px"
+            android:visibility="invisible"/>
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Welcome to ITAG!\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Drones! - The Process\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="The Dark Web\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Bodycams - Let\'s Talk\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
   </FrameLayout>
   <FrameLayout
         android:id="@+id/day_four"
         android:layout_height="920px"
         android:visibility="gone"
         android:layout_width="match_parent">
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_height="50px"
-        android:layout_width="match_parent"
-        android:background="@drawable/whiteBox">
-      <ImageView
-          android:id="@+id/left_arrow"
-          android:src="@drawable/left_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:layout_marginRight="0.0dp"
-          android:layout_marginLeft="5.0dp"
-          android:layout_marginTop="5px" />
-      <TextView
-          android:layout_width="335.5dp"
-          android:layout_height="wrap_content"
-          android:id="@+id/track_title"
-          android:text="Track 2"
-          android:background="@android:color/white"
-          android:textColor="@android:color/black"
-          android:gravity="center"
-          android:layout_marginTop="7px"
-          android:layout_marginBottom="10px" />
-      <ImageView
-          android:id="@+id/right_arrow"
-          android:src="@drawable/right_arrow"
-          android:layout_width="40px"
-          android:layout_height="wrap_content"
-          android:gravity="right"
-          android:layout_marginRight="5dp"
-          android:layout_marginLeft="-5dp"
-          android:layout_marginTop="5px" />
-    </LinearLayout>
-    <ScrollView
-        android:layout_height="865px"
-        android:layout_width="match_parent"
-        android:layout_marginTop="60px">
+    <FrameLayout
+      android:id="@+id/dayfourTrack1"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="visible">
       <LinearLayout
           android:orientation="horizontal"
-          android:layout_height="match_parent"
+          android:layout_height="50px"
           android:layout_width="match_parent"
-          android:layout_marginTop="20px"
-          android:paddingBottom="50px">
-        <TextView
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d4t1left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:visibility="invisible"
             android:layout_height="wrap_content"
-            android:layout_width="150px"
-            android:maxLines="50"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 4 Track 1"
+            android:background="@android:color/white"
             android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d4t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
             android:gravity="right"
-            android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
-            android:includeFontPadding="true"
-            android:lineSpacingExtra="50px"
-            android:paddingRight="20px" />
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-          <TextView
-              android:layout_height="83px"
-              android:layout_width="fill_parent"
-              android:text="Registration"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:layout_marginTop="20px"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="First Session Title\n9:00 am - 10:30 am"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="Second Session Title\n10:45 am - 12:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="172px"
-              android:layout_width="fill_parent"
-              android:text="Lunch"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="209px"
-              android:layout_width="fill_parent"
-              android:text="Third Session Title\n1:00 pm - 2:15 pm"
-              android:background="@drawable/primaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="41px"
-              android:layout_width="fill_parent"
-              android:text="Break"
-              android:background="@drawable/secondaryBox"
-              android:textColor="@android:color/black"
-              android:gravity="center" />
-          <TextView
-              android:layout_height="250px"
-              android:layout_width="fill_parent"
-              android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
-              android:background="@drawable/tertiaryBox"
-              android:textColor="@android:color/white"
-              android:gravity="center" />
-        </LinearLayout>
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
       </LinearLayout>
-    </ScrollView>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/dayfourTrack2"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d4t2left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 4 Track 2"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d4t2right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
+    <FrameLayout
+      android:id="@+id/dayfourTrack3"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent"
+      android:visibility="gone">
+      <LinearLayout
+          android:orientation="horizontal"
+          android:layout_height="50px"
+          android:layout_width="match_parent"
+          android:background="@drawable/whiteBox">
+        <ImageView
+            android:id="@+id/d4t3left_arrow"
+            android:src="@drawable/left_arrow"
+            android:layout_width="40px"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0.0dp"
+            android:layout_marginLeft="5.0dp"
+            android:layout_marginTop="5px" />
+        <TextView
+            android:layout_width="335.5dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/track_title"
+            android:text="Day 4 Track 3"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginTop="7px"
+            android:layout_marginBottom="10px" />
+        <ImageView
+            android:id="@+id/d4t1right_arrow"
+            android:src="@drawable/right_arrow"
+            android:layout_width="40px"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="-5dp"
+            android:layout_marginTop="5px" />
+      </LinearLayout>
+      <ScrollView
+          android:layout_height="865px"
+          android:layout_width="match_parent"
+          android:layout_marginTop="60px">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20px"
+            android:paddingBottom="50px">
+          <TextView
+              android:layout_height="wrap_content"
+              android:layout_width="150px"
+              android:maxLines="50"
+              android:textColor="@android:color/black"
+              android:gravity="right"
+              android:text="8:30 am\n9:00 am\n9:30 am\n10:00 am\n10:30 am\n11:00 am\n11:30 am\n12:00 pm\n12:30 pm\n1:00 pm\n1:30 pm\n2:00 pm\n2:30 pm\n3:00 pm\n3:30 pm\n4:00 pm"
+              android:includeFontPadding="true"
+              android:lineSpacingExtra="50px"
+              android:paddingRight="20px" />
+          <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+            <TextView
+                android:layout_height="83px"
+                android:layout_width="fill_parent"
+                android:text="Registration"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="20px"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="First Session Title\n9:00 am - 10:30 am"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Second Session Title\n10:45 am - 12:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="172px"
+                android:layout_width="fill_parent"
+                android:text="Lunch"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="209px"
+                android:layout_width="fill_parent"
+                android:text="Third Session Title\n1:00 pm - 2:15 pm"
+                android:background="@drawable/primaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="41px"
+                android:layout_width="fill_parent"
+                android:text="Break"
+                android:background="@drawable/secondaryBox"
+                android:textColor="@android:color/black"
+                android:gravity="center" />
+            <TextView
+                android:layout_height="250px"
+                android:layout_width="fill_parent"
+                android:text="Fourth Session Title\n2:30 pm - 4:00 pm"
+                android:background="@drawable/tertiaryBox"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+          </LinearLayout>
+        </LinearLayout>
+      </ScrollView>
+    </FrameLayout>
   </FrameLayout>
   <GridLayout
       android:layout_width="match_parent"

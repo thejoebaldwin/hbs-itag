@@ -2592,8 +2592,74 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07004f
 			public const int customPanel = 2131165263;
 			
+			// aapt resource value: 0x7f0700ec
+			public const int d1t1left_arrow = 2131165420;
+			
+			// aapt resource value: 0x7f0700ee
+			public const int d1t1right_arrow = 2131165422;
+			
 			// aapt resource value: 0x7f0700f0
-			public const int day_four = 2131165424;
+			public const int d1t2left_arrow = 2131165424;
+			
+			// aapt resource value: 0x7f0700f1
+			public const int d1t2right_arrow = 2131165425;
+			
+			// aapt resource value: 0x7f0700f3
+			public const int d1t3left_arrow = 2131165427;
+			
+			// aapt resource value: 0x7f0700f4
+			public const int d1t3right_arrow = 2131165428;
+			
+			// aapt resource value: 0x7f0700f7
+			public const int d2t1left_arrow = 2131165431;
+			
+			// aapt resource value: 0x7f0700f8
+			public const int d2t1right_arrow = 2131165432;
+			
+			// aapt resource value: 0x7f0700fa
+			public const int d2t2left_arrow = 2131165434;
+			
+			// aapt resource value: 0x7f0700fb
+			public const int d2t2right_arrow = 2131165435;
+			
+			// aapt resource value: 0x7f0700fd
+			public const int d2t3left_arrow = 2131165437;
+			
+			// aapt resource value: 0x7f0700fe
+			public const int d2t3right_arrow = 2131165438;
+			
+			// aapt resource value: 0x7f070101
+			public const int d3t1left_arrow = 2131165441;
+			
+			// aapt resource value: 0x7f070102
+			public const int d3t1right_arrow = 2131165442;
+			
+			// aapt resource value: 0x7f070104
+			public const int d3t2left_arrow = 2131165444;
+			
+			// aapt resource value: 0x7f070105
+			public const int d3t2right_arrow = 2131165445;
+			
+			// aapt resource value: 0x7f070107
+			public const int d3t3left_arrow = 2131165447;
+			
+			// aapt resource value: 0x7f07010a
+			public const int d4t1left_arrow = 2131165450;
+			
+			// aapt resource value: 0x7f07010b
+			public const int d4t1right_arrow = 2131165451;
+			
+			// aapt resource value: 0x7f07010d
+			public const int d4t2left_arrow = 2131165453;
+			
+			// aapt resource value: 0x7f07010e
+			public const int d4t2right_arrow = 2131165454;
+			
+			// aapt resource value: 0x7f070110
+			public const int d4t3left_arrow = 2131165456;
+			
+			// aapt resource value: 0x7f070108
+			public const int day_four = 2131165448;
 			
 			// aapt resource value: 0x7f0700e9
 			public const int day_four_btn = 2131165417;
@@ -2604,17 +2670,53 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700e6
 			public const int day_one_btn = 2131165414;
 			
-			// aapt resource value: 0x7f0700ef
-			public const int day_three = 2131165423;
+			// aapt resource value: 0x7f0700ff
+			public const int day_three = 2131165439;
 			
 			// aapt resource value: 0x7f0700e8
 			public const int day_three_btn = 2131165416;
 			
-			// aapt resource value: 0x7f0700ee
-			public const int day_two = 2131165422;
+			// aapt resource value: 0x7f0700f5
+			public const int day_two = 2131165429;
 			
 			// aapt resource value: 0x7f0700e7
 			public const int day_two_btn = 2131165415;
+			
+			// aapt resource value: 0x7f070109
+			public const int dayfourTrack1 = 2131165449;
+			
+			// aapt resource value: 0x7f07010c
+			public const int dayfourTrack2 = 2131165452;
+			
+			// aapt resource value: 0x7f07010f
+			public const int dayfourTrack3 = 2131165455;
+			
+			// aapt resource value: 0x7f0700eb
+			public const int dayoneTrack1 = 2131165419;
+			
+			// aapt resource value: 0x7f0700ef
+			public const int dayoneTrack2 = 2131165423;
+			
+			// aapt resource value: 0x7f0700f2
+			public const int dayoneTrack3 = 2131165426;
+			
+			// aapt resource value: 0x7f070100
+			public const int daythreeTrack1 = 2131165440;
+			
+			// aapt resource value: 0x7f070103
+			public const int daythreeTrack2 = 2131165443;
+			
+			// aapt resource value: 0x7f070106
+			public const int daythreeTrack3 = 2131165446;
+			
+			// aapt resource value: 0x7f0700f6
+			public const int daytwoTrack1 = 2131165430;
+			
+			// aapt resource value: 0x7f0700f9
+			public const int daytwoTrack2 = 2131165433;
+			
+			// aapt resource value: 0x7f0700fc
+			public const int daytwoTrack3 = 2131165436;
 			
 			// aapt resource value: 0x7f070058
 			public const int decor_content_parent = 2131165272;
@@ -2726,9 +2828,6 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
-			
-			// aapt resource value: 0x7f0700eb
-			public const int left_arrow = 2131165419;
 			
 			// aapt resource value: 0x7f0700de
 			public const int line1 = 2131165406;
@@ -2865,9 +2964,6 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
 			
-			// aapt resource value: 0x7f0700ed
-			public const int right_arrow = 2131165421;
-			
 			// aapt resource value: 0x7f070017
 			public const int screen = 2131165207;
 			
@@ -3000,8 +3096,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07008a
 			public const int touch_outside = 2131165322;
 			
-			// aapt resource value: 0x7f0700ec
-			public const int track_title = 2131165420;
+			// aapt resource value: 0x7f0700ed
+			public const int track_title = 2131165421;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;
