@@ -11,8 +11,8 @@ namespace HBS.ITAG.Client
 
         public string Name { get; set; }
         public int Id { get; set; }
-        public int StartTime { get; set; }
-        public int EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public string Presenter { get; set; }
         public string Summary { get; set; }
         public int Track { get; set; }
@@ -23,6 +23,11 @@ namespace HBS.ITAG.Client
         {
             Name = name;
             Id = id;
+            StartTime = startTime;
+            EndTime = endTime;
+            Presenter = presenter;
+            Summary = summary;
+            EventWebId = eventWebId;
        }
 
         public static Event FromJson(string json)
@@ -37,7 +42,7 @@ namespace HBS.ITAG.Client
             DateTime endTime = DateTime.Parse(data["end_time"]);
             string presenter = data["presenter"];
             string summary = data["summary"];
-            //int eventWebId = data["event_web_id"];
+            
 
             return new Event(name, id, startTime, endTime, presenter, summary, -1);
         }
