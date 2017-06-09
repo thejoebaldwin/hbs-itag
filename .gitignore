@@ -286,3 +286,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+HBS.ITAG/HBS.ITAG/Resources/drawable/selected_ripple.xml
+HBS.ITAG/HBS.ITAG/Resources/drawable/unselected_ripple.xml
