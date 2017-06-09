@@ -77,7 +77,7 @@
     <item>Prefer Not to Respond</item>
   </string-array>
   <string name="Info1">This app uses location powered technology to give you the most accurate information. There are beacons scattered around the conference which pinpoint your location and communicate with our software to get you to the correct session in the correct place. Beacons use Bluetooth to send signals to cellular devices so that communication and sharing can occur.</string>
-  <string name ="Info2">This app allows you to see when/where sessions are occuring and what each session is about. You can add sessions to your favorites which will appear in the scheduling tab. The favorites area will show you the sessions which are currently occuring and the upcoming sessions that you are interested in. This app is meant to make your involvment in the ITAG convention as simple and easy as possible.</string>
+  <string name ="Info2">This app allows you to see when/where sessions are occurring and what each session is about. You can add sessions to your favorites which will appear in the scheduling tab. The favorites area will show you the sessions which are currently occurring and the upcoming sessions that you are interested in. This app is meant to make your involvement in the ITAG convention as simple and easy as possible.</string>
   <string name="conferenceDetails">
     2017 ITAG Conference\n
     Tuesday, June 20 - Friday, June 23\n
