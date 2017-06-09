@@ -32,7 +32,7 @@ namespace HBS.ITAG
             //open android asset text file
           
 
-             string json =  System.IO.File.ReadAllText("Resource/Tracks.txt");
+             string json =  System.IO.File.ReadAllText("Tracks.txt");
 
             //convert raw json into dictionary
             Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
@@ -50,7 +50,7 @@ namespace HBS.ITAG
 		public void LoadEventsFromFile()
 		{
 			//open android asset text file
-			string json = System.IO.File.ReadAllText("Resource/Events.txt");
+			string json = System.IO.File.ReadAllText("Events.txt");
 
 			//convert raw json into dictionary
 			Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);

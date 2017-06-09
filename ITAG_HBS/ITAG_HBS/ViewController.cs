@@ -26,6 +26,12 @@ namespace ITAG_HBS
 
 			};
 
+            HBS.ITAG.Store.Instance.LoadEventsFromFile();
+            HBS.ITAG.Store.Instance.LoadTracksFromFile();
+
+
+
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
