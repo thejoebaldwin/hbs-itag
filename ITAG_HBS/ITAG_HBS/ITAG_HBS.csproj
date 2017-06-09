@@ -124,6 +124,7 @@
     <BundleResource Include="Resources\bluetooth.png" />
     <BundleResource Include="Resources\left_arrow.png" />
     <BundleResource Include="Resources\blueprintexample.png" />
+    <BundleResource Include="Resources\unfavorited star.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

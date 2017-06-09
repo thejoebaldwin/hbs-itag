@@ -667,6 +667,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2061" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="124" width="375" height="3"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.69411764705882351" green="0" blue="0.11764705882352941" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details">
+                                <rect key="frame" x="0.0" y="67" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Name :">
+                                <rect key="frame" x="0.0" y="147" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2065" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Time :">
+                                <rect key="frame" x="0.0" y="264" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Location :">
+                                <rect key="frame" x="0.0" y="372" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Link to Full Description :">
+                                <rect key="frame" x="0.0" y="499" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Building Apps with Web AppBuilder">
+                                <rect key="frame" x="0.0" y="197" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2070" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9:00 am to 10:30 am">
+                                <rect key="frame" x="0.0" y="312" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2071" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Room 110">
+                                <rect key="frame" x="0.0" y="430" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2072" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="276" y="563" width="83" height="30"/>
+                                <state key="normal" title="Click Here">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.29019607843137257" green="0.73333333333333328" blue="0.61960784313725492" alpha="1"/>
+                                </state>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES"/>
+                                </accessibility>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2123" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="239" y="58" width="83" height="45"/>
+                                <state key="normal" image="unfavorited star.jpg">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -686,5 +758,6 @@
         <image name="bluetooth.png" width="200" height="200"/>
         <image name="left_arrow.png" width="20" height="20"/>
         <image name="blueprintexample.png" width="428" height="326"/>
+        <image name="unfavorited star.jpg" width="500" height="500"/>
     </resources>
 </document>
