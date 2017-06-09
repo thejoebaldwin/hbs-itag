@@ -440,40 +440,42 @@
                                 </subviews>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                             </scrollView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="861" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="74" y="106" width="240" height="128"/>
+                            <view contentMode="scaleToFill" id="943" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="0.0" y="96" width="375" height="198"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="930" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                        <rect key="frame" x="-74" y="-105" width="375" height="289"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="944" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                        <rect key="frame" x="68" y="32" width="240" height="128"/>
                                         <subviews/>
-                                    </view>
+                                    </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="949" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                        <rect key="frame" x="68" y="3" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="950" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                        <rect key="frame" x="68" y="161" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint id="910" firstAttribute="width" constant="240"/>
-                                    <constraint id="911" firstAttribute="height" constant="128"/>
+                                    <constraint id="945" firstItem="943" firstAttribute="trailing" secondItem="944" secondAttribute="trailing" constant="67"/>
+                                    <constraint id="946" firstItem="943" firstAttribute="bottom" secondItem="944" secondAttribute="bottom" constant="38"/>
+                                    <constraint id="947" firstItem="944" firstAttribute="top" secondItem="943" secondAttribute="top" constant="32"/>
+                                    <constraint id="948" firstItem="944" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
+                                    <constraint id="951" firstItem="949" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
+                                    <constraint id="952" firstItem="949" firstAttribute="height" secondItem="943" secondAttribute="height"/>
+                                    <constraint id="953" firstItem="949" firstAttribute="top" secondItem="943" secondAttribute="top" constant="3"/>
+                                    <constraint id="955" firstItem="950" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
                                 </constraints>
-                            </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="935" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="86" y="267" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="918" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="74" y="29" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </view>
                         </subviews>
                         <constraints>
-                            <constraint id="908" firstItem="360" firstAttribute="trailing" secondItem="861" secondAttribute="trailing" constant="55"/>
-                            <constraint id="909" firstItem="861" firstAttribute="top" secondItem="360" secondAttribute="top" constant="106"/>
-                            <constraint id="912" firstItem="861" firstAttribute="leading" secondItem="360" secondAttribute="leadingMargin" constant="64"/>
                             <constraint id="914" firstItem="360" firstAttribute="trailing" secondItem="829" secondAttribute="trailing" constant="67"/>
                             <constraint id="915" firstItem="829" firstAttribute="top" secondItem="360" secondAttribute="top" constant="288"/>
-                            <constraint id="929" firstItem="829" firstAttribute="top" secondItem="861" secondAttribute="bottom" constant="54"/>
                         </constraints>
                     </view>
                 </viewController>
