@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    class Track
+    public class Track
     {
         public string Name { get; set; }
         public int Id { get; set; }
         public DateTime TrackDate { get; set; }
-        public int BeaconGuid { get; set; }
+        public string BeaconGuid { get; set; }
 
-        public Track (string name,int id, DateTime trackDate, int beaconGuid)
+        public Track (string name,int id, DateTime trackDate, string beaconGuid)
         {
             Name = name;
             Id = id;
@@ -36,7 +36,7 @@ namespace HBS.ITAG
             string name = data["name"];
             int id = System.Convert.ToInt32(data["track_id"]);
             DateTime trackDate = DateTime.Parse(data["track_date"]);
-            int beaconGuid = System.Convert.ToInt32(data["beacon_guid"]);
+            string beaconGuid = data["beacon_guid"];
 
 
             return new Track(name, id, trackDate, beaconGuid);

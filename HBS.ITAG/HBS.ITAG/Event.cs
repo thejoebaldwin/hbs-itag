@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    class Event
+    public class Event
     {
         public string Name { get; set; }
         public int Id { get; set; }

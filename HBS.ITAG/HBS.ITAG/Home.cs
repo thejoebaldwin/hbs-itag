@@ -72,6 +72,10 @@ namespace HBS.ITAG
                 StartActivity(typeof(EventDetails));
             };
 
+            Store.Instance.LoadEventsFromFile();
+            Store.Instance.LoadTracksFromFile();
+
+
         }
     }
 }
