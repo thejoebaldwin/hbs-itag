@@ -106,23 +106,41 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1490" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="93" y="169" width="221" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1491" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="0.0" y="94" width="375" height="3"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.69411764705882351" green="0" blue="0.11764705882352941" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <pickerView contentMode="scaleToFill" id="1950" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" showsSelectionIndicator="NO">
+                                <rect key="frame" x="93" y="105" width="209" height="167"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1975" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="93" y="169" width="221" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" id="2056" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="28" y="139" width="204" height="138"/>
+                            </pickerView>
                         </subviews>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1950"/>
+                            </mask>
+                        </variation>
+                        <accessibility key="accessibilityConfiguration">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
                     </view>
                     <connections>
                         <outlet property="GoToPage2Button" destination="63" id="name-outlet-63"/>
+                        <outlet property="AgePicker" destination="2056" id="name-outlet-2056"/>
                     </connections>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -328,7 +346,7 @@
                         <viewControllerLayoutGuide type="top" id="349"/>
                         <viewControllerLayoutGuide type="bottom" id="350"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="353">
+                    <view key="view" contentMode="scaleToFill" id="353" customClass="UINavigationController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -371,6 +389,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <connections/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="354" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -455,14 +474,88 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="831" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="74" y="336" width="240" height="147"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="833" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Collector for ArcGIS">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="833" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Collector for ArcGIS" editable="NO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="35"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1979" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Bodycams - Let's Talk" editable="NO">
+                                        <rect key="frame" x="0.0" y="30" width="240" height="35"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1980" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Building Apps with Web AppBuilder" editable="NO">
+                                        <rect key="frame" x="0.0" y="59" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1983" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Intermediate Python Workshop" editable="NO">
+                                        <rect key="frame" x="0.0" y="87" width="240" height="35"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1986" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Basic Python Workshop">
+                                        <rect key="frame" x="0.0" y="118" width="240" height="29"/>
                                         <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                            </scrollView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1981" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="68" y="106" width="240" height="128"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1976" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Buidling Apps with Web AppBuilder" editable="NO">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1977" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="What's New in vSphere 6.5" editable="NO">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1978" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Basic Python Workshop" editable="NO">
+                                        <rect key="frame" x="0.0" y="57" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1982" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Drones! - The Process" editable="NO">
+                                        <rect key="frame" x="0.0" y="86" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1984" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Collector for ArcGIS" editable="NO">
+                                        <rect key="frame" x="0.0" y="112" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1985" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Collector for ArcGIS">
+                                        <rect key="frame" x="80" y="137" width="240" height="29"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2005" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue id="2054" destination="2001" kind="show"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                             </scrollView>
                         </subviews>
                         <constraints>
@@ -562,6 +655,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1236" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-405" y="-387"/>
+        </scene>
+        <scene sceneID="2000">
+            <objects>
+                <viewController id="2001" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1998"/>
+                        <viewControllerLayoutGuide type="bottom" id="1999"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2002">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1579" y="438"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

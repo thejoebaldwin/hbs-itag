@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 using UIKit;
 
@@ -6,6 +6,7 @@ namespace ITAG_HBS
 {
     public partial class ViewController : UIViewController
     {
+        UIPickerView agepicker;
         public object ServiceLocator { get; private set; }
 
         protected ViewController(IntPtr handle) : base(handle)
@@ -16,8 +17,7 @@ namespace ITAG_HBS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-
+       
 
             GoToPage2Button.AccessibilityIdentifier = "myButton";
             GoToPage2Button.TouchUpInside += (s,e) =>
@@ -32,6 +32,9 @@ namespace ITAG_HBS
 
 
 
+
+
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -40,5 +43,21 @@ namespace ITAG_HBS
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
         }
+    }
+    public partial class StatusPickerPopoverView : UIViewController
+    {
+        UIPickerView agepicker;
+        public StatusPickerPopoverView (IntPtr handle) : base (handle)
+        {
+            
+        }
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            agepicker = new UIPickerView();
+          
+        }
+
     }
 }
