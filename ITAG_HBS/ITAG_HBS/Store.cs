@@ -2,13 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using Xamarin;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace HBS.ITAG
 {
@@ -37,9 +30,10 @@ namespace HBS.ITAG
         public void LoadTracksFromFile()
         {
             //open android asset text file
-            StreamReader reader = new StreamReader(Android.App.Application.Context.Assets.Open("tracks.txt"));
-            //read file
-			string json = reader.ReadToEnd();
+          
+
+             string json =  System.IO.File.ReadAllText("Tracks.txt");
+
             //convert raw json into dictionary
             Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
             //get tracks array json
@@ -56,9 +50,8 @@ namespace HBS.ITAG
 		public void LoadEventsFromFile()
 		{
 			//open android asset text file
-			StreamReader reader = new StreamReader(Android.App.Application.Context.Assets.Open("events.txt"));
-			//read file
-			string json = reader.ReadToEnd();
+			string json = System.IO.File.ReadAllText("Events.txt");
+
 			//convert raw json into dictionary
 			Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 			//get events array json
