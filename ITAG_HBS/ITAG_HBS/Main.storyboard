@@ -187,9 +187,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="281" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="ITAG.png">
                                 <rect key="frame" x="100" y="76" width="174" height="136"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="282" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="app_features.png">
-                                <rect key="frame" x="298" y="30" width="61" height="57"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="289" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Favorites">
                                 <rect key="frame" x="152" y="228" width="71" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -276,6 +273,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
+                                <connections/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="369" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="149" y="600" width="83" height="80"/>
@@ -297,6 +295,18 @@
                                 </state>
                                 <connections>
                                     <segue id="741" destination="359" kind="show"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1229" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="app_features.png">
+                                <rect key="frame" x="298" y="33" width="54" height="51"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1230" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="289" y="33" width="68" height="51"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue id="1274" destination="1234" kind="show"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -440,38 +450,6 @@
                                 </subviews>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" id="943" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="0.0" y="96" width="375" height="198"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="944" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                        <rect key="frame" x="68" y="32" width="240" height="128"/>
-                                        <subviews/>
-                                    </scrollView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="949" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                        <rect key="frame" x="68" y="3" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="950" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                        <rect key="frame" x="68" y="161" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint id="945" firstItem="943" firstAttribute="trailing" secondItem="944" secondAttribute="trailing" constant="67"/>
-                                    <constraint id="946" firstItem="943" firstAttribute="bottom" secondItem="944" secondAttribute="bottom" constant="38"/>
-                                    <constraint id="947" firstItem="944" firstAttribute="top" secondItem="943" secondAttribute="top" constant="32"/>
-                                    <constraint id="948" firstItem="944" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
-                                    <constraint id="951" firstItem="949" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
-                                    <constraint id="952" firstItem="949" firstAttribute="height" secondItem="943" secondAttribute="height"/>
-                                    <constraint id="953" firstItem="949" firstAttribute="top" secondItem="943" secondAttribute="top" constant="3"/>
-                                    <constraint id="955" firstItem="950" firstAttribute="leading" secondItem="943" secondAttribute="leading" constant="68"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <constraints>
                             <constraint id="914" firstItem="360" firstAttribute="trailing" secondItem="829" secondAttribute="trailing" constant="67"/>
@@ -482,6 +460,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="361" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="980" y="436"/>
+        </scene>
+        <scene sceneID="1233">
+            <objects>
+                <viewController id="1234" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1231"/>
+                        <viewControllerLayoutGuide type="bottom" id="1232"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1235">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1236" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-405" y="-387"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
