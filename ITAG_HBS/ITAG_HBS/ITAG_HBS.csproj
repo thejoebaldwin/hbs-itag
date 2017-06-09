@@ -6,7 +6,7 @@
     <ProjectGuid>{8EBC524B-6929-4579-80BA-6972C5462F11}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ITAG_HBS</RootNamespace>
+    <RootNamespace>ITAG.HBS</RootNamespace>
     <AssemblyName>ITAG_HBS</AssemblyName>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
   </PropertyGroup>
@@ -106,6 +106,12 @@
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Session.cs" />
+    <Compile Include="Store.cs" />
+    <Compile Include="Track.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Event.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
@@ -113,6 +119,8 @@
     <BundleResource Include="Resources\profile.png" />
     <BundleResource Include="Resources\ITAG.png" />
     <BundleResource Include="Resources\app_features.png" />
+    <BundleResource Include="Resources\Tracks.txt" />
+    <BundleResource Include="Resources\Events.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
