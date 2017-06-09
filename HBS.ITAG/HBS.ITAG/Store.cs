@@ -28,6 +28,7 @@ namespace HBS.ITAG
 				if (instance == null)
 				{
 					instance = new Store();
+                    instance.Init();
 				}
 				return instance;
 			}
@@ -76,6 +77,11 @@ namespace HBS.ITAG
         {
             //get tracks
             //get events
+            LoadTracksFromFile();
+            LoadEventsFromFile();
+
+
+
         }
     }
 }

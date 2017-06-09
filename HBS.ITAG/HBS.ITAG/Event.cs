@@ -22,8 +22,10 @@ namespace HBS.ITAG
         public string Summary { get; set; }
         public int Track { get; set; }
         public int EventWebId { get; set; }
+        public Boolean ScheduleOnly { get; set; }
 
-        public Event(string name, int id, DateTime startTime, DateTime endTime, string presenter, string summary, int eventWebId)
+
+        public Event(string name, int id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,int eventWebId, Boolean scheduleOnly)
         {
             Name = name;
             Id = id;
@@ -31,7 +33,9 @@ namespace HBS.ITAG
             EndTime = endTime;
             Presenter = presenter;
             Summary = summary;
+            Track = track;
             EventWebId = eventWebId;
+            ScheduleOnly = scheduleOnly;
         }
 
         public static Event FromJson(string json)
@@ -46,9 +50,11 @@ namespace HBS.ITAG
             DateTime endTime = DateTime.Parse(data["end_time"]);
             string presenter = data["presenter"];
             string summary = data["summary"];
+            int track = System.Convert.ToInt32(data["track_id"]);
+            int eventWebId = System.Convert.ToInt32(data["event_web_id"]);
+            Boolean scheduleOnly = System.Convert.ToBoolean(data["schedule_only"]);
 
-
-            return new Event(name, id, startTime, endTime, presenter, summary, -1);
+            return new Event(name, id, startTime, endTime, presenter, summary, track, eventWebId, scheduleOnly);
         }
 
 
