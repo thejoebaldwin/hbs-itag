@@ -119,12 +119,11 @@
     <BundleResource Include="Resources\profile.png" />
     <BundleResource Include="Resources\ITAG.png" />
     <BundleResource Include="Resources\app_features.png" />
-    <BundleResource Include="Resources\Tracks.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </BundleResource>
-    <BundleResource Include="Resources\Events.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </BundleResource>
+    <BundleResource Include="Resources\Tracks.txt" />
+    <BundleResource Include="Resources\Events.txt" />
+    <BundleResource Include="Resources\bluetooth.png" />
+    <BundleResource Include="Resources\left_arrow.png" />
+    <BundleResource Include="Resources\blueprintexample.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
