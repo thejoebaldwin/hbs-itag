@@ -13,29 +13,40 @@ namespace HBS.ITAG
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-
-            // Set our view from the "main" layout resource
             RequestWindowFeature(WindowFeatures.NoTitle);
-            SetContentView (Resource.Layout.DemographicSurvey);
-            
-            Spinner state = FindViewById<Spinner>(Resource.Id.DSspinner1);
-            Spinner age = FindViewById<Spinner>(Resource.Id.DSspinner2);
-            Spinner gender = FindViewById<Spinner>(Resource.Id.DSspinner3);
-            EditText jobTitle = FindViewById<EditText>(Resource.Id.DSedittext);
-            EditText email = FindViewById<EditText>(Resource.Id.DSedittext2);
-            CheckBox emailNotifications = FindViewById<CheckBox>(Resource.Id.DScheckBox1);
-            Button done = FindViewById<Button>(Resource.Id.DSbutton1);
+       
+            // if statement is here to set up code for later when we actually check to see if survey has already been done
+            if ( true )
+            {
+                SetContentView (Resource.Layout.DemographicSurvey);
 
-            // Sets Default Values for Spinners
-            state.SetSelection(14);
-            age.SetSelection(0);
-            gender.SetSelection(0);
+                Spinner state = FindViewById<Spinner>(Resource.Id.DSspinner1);
+                Spinner age = FindViewById<Spinner>(Resource.Id.DSspinner2);
+                Spinner gender = FindViewById<Spinner>(Resource.Id.DSspinner3);
+                EditText jobTitle = FindViewById<EditText>(Resource.Id.DSedittext);
+                EditText email = FindViewById<EditText>(Resource.Id.DSedittext2);
+                CheckBox emailNotifications = FindViewById<CheckBox>(Resource.Id.DScheckBox1);
+                Button done = FindViewById<Button>(Resource.Id.DSbutton1);
+
+                // Sets Default Values for Spinners
+                state.SetSelection(14);
+                age.SetSelection(0);
+                gender.SetSelection(0);
+
+                done.Click += (object sender, EventArgs e) =>
+                {
+                StartActivity(typeof(Home));
+                };
 
 
-            done.Click += (object sender, EventArgs e) =>
+            }
+            else
             {
                 StartActivity(typeof(Home));
-            };
+            }
+
+
+            
         }
 
         

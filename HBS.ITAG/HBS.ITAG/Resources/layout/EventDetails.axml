@@ -133,15 +133,15 @@
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
             android:textColor="#0e1d52" />
-        <TextView
-            android:text=""
-            android:linksClickable="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/EDtextView9"
-            android:layout_below="@id/EDtextView8"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp" />
+      <TextView
+         android:text="Click Here"
+         android:linksClickable="true"
+         android:textAppearance="?android:attr/textAppearanceMedium"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:id="@+id/EDtextView9"
+         android:layout_below="@id/EDtextView8"
+         android:layout_alignParentEnd="true"
+         android:layout_marginRight="20dp" />
     </RelativeLayout>
 </LinearLayout>

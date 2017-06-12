@@ -29,7 +29,7 @@ namespace HBS.ITAG
             String testEvents = null;
             for (int i = 0; i < 5; i++)
             {
-                testEvents = testEvents + "Event Name: " +events[i].Name + System.Environment.NewLine 
+                testEvents = testEvents + "Event Name: " + events[i].Name + System.Environment.NewLine 
                     + "Event Id: " + events[i].Id + System.Environment.NewLine 
                     + "Event StartTime: " + events[i].StartTime + System.Environment.NewLine 
                     + "Event EndTime: " + events[i].EndTime + System.Environment.NewLine 
