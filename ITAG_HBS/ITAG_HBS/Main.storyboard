@@ -614,7 +614,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details :">
                                 <rect key="frame" x="0.0" y="67" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -672,9 +672,18 @@
                                     <accessibilityTraits key="traits" link="YES"/>
                                 </accessibility>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2123" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="239" y="58" width="83" height="45"/>
-                                <state key="normal" image="unfavorited star.jpg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2131" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="296" y="68" width="42" height="39"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                <state key="normal" title="Button" image="unfavoritedstar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2139" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="302" y="75" width="30" height="26"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.72941176470588232" blue="0.11372549019607843" alpha="1"/>
+                                <state key="normal" title="Button" image="favoritedstar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -698,6 +707,7 @@
         <image name="bluetooth.png" width="200" height="200"/>
         <image name="left_arrow.png" width="20" height="20"/>
         <image name="blueprintexample.png" width="428" height="326"/>
-        <image name="unfavorited star.jpg" width="500" height="500"/>
+        <image name="unfavoritedstar.png" width="500" height="500"/>
+        <image name="favoritedstar.png" width="500" height="500"/>
     </resources>
 </document>
