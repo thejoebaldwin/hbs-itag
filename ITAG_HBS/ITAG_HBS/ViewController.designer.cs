@@ -21,6 +21,10 @@ namespace ITAG_HBS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton GoToPage2Button { get; set; }
 
+        [Action ("Favoritedstarbutton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void Favoritedstarbutton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (AgePicker != null) {
