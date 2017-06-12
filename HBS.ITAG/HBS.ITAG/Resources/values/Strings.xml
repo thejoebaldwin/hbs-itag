@@ -56,6 +56,7 @@
     <item>Wyoming</item>
   </string-array>
   <string-array name="Age">
+    <item>(Choose One)</item> 
     <item>16 and Under</item>
     <item>17 to 20</item>
     <item>21 to 25</item>
@@ -69,8 +70,10 @@
     <item>61 to 65</item>
     <item>66 to 70</item>
     <item>70 and Above</item>
+    
   </string-array>
   <string-array name="Gender">
+    <item>(Choose One)</item>
     <item>Male</item>
     <item>Female</item>
     <item>Other</item>

@@ -17,10 +17,22 @@ namespace HBS.ITAG
             // Set our view from the "main" layout resource
             RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView (Resource.Layout.DemographicSurvey);
+            
+            Spinner state = FindViewById<Spinner>(Resource.Id.DSspinner1);
+            Spinner age = FindViewById<Spinner>(Resource.Id.DSspinner2);
+            Spinner gender = FindViewById<Spinner>(Resource.Id.DSspinner3);
+            EditText jobTitle = FindViewById<EditText>(Resource.Id.DSedittext);
+            EditText email = FindViewById<EditText>(Resource.Id.DSedittext2);
+            CheckBox emailNotifications = FindViewById<CheckBox>(Resource.Id.DScheckBox1);
+            Button done = FindViewById<Button>(Resource.Id.DSbutton1);
 
-            var button = FindViewById<Button>(Resource.Id.DSbutton1);
+            // Sets Default Values for Spinners
+            state.SetSelection(14);
+            age.SetSelection(0);
+            gender.SetSelection(0);
 
-            button.Click += (object sender, EventArgs e) =>
+
+            done.Click += (object sender, EventArgs e) =>
             {
                 StartActivity(typeof(Home));
             };
