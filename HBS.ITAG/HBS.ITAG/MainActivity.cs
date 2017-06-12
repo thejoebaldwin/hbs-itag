@@ -32,10 +32,27 @@ namespace HBS.ITAG
                 state.SetSelection(14);
                 age.SetSelection(0);
                 gender.SetSelection(0);
+                
 
                 done.Click += (object sender, EventArgs e) =>
                 {
-                StartActivity(typeof(Home));
+                    // Gets data from survey
+                    String stateAnswer = state.SelectedItem.ToString();
+                    String ageAnswer = age.SelectedItem.ToString();
+                    String genderAnswer = gender.SelectedItem.ToString();
+                    String jobTitleAnswer = jobTitle.Text;
+                    String emailAnswer = email.Text;
+                    String emailNotificationsAnswer;
+                    if (emailNotifications.Checked)
+                    {
+                        emailNotificationsAnswer = "true";
+                    }
+                    else
+                    {
+                        emailNotificationsAnswer = "false";
+                    }
+                    
+                    StartActivity(typeof(Home));
                 };
 
 
