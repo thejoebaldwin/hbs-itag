@@ -7,169 +7,175 @@
     <TextView
         android:text="Favorite Events"
         android:textColor="#0e1d52"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/MEtextView2"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal" />
+  <LinearLayout
+    android:orientation="vertical"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:background="@drawable/MyEventsScrollBox"
+    android:layout_gravity="center">
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="150dp"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
         android:id="@+id/MEscrollView1"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:background="#99a1ac"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
         android:scrollbarSize="20dp"
-        android:scrollbarThumbVertical="@drawable/custom_scroll_style">
-        <LinearLayout
-            android:orientation="vertical"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+        android:background="@drawable/MyEventsScrollBox">
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/MElinearLayout1"
+          android:scrollbarAlwaysDrawVerticalTrack="true">
+        <TextView
+            android:text="Building Apps with Web AppBuilder"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MElinearLayout1"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:background="@drawable/secondaryBox">
-            <TextView
-                android:text="Building Apps with Web AppBuilder"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView3"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="What’s New in vSphere 6.5"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView4"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Basic Python Workshop"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView5"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Drones! - The Process"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView10"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Intermediate Python Workshop"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView11"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="The Dark Web"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView12"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView3" />
+        <TextView
+            android:text="What’s New in vSphere 6.5"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView4" />
+        <TextView
+            android:text="Basic Python Workshop"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView5" />
+        <TextView
+            android:text="Drones! - The Process"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView10" />
+        <TextView
+            android:text="Intermediate Python Workshop"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView11" />
+        <TextView
+            android:text="The Dark Web"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView12" />
+      </LinearLayout>
     </ScrollView>
+  </LinearLayout>
     <TextView
         android:text="Previous Events"
         android:layout_marginBottom="20dp"
         android:textColor="#0e1d52"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:textSize="24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/MEtextView6"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal" />
+  <LinearLayout
+    android:orientation="vertical"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:background="@drawable/MyEventsScrollBox"
+    android:layout_gravity="center">
     <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="150.0dp"
+        android:layout_width="300dp"
+        android:layout_height="140dp"
         android:id="@+id/MEscrollView2"
         android:scrollbarAlwaysDrawVerticalTrack="true"
-        android:background="#99a1ac"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
         android:scrollbarSize="20dp"
-        android:scrollbarThumbVertical="@drawable/custom_scroll_style">
-        <LinearLayout
-            android:orientation="vertical"
+        android:scrollbarThumbVertical="@drawable/custom_scroll_style"
+        android:background="@drawable/MyEventsScrollBox">
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/MElinearLayout2"
+          android:scrollbarAlwaysDrawVerticalTrack="true">
+        <TextView
+            android:text="Building Apps with Web AppBuilder"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MElinearLayout2"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:background="@drawable/secondaryBox">
-            <TextView
-                android:text="Collector for ArcGIS"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView7"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Bodycams - Let's Talk!"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView8"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Building Apps with Web AppBuilder"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView9"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Intermediate Python Workshop"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView13"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="What’s New in vSphere 6.5"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView14"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-            <TextView
-                android:text="Basic Python Workshop"
-                android:textColor="@android:color/black"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/MEtextView15"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="20dp" />
-        </LinearLayout>
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView7" />
+        <TextView
+            android:text="What’s New in vSphere 6.5"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView8" />
+        <TextView
+            android:text="Basic Python Workshop"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView9" />
+        <TextView
+            android:text="Drones! - The Process"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView13" />
+        <TextView
+            android:text="Intermediate Python Workshop"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/tertiaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView14" />
+        <TextView
+            android:text="The Dark Web"
+            android:textColor="@android:color/black"
+            android:layout_height="83px"
+            android:layout_width="fill_parent"
+            android:background="@drawable/secondaryBox"
+            android:gravity="center"
+            android:id="@+id/MEtextView15" />
+      </LinearLayout>
     </ScrollView>
+  </LinearLayout>
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="60.0dp"
