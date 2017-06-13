@@ -789,6 +789,9 @@
                         </subviews>
                     </view>
                     <navigationItem title="Title" id="12767" key="navigationItem"/>
+                    <connections>
+                        <outlet property="Day2TrackName" destination="3149" id="name-outlet-3149"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3152" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -893,6 +896,9 @@
                         </subviews>
                     </view>
                     <navigationItem title="Title" id="12827" key="navigationItem"/>
+                    <connections>
+                        <outlet property="Day3TrackName" destination="3213" id="name-outlet-3213"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3216" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -997,6 +1003,9 @@
                         </subviews>
                     </view>
                     <navigationItem title="Title" id="13094" key="navigationItem"/>
+                    <connections>
+                        <outlet property="Day4TrackName" destination="3277" id="name-outlet-3277"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3280" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
