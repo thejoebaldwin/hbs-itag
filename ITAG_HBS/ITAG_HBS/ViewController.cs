@@ -8,6 +8,8 @@ namespace ITAG_HBS
     {
         public object ServiceLocator { get; private set; }
 
+        public string DataObject { get; set; }
+
         protected ViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -16,6 +18,7 @@ namespace ITAG_HBS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
 
             HBS.ITAG.Store.Instance.LoadEventsFromFile();
             HBS.ITAG.Store.Instance.LoadTracksFromFile();
@@ -27,6 +30,10 @@ namespace ITAG_HBS
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
         }
     }
 }

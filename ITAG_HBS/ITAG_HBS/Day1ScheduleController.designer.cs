@@ -7,18 +7,23 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
-namespace ITAG_HBS
+namespace ITAG.HBS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("Day1ScheduleController")]
+    partial class Day1ScheduleController
     {
-        [Action ("Favoritedstarbutton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Favoritedstarbutton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UITableView DayOne { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (DayOne != null) {
+                DayOne.Dispose ();
+                DayOne = null;
+            }
         }
     }
 }

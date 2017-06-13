@@ -94,6 +94,9 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="DataViewController.xib" />
+    <InterfaceDefinition Include="FavoritesViewController.xib" />
+    <InterfaceDefinition Include="PickerViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -112,6 +115,25 @@
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="ScheduleTableViewSource.cs" />
+    <Compile Include="DataViewController.cs" />
+    <Compile Include="DataViewController.designer.cs">
+      <DependentUpon>DataViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritesViewController.cs" />
+    <Compile Include="FavoritesViewController.designer.cs">
+      <DependentUpon>FavoritesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIColorExtension.cs" />
+    <Compile Include="Day1ScheduleController.cs" />
+    <Compile Include="Day1ScheduleController.designer.cs">
+      <DependentUpon>Day1ScheduleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FavoritesTableViewSource.cs" />
+    <Compile Include="PickerViewController.cs" />
+    <Compile Include="PickerViewController.designer.cs">
+      <DependentUpon>PickerViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />

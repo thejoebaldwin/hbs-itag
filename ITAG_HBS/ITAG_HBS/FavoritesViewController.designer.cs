@@ -10,15 +10,19 @@ using System.CodeDom.Compiler;
 
 namespace ITAG_HBS
 {
-    [Register ("ViewController")]
-    partial class ViewController
+    [Register ("FavoritesViewController")]
+    partial class FavoritesViewController
     {
-        [Action ("Favoritedstarbutton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Favoritedstarbutton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UITableView ScheduleTableViewFavs { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (ScheduleTableViewFavs != null) {
+                ScheduleTableViewFavs.Dispose ();
+                ScheduleTableViewFavs = null;
+            }
         }
     }
 }
