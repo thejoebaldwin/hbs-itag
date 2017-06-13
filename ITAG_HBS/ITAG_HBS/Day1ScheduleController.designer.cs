@@ -16,10 +16,19 @@ namespace ITAG.HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView Day1TrackName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView DayOne { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (Day1TrackName != null) {
+                Day1TrackName.Dispose ();
+                Day1TrackName = null;
+            }
+
             if (DayOne != null) {
                 DayOne.Dispose ();
                 DayOne = null;

@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "Schedule")]
+    [Activity(Label = "Schedule", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Schedule : Activity
     {
         //bool d1nextTrack = true;

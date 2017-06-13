@@ -241,7 +241,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="12652" destination="2875" kind="show"/>
+                                    <segue id="15269" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="370" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -335,7 +335,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="12520" destination="2875" kind="show"/>
+                                    <segue id="15369" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="817" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -595,66 +595,6 @@
             </objects>
             <point key="canvasLocation" x="1579" y="438"/>
         </scene>
-        <scene sceneID="2874">
-            <objects>
-                <navigationController id="2875" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2877">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12720" destination="2932" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2878" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="979" y="-345"/>
-        </scene>
-        <scene sceneID="2890">
-            <objects>
-                <navigationController id="2891" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2893">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12768" destination="3139" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2894" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="978" y="-1087"/>
-        </scene>
-        <scene sceneID="2906">
-            <objects>
-                <navigationController id="2907" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2909">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12828" destination="3203" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2910" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="975" y="-1822"/>
-        </scene>
-        <scene sceneID="2922">
-            <objects>
-                <navigationController id="2923" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2925">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="13095" destination="3267" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2926" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="-2560"/>
-        </scene>
         <scene sceneID="2931">
             <objects>
                 <viewController id="2932" sceneMemberID="viewController" customClass="Day1ScheduleController">
@@ -720,7 +660,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7128" destination="2891" kind="show"/>
+                                    <segue id="15431" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -731,7 +671,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7240" destination="2907" kind="show"/>
+                                    <segue id="15551" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2968" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -742,16 +682,16 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7508" destination="2923" kind="show"/>
+                                    <segue id="15763" destination="3267" kind="show"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3088" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3088" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 1" editable="NO" selectable="NO" scrollEnabled="NO">
                                 <rect key="frame" x="0.0" y="60" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="15106" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="15106" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" allowsSelection="NO">
                                 <rect key="frame" x="0.0" y="98" width="375" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -771,324 +711,16 @@
                     <navigationItem title="Title" id="12719" key="navigationItem"/>
                     <connections>
                         <outlet property="DayOne" destination="15106" id="name-outlet-15106"/>
+                        <outlet property="Day1TrackName" destination="3088" id="name-outlet-3088"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="-344"/>
-        </scene>
-        <scene sceneID="3090">
-            <objects>
-                <viewController id="3091" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3102"/>
-                        <viewControllerLayoutGuide type="bottom" id="3103"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3092" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3093" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3094" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="3734" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3095" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="3810" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3096" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3097" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3098" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="7574" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3099" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="7684" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3100" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8138" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3101" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 2">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3104" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1789" y="-344"/>
-        </scene>
-        <scene sceneID="3106">
-            <objects>
-                <viewController id="3107" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3118"/>
-                        <viewControllerLayoutGuide type="bottom" id="3119"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3108" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3109" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3110" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="3926" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3111" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="3998" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3112" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3113" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3114" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8210" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3115" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8340" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3116" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8456" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3117" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 3">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3120" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2184" y="-345"/>
-        </scene>
-        <scene sceneID="3122">
-            <objects>
-                <viewController id="3123" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3134"/>
-                        <viewControllerLayoutGuide type="bottom" id="3135"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3124" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3125" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3126" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4134" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3127" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4190" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3128" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3129" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3130" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8554" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3131" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8612" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3132" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8696" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3133" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 4">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3136" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2575" y="-345"/>
+            <point key="canvasLocation" x="974" y="-336"/>
         </scene>
         <scene sceneID="3138">
             <objects>
-                <viewController id="3139" sceneMemberID="viewController">
+                <viewController id="3139" sceneMemberID="viewController" customClass="Day2ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3150"/>
                         <viewControllerLayoutGuide type="bottom" id="3151"/>
@@ -1143,7 +775,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8742" destination="2875" kind="show"/>
+                                    <segue id="15817" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3146" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1162,7 +794,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8802" destination="2907" kind="show"/>
+                                    <segue id="15885" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3148" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1173,7 +805,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8860" destination="2923" kind="show"/>
+                                    <segue id="16005" destination="3267" kind="show"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3149" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 2 Track 1">
@@ -1188,320 +820,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3152" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="-1084"/>
-        </scene>
-        <scene sceneID="3154">
-            <objects>
-                <viewController id="3155" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3166"/>
-                        <viewControllerLayoutGuide type="bottom" id="3167"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3156" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3157" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3158" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4466" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3159" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4620" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3160" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3161" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="8958" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3162" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3163" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9016" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3164" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9118" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3165" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 2 Track 2">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3168" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1790" y="-1082"/>
-        </scene>
-        <scene sceneID="3170">
-            <objects>
-                <viewController id="3171" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3182"/>
-                        <viewControllerLayoutGuide type="bottom" id="3183"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3172" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3173" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3174" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4708" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3175" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4802" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3176" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3177" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9216" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3178" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3179" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9282" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3180" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9356" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3181" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 2 Track 3">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3184" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2183" y="-1080"/>
-        </scene>
-        <scene sceneID="3186">
-            <objects>
-                <viewController id="3187" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3198"/>
-                        <viewControllerLayoutGuide type="bottom" id="3199"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3188" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3189" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3190" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="4894" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3191" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5008" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3192" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3193" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9442" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3194" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3195" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9538" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3196" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="9616" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3197" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 2 Track 4">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3200" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2575" y="-1079"/>
+            <point key="canvasLocation" x="982" y="-1083"/>
         </scene>
         <scene sceneID="3202">
             <objects>
-                <viewController id="3203" sceneMemberID="viewController">
+                <viewController id="3203" sceneMemberID="viewController" customClass="Day3ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3214"/>
                         <viewControllerLayoutGuide type="bottom" id="3215"/>
@@ -1556,7 +879,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9738" destination="2875" kind="show"/>
+                                    <segue id="16119" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3210" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1567,7 +890,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9826" destination="2891" kind="show"/>
+                                    <segue id="16167" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3211" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1586,7 +909,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9888" destination="2923" kind="show"/>
+                                    <segue id="16207" destination="3267" kind="show"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3213" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 3 Track 1">
@@ -1601,320 +924,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3216" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-1816"/>
-        </scene>
-        <scene sceneID="3218">
-            <objects>
-                <viewController id="3219" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3230"/>
-                        <viewControllerLayoutGuide type="bottom" id="3231"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3220" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3221" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3222" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5352" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3223" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5476" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3224" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3225" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10072" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3226" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10138" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3227" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3228" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10212" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3229" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 3 Track 2">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3232" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1789" y="-1816"/>
-        </scene>
-        <scene sceneID="3234">
-            <objects>
-                <viewController id="3235" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3246"/>
-                        <viewControllerLayoutGuide type="bottom" id="3247"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3236" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3237" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3238" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5636" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3239" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5712" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3240" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3241" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10374" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3242" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10500" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3243" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3244" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10560" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3245" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 3 Track 3">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3248" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2185" y="-1816"/>
-        </scene>
-        <scene sceneID="3250">
-            <objects>
-                <viewController id="3251" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3262"/>
-                        <viewControllerLayoutGuide type="bottom" id="3263"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3252" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3253" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3254" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5816" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3255" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="5928" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3256" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3257" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10882" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3258" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="10954" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3259" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3260" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11078" destination="2923" kind="show"/>
-                                </connections>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3261" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 3 Track 4">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3264" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2578" y="-1815"/>
+            <point key="canvasLocation" x="991" y="-1824"/>
         </scene>
         <scene sceneID="3266">
             <objects>
-                <viewController id="3267" sceneMemberID="viewController">
+                <viewController id="3267" sceneMemberID="viewController" customClass="Day4ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3278"/>
                         <viewControllerLayoutGuide type="bottom" id="3279"/>
@@ -1969,7 +983,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11266" destination="2875" kind="show"/>
+                                    <segue id="16287" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1980,7 +994,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11334" destination="2891" kind="show"/>
+                                    <segue id="16377" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3275" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1991,7 +1005,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11384" destination="2907" kind="show"/>
+                                    <segue id="16435" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3276" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -2014,316 +1028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3280" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-2557"/>
-        </scene>
-        <scene sceneID="3282">
-            <objects>
-                <viewController id="3283" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3294"/>
-                        <viewControllerLayoutGuide type="bottom" id="3295"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3284" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3285" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3286" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="6420" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3287" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="6568" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3288" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3289" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11488" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3290" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11542" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3291" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11592" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3292" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3293" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 4 Track 2">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3296" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1790" y="-2557"/>
-        </scene>
-        <scene sceneID="3298">
-            <objects>
-                <viewController id="3299" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3310"/>
-                        <viewControllerLayoutGuide type="bottom" id="3311"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3300" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3301" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3302" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="6702" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3303" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="6834" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3304" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3305" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11834" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3306" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="11908" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="12054" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3308" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3309" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 4 Track 3">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3312" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2188" y="-2557"/>
-        </scene>
-        <scene sceneID="3314">
-            <objects>
-                <viewController id="3315" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3326"/>
-                        <viewControllerLayoutGuide type="bottom" id="3327"/>
-                    </layoutGuides>
-                    <view contentMode="scaleToFill" id="3316" key="view">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="3317" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3318" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="house.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="6922" destination="67" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3319" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="profile.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="7068" destination="359" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3320" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
-                                <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <state key="normal" title="Button" image="calendar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3321" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/20">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="12240" destination="2875" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3322" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="94" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/21">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="12336" destination="2891" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3323" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="188" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.52549019607843139" green="0.5607843137254902" blue="0.611764705882353" alpha="1"/>
-                                <state key="normal" title="6/22">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                </state>
-                                <connections>
-                                    <segue id="12392" destination="2907" kind="show"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3324" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="282" y="20" width="94" height="40"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                                <state key="normal" title="6/23">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                </state>
-                            </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3325" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 4 Track 4">
-                                <rect key="frame" x="0.0" y="60" width="375" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3328" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2580" y="-2558"/>
+            <point key="canvasLocation" x="996" y="-2543"/>
         </scene>
         <scene sceneID="13163">
             <objects>

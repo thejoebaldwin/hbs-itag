@@ -7,7 +7,7 @@ using System.Collections;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "HBS.ITAG", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "HBS.ITAG", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -15,6 +15,7 @@ namespace HBS.ITAG
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
             
+
             
             // if statement is here to set up code for later when we actually check to see if survey has already been done
             if ( true )
@@ -63,7 +64,7 @@ namespace HBS.ITAG
                 StartActivity(typeof(Home));
             }
             
-
+            
             
         }
 

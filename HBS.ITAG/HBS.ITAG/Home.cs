@@ -11,7 +11,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "Home")]
+    [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Home : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

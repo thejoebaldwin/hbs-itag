@@ -16,7 +16,7 @@ using Android;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "EventDetails")]
+    [Activity(Label = "EventDetails", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventDetails : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
