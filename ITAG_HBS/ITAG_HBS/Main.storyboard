@@ -657,7 +657,7 @@
                                     <segue id="15763" destination="3267" kind="show"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3088" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3088" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 1" editable="NO" selectable="NO" scrollEnabled="NO">
                                 <rect key="frame" x="0.0" y="60" width="375" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -683,6 +683,7 @@
                     <navigationItem title="Title" id="12719" key="navigationItem"/>
                     <connections>
                         <outlet property="DayOne" destination="15106" id="name-outlet-15106"/>
+                        <outlet property="Day1TrackName" destination="3088" id="name-outlet-3088"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -691,7 +692,7 @@
         </scene>
         <scene sceneID="3138">
             <objects>
-                <viewController id="3139" sceneMemberID="viewController">
+                <viewController id="3139" sceneMemberID="viewController" customClass="Day2ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3150"/>
                         <viewControllerLayoutGuide type="bottom" id="3151"/>
@@ -795,7 +796,7 @@
         </scene>
         <scene sceneID="3202">
             <objects>
-                <viewController id="3203" sceneMemberID="viewController">
+                <viewController id="3203" sceneMemberID="viewController" customClass="Day3ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3214"/>
                         <viewControllerLayoutGuide type="bottom" id="3215"/>
@@ -899,7 +900,7 @@
         </scene>
         <scene sceneID="3266">
             <objects>
-                <viewController id="3267" sceneMemberID="viewController">
+                <viewController id="3267" sceneMemberID="viewController" customClass="Day4ScheduleController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3278"/>
                         <viewControllerLayoutGuide type="bottom" id="3279"/>

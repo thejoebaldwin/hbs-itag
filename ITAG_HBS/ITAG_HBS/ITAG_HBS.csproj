@@ -134,6 +134,18 @@
     <Compile Include="PickerViewController.designer.cs">
       <DependentUpon>PickerViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Day2ScheduleController.cs" />
+    <Compile Include="Day2ScheduleController.designer.cs">
+      <DependentUpon>Day2ScheduleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Day3ScheduleController.cs" />
+    <Compile Include="Day3ScheduleController.designer.cs">
+      <DependentUpon>Day3ScheduleController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Day4ScheduleController.cs" />
+    <Compile Include="Day4ScheduleController.designer.cs">
+      <DependentUpon>Day4ScheduleController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
