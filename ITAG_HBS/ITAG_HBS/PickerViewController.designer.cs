@@ -24,10 +24,6 @@ namespace ITAG_HBS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton GoToPage2Button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView StatePickerView { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -40,11 +36,6 @@ namespace ITAG_HBS
             if (GenderPickerView != null) {
                 GenderPickerView.Dispose ();
                 GenderPickerView = null;
-            }
-
-            if (GoToPage2Button != null) {
-                GoToPage2Button.Dispose ();
-                GoToPage2Button = null;
             }
 
             if (StatePickerView != null) {

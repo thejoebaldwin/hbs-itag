@@ -14,5 +14,8 @@ namespace ITAG.HBS
     [Register ("Day3ScheduleController")]
     partial class Day3ScheduleController
     {
+        void ReleaseDesignerOutlets ()
+        {
+        }
     }
 }
