@@ -53,7 +53,7 @@ namespace HBS.ITAG
                 testTracks = testTracks + "Track Name: " + tracks[i].Name + System.Environment.NewLine 
                     + "Track Id: " + tracks[i].Id + System.Environment.NewLine 
                     + "Track Date: " + tracks[i].TrackDate + System.Environment.NewLine 
-                    + "Track BeaconGuid: " + tracks[i].BeaconGuid + System.Environment.NewLine 
+                    + "Track BeaconGuid: "   + tracks[i].BeaconGuid + System.Environment.NewLine 
                     + System.Environment.NewLine;
             }
             testArrTracks = testTracks.ToCharArray();

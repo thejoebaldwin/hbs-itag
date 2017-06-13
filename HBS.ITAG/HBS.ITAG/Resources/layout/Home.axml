@@ -21,10 +21,10 @@
             android:id="@+id/app_features"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:src="@drawable/app_features"
             android:background="#FFFFFF"
-            android:layout_marginLeft="70dp" />
+            android:layout_marginLeft="45dp" />
     </LinearLayout>
     <TextView
         android:id="@+id/favorites_header"
@@ -150,12 +150,16 @@
         android:gravity="center"
         android:textColor="@android:color/black"
         android:paddingTop="20dp"
-        android:text="@string/conferenceDetails"
-        android:layout_marginBottom="40.0dp"
-        android:layout_marginTop="10.0dp" />
-    <GridLayout
+        android:text="@string/conferenceDetails" />
+  <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60.0dp"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+  <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="65.0dp"
         android:orientation="horizontal"
         android:id="@+id/linearLayout1"
         android:background="#0e1d52">
@@ -165,9 +169,9 @@
             android:layout_width="200.0dp"
             android:layout_height="126.0dp"
             android:layout_marginRight="-70.0dp"
-            android:layout_marginLeft="-40.0dp"
+            android:layout_marginLeft="-50.0dp"
             android:background="#0e1d52"
-            android:layout_marginTop="-37dp"
+            android:layout_marginTop="-35dp"
             android:scaleType="fitCenter"
             android:padding="20dp" />
         <ImageButton
@@ -176,7 +180,7 @@
             android:layout_width="134dp"
             android:layout_height="121.5dp"
             android:layout_marginLeft="34.5dp"
-            android:layout_marginTop="-35.0dp"
+            android:layout_marginTop="-33.0dp"
             android:background="#0e1d52"
             android:scaleType="fitCenter"
             android:padding="20dp"
@@ -187,10 +191,11 @@
             android:layout_width="124.5dp"
             android:layout_height="121.5dp"
             android:layout_marginRight="0.0dp"
-            android:layout_marginLeft="0.0dp"
-            android:layout_marginTop="-35.0dp"
+            android:layout_marginLeft="-10.0dp"
+            android:layout_marginTop="-33.0dp"
             android:background="#0e1d52"
             android:scaleType="fitCenter"
             android:padding="20dp" />
     </GridLayout>
+  </LinearLayout>
 </LinearLayout>

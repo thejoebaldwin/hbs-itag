@@ -20,6 +20,12 @@ namespace HBS.ITAG
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
 
+            
+
+
+
+
+
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 
             Homeimagebutton.Click += (sender, e) =>

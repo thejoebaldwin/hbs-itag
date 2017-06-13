@@ -19,7 +19,7 @@ namespace HBS.ITAG
         public DateTime TrackDate { get; set; }
         public string BeaconGuid { get; set; }
 
-        public Track (string name,int id, DateTime trackDate, string beaconGuid)
+        public Track (string name,int id, DateTime trackDate, string beaconGuid )
         {
             Name = name;
             Id = id;
@@ -39,7 +39,7 @@ namespace HBS.ITAG
             string beaconGuid = data["beacon_guid"];
 
 
-            return new Track(name, id, trackDate, beaconGuid);
+            return new Track(name, id, trackDate,  beaconGuid  );
         }
 
     }
