@@ -29,9 +29,9 @@ namespace ITAG_HBS
 	public class StatusModel : UIPickerViewModel
 	{
 		static string[] names = new string[] {
-			"Pending",
-			"In Progress",
-			"Complete",
+			"Choose One",
+			"16 and Under",
+			"17 to 20","21 to 25","26 to 30","31 to 35","36 to 40","41 to 45","46 to 50","51 to 55","56 to 60","61 to 65","66 to 70","70 and Above"
 		};
 
 		//UILabel lbl;
@@ -59,9 +59,9 @@ namespace ITAG_HBS
 		public override void Selected(UIPickerView pickerView, nint row, nint component)
 		{
 			//lbl.Text = String.Format("{0} : {1} : {2}",
-			//  names[picker.SelectedRowInComponent(0)],
-			//  picker.SelectedRowInComponent(1),
-			//  picker.SelectedRowInComponent(2));
+			//names[pickerView.SelectedRowInComponent(0)],
+			//pickerView.SelectedRowInComponent(1),
+		    //pickerView.SelectedRowInComponent(2));
 		}
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
