@@ -116,31 +116,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pickerView contentMode="scaleToFill" id="1950" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" showsSelectionIndicator="NO">
-                                <rect key="frame" x="93" y="105" width="209" height="167"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                            </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="1975" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="93" y="169" width="221" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <color key="textColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
-                            </textField>
+                            <view contentMode="scaleToFill" id="15141" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="78" y="146" width="281" height="76"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" id="15142" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                        <rect key="frame" x="0.0" y="17" width="236" height="42"/>
+                                    </pickerView>
+                                </subviews>
+                            </view>
                         </subviews>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="1950"/>
-                            </mask>
-                        </variation>
                         <accessibility key="accessibilityConfiguration">
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                     </view>
                     <connections>
                         <outlet property="GoToPage2Button" destination="63" id="name-outlet-63"/>
+                        <outlet property="AgePickerView" destination="15142" id="name-outlet-15142"/>
                     </connections>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>

@@ -15,6 +15,10 @@ namespace ITAG_HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView AgePickerView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton GoToPage2Button { get; set; }
 
         [Action ("Favoritedstarbutton_TouchUpInside:")]
@@ -23,6 +27,11 @@ namespace ITAG_HBS
 
         void ReleaseDesignerOutlets ()
         {
+            if (AgePickerView != null) {
+                AgePickerView.Dispose ();
+                AgePickerView = null;
+            }
+
             if (GoToPage2Button != null) {
                 GoToPage2Button.Dispose ();
                 GoToPage2Button = null;

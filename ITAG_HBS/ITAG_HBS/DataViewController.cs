@@ -27,8 +27,8 @@ namespace ITAG_HBS
             string[] tableItems2 = new string[] { "Building Apps with Web AppBuilder", "What's New in vSphere 6.5", "Basic Python Workshop", "Drones! - The Process", "Intermediate Python Workshop", "The Dark Web" };
            
 			//use the array contents to build the table view source
-			ScheduleTableView.Source = new ScheduleTableViewSource(tableItems);
-            ScheduleTableView2.Source = new ScheduleTableViewSource(tableItems2);
+			ScheduleTableView.Source = new FavoritesTableViewSource(tableItems);
+            ScheduleTableView2.Source = new FavoritesTableViewSource(tableItems2);
 
 
 
