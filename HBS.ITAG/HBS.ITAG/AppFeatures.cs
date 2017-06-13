@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "AppFeatures")]
+    [Activity(Label = "AppFeatures", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class AppFeatures : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
