@@ -25,7 +25,7 @@ namespace HBS.ITAG
         public Boolean ScheduleOnly { get; set; }
 
 
-        public Event(string name, int id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,int eventWebId, Boolean scheduleOnly)
+        public Event(string name, int id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,int eventWebId, Boolean scheduleOnly )
         {
             Name = name;
             Id = id;

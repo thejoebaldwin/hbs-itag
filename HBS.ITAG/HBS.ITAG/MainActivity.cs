@@ -14,7 +14,8 @@ namespace HBS.ITAG
         {
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
-       
+            
+            
             // if statement is here to set up code for later when we actually check to see if survey has already been done
             if ( true )
             {
@@ -61,7 +62,7 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(Home));
             }
-
+            
 
             
         }
