@@ -11,20 +11,28 @@ using UIKit;
 
 namespace ITAG_HBS
 {
-	[Register("PickerViewExampleController")]
-	partial class PickerViewExampleController
-	{
-		[Outlet]
-		[GeneratedCode("iOS Designer", "1.0")]
-		UIKit.UIPickerView AgePickerView { get; set; }
+    [Register ("PickerViewExampleController")]
+    partial class PickerViewExampleController
+    {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView AgePickerView { get; set; }
 
-		void ReleaseDesignerOutlets()
-		{
-			if (AgePickerView != null)
-			{
-				AgePickerView.Dispose();
-				AgePickerView = null;
-			}
-		}
-	}
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton GoToPage2Button { get; set; }
+
+        void ReleaseDesignerOutlets ()
+        {
+            if (AgePickerView != null) {
+                AgePickerView.Dispose ();
+                AgePickerView = null;
+            }
+
+            if (GoToPage2Button != null) {
+                GoToPage2Button.Dispose ();
+                GoToPage2Button = null;
+            }
+        }
+    }
 }

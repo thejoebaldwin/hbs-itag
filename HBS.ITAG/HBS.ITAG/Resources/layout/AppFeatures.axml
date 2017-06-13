@@ -23,14 +23,15 @@
             android:id="@+id/BluetoothMsg"
             android:text="Turn on Bluetooth for improved functionality"
             android:textColor="@android:color/white"
-            android:textSize="25px"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:background="#bf1e2d"
             android:gravity="center"
             android:layout_marginTop="-10.0dp"
             android:layout_marginRight="0.0dp"
-            android:background="#bf1e2d"
             android:layout_marginBottom="-15.0dp" />
     </GridLayout>
-    <GridLayout>
+    <GridLayout
+        android:layout_marginTop="10dp">
         <ImageView
             android:id="@+id/arrowbutton"
             android:src="@drawable/left_arrow"
@@ -40,6 +41,7 @@
         <TextView
             android:text="  Home"
             android:id="@+id/backhomebutton"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="#0e1d52"
             android:gravity="center"
             android:layout_marginTop="3.0dp" />
@@ -56,11 +58,12 @@
             android:text="App Features"
             android:id="@+id/Title"
             android:textStyle="bold"
-            android:textSize="55px"
             android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:gravity="center"
-            android:layout_marginLeft="88.5dp"
-            android:layout_marginBottom="0.0dp" />
+            android:layout_marginLeft="98.5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
     </GridLayout>
     <GridLayout
         android:minWidth="1000dp" />
@@ -75,10 +78,11 @@
         <TextView
             android:text="How does it work?"
             android:id="@+id/Header1"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
-            android:textSize="40px"
             android:textColor="@android:color/black"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_marginLeft="20dp" />
     </GridLayout>
     <GridLayout
         android:id="@+id/gridLayout5"
@@ -87,8 +91,8 @@
         <TextView
             android:id="@+id/Info1"
             android:text="@string/Info1"
-            android:textSize="29px"
             android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:gravity="left"
             android:layout_marginLeft="5.0dp" />
     </GridLayout>
@@ -98,10 +102,11 @@
         <TextView
             android:id="@+id/Header2"
             android:text="Where are the beacons?"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textStyle="bold"
-            android:textSize="40px"
             android:textColor="@android:color/black"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_marginLeft="20dp" />
     </GridLayout>
     <GridLayout>
         <ImageView
@@ -117,16 +122,17 @@
             android:id="@+id/Header3"
             android:text="Why it's helpful"
             android:textStyle="bold"
-            android:textSize="40px"
             android:textColor="@android:color/black"
-            android:gravity="center" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:gravity="center"
+            android:layout_marginLeft="20dp" />
     </GridLayout>
     <GridLayout>
         <TextView
             android:id="@+id/Info2"
             android:text="@string/Info2"
-            android:textSize="29px"
             android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_marginLeft="5.0dp" />
     </GridLayout>
 </GridLayout>

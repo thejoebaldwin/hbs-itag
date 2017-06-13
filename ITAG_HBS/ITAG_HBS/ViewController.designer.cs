@@ -13,29 +13,12 @@ namespace ITAG_HBS
     [Register ("ViewController")]
     partial class ViewController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView AgePickerView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton GoToPage2Button { get; set; }
-
         [Action ("Favoritedstarbutton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void Favoritedstarbutton_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (AgePickerView != null) {
-                AgePickerView.Dispose ();
-                AgePickerView = null;
-            }
-
-            if (GoToPage2Button != null) {
-                GoToPage2Button.Dispose ();
-                GoToPage2Button = null;
-            }
         }
     }
 }

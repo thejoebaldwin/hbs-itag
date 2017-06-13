@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "My Events")]
+    [Activity(Label = "My Events", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MyEvents : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
