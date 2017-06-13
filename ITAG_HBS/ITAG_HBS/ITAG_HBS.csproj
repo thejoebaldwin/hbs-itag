@@ -123,6 +123,11 @@
     <Compile Include="FavoritesViewController.designer.cs">
       <DependentUpon>FavoritesViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="UIColorExtension.cs" />
+    <Compile Include="Day1ScheduleController.cs" />
+    <Compile Include="Day1ScheduleController.designer.cs">
+      <DependentUpon>Day1ScheduleController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
