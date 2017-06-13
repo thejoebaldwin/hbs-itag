@@ -213,7 +213,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="12652" destination="2875" kind="show"/>
+                                    <segue id="15269" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="370" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -307,7 +307,7 @@
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="12520" destination="2875" kind="show"/>
+                                    <segue id="15369" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="817" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -567,66 +567,6 @@
             </objects>
             <point key="canvasLocation" x="1579" y="438"/>
         </scene>
-        <scene sceneID="2874">
-            <objects>
-                <navigationController id="2875" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2877">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12720" destination="2932" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2878" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="979" y="-345"/>
-        </scene>
-        <scene sceneID="2890">
-            <objects>
-                <navigationController id="2891" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2893">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12768" destination="3139" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2894" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="978" y="-1087"/>
-        </scene>
-        <scene sceneID="2906">
-            <objects>
-                <navigationController id="2907" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2909">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="12828" destination="3203" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2910" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="975" y="-1822"/>
-        </scene>
-        <scene sceneID="2922">
-            <objects>
-                <navigationController id="2923" sceneMemberID="viewController" navigationBarHidden="YES">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2925">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue id="13095" destination="3267" kind="relationship" relationship="rootViewController"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2926" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="974" y="-2560"/>
-        </scene>
         <scene sceneID="2931">
             <objects>
                 <viewController id="2932" sceneMemberID="viewController" customClass="Day1ScheduleController">
@@ -692,7 +632,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7128" destination="2891" kind="show"/>
+                                    <segue id="15431" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2967" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -703,7 +643,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7240" destination="2907" kind="show"/>
+                                    <segue id="15551" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2968" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -714,7 +654,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="7508" destination="2923" kind="show"/>
+                                    <segue id="15763" destination="3267" kind="show"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3088" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 1 Track 1">
@@ -747,7 +687,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="-344"/>
+            <point key="canvasLocation" x="974" y="-336"/>
         </scene>
         <scene sceneID="3138">
             <objects>
@@ -806,7 +746,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8742" destination="2875" kind="show"/>
+                                    <segue id="15817" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3146" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -825,7 +765,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8802" destination="2907" kind="show"/>
+                                    <segue id="15885" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3148" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -836,7 +776,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="8860" destination="2923" kind="show"/>
+                                    <segue id="16005" destination="3267" kind="show"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3149" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 2 Track 1">
@@ -851,7 +791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3152" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="-1084"/>
+            <point key="canvasLocation" x="982" y="-1083"/>
         </scene>
         <scene sceneID="3202">
             <objects>
@@ -910,7 +850,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9738" destination="2875" kind="show"/>
+                                    <segue id="16119" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3210" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -921,7 +861,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9826" destination="2891" kind="show"/>
+                                    <segue id="16167" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3211" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -940,7 +880,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="9888" destination="2923" kind="show"/>
+                                    <segue id="16207" destination="3267" kind="show"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="3213" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Day 3 Track 1">
@@ -955,7 +895,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3216" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-1816"/>
+            <point key="canvasLocation" x="991" y="-1824"/>
         </scene>
         <scene sceneID="3266">
             <objects>
@@ -1014,7 +954,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11266" destination="2875" kind="show"/>
+                                    <segue id="16287" destination="2932" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1025,7 +965,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11334" destination="2891" kind="show"/>
+                                    <segue id="16377" destination="3139" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3275" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1036,7 +976,7 @@
                                     <color key="titleColor" colorSpace="calibratedRGB" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1"/>
                                 </state>
                                 <connections>
-                                    <segue id="11384" destination="2907" kind="show"/>
+                                    <segue id="16435" destination="3203" kind="show"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3276" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -1059,7 +999,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3280" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-2557"/>
+            <point key="canvasLocation" x="996" y="-2543"/>
         </scene>
         <scene sceneID="13163">
             <objects>
