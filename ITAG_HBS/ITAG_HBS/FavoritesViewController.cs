@@ -1,5 +1,7 @@
 ﻿using System;
-
+using Foundation;
+using ITAG_HBS;
+using HBS.ITAG;
 using UIKit;
 
 namespace ITAG_HBS
@@ -11,7 +13,7 @@ namespace ITAG_HBS
 			get; set;
 		}
 
-        protected FavoritesViewController(IntPtr handle) : base(handle)
+        public FavoritesViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -20,7 +22,9 @@ namespace ITAG_HBS
             base.ViewDidLoad();
 
 			string[] tableItemsFavs = new string[] { "Building Apps with Web App Builder", "9:00 am - 10:30 am" ,"Basic Python Workshop","10:45 am - 12:00 pm","Drones! - The Process","11:30 am - 12:00 pm","The Dark Web","1:30 pm - 3:00 pm"};
-            ScheduleTableViewFavs.Source = new FavoritesTableViewSource(tableItemsFavs);
+
+            var trackEvents = Store.Instance.Events;
+            ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
