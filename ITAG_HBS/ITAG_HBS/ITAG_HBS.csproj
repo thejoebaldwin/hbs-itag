@@ -146,6 +146,7 @@
     <Compile Include="Day4ScheduleController.designer.cs">
       <DependentUpon>Day4ScheduleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreviousTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
