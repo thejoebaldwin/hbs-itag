@@ -33,12 +33,11 @@ namespace ITAG_HBS
             TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			eventLength = item.EndTime.Hour * 60 + item.EndTime.Minute - (item.StartTime.Hour * 60 + item.StartTime.Minute);
 
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
-                cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier); 
+                cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier); 
             }
             if(!item.ScheduleOnly)
             {

@@ -15,7 +15,7 @@ namespace ITAG_HBS
 
         public PreviousTableViewSource(List<HBS.ITAG.Event> previousitems)
         {
-			//previousitems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+			previousitems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			TableItems = previousitems;
         }
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -27,15 +27,13 @@ namespace ITAG_HBS
 		{
 			UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			HBS.ITAG.Event item = TableItems[indexPath.Row];
-            TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			eventLength = item.EndTime.Hour * 60 + item.EndTime.Minute - (item.StartTime.Hour * 60 + item.StartTime.Minute);
 
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
-				cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			}
 			if (!item.ScheduleOnly)
 			{

@@ -361,7 +361,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" id="14894" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="30" y="352" width="330" height="193"/>
+                                <rect key="frame" x="30" y="352" width="330" height="194"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.44705882352941179" green="0.4823529411764706" blue="0.53725490196078429" alpha="1"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="14895" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
