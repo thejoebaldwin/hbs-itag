@@ -8,7 +8,6 @@ namespace ITAG_HBS
 	public class FavoritesTableViewSource : UITableViewSource
 	{
         //THIS IS FOR THE MY EVENTS PAGE//
-        int eventLength = 0;
 
         List<HBS.ITAG.Event> TableItems;
 		

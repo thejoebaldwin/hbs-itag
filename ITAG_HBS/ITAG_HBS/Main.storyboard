@@ -383,15 +383,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="18837" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="280" y="37" width="46" height="30"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue id="18886" destination="2001" kind="show"/>
-                                </connections>
-                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -566,6 +557,17 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2131" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="312" y="67" width="47" height="44"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                <state key="normal" title="Button" image="unfavoritedstar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <segue id="13672" destination="13164" kind="show"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13816" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="33" y="32" width="46" height="30"/>
                                 <state key="normal" title="Home">
@@ -584,14 +586,9 @@
                                     <segue id="14028" destination="67" kind="show"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png">
-                                <rect key="frame" x="293" y="66" width="47" height="44"/>
-                            </imageView>
                         </subviews>
                     </view>
-                    <connections>
-                        <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
-                    </connections>
+                    <connections/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -730,6 +727,135 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="974" y="-336"/>
+        </scene>
+        <scene sceneID="13163">
+            <objects>
+                <viewController id="13164" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="13161"/>
+                        <viewControllerLayoutGuide type="bottom" id="13162"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="13165">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13242" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="316" y="93" width="30" height="30"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.75686274509803919" blue="0.16470588235294117" alpha="1"/>
+                                <state key="disabled" title="Button" image="favoritedstar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.77254901960784317" blue="0.17647058823529413" alpha="1"/>
+                                </state>
+                                <connections/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13245" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details :" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="16" y="63" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13252" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="312" y="60" width="47" height="44"/>
+                                <color key="tintColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                <state key="normal" title="Button" image="unfavoritedstar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedWhite" white="0.666666666666667" alpha="1"/>
+                                </state>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13253" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="114" width="375" height="3"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.69411764705882351" green="0" blue="0.11764705882352941" alpha="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13254" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Name :" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="16" y="151" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="13255" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Building Apps with Web AppBuilder" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="0.0" y="214" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13256" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Time :" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="16" y="283" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="13257" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9:00 am to 10:30 am" scrollEnabled="NO" selectable="NO" editable="NO">
+                                <rect key="frame" x="0.0" y="330" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13258" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Location :" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="16" y="392" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="13259" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Room 110" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="0.0" y="451" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="13260" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Link to Full Description :" bounces="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="16" y="520" width="375" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13133" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="320" y="67" width="30" height="30"/>
+                                <color key="tintColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.75686274509803919" blue="0.16470588235294117" alpha="1"/>
+                                <state key="normal" title="Button" image="favoritedstar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.77254901960784317" blue="0.17647058823529413" alpha="1"/>
+                                </state>
+                                <connections>
+                                    <action selector="Favoritedstarbutton_TouchUpInside:" destination="2001" id="13291" eventType="touchUpInside"/>
+                                    <segue id="13800" destination="2001" kind="show"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13810" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="33" y="29" width="46" height="30"/>
+                                <state key="normal" title="Home">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue id="14812" destination="67" kind="show"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13813" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="32" width="25" height="24"/>
+                                <state key="normal" image="left_arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue id="14348" destination="67" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13166" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="443"/>
         </scene>
         <scene sceneID="16753">
             <objects>

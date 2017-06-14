@@ -7,8 +7,6 @@ namespace ITAG_HBS
 {
     public class PreviousTableViewSource : UITableViewSource
     {
-		int eventLength = 0;
-
 		List<HBS.ITAG.Event> TableItems;
 
 		string CellIdentifier = "TableCell";

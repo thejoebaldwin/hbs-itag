@@ -74,14 +74,14 @@ namespace ITAG.HBS
 			//get events for current track
 			if (tracks.Count == 0)
 			{
-				tracks.Add(new Track("No Tracks Today", -1, DateTime.Today, ""));
+				tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
 			}
 			Day3TrackName.Text = tracks[currentTrack].Name;
 			List<Event> trackEvents = new List<Event>();
 			trackEvents = new List<Event>();
 			foreach (var e in Store.Instance.Events)
 			{
-				if (e.Track == tracks[currentTrack].Id)
+				if (e.Track.ToString() == tracks[currentTrack].Id)
 				{
 					trackEvents.Add(e);
 				}
