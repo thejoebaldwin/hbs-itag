@@ -8,12 +8,14 @@ namespace ITAG_HBS
 	public class FavoritesTableViewSource : UITableViewSource
 	{
         int eventLength = 0;
+
         List<HBS.ITAG.Event> TableItems;
-		//string[] TableItems;
+		
 		string CellIdentifier = "TableCell";
 
         public FavoritesTableViewSource(List<HBS.ITAG.Event> items)
 		{
+            items.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			TableItems = items;
 		}
 

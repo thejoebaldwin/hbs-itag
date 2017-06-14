@@ -21,7 +21,7 @@ namespace ITAG_HBS
         {
             base.ViewDidLoad();
 
-			string[] tableItemsFavs = new string[] { "Building Apps with Web App Builder", "9:00 am - 10:30 am" ,"Basic Python Workshop","10:45 am - 12:00 pm","Drones! - The Process","11:30 am - 12:00 pm","The Dark Web","1:30 pm - 3:00 pm"};
+			
 
             var trackEvents = Store.Instance.Events;
             ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);

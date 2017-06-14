@@ -25,8 +25,7 @@ namespace ITAG_HBS
 			// Perform any additional setup after loading the view, typically from a nib.
 
 			//create the tableview contents
-			string[] tableItems = new string[] { "Building Apps with Web AppBuilder", "What's New in vSphere 6.5", "Basic Python Workshop", "Drones! - The Process", "Intermediate Python Workshop", "The Dark Web" };
-            string[] tableItems2 = new string[] { "Building Apps with Web AppBuilder", "What's New in vSphere 6.5", "Basic Python Workshop", "Drones! - The Process", "Intermediate Python Workshop", "The Dark Web" };
+			
             var trackEvents = Store.Instance.Events;
 			//use the array contents to build the table view source
             ScheduleTableView.Source = new FavoritesTableViewSource(trackEvents);
