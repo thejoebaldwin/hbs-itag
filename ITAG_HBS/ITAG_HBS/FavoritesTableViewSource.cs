@@ -1,35 +1,37 @@
 ﻿using System;
 using UIKit;
 using Foundation;
+using System.Collections.Generic;
 
 namespace ITAG_HBS
 {
 	public class FavoritesTableViewSource : UITableViewSource
 	{
-
-		string[] TableItems;
+        List<HBS.ITAG.Event> TableItems;
+		//string[] TableItems;
 		string CellIdentifier = "TableCell";
 
-        public FavoritesTableViewSource(string[] items)
+        public FavoritesTableViewSource(List<HBS.ITAG.Event> items)
 		{
 			TableItems = items;
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-			return TableItems.Length;
+            return TableItems.Count;
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-			UITableViewCell cell = tableView.DequeueReusableCell(CellIdentifier);
-			string item = TableItems[indexPath.Row];
+            //This is the old one//UITableViewCell cell = tableView.DequeueReusableCell(CellIdentifier);
+            UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
+            HBS.ITAG.Event item = TableItems[indexPath.Row];
 
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{ cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier); }
 
-			cell.TextLabel.Text = item;
+			
 
 			return cell;
 		}
