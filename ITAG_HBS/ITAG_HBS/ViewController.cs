@@ -2,6 +2,7 @@
 using Foundation;
 using ITAG_HBS;
 using UIKit;
+using System.CodeDom.Compiler;
 
 namespace ITAG_HBS
 {
@@ -19,15 +20,35 @@ namespace ITAG_HBS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-
+			
+           
             HBS.ITAG.Store.Instance.LoadEventsFromFile();
             HBS.ITAG.Store.Instance.LoadTracksFromFile();
 
+            GrayStar.UserInteractionEnabled = true;
 
+            UITapGestureRecognizer Favoritedtapguesture = new UITapGestureRecognizer(FavoritedClick);
+            Favoritedtapguesture.NumberOfTapsRequired = 1;
+            GrayStar.AddGestureRecognizer(Favoritedtapguesture);
+
+
+           
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
+        private void FavoritedClick()
+        {
+            GrayStar.Highlighted = true;
+			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
+			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
+			GrayStar.AddGestureRecognizer(Unfavoritedtapgesture);
+
+        }
+        public void UnfavoritedClick()
+        {
+            GrayStar.Highlighted = false;
+            ViewDidLoad();
+        }
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();

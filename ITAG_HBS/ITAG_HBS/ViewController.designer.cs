@@ -13,12 +13,16 @@ namespace ITAG_HBS
     [Register ("ViewController")]
     partial class ViewController
     {
-        [Action ("Favoritedstarbutton_TouchUpInside:")]
+        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void Favoritedstarbutton_TouchUpInside (UIKit.UIButton sender);
+        UIKit.UIImageView GrayStar { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (GrayStar != null) {
+                GrayStar.Dispose ();
+                GrayStar = null;
+            }
         }
     }
 }

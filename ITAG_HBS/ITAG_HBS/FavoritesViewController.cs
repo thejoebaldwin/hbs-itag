@@ -20,6 +20,8 @@ namespace ITAG_HBS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
+			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 
 			//THIS IS FOR THE HOME PAGE//
 
