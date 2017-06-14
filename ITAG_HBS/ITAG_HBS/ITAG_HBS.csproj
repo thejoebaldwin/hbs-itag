@@ -146,6 +146,7 @@
     <Compile Include="Day4ScheduleController.designer.cs">
       <DependentUpon>Day4ScheduleController.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreviousTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
@@ -160,6 +161,7 @@
     <BundleResource Include="Resources\blueprintexample.png" />
     <BundleResource Include="Resources\unfavoritedstar.png" />
     <BundleResource Include="Resources\favoritedstar.png" />
+    <BundleResource Include="Resources\right_arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

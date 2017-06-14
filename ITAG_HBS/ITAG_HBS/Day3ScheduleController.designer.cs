@@ -16,13 +16,40 @@ namespace ITAG.HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView D3LeftArrow { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView D3RightArrow { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView Day3TrackName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView DayThree { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (D3LeftArrow != null) {
+                D3LeftArrow.Dispose ();
+                D3LeftArrow = null;
+            }
+
+            if (D3RightArrow != null) {
+                D3RightArrow.Dispose ();
+                D3RightArrow = null;
+            }
+
             if (Day3TrackName != null) {
                 Day3TrackName.Dispose ();
                 Day3TrackName = null;
+            }
+
+            if (DayThree != null) {
+                DayThree.Dispose ();
+                DayThree = null;
             }
         }
     }

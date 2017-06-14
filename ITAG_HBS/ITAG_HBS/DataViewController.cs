@@ -27,10 +27,9 @@ namespace ITAG_HBS
 			//create the tableview contents
 			
             var trackEvents = Store.Instance.Events;
-			//use the array contents to build the table view source
+			ScheduleTableView2.Source = new PreviousTableViewSource(trackEvents);
             ScheduleTableView.Source = new FavoritesTableViewSource(trackEvents);
-            ScheduleTableView2.Source = new FavoritesTableViewSource(trackEvents);
-
+           
 
 
 		}

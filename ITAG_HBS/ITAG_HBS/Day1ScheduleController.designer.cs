@@ -16,6 +16,14 @@ namespace ITAG.HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView D1LeftArrow { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView D1RightArrow { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView Day1TrackName { get; set; }
 
         [Outlet]
@@ -24,6 +32,16 @@ namespace ITAG.HBS
 
         void ReleaseDesignerOutlets ()
         {
+            if (D1LeftArrow != null) {
+                D1LeftArrow.Dispose ();
+                D1LeftArrow = null;
+            }
+
+            if (D1RightArrow != null) {
+                D1RightArrow.Dispose ();
+                D1RightArrow = null;
+            }
+
             if (Day1TrackName != null) {
                 Day1TrackName.Dispose ();
                 Day1TrackName = null;

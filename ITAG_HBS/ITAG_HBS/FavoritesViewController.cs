@@ -21,7 +21,7 @@ namespace ITAG_HBS
         {
             base.ViewDidLoad();
 
-			
+			//THIS IS FOR THE HOME PAGE//
 
             var trackEvents = Store.Instance.Events;
             ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);
