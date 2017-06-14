@@ -69,6 +69,8 @@ namespace HBS.ITAG
                 //StartActivity(typeof(JsonCallTester));
 
                 noFavorites.Visibility = ViewStates.Invisible;
+
+
                 firstFavorite.Visibility = ViewStates.Visible;
                 secondFavorite.Visibility = ViewStates.Visible;
                 thirdFavorite.Visibility = ViewStates.Visible;

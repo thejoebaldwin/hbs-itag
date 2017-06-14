@@ -15,13 +15,31 @@ namespace HBS.ITAG
     [Activity(Label = "My Events", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MyEvents : Activity
     {
+        private List<string> mItems;
+        private ListView mListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
+            mListView = FindViewById<ListView>(Resource.Id.MElistView1);
+
+
+            List<Event> events = Store.Instance.Events;
+            mItems = new List<string>();
+            for ( int i = 0; i < 6; i++)
+            {
+                 mItems.Add(events[i].Name);
+            }
+           
+
+            //mItems.Add("Bob");
+            //mItems.Add("Jim");
+            //mItems.Add("Tom");
 
             
-
+            ListViewAdapter adapter = new ListViewAdapter(this, mItems);
+            mListView.Adapter = adapter;
 
 
 
@@ -47,12 +65,12 @@ namespace HBS.ITAG
                 StartActivity(typeof(MyEvents));
             };
             
-            TextView firstInScrollBar = FindViewById<TextView>(Resource.Id.MEtextView3);
+           /* TextView firstInScrollBar = FindViewById<TextView>(Resource.Id.MEtextView3);
 
             firstInScrollBar.Click += (object sender, EventArgs e) =>
             {
                 StartActivity(typeof(EventDetails));
-            };
+            }; */
         }
     }
 }
