@@ -1,5 +1,7 @@
 ﻿using System;
-
+using Foundation;
+using ITAG_HBS;
+using HBS.ITAG;
 using UIKit;
 
 namespace ITAG_HBS
@@ -23,13 +25,11 @@ namespace ITAG_HBS
 			// Perform any additional setup after loading the view, typically from a nib.
 
 			//create the tableview contents
-			string[] tableItems = new string[] { "Building Apps with Web AppBuilder", "What's New in vSphere 6.5", "Basic Python Workshop", "Drones! - The Process", "Intermediate Python Workshop", "The Dark Web" };
-            string[] tableItems2 = new string[] { "Building Apps with Web AppBuilder", "What's New in vSphere 6.5", "Basic Python Workshop", "Drones! - The Process", "Intermediate Python Workshop", "The Dark Web" };
+			
+            var trackEvents = Store.Instance.Events;
+			ScheduleTableView2.Source = new PreviousTableViewSource(trackEvents);
+            ScheduleTableView.Source = new FavoritesTableViewSource(trackEvents);
            
-			//use the array contents to build the table view source
-			ScheduleTableView.Source = new FavoritesTableViewSource(tableItems);
-            ScheduleTableView2.Source = new FavoritesTableViewSource(tableItems2);
-
 
 
 		}
