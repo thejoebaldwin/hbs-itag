@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using UIKit;
 using Foundation;
 using System.Collections.Generic;
@@ -28,12 +28,10 @@ namespace ITAG_HBS
 			HBS.ITAG.Event item = TableItems[indexPath.Row];
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			
-
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
-				cell = new UITableViewCell(UITableViewCellStyle.Default, CellIdentifier);
+				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			}
 			if (!item.ScheduleOnly)
 			{

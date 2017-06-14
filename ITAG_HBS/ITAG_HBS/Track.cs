@@ -9,11 +9,11 @@ namespace HBS.ITAG
     public class Track
     {
         public string Name { get; set; }
-        public int Id { get; set; }
+        public string Id { get; set; }
         public DateTime TrackDate { get; set; }
         public string BeaconGuid { get; set; }
 
-        public Track (string name,int id, DateTime trackDate, string beaconGuid)
+        public Track (string name,string id, DateTime trackDate, string beaconGuid)
         {
             Name = name;
             Id = id;
@@ -28,7 +28,7 @@ namespace HBS.ITAG
             //dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
 
             string name = data["name"];
-            int id = System.Convert.ToInt32(data["track_id"]);
+            string id = data["track_id"];
             DateTime trackDate = DateTime.Parse(data["track_date"]);
             string beaconGuid = data["beacon_guid"];
 

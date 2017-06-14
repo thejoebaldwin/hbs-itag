@@ -9,8 +9,8 @@ namespace ITAG.HBS {     public partial class Day1ScheduleController : UIVie
 			//get events for current track
 			if (tracks.Count == 0)
 			{
-				tracks.Add(new Track("No Tracks Today", -1, DateTime.Today, ""));
-			}             Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.Track == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }              //use the array contents to build the table view source             DayOne.Source = new ScheduleTableViewSource(trackEvents);             DayOne.ReloadData();          }          private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else{                 return;             }         }
+				tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
+			}             Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.Track.ToString() == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }              //use the array contents to build the table view source             DayOne.Source = new ScheduleTableViewSource(trackEvents);             DayOne.ReloadData();          }          private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else{                 return;             }         }
 
 		private void rightSwipeDetected()
 		{
