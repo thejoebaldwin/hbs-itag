@@ -102,9 +102,10 @@
     <Compile Include="EventDetails.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="JsonCallTester.cs" />
-    <Compile Include="ListViewAdapter.cs" />
+    <Compile Include="MyEventsFavoritesListViewAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyEvents.cs" />
+    <Compile Include="MyEventsPreviousEventsListViewAdapter.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schedule.cs" />
@@ -139,6 +140,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MyEventsFavoritesListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\MyEventsPreviousEventsListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
