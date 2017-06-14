@@ -160,6 +160,7 @@
     <BundleResource Include="Resources\blueprintexample.png" />
     <BundleResource Include="Resources\unfavoritedstar.png" />
     <BundleResource Include="Resources\favoritedstar.png" />
+    <BundleResource Include="Resources\right_arrow.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
