@@ -17,33 +17,31 @@ namespace HBS.ITAG
     {
         private List<string> mItems;
         private ListView mListView;
+        private ListView mListView2;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
+
             mListView = FindViewById<ListView>(Resource.Id.MElistView1);
-
-
             List<Event> events = Store.Instance.Events;
             mItems = new List<string>();
             for ( int i = 0; i < 6; i++)
             {
                  mItems.Add(events[i].Name);
             }
-           
 
-            //mItems.Add("Bob");
-            //mItems.Add("Jim");
-            //mItems.Add("Tom");
+            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, mItems);
+            mListView.Adapter = adapter;
+            mListView.ItemClick += mListView_ItemClick;
+
+            mListView2 = FindViewById<ListView>(Resource.Id.MElistView2);
+            MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, mItems);
+            mListView2.Adapter = adapter2;
+            mListView2.ItemClick += mListView2_ItemClick;
 
             
-            ListViewAdapter adapter = new ListViewAdapter(this, mItems);
-            mListView.Adapter = adapter;
-
-
-
-
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 
             Homeimagebutton.Click += (sender, e) =>
@@ -65,12 +63,17 @@ namespace HBS.ITAG
                 StartActivity(typeof(MyEvents));
             };
             
-           /* TextView firstInScrollBar = FindViewById<TextView>(Resource.Id.MEtextView3);
+        }
 
-            firstInScrollBar.Click += (object sender, EventArgs e) =>
-            {
-                StartActivity(typeof(EventDetails));
-            }; */
+        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            //EventDetails.indexedEvent = mItems[e.Position];
+            StartActivity(typeof(EventDetails));
+        }
+
+        private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            StartActivity(typeof(EventDetails));
         }
     }
 }

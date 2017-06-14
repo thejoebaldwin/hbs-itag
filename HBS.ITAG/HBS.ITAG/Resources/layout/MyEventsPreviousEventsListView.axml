@@ -11,7 +11,7 @@
       android:textAppearance="?android:attr/textAppearanceSmall"
       android:layout_height="150px"
       android:layout_width="fill_parent"
-      android:background="@drawable/primaryBox"
+      android:background="@drawable/secondaryBox"
       android:gravity="center"
-      android:id="@+id/MElistViewTextView1"/>
+      android:id="@+id/MElistViewTextView2"/>
 </LinearLayout>
