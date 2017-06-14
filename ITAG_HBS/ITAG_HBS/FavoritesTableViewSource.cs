@@ -8,7 +8,7 @@ namespace ITAG_HBS
 	public class FavoritesTableViewSource : UITableViewSource
 	{
         //THIS IS FOR THE MY EVENTS PAGE//
-        int eventLength = 0;
+
 
         List<HBS.ITAG.Event> TableItems;
 		
@@ -16,8 +16,9 @@ namespace ITAG_HBS
 
         public FavoritesTableViewSource(List<HBS.ITAG.Event> items)
 		{
-            
-			TableItems = items;
+            TableItems = new List<HBS.ITAG.Event>(items);
+            TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+			
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -30,10 +31,9 @@ namespace ITAG_HBS
             
             UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
             HBS.ITAG.Event item = TableItems[indexPath.Row];
-            TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			eventLength = item.EndTime.Hour * 60 + item.EndTime.Minute - (item.StartTime.Hour * 60 + item.StartTime.Minute);
+			
 
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)

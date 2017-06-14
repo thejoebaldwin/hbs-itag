@@ -7,7 +7,6 @@ namespace ITAG_HBS
 {
     public class PreviousTableViewSource : UITableViewSource
     {
-		int eventLength = 0;
 
 		List<HBS.ITAG.Event> TableItems;
 
@@ -15,8 +14,8 @@ namespace ITAG_HBS
 
         public PreviousTableViewSource(List<HBS.ITAG.Event> previousitems)
         {
-			//previousitems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-			TableItems = previousitems;
+            TableItems = new List<HBS.ITAG.Event>(previousitems);
+            TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
         }
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
@@ -27,10 +26,9 @@ namespace ITAG_HBS
 		{
 			UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			HBS.ITAG.Event item = TableItems[indexPath.Row];
-            TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			eventLength = item.EndTime.Hour * 60 + item.EndTime.Minute - (item.StartTime.Hour * 60 + item.StartTime.Minute);
+			
 
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
@@ -42,12 +40,14 @@ namespace ITAG_HBS
 				cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
 				cell.TextLabel.TextColor = UIColor.White;
                 cell.DetailTextLabel.TextColor = UIColor.White;
+
 			}
 			else if (item.ScheduleOnly)
 			{
-				cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
-				cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
-				cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+                //cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
+                //cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+                //cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+                cell.Hidden = true;
 			}
 			else
 			{
