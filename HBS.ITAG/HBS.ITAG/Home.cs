@@ -28,6 +28,7 @@ namespace HBS.ITAG
             LinearLayout secondFavorite = FindViewById<LinearLayout>(Resource.Id.second_favorite);
             LinearLayout thirdFavorite = FindViewById<LinearLayout>(Resource.Id.third_favorite);
             LinearLayout fourthFavorite = FindViewById<LinearLayout>(Resource.Id.fourth_favorite);
+            TextView noFavorites = FindViewById<TextView>(Resource.Id.no_favorites);
 
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
 
@@ -64,8 +65,15 @@ namespace HBS.ITAG
             {
                 //Toast toast = Toast.MakeText(this, beaconMessage, ToastLength.Long);
                 // toast.Show();
-                StartActivity(typeof(JsonCallTester));
-                
+
+                //StartActivity(typeof(JsonCallTester));
+
+                noFavorites.Visibility = ViewStates.Invisible;
+                firstFavorite.Visibility = ViewStates.Visible;
+                secondFavorite.Visibility = ViewStates.Visible;
+                thirdFavorite.Visibility = ViewStates.Visible;
+                fourthFavorite.Visibility = ViewStates.Visible;
+
             };
 
             firstFavorite.Click += (object sender, EventArgs e) =>
