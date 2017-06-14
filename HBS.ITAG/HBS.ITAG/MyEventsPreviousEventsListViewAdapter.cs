@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    class ListViewAdapter : BaseAdapter<string>
+    class MyEventsPreviousEventsListViewAdapter : BaseAdapter<string>
     {
 
         private List<string> mItems;
@@ -23,7 +23,7 @@ namespace HBS.ITAG
             get { return mItems.Count; }
         }
 
-        public ListViewAdapter(Context context, List<string> items)
+        public MyEventsPreviousEventsListViewAdapter(Context context, List<string> items)
         {
             mItems = items;
             mContext = context;
@@ -45,10 +45,10 @@ namespace HBS.ITAG
 
             if (row == null)
             {
-                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.MyEventsFavoritesListView, null, false);
+                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.MyEventsPreviousEventsListView, null, false);
             }
 
-            TextView txtname = row.FindViewById<TextView>(Resource.Id.MElistViewTextView1);
+            TextView txtname = row.FindViewById<TextView>(Resource.Id.MElistViewTextView2);
             txtname.Text = mItems[position];
 
             return row;
