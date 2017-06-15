@@ -587,10 +587,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png" highlighted="YES">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Here" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19019" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="594" width="368" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.050980392156862744" green="0.031372549019607843" blue="0.32156862745098042" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
+                        <outlet property="EventName" destination="2069" id="name-outlet-2069"/>
+                        <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
+                        <outlet property="EventLocation" destination="2071" id="name-outlet-2071"/>
+                        <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -30,6 +30,11 @@ namespace ITAG.HBS
             //EventLocation.Text = "";
             //LinkToDescription.Text = "";
 
+            LinkToDescription.UserInteractionEnabled = true;
+            UITapGestureRecognizer Link = new UITapGestureRecognizer(LinkClick);
+            Link.NumberOfTapsRequired = 1;
+            LinkToDescription.AddGestureRecognizer(Link);
+
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
@@ -48,5 +53,9 @@ namespace ITAG.HBS
             //TODO remove event from favorites for the user
 			ViewDidLoad();
 		}
+        public void LinkClick()
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"));
+        }
     }
 }
