@@ -34,7 +34,7 @@ namespace HBS.ITAG
 
         }
 */
-		public User(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications)
+		public UserOld(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications)
 		{
 			Id = id;
 			State = state;
@@ -48,7 +48,7 @@ namespace HBS.ITAG
 
 		}
 
-        public static User FromJson(string json)
+        public static UserOld FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 
