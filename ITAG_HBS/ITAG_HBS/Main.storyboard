@@ -182,7 +182,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="302" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="2017 ITAG Conference" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="487" width="349" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14" weight="semibold"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14" weight="heavy"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Contact Number (515) 223-1800" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
@@ -207,9 +207,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="304" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="West Des Moines Sheraton" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="20" y="524" width="343" height="28"/>
+                                <rect key="frame" x="18" y="526" width="343" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16" weight="medium"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="303" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Tuesday, June 20th - Friday, June 23rd" scrollEnabled="NO" editable="NO" selectable="NO">
@@ -291,6 +291,7 @@
                     <connections>
                         <outlet property="ScheduleTableViewFavs" destination="14952" id="name-outlet-14952"/>
                         <outlet property="HotelName" destination="304" id="name-outlet-304"/>
+                        <outlet property="PhoneNumber" destination="307" id="name-outlet-307"/>
                     </connections>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>

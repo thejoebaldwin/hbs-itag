@@ -31,7 +31,12 @@ namespace ITAG_HBS
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
             HotelMapGesture.NumberOfTapsRequired = 1;
             HotelName.AddGestureRecognizer(HotelMapGesture);
-			// Perform any additional setup after loading the view, typically from a nib.
+
+            PhoneNumber.UserInteractionEnabled = true;
+            UITapGestureRecognizer CallGesture = new UITapGestureRecognizer(CallClick);
+            CallGesture.NumberOfTapsRequired = 1;
+            PhoneNumber.AddGestureRecognizer(CallGesture);
+		    //Perform any additional setup after loading the view, typically from a nib.
 		}
 
         private void HotelMapClick()
@@ -39,6 +44,11 @@ namespace ITAG_HBS
             UIApplication.SharedApplication.OpenUrl(new NSUrl("http://www.starwoodhotels.com/sheraton/property/overview/index.html?propertyID=1557&language=en_US"));
 
 		}
+
+       private void CallClick()
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"telprompt://5152231800"));
+        }
 
         public override void DidReceiveMemoryWarning()
         {
