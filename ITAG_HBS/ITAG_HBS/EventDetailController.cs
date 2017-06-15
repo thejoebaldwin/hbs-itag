@@ -2,11 +2,15 @@ using Foundation;
 using System;
 using UIKit;
 using HBS.ITAG;
+using ITAG_HBS;
+using System.Collections.Generic;
 
 namespace ITAG.HBS
 {
     public partial class EventDetailController : UIViewController
     {
+        List<Event> events = Store.Instance.Events;
+        int indexedEvent = 0;
         public EventDetailController (IntPtr handle) : base (handle)
         {
         }
@@ -55,7 +59,10 @@ namespace ITAG.HBS
 		}
         public void LinkClick()
         {
-            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"));
+            string eventWebId = events[indexedEvent].EventWebId;
+            DateTime newStartTime = events[indexedEvent].StartTime;
+            string endofLink = "/" + newStartTime.DayOfWeek + "/#event-" + eventWebId;
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"+endofLink));
         }
     }
 }
