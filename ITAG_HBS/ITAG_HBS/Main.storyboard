@@ -465,7 +465,7 @@
         </scene>
         <scene sceneID="2000">
             <objects>
-                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController">
+                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController" storyboardIdentifier="EventDetailController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1998"/>
                         <viewControllerLayoutGuide type="bottom" id="1999"/>
@@ -484,54 +484,54 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="68" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Name :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="159" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2065" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Time :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="293" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Location :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="407" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Link to Full Description :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="10" y="532" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Building Apps with Web AppBuilder" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="225" width="375" height="42"/>
+                                <rect key="frame" x="16" y="229" width="343" height="69"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2070" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9:00 am to 10:30 am" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="343" width="375" height="42"/>
+                                <rect key="frame" x="16" y="365" width="343" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2071" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Room 110" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="468" width="375" height="42"/>
+                                <rect key="frame" x="16" y="468" width="343" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -558,12 +558,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Here" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19019" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="594" width="368" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19019" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Click here to redirect">
+                                <rect key="frame" x="16" y="594" width="343" height="29"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.050980392156862744" green="0.031372549019607843" blue="0.32156862745098042" alpha="1"/>
                                 <nil key="highlightedColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="19120" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9:00 am to 10:30 am" scrollEnabled="NO" editable="NO" selectable="NO">
+                                <rect key="frame" x="-4" y="330" width="363" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
+                            </textView>
                         </subviews>
                     </view>
                     <connections>
@@ -572,6 +579,7 @@
                         <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
                         <outlet property="EventLocation" destination="2071" id="name-outlet-2071"/>
                         <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
+                        <outlet property="EventDay" destination="19120" id="name-outlet-19120"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>

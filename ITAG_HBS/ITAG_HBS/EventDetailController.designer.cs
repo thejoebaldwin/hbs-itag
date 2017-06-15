@@ -16,6 +16,10 @@ namespace ITAG.HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView EventDay { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView EventLocation { get; set; }
 
         [Outlet]
@@ -36,6 +40,11 @@ namespace ITAG.HBS
 
         void ReleaseDesignerOutlets ()
         {
+            if (EventDay != null) {
+                EventDay.Dispose ();
+                EventDay = null;
+            }
+
             if (EventLocation != null) {
                 EventLocation.Dispose ();
                 EventLocation = null;

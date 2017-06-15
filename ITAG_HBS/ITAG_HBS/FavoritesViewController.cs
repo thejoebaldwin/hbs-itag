@@ -64,7 +64,9 @@ namespace ITAG_HBS
 
             //now load events because we have all the data
 			var trackEvents = Store.Instance.Events;
-			ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);
+			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
+			data.parent = (UIViewController)this;
+            ScheduleTableViewFavs.Source = data;
 		}
 
         private void HotelMapClick()
