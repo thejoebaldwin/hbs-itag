@@ -729,7 +729,6 @@
                         <outlet property="Day1TrackName" destination="3088" id="name-outlet-3088"/>
                         <outlet property="D1LeftArrow" destination="16723" id="name-outlet-16723"/>
                         <outlet property="D1RightArrow" destination="16724" id="name-outlet-16724"/>
-                        <segue id="19178" destination="2001" kind="presentation" identifier="UpdateEventDetails"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
