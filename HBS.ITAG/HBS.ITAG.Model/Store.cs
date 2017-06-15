@@ -202,6 +202,8 @@ namespace HBS.ITAG.Model
         private List<Location> _arrLocations;
         private List<Track> _arrTracks;
         private List<User> _arrUsers;
+        private List<string> _arrFavoriteIds;
+
 
         private string _deviceId;
 
@@ -221,16 +223,88 @@ namespace HBS.ITAG.Model
                     //uncomment for local node.js server
 					//instance = new Store("https://localhost:8080");
 					instance = new Store("https://hbs-itag.azurewebsites.net");
-					//instance.Init();
+					instance.Init();
 
 				}
 				return instance;
 			}
 		}
 
+        public void Init()
+        {
+            _arrFavoriteIds = new List<string>();
+        }
+
+        public void InitializeFavorites(string favorites)
+        {
+			_arrFavoriteIds = new List<string>();
+            string[] arrFavorites = favorites.Split((','));
+            for (int i = 0; i < arrFavorites.Length; i++)
+            {
+                _arrFavoriteIds.Add(arrFavorites[i]);
+            }
+        }
+
+        public bool IsFavorite(Event favoriteEvent)
+        {
+            bool isFavorite = false;
+			for (int i = 0; i < _arrFavoriteIds.Count; i++)
+			{
+                if (_arrFavoriteIds[i] == favoriteEvent.Id)
+                {
+                    isFavorite = true;
+                    break;
+                }
+			}
+            return isFavorite;
+        }
 
 
+        public void AddFavorite(Event favoriteEvent)
+        {
+            favoriteEvent.Favorited = true;
+            if (!_arrFavoriteIds.Contains(favoriteEvent.Id))
+            {
+                _arrFavoriteIds.Add(favoriteEvent.Id);
+            }
+			string favorites = string.Empty;
+			for (int i = 0; i < _arrFavoriteIds.Count; i++)
+			{
+				if (favorites != string.Empty) favorites += ",";
+				favorites += _arrFavoriteIds[i];
+			}
+			return favorites;
+#if __MOBILE__
+			// Xamarin iOS or Android-specific code
+#endif
+#if __IOS__
+			// iOS-specific code
 
+#endif
+		}
+
+		public string DeleteFavorite(Event favoriteEvent)
+		{
+            favoriteEvent.Favorited = false;
+			if (_arrFavoriteIds.Contains(favoriteEvent.Id))
+			{
+				_arrFavoriteIds.Remove(favoriteEvent.Id);
+			}
+
+            string favorites = string.Empty;
+            for (int i = 0; i < _arrFavoriteIds.Count; i++)
+            {
+                if (favorites != string.Empty) favorites += ",";
+                favorites += _arrFavoriteIds[i];
+            }
+            return favorites;
+#if __MOBILE__
+			// Xamarin iOS or Android-specific code
+#endif
+#if __IOS__
+			// iOS-specific code
+#endif
+		}
 
 
 		public User CurrentUser { get; set; }
@@ -511,6 +585,10 @@ namespace HBS.ITAG.Model
                             for (int i = 0; i < arrJson.Length; i++)
                             {
                                 Event tempEvent = Event.FromJson(arrJson[i]);
+                                if (IsFavorite((tempEvent)))
+                                {
+                                    tempEvent.Favorited = true;
+                                }
                                 _arrEvents.Add(tempEvent);
                             }
                             break;
