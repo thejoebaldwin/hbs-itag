@@ -433,21 +433,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1421" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Why it's helpful" scrollEnabled="NO" editable="NO" selectable="NO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1421" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Why is it helpful?" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="0.0" y="477" width="375" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1422" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="3" y="156" width="369" height="137"/>
+                                <rect key="frame" x="16" y="156" width="360" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <string key="text">This app uses location powered technology to give you the most accurate information. There are beacons scattered around the conference which pinpoint your location and communicate with our software to get you to the correct session in the correct place. Beacons use Bluetooth to send signals to cellular devices so that communication and sharing can occur.</string>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="1423" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="16" y="506" width="359" height="161"/>
+                                <rect key="frame" x="16" y="506" width="360" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This app allows you to see when/where sessions are occurring and what each session is about. You can add sessions to your favorites which will appear in the scheduling tab. The favorites area will show you the sessions which are currently occurring and the upcoming sessions that you are interested in. This app is meant to make your involvement in the ITAG convention as simple and easy as possible.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
