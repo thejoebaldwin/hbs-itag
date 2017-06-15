@@ -7,9 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBS.ITAG", "HBS.ITAG\HBS.IT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITAG_HBS", "..\ITAG_HBS\ITAG_HBS\ITAG_HBS.csproj", "{8EBC524B-6929-4579-80BA-6972C5462F11}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HBS.ITAG.Model", "HBS.ITAG.Store\HBS.ITAG.Model.shproj", "{0025AFF6-8919-4860-B634-24B0D7F9CD2B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HBS.ITAG.Admin", "HBS.ITAG.Admin\HBS.ITAG.Admin.csproj", "{646D8260-6366-46E2-9AD3-A8D5D58579F7}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HBS.ITAG.Model", "HBS.ITAG.Model\HBS.ITAG.Model.shproj", "{0025AFF6-8919-4860-B634-24B0D7F9CD2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,18 +45,6 @@ Global
 		{8EBC524B-6929-4579-80BA-6972C5462F11}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{8EBC524B-6929-4579-80BA-6972C5462F11}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{8EBC524B-6929-4579-80BA-6972C5462F11}.Debug|iPhone.Build.0 = Debug|iPhone
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|iPhone.Build.0 = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{646D8260-6366-46E2-9AD3-A8D5D58579F7}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

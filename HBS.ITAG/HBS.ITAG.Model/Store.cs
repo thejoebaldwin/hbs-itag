@@ -6,7 +6,7 @@ using System.Net;
 using System.Globalization;
 using HBS.ITAG.Models;
 
-namespace HBS.ITAG
+namespace HBS.ITAG.Model
 {
     public class Utilities
     {

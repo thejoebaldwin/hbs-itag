@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HBS.ITAG.Models
+namespace HBS.ITAG.Model
 {
     public class Location
     {

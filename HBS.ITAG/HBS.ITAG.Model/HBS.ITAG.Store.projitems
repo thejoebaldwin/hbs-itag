@@ -6,7 +6,7 @@
     <SharedGUID>{0025AFF6-8919-4860-B634-24B0D7F9CD2B}</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>HBS.ITAG.Store</Import_RootNamespace>
+    <Import_RootNamespace>HBS.ITAG.Model</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)User.cs" />
