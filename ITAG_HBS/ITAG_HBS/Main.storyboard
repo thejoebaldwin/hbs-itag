@@ -464,7 +464,7 @@
         </scene>
         <scene sceneID="2000">
             <objects>
-                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController">
+                <viewController id="2001" sceneMemberID="viewController" customClass="EventDetailController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1998"/>
                         <viewControllerLayoutGuide type="bottom" id="1999"/>
@@ -483,47 +483,47 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2062" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Details :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="68" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2064" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Event Name :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="159" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2065" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Time :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="293" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2066" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Location :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="407" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="2068" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Link to Full Description :" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="10" y="532" width="375" height="42"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2069" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Building Apps with Web AppBuilder" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="225" width="375" height="42"/>
+                                <rect key="frame" x="0.0" y="225" width="375" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="2070" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="9:00 am to 10:30 am" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="0.0" y="343" width="375" height="42"/>
+                                <rect key="frame" x="181" y="330" width="194" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
