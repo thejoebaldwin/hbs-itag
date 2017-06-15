@@ -25,7 +25,10 @@ namespace ITAG.HBS
 			Favoritedtapguesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Favoritedtapguesture);
 
-
+            //EventName.Text = "";
+            //EventTime.Text = "";
+            //EventLocation.Text = "";
+            //LinkToDescription.Text = "";
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
@@ -33,6 +36,7 @@ namespace ITAG.HBS
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;
+            //TODO add event to favorites for the user
 			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
 			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Unfavoritedtapgesture);
@@ -41,6 +45,7 @@ namespace ITAG.HBS
 		public void UnfavoritedClick()
 		{
 			GrayStar.Highlighted = false;
+            //TODO remove event from favorites for the user
 			ViewDidLoad();
 		}
     }
