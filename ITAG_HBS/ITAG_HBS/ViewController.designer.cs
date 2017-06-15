@@ -13,16 +13,8 @@ namespace ITAG_HBS
     [Register ("ViewController")]
     partial class ViewController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView GrayStar { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (GrayStar != null) {
-                GrayStar.Dispose ();
-                GrayStar = null;
-            }
         }
     }
 }
