@@ -31,14 +31,25 @@ namespace ITAG_HBS
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
             HotelMapGesture.NumberOfTapsRequired = 1;
             HotelName.AddGestureRecognizer(HotelMapGesture);
-			// Perform any additional setup after loading the view, typically from a nib.
+
+            PhoneNumber.UserInteractionEnabled = true;
+            UITapGestureRecognizer CallGesture = new UITapGestureRecognizer(CallClick);
+            CallGesture.NumberOfTapsRequired = 1;
+            PhoneNumber.AddGestureRecognizer(CallGesture);
+		    //Perform any additional setup after loading the view, typically from a nib.
 		}
 
         private void HotelMapClick()
         {
-            UIApplication.SharedApplication.OpenUrl(new NSUrl("http://www.starwoodhotels.com/sheraton/property/overview/index.html?propertyID=1557&language=en_US"));
+          
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://www.google.com/maps/dir/''/west+des+moines+sheraton/@41.59935,-93.8430521,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x87ec20e82abf28f7:0xd2055049c83ddfb4!2m2!1d-93.7730122!2d41.5993713"));
 
 		}
+
+       private void CallClick()
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"telprompt://5152231800"));
+        }
 
         public override void DidReceiveMemoryWarning()
         {
