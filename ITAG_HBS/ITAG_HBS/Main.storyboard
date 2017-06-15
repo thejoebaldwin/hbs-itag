@@ -182,10 +182,10 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="302" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="2017 ITAG Conference" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="16" y="487" width="349" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14" weight="semibold"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14" weight="heavy"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Contact Number 111-111-1111" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Contact Number (515) 223-1800" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="17" y="560" width="349" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -207,9 +207,9 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="304" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="West Des Moines Sheraton" scrollEnabled="NO" editable="NO" selectable="NO">
-                                <rect key="frame" x="20" y="524" width="343" height="28"/>
+                                <rect key="frame" x="18" y="526" width="343" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16" weight="medium"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="303" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Tuesday, June 20th - Friday, June 23rd" scrollEnabled="NO" editable="NO" selectable="NO">
@@ -290,6 +290,8 @@
                     </view>
                     <connections>
                         <outlet property="ScheduleTableViewFavs" destination="14952" id="name-outlet-14952"/>
+                        <outlet property="HotelName" destination="304" id="name-outlet-304"/>
+                        <outlet property="PhoneNumber" destination="307" id="name-outlet-307"/>
                     </connections>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -578,21 +580,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="18859" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" text="Link Here">
-                                <rect key="frame" x="0.0" y="590" width="375" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click Here" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19019" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="0.0" y="594" width="368" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
-                            </textView>
+                                <color key="textColor" colorSpace="calibratedRGB" red="0.050980392156862744" green="0.031372549019607843" blue="0.32156862745098042" alpha="1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
                         <outlet property="EventName" destination="2069" id="name-outlet-2069"/>
                         <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
                         <outlet property="EventLocation" destination="2071" id="name-outlet-2071"/>
-                        <outlet property="LinkToDescription" destination="18859" id="name-outlet-18859"/>
-                        <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
+                        <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>

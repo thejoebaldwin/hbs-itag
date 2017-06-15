@@ -48,7 +48,7 @@ namespace HBS.ITAG
 
             // Sets up link on the bottom of page
             TextView link = FindViewById<TextView>(Resource.Id.EDtextView9);
-            int eventWebId = events[indexedEvent].EventWebId;
+            string eventWebId = events[indexedEvent].EventWebId;
             String endOfLink = "/" + newStartTime.DayOfWeek + "/#event-" + eventWebId;
             link.TextFormatted = Html.FromHtml("" +
                             "<a href=https://iowacountiesit.org/itag-conference/schedule/" + endOfLink + "\">Click Here</a> " +
@@ -75,6 +75,8 @@ namespace HBS.ITAG
 
             button.Click += (object sender, EventArgs e) =>
                 {
+
+
 
                     if (count % 2 == 0)
                     {

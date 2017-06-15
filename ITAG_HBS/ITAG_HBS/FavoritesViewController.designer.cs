@@ -15,10 +15,28 @@ namespace ITAG_HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView HotelName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView PhoneNumber { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ScheduleTableViewFavs { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
+            if (HotelName != null) {
+                HotelName.Dispose ();
+                HotelName = null;
+            }
+
+            if (PhoneNumber != null) {
+                PhoneNumber.Dispose ();
+                PhoneNumber = null;
+            }
+
             if (ScheduleTableViewFavs != null) {
                 ScheduleTableViewFavs.Dispose ();
                 ScheduleTableViewFavs = null;
