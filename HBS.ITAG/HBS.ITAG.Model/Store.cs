@@ -206,7 +206,7 @@ namespace HBS.ITAG.Model
         private string _deviceId;
 
 
-        private Event _selectedEvent;
+		public Event SelectedEvent { get; set; }
 
 		private Store() { }
         private static Store instance;
@@ -250,11 +250,7 @@ namespace HBS.ITAG.Model
             get { return _arrTracks; }
         }
 
-		public Event SelectedEvent
-		{
-			get { return _selectedEvent; }
-		}
-
+		
         public List<User> Users
         {
             get { return _arrUsers; }
