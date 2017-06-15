@@ -188,7 +188,7 @@ namespace HBS.ITAG.Model
     }
 
 
-    public class Client
+    public class Store
     {
         System.Net.HttpWebRequest _Request;
         string _AccessToken;
@@ -204,9 +204,32 @@ namespace HBS.ITAG.Model
         private List<User> _arrUsers;
 
         private string _deviceId;
-        private List<string> _purchasedThemes;
 
-        public User CurrentUser { get; set; }
+		private Store() { }
+
+		public static Store Instance
+		{
+			get
+			{
+				if (instance == null)
+				{
+					//do not put trailing / on url
+                    //uncomment for local node.js server
+					//instance = new Store("https://localhost:8080");
+					instance = new Store("https://hbs-itag.azurewebsites.net");
+					instance.Init();
+
+				}
+				return instance;
+			}
+		}
+
+
+
+
+
+
+		public User CurrentUser { get; set; }
 
         public string AccessToken
         {
@@ -235,7 +258,7 @@ namespace HBS.ITAG.Model
 
 
 
-        public Client(string connectionUrl)
+        public Store(string connectionUrl)
         {
             _ConnectionUrl = connectionUrl;
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
