@@ -9,6 +9,8 @@ namespace ITAG_HBS
 { //THIS IS FOR THE HOME PAGE//
     public partial class FavoritesViewController : UIViewController
     {
+        bool didRegister = false;
+
 		public string DataObject
 		{
 			get; set;
@@ -21,6 +23,7 @@ namespace ITAG_HBS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
 
 			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
@@ -41,6 +44,16 @@ namespace ITAG_HBS
             //TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}
+        public override void ViewDidAppear(bool animiated)
+        {
+			
+            if(!didRegister)
+            {
+				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
+				this.PresentViewController(temp, true, null);
+                didRegister = true;
+            }
+        }
 
 		private void LoadTracksComplete(string message)
 		{
@@ -65,7 +78,7 @@ namespace ITAG_HBS
         private void HotelMapClick()
         {
           
-            UIApplication.SharedApplication.OpenUrl(new NSUrl("https://www.google.com/maps/dir/''/west+des+moines+sheraton/@41.59935,-93.8430521,12z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x87ec20e82abf28f7:0xd2055049c83ddfb4!2m2!1d-93.7730122!2d41.5993713"));
+            UIApplication.SharedApplication.OpenUrl(new NSUrl("http://www.starwoodhotels.com/sheraton/property/overview/index.html?propertyID=1557&language=en_US"));
 
 		}
 

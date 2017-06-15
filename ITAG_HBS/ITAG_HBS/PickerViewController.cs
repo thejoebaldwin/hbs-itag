@@ -2,15 +2,16 @@
 using Foundation;
 using UIKit;
 using CoreGraphics;
+using HBS.ITAG.Model;
 
 
 namespace ITAG_HBS
 {
-
-	public partial class PickerViewExampleController : UIViewController
+    
+	public partial class PickerViewController : UIViewController
 	{
-
-		public PickerViewExampleController(IntPtr handle) : base(handle)
+        User tempuser;
+		public PickerViewController(IntPtr handle) : base(handle)
 		{
 		}
 
@@ -20,6 +21,18 @@ namespace ITAG_HBS
 			AgePickerView.Model = new StatusModel();
             StatePickerView.Model = new StateModel();
             GenderPickerView.Model = new GenderModel();
+
+            SubmitForm.UserInteractionEnabled = true;
+            UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
+            SubmitFormGesture.NumberOfTapsRequired = 1;
+            SubmitForm.AddGestureRecognizer(SubmitFormGesture);
+		}
+		private void SubmitFormClick()
+		{
+            //todo figure out what to do with id,pickerview strings and device id stuff
+            // tempuser = new User("id", AgePickerView.ToString(),GenderPickerView.ToString(),Position.Text,StatePickerView.ToString(),"","");
+            this.DismissViewController(true, null);
+
 		}
 
 		public override void DidReceiveMemoryWarning()
@@ -158,6 +171,7 @@ namespace ITAG_HBS
 
 
 		}
+
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
 		{

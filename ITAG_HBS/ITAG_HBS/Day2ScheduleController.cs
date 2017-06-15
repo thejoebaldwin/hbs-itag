@@ -82,7 +82,7 @@ namespace ITAG.HBS
 			trackEvents = new List<Event>();
 			foreach (var e in Store.Instance.Events)
 			{
-				if (e.Track.ToString() == tracks[currentTrack].Id)
+				if (e.TrackId == tracks[currentTrack].Id)
 				{
 					trackEvents.Add(e);
 				}

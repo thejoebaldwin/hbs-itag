@@ -11,8 +11,8 @@ using UIKit;
 
 namespace ITAG_HBS
 {
-    [Register ("PickerViewExampleController")]
-    partial class PickerViewExampleController
+    [Register ("PickerViewController")]
+    partial class PickerViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -24,7 +24,15 @@ namespace ITAG_HBS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField Position { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView StatePickerView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SubmitForm { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -38,9 +46,19 @@ namespace ITAG_HBS
                 GenderPickerView = null;
             }
 
+            if (Position != null) {
+                Position.Dispose ();
+                Position = null;
+            }
+
             if (StatePickerView != null) {
                 StatePickerView.Dispose ();
                 StatePickerView = null;
+            }
+
+            if (SubmitForm != null) {
+                SubmitForm.Dispose ();
+                SubmitForm = null;
             }
         }
     }

@@ -34,7 +34,16 @@ namespace HBS.ITAG
 			}
 		}
 
-        public void LoadTracksFromFile()
+
+		public void SaveKey(string key, string value)
+		{
+			var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+			var prefEditor = prefs.Edit();
+			prefEditor.PutString(key, value);
+			prefEditor.Commit();
+		}
+
+		void LoadTracksFromFile()
         {
             //open android asset text file
             StreamReader reader = new StreamReader(Android.App.Application.Context.Assets.Open("tracks.txt"));
