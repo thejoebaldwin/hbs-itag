@@ -4,6 +4,7 @@ using UIKit;
 using ITAG_HBS;
 using HBS.ITAG;
 using System.Collections.Generic;
+using HBS.ITAG.Model;
 
 namespace ITAG.HBS
 {

@@ -2,6 +2,7 @@
 using UIKit;
 using Foundation;
 using System.Collections.Generic;
+using HBS.ITAG.Model;
 
 namespace ITAG_HBS
 {
@@ -10,13 +11,13 @@ namespace ITAG_HBS
         //THIS IS FOR THE MY EVENTS PAGE//
 
 
-        List<HBS.ITAG.Event> TableItems;
+        List<Event> TableItems;
 		
 		string CellIdentifier = "TableCell";
 
-        public FavoritesTableViewSource(List<HBS.ITAG.Event> items)
+        public FavoritesTableViewSource(List<Event> items)
 		{
-            TableItems = new List<HBS.ITAG.Event>(items);
+            TableItems = new List<Event>(items);
             TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			
 		}
@@ -30,7 +31,7 @@ namespace ITAG_HBS
 		{
             
             UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
-            HBS.ITAG.Event item = TableItems[indexPath.Row];
+            Event item = TableItems[indexPath.Row];
 			cell.TextLabel.Text = item.Name;
 			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
 			

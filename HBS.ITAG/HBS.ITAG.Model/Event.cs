@@ -19,7 +19,8 @@ namespace HBS.ITAG.Model
         public bool ScheduleOnly { get; set; }
         public string LocationId { get; set; }
         public string EventWebId { get; set; }
-
+		public int Track { get; set; }
+        public bool Favorited { get; set; }
 
         public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, string eventWebId, string trackId, string locationId, bool scheduleOnly)
         {
@@ -37,7 +38,7 @@ namespace HBS.ITAG.Model
 
         public static Event FromJson(string json)
         {
-            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Utilities.ParseJson(json);
+            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Model.Utilities.ParseJson(json);
 
             //dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
 

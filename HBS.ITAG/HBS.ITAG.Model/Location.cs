@@ -31,7 +31,7 @@ namespace HBS.ITAG.Model
 
         public static Location FromJson(string json)
         {
-            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Utilities.ParseJson(json);
+            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Model.Utilities.ParseJson(json);
 
             //dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
 

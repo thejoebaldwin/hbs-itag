@@ -3,6 +3,7 @@ using Foundation;
 using ITAG_HBS;
 using HBS.ITAG;
 using UIKit;
+using HBS.ITAG.Model;
 
 namespace ITAG_HBS
 { //THIS IS FOR THE HOME PAGE//
@@ -24,8 +25,7 @@ namespace ITAG_HBS
 			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 
-            var trackEvents = Store.Instance.Events;
-            ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);
+          
 
             HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
@@ -36,7 +36,30 @@ namespace ITAG_HBS
             UITapGestureRecognizer CallGesture = new UITapGestureRecognizer(CallClick);
             CallGesture.NumberOfTapsRequired = 1;
             PhoneNumber.AddGestureRecognizer(CallGesture);
-		    //Perform any additional setup after loading the view, typically from a nib.
+			//Perform any additional setup after loading the view, typically from a nib.
+
+            //TODO: TURN ON LOADING INDICATOR
+			Store.Instance.GetTracks(LoadTracksComplete);
+		}
+
+		private void LoadTracksComplete(string message)
+		{
+			Store.Instance.GetEvents(LoadEventsComplete);
+		}
+
+        private void LoadEventsComplete(string message)
+        {
+            Store.Instance.GetLocations(LoadLocationsComplete);
+        }
+
+		private void LoadLocationsComplete(string message)
+		{
+			//TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
+			//TURN OFF LOADING INDICATOR
+
+            //now load events because we have all the data
+			var trackEvents = Store.Instance.Events;
+			ScheduleTableViewFavs.Source = new FavoritesTableViewSource(trackEvents);
 		}
 
         private void HotelMapClick()

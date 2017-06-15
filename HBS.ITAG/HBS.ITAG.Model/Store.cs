@@ -4,7 +4,7 @@ using System.Text;
 using System.IO;
 using System.Net;
 using System.Globalization;
-using HBS.ITAG.Models;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG.Model
 {
@@ -205,7 +205,11 @@ namespace HBS.ITAG.Model
 
         private string _deviceId;
 
+
+        private Event _selectedEvent;
+
 		private Store() { }
+        private static Store instance;
 
 		public static Store Instance
 		{
@@ -217,7 +221,7 @@ namespace HBS.ITAG.Model
                     //uncomment for local node.js server
 					//instance = new Store("https://localhost:8080");
 					instance = new Store("https://hbs-itag.azurewebsites.net");
-					instance.Init();
+					//instance.Init();
 
 				}
 				return instance;
@@ -245,6 +249,11 @@ namespace HBS.ITAG.Model
         {
             get { return _arrTracks; }
         }
+
+		public Event SelectedEvent
+		{
+			get { return _selectedEvent; }
+		}
 
         public List<User> Users
         {

@@ -1,5 +1,5 @@
 using Foundation; using System; using UIKit; using ITAG_HBS; using HBS.ITAG; using System.Collections.Generic;
-
+using HBS.ITAG.Model; 
 namespace ITAG.HBS {     public partial class Day1ScheduleController : UIViewController     {
 		//pick track here
 		int currentTrack = 0;         List<Track> tracks = new List<Track>();          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }
@@ -11,7 +11,10 @@ namespace ITAG.HBS {     public partial class Day1ScheduleController : UIVie
 			if (tracks.Count == 0)
 			{
 				tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
-			}             Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.Track.ToString() == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }              //use the array contents to build the table view source             DayOne.Source = new ScheduleTableViewSource(trackEvents);             DayOne.ReloadData();         }          private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else{                 return;             }         }
+			}             Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.Track.ToString() == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }                       
+
+			DayOne.Source = new ScheduleTableViewSource(Store.Instance.Events);
+			DayOne.ReloadData();          }           private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else{                 return;             }         }
 
 		private void rightSwipeDetected()
 		{

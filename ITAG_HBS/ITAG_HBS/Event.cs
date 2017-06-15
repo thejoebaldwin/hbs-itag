@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HBS.ITAG
 {
-    public class Event
+    public class EventOld
     {
         public string Name { get; set; }
         public string Id { get; set; }
@@ -19,7 +19,8 @@ namespace HBS.ITAG
         public Boolean ScheduleOnly { get; set; }
 
 
-        public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,string eventWebId, Boolean scheduleOnly)
+
+        public EventOld(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,string eventWebId, Boolean scheduleOnly)
         {
             Name = name;
             Id = id;
@@ -32,7 +33,7 @@ namespace HBS.ITAG
             ScheduleOnly = scheduleOnly;
         }
 
-        public static Event FromJson(string json)
+        public static EventOld FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 
@@ -48,7 +49,7 @@ namespace HBS.ITAG
             string eventWebId = data["event_web_id"];
             Boolean scheduleOnly = System.Convert.ToBoolean(data["schedule_only"]);
 
-            return new Event(name, id, startTime, endTime, presenter, summary, track, eventWebId, scheduleOnly);
+            return new EventOld(name, id, startTime, endTime, presenter, summary, track, eventWebId, scheduleOnly);
         }
 
 

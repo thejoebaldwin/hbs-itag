@@ -4,6 +4,7 @@ using UIKit;
 using HBS.ITAG;
 using ITAG_HBS;
 using System.Collections.Generic;
+using HBS.ITAG.Model;
 
 namespace ITAG.HBS
 {
@@ -20,8 +21,8 @@ namespace ITAG.HBS
 			base.ViewDidLoad();
 
 
-			Store.Instance.LoadEventsFromFile();
-			Store.Instance.LoadTracksFromFile();
+			//Store.Instance.LoadEventsFromFile();
+			//Store.Instance.LoadTracksFromFile();
 
 			GrayStar.UserInteractionEnabled = true;
 

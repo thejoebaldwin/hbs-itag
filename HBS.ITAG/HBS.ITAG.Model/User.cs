@@ -28,7 +28,7 @@ namespace HBS.ITAG.Model
 
         public static User FromJson(string json)
         {
-            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Utilities.ParseJson(json);
+            System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Model.Utilities.ParseJson(json);
             string id = data["user_id"];
             string age = data["age"];
             string gender = data["gender"];

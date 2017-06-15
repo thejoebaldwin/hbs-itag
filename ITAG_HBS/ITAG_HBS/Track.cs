@@ -6,14 +6,14 @@ using System.Text;
 
 namespace HBS.ITAG
 {
-    public class Track
+    public class TrackOld
     {
         public string Name { get; set; }
         public string Id { get; set; }
         public DateTime TrackDate { get; set; }
         public string BeaconGuid { get; set; }
 
-        public Track (string name,string id, DateTime trackDate, string beaconGuid)
+        public TrackOld (string name,string id, DateTime trackDate, string beaconGuid)
         {
             Name = name;
             Id = id;
@@ -21,7 +21,7 @@ namespace HBS.ITAG
             BeaconGuid = beaconGuid;
         }
 
-        public static Track FromJson(string json)
+        public static TrackOld FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 
@@ -33,7 +33,7 @@ namespace HBS.ITAG
             string beaconGuid = data["beacon_guid"];
 
 
-            return new Track(name, id, trackDate, beaconGuid);
+            return new TrackOld(name, id, trackDate, beaconGuid);
         }
 
     }

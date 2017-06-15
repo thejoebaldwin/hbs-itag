@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HBS.ITAG
 {
-    class User
+    class UserOld
     {
         public int Id { get; set; }
         public string State { get; set; }
@@ -16,10 +16,10 @@ namespace HBS.ITAG
         public string JobTitle { get; set; }
         public string Email { get; set; }
         public Boolean EmailNotifications { get; set; }
-        public int[] FavoritedEvents { get; set; }
-        public Event[] FullFavoritedEvents { get; set; }
+        //public int[] FavoritedEvents { get; set; }
+        //public Event[] FullFavoritedEvents { get; set; }
 
-
+        /*
         public User(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications, int[] favoritedEvents, Event[] fullFavoritedEvents)
         {
             Id = id;
@@ -33,6 +33,20 @@ namespace HBS.ITAG
             FullFavoritedEvents = fullFavoritedEvents;
 
         }
+*/
+		public User(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications)
+		{
+			Id = id;
+			State = state;
+			Age = age;
+			Gender = gender;
+			JobTitle = jobTitle;
+			Email = email;
+			EmailNotifications = emailNotifications;
+			FavoritedEvents = favoritedEvents;
+			FullFavoritedEvents = fullFavoritedEvents;
+
+		}
 
         public static User FromJson(string json)
         {

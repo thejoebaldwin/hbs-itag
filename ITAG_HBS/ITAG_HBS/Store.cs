@@ -5,28 +5,28 @@ using System.IO;
 
 namespace HBS.ITAG
 {
-    public class Store
+    public class StoreOld
     {
-		private static Store instance;
+		private static StoreOld instance;
 
-        public List<Event> Events;
-        public List<Track> Tracks;
+        //public List<Event> Events;
+        //public List<Track> Tracks;
 
-		private Store() { }
+		private StoreOld() { }
 
-		public static Store Instance
+		public static StoreOld Instance
 		{
 			get
 			{
 				if (instance == null)
 				{
-					instance = new Store();
+					instance = new StoreOld();
                     instance.Init();
 				}
 				return instance;
 			}
 		}
-
+        /*
         public void LoadTracksFromFile()
         {
             //open android asset text file
@@ -64,14 +64,15 @@ namespace HBS.ITAG
 				Events.Add(Event.FromJson(s));
 			}
 		}
+*/
 
 
 		public void Init()
         {
             //get tracks
             //get events
-            LoadTracksFromFile();
-            LoadEventsFromFile();
+          //  LoadTracksFromFile();
+            //LoadEventsFromFile();
 
 
 

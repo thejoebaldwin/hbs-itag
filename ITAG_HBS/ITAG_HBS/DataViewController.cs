@@ -3,6 +3,7 @@ using Foundation;
 using ITAG_HBS;
 using HBS.ITAG;
 using UIKit;
+using HBS.ITAG.Model;
 
 namespace ITAG_HBS
 {
