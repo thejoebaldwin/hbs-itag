@@ -1,10 +1,17 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Net;
 using System.Globalization;
 using HBS.ITAG.Model;
+using Foundation;
+using UIKit;
+using HBS.ITAG;
+using ITAG_HBS;
+
+
+
 
 namespace HBS.ITAG.Model
 {
@@ -233,6 +240,19 @@ namespace HBS.ITAG.Model
         public void Init()
         {
             _arrFavoriteIds = new List<string>();
+            string favorites = string.Empty;
+#if __IOS__
+            favorites = NSUserDefaults.StandardUserDefaults.StringForKey("favorites");
+#endif
+            if (favorites == null)
+            {
+                favorites = string.Empty;
+            }
+            string[] arrFavorites = favorites.Split(',');
+			for (int i = 0; i < arrFavorites.Length; i++)
+			{
+                _arrFavoriteIds.Add(arrFavorites[i]);
+			}
         }
 
         public void InitializeFavorites(string favorites)
@@ -273,17 +293,21 @@ namespace HBS.ITAG.Model
 				if (favorites != string.Empty) favorites += ",";
 				favorites += _arrFavoriteIds[i];
 			}
-			return favorites;
+			
 #if __MOBILE__
 			// Xamarin iOS or Android-specific code
+
 #endif
 #if __IOS__
 			// iOS-specific code
+           NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
 
 #endif
-		}
+        }
 
-		public string DeleteFavorite(Event favoriteEvent)
+
+
+		public void DeleteFavorite(Event favoriteEvent)
 		{
             favoriteEvent.Favorited = false;
 			if (_arrFavoriteIds.Contains(favoriteEvent.Id))
@@ -297,12 +321,12 @@ namespace HBS.ITAG.Model
                 if (favorites != string.Empty) favorites += ",";
                 favorites += _arrFavoriteIds[i];
             }
-            return favorites;
+          
 #if __MOBILE__
 			// Xamarin iOS or Android-specific code
 #endif
 #if __IOS__
-			// iOS-specific code
+			NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
 #endif
 		}
 
