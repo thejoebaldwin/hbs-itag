@@ -361,7 +361,7 @@
                                 </subviews>
                             </view>
                             <view contentMode="scaleToFill" id="14894" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="30" y="352" width="330" height="194"/>
+                                <rect key="frame" x="30" y="352" width="330" height="193"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.44705882352941179" green="0.4823529411764706" blue="0.53725490196078429" alpha="1"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="14895" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -383,6 +383,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="18837" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="280" y="37" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue id="19008" destination="2001" kind="show"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -575,23 +584,12 @@
                                     <segue id="14028" destination="67" kind="show"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png" highlighted="YES">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="right" id="18859" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" scrollEnabled="NO" editable="NO" selectable="NO" text="Link Here">
-                                <rect key="frame" x="0.0" y="590" width="375" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <color key="textColor" colorSpace="calibratedRGB" red="0.062745098039215685" green="0.074509803921568626" blue="0.4" alpha="1"/>
-                            </textView>
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="EventName" destination="2069" id="name-outlet-2069"/>
-                        <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
-                        <outlet property="EventLocation" destination="2071" id="name-outlet-2071"/>
-                        <outlet property="LinkToDescription" destination="18859" id="name-outlet-18859"/>
                         <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
                     </connections>
                 </viewController>
@@ -1149,7 +1147,7 @@
         <image name="left_arrow.png" width="20" height="20"/>
         <image name="blueprintexample.png" width="428" height="326"/>
         <image name="right_arrow.png" width="20" height="20"/>
-        <image name="favoritedstar.png" width="64" height="64"/>
         <image name="unfavoritedstar.png" width="64" height="64"/>
+        <image name="favoritedstar.png" width="64" height="64"/>
     </resources>
 </document>
