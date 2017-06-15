@@ -71,10 +71,10 @@ namespace HBS.ITAG
                 noFavorites.Visibility = ViewStates.Invisible;
 
 
-                firstFavorite.Visibility = ViewStates.Visible;
-                secondFavorite.Visibility = ViewStates.Visible;
-                thirdFavorite.Visibility = ViewStates.Visible;
-                fourthFavorite.Visibility = ViewStates.Visible;
+               firstFavorite.Visibility = ViewStates.Visible;
+               secondFavorite.Visibility = ViewStates.Visible;
+               thirdFavorite.Visibility = ViewStates.Visible;
+               fourthFavorite.Visibility = ViewStates.Visible;
 
             };
 

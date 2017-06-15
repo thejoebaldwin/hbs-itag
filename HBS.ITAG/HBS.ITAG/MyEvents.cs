@@ -30,7 +30,9 @@ namespace HBS.ITAG
             for ( int i = 0; i < 6; i++)
             {
                  mItems.Add(events[i].Name);
-            }
+            } 
+
+
 
             MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
@@ -42,6 +44,9 @@ namespace HBS.ITAG
             mListView2.ItemClick += mListView2_ItemClick;
 
             
+
+            // Code for nav bar
+
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 
             Homeimagebutton.Click += (sender, e) =>
@@ -64,6 +69,9 @@ namespace HBS.ITAG
             };
             
         }
+
+
+        // Code for clicking items on ListView
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
