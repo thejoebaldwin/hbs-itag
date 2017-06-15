@@ -11,9 +11,8 @@ namespace ITAG.HBS {     public partial class Day1ScheduleController : UIVie
 			if (tracks.Count == 0)
 			{
 				tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
-			}             Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.Track.ToString() == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }                       
-             ScheduleTableViewSource data = new ScheduleTableViewSource(Store.Instance.Events);             data.parent = (UIViewController) this;
-            DayOne.Source = data;           
+			}              Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.TrackId == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }              ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);             data.parent = (UIViewController) this;
+            DayOne.Source = data;
 			DayOne.ReloadData();          }           private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else{                 return;             }         }
 
 		private void rightSwipeDetected()

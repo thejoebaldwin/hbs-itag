@@ -464,7 +464,7 @@
         </scene>
         <scene sceneID="2000">
             <objects>
-                <viewController id="2001" sceneMemberID="viewController" customClass="EventDetailController">
+                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1998"/>
                         <viewControllerLayoutGuide type="bottom" id="1999"/>
