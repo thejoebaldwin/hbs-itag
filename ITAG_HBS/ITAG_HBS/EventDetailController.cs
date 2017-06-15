@@ -59,6 +59,7 @@ namespace ITAG.HBS
 		}
         public void LinkClick()
         {
+            //TODO make indexedEvent incremented with a for loop that searches through events in the database
             string eventWebId = events[indexedEvent].EventWebId;
             DateTime newStartTime = events[indexedEvent].StartTime;
             string endofLink = "/" + newStartTime.DayOfWeek + "/#event-" + eventWebId;
