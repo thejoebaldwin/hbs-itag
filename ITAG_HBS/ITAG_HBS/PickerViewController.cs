@@ -42,7 +42,7 @@ namespace ITAG_HBS
 			"Choose One",
 			"Male", "Female", "Other", "Prefer Not to Respond"
 		};
-            tempuser = new User("-1",ages[AgePickerView.SelectedRowInComponent(1)],Gender[GenderPickerView.SelectedRowInComponent(2)],Position.Text,States[StatePickerView.SelectedRowInComponent(0)],"iOS", UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
+            tempuser = new User("-1",ages[AgePickerView.SelectedRowInComponent(0)],Gender[GenderPickerView.SelectedRowInComponent(0)],Position.Text,States[StatePickerView.SelectedRowInComponent(0)],"iOS", UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
 			this.DismissViewController(true, null);
 
 		}

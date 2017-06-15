@@ -293,9 +293,7 @@ namespace HBS.ITAG.Model
 				if (favorites != string.Empty) favorites += ",";
 				favorites += _arrFavoriteIds[i];
 			}
-
 			//return favorites;
-
 #if __MOBILE__
 			// Xamarin iOS or Android-specific code
 
