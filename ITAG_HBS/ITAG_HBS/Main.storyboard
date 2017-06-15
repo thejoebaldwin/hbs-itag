@@ -541,7 +541,7 @@
         <!--Event Detail Controller-->
         <scene sceneID="2000">
             <objects>
-                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController">
+                <viewController id="2001" customClass="EventDetailController" sceneMemberID="viewController" storyboardIdentifier="EventDetail">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1998"/>
                         <viewControllerLayoutGuide type="bottom" id="1999"/>
