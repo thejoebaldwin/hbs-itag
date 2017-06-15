@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SQLite;
+using System.IO;
 
 using Android.App;
 using Android.Content;
@@ -60,8 +62,13 @@ namespace HBS.ITAG
             var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
             int count = 0;
 
-            /*User user = null;
-            if (user.FavoritedEvents.Contains(events[indexedEvent].Id))
+            //string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "dbTest.db3");
+            //var db = new SQLiteConnection(dbPath);
+            //var table = db.CreateTable<Favorites>();
+            //Favorites myFavorite;
+            
+
+            /*if ()
             {
                 button.SetImageDrawable(GetDrawable(17301516));
                 count = 1;
@@ -70,7 +77,7 @@ namespace HBS.ITAG
             {
                 button.SetImageDrawable(GetDrawable(17301515));
                 count = 0;
-            } */ 
+            } */
 
 
             button.Click += (object sender, EventArgs e) =>
@@ -83,6 +90,8 @@ namespace HBS.ITAG
                         Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
                         toast.Show();
                         button.SetImageDrawable(GetDrawable(17301516));
+                       // myFavorite = new Favorites(events[indexedEvent].Name, true);
+                       // db.Insert(myFavorite);
                         count++;
                     }
                     else
@@ -90,6 +99,8 @@ namespace HBS.ITAG
                         Toast toast = Toast.MakeText(this, "Removed from Favorites", ToastLength.Short);
                         toast.Show();
                         button.SetImageDrawable(GetDrawable(17301515));
+                        //myFavorite = new Favorites(events[indexedEvent].Name, false);
+                        //db.Insert(myFavorite);
                         count++;
                     }
                      
