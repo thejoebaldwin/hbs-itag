@@ -185,7 +185,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14" weight="semibold"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Contact Number 111-111-1111" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="307" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Contact Number (515) 223-1800" textAlignment="center" scrollEnabled="NO" editable="NO" selectable="NO">
                                 <rect key="frame" x="17" y="560" width="349" height="26"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -290,6 +290,7 @@
                     </view>
                     <connections>
                         <outlet property="ScheduleTableViewFavs" destination="14952" id="name-outlet-14952"/>
+                        <outlet property="HotelName" destination="304" id="name-outlet-304"/>
                     </connections>
                     <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
