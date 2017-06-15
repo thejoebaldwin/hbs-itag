@@ -22,6 +22,11 @@ namespace ITAG_HBS
         {
             base.ViewDidLoad();
 
+
+            //this.PresentViewController();
+            PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
+            this.PresentViewController(temp,true,null);
+
 			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 

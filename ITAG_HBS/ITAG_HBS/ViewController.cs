@@ -2,6 +2,7 @@
 using Foundation;
 using ITAG_HBS;
 using UIKit;
+using HBS.ITAG.Model;
 using System.CodeDom.Compiler;
 
 namespace ITAG_HBS
@@ -16,7 +17,6 @@ namespace ITAG_HBS
         {
             // Note: this .ctor should not contain any initialization logic.
         }
-
 
         public override void DidReceiveMemoryWarning()
         {
