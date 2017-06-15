@@ -26,8 +26,6 @@ namespace HBS.ITAG
                 Spinner age = FindViewById<Spinner>(Resource.Id.DSspinner2);
                 Spinner gender = FindViewById<Spinner>(Resource.Id.DSspinner3);
                 EditText jobTitle = FindViewById<EditText>(Resource.Id.DSedittext);
-                EditText email = FindViewById<EditText>(Resource.Id.DSedittext2);
-                CheckBox emailNotifications = FindViewById<CheckBox>(Resource.Id.DScheckBox1);
                 Button done = FindViewById<Button>(Resource.Id.DSbutton1);
 
                 // Sets Default Values for Spinners
@@ -43,16 +41,6 @@ namespace HBS.ITAG
                     String ageAnswer = age.SelectedItem.ToString();
                     String genderAnswer = gender.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
-                    String emailAnswer = email.Text;
-                    String emailNotificationsAnswer;
-                    if (emailNotifications.Checked)
-                    {
-                        emailNotificationsAnswer = "true";
-                    }
-                    else
-                    {
-                        emailNotificationsAnswer = "false";
-                    }
                     
                     StartActivity(typeof(Home));
                 };

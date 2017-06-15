@@ -59,7 +59,7 @@ namespace ITAG_HBS
                 //cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
                 //cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
                 //cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
-                cell.Hidden = true;
+
 			}
 			else
 			{

@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DSrelativeLayout1"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
         <TextView
             android:text="State :"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DSrelativeLayout2"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
         <TextView
             android:text="Age :"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -80,7 +80,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DSrelativeLayout3"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
         <TextView
             android:text="Gender :"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -107,7 +107,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/DSrelativeLayout4"
         android:gravity="center_horizontal"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="40dp">
         <EditText
             android:id="@+id/DSedittext"
             android:layout_width="wrap_content"
@@ -123,51 +123,17 @@
             android:id="@+id/DStextView5"
             android:layout_below="@id/DSedittext"
             android:gravity="center_horizontal"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:textColor="#0e1d52" />
     </RelativeLayout>
-    <RelativeLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DSrelativeLayout5"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="20dp">
-        <EditText
-            android:id="@+id/DSedittext2"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:background="@android:drawable/editbox_background"
-            android:backgroundTint="#99a1ac"
-            android:width="300dp" />
-        <TextView
-            android:text="Email (Optional)"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/DStextView6"
-            android:layout_below="@id/DSedittext2"
-            android:layout_marginTop="5dp"
-            android:textColor="#0e1d52" />
-    </RelativeLayout>
-    <CheckBox
-        android:text="Send Me Email Notifications on Upcoming Events"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/DScheckBox1"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="50dp"
-        android:backgroundTint="#00000000"
-        android:textColor="#0e1d52"
-        android:buttonTint="#ffbf1e2d" />
+   
     <Button
         android:text="Done"
         android:textColor="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/DSbutton1"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="#0e1d52" />

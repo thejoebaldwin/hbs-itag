@@ -34,6 +34,7 @@ namespace HBS.ITAG.Model
             TrackId = trackId;
             LocationId = locationId;
             ScheduleOnly = scheduleOnly;
+            Favorited = false;
         }
 
         public static Event FromJson(string json)
