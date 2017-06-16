@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     public class UIColorExtension
     {

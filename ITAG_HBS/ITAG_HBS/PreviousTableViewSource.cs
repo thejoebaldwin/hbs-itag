@@ -49,7 +49,7 @@ namespace ITAG_HBS
 			}
 			if (!item.ScheduleOnly)
 			{
-				cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 				cell.TextLabel.TextColor = UIColor.White;
                 cell.DetailTextLabel.TextColor = UIColor.White;
 

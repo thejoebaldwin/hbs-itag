@@ -3,14 +3,23 @@ using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
+using ITAG.HBS;
 
-
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
 
     public partial class PickerViewController : UIViewController
     {
         User tempuser;
+
+
+
+		public DateTime EndTime { get; set; }
+		public string Presenter { get; set; }
+
+     
+
+
 		public PickerViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -26,6 +35,9 @@ namespace ITAG_HBS
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
             SubmitFormGesture.NumberOfTapsRequired = 1;
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
+
+
+
 		}
 
 		private void SubmitFormClick()

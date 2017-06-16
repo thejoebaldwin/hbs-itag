@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     [Register ("Day4ScheduleController")]
     partial class Day4ScheduleController
@@ -29,6 +29,30 @@ namespace ITAG.HBS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView DayFour { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June20Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June21Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June22Button { get; set; }
+
+        [Action ("June20ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June20ButtonClick (UIKit.UIButton sender);
+
+        [Action ("June21ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June21ButtonClick (UIKit.UIButton sender);
+
+        [Action ("June22ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June22ButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -50,6 +74,21 @@ namespace ITAG.HBS
             if (DayFour != null) {
                 DayFour.Dispose ();
                 DayFour = null;
+            }
+
+            if (June20Button != null) {
+                June20Button.Dispose ();
+                June20Button = null;
+            }
+
+            if (June21Button != null) {
+                June21Button.Dispose ();
+                June21Button = null;
+            }
+
+            if (June22Button != null) {
+                June22Button.Dispose ();
+                June22Button = null;
             }
         }
     }
