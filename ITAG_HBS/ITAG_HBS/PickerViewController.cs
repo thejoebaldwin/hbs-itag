@@ -20,8 +20,9 @@ namespace HBS.ITAG
 		{
 			base.ViewDidLoad();
 			AgePickerView.Model = new StatusModel();
-            StatePickerView.Model = new StateModel();
+            StatePickerView.Model = new TechFocusModel();
             GenderPickerView.Model = new GenderModel();
+
 
             SubmitForm.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
@@ -36,7 +37,7 @@ namespace HBS.ITAG
                                 StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
                                 GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
                                 Position.Text,
-                                StateModel.States[StatePickerView.SelectedRowInComponent(0)],
+                                TechFocusModel.TechFocus[StatePickerView.SelectedRowInComponent(0)],
                                 "iOS",
                                 UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
             Store.Instance.GetUsers(LoadUsersComplete);
@@ -115,64 +116,18 @@ namespace HBS.ITAG
 				return 30f;
 		}
 	}
-	public class StateModel : UIPickerViewModel
+	public class TechFocusModel : UIPickerViewModel
 	{
-		public static string[] States = new string[] {
+		public static string[] TechFocus = new string[] {
 			"Choose One",
-			"Alabama",
-            "Alaska",
-            "Arizona",
-            "Arkansas",
-            "California",
-            "Colorado",
-            "Connecticut",
-            "Delaware",
-            "District of Columbia",
-            "Florida",
-            "Georgia",
-            "Hawaii",
-            "Idaho",
-            "Illinois",
-            "Indiana",
-            "Iowa",
-            "Kansas",
-            "Kentucky",
-            "Louisiana",
-            "Maine",
-            "Maryland",
-            "Massachusetts",
-            "Michigan",
-            "Minnesota",
-            "Mississippi",
-            "Missouri",
-            "Montana",
-            "Nebraska",
-            "Nevada",
-            "New Hampshire",
-            "New Jersey",
-            "New Mexico",
-            "New York",
-            "North Carolina",
-            "North Dakota",
-            "Ohio",
-            "Oklahoma",
-            "Oregon",
-            "Pennsylvania",
-            "Rhode Island",
-            "South Carolina",
-            "South Dakota",
-            "Tennessee",
-            "Texas",
-            "Utah",
-            "Vermont",
-            "Virginia",
-            "Washington",
-            "West Virginia",
-            "Wisconsin",
-            "Wyoming"
+			"IT",
+            "GIS",
+            "Both",
+            "None"
+         
 		};
 
-		public StateModel()
+		public TechFocusModel()
 		{
 
 		}
@@ -184,12 +139,12 @@ namespace HBS.ITAG
 
 		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
 		{
-            return States.Length;
+            return TechFocus.Length;
 		}
 
 		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
 		{
-            return States[row];
+            return TechFocus[row];
 		}
 
 		public override void Selected(UIPickerView pickerView, nint row, nint component)
@@ -252,6 +207,56 @@ namespace HBS.ITAG
 
 		}
 
+
+		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
+		{
+			if (component == 0)
+				return 220f;
+			else
+				return 30f;
+		}
+	}
+	public class OrganizationModel : UIPickerViewModel
+	{
+		public static string[] Organization = new string[] {
+			"Choose One",
+			"IGIC",
+			"ICIT",
+			"Both",
+			"None"
+
+		};
+
+		public OrganizationModel()
+		{
+
+		}
+
+		public override nint GetComponentCount(UIPickerView v)
+		{
+			return 1;
+		}
+
+		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
+		{
+            return Organization.Length;
+		}
+
+		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
+		{
+            return Organization[row];
+		}
+
+		public override void Selected(UIPickerView pickerView, nint row, nint component)
+		{
+
+			//lbl.Text = String.Format("{0} : {1} : {2}",
+			//names[pickerView.SelectedRowInComponent(0)],
+			//pickerView.SelectedRowInComponent(1),
+			//pickerView.SelectedRowInComponent(2));
+
+
+		}
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
 		{
