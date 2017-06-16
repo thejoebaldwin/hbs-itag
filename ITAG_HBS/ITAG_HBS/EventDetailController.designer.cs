@@ -16,6 +16,14 @@ namespace ITAG.HBS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView EventDay { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView EventLocation { get; set; }
 
         [Outlet]
@@ -27,10 +35,6 @@ namespace ITAG.HBS
         UIKit.UITextView EventTime { get; set; }
 
         [Outlet]
-        [GeneratedCode("iOS Designer", "1.0")]
-        UIKit.UITextView EventDay { get; set; }
-
-        [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView GrayStar { get; set; }
 
@@ -38,8 +42,22 @@ namespace ITAG.HBS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LinkToDescription { get; set; }
 
+        [Action ("UIButton13816_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UIButton13816_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (BackButton != null) {
+                BackButton.Dispose ();
+                BackButton = null;
+            }
+
+            if (EventDay != null) {
+                EventDay.Dispose ();
+                EventDay = null;
+            }
+
             if (EventLocation != null) {
                 EventLocation.Dispose ();
                 EventLocation = null;

@@ -6,16 +6,45 @@ using HBS.ITAG;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
 	public partial class Day4ScheduleController : UIViewController
 	{
-		//pick track here
-		int currentTrack = 0;
+        partial void HomeButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, null);
+        }
+
+        partial void MyEventsButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
+        }
+
+     
+
+        partial void June22ButtonClick(UIButton sender)
+        {
+			this.DismissViewController(false, new Action(parent.NavigationScheduleJune22));
+        }
+
+        partial void June21ButtonClick(UIButton sender)
+        {
+			this.DismissViewController(false, new Action(parent.NavigationScheduleJune21));
+        }
+
+        partial void June20ButtonClick(UIButton sender)
+        {
+			this.DismissViewController(false, new Action(parent.NavigationScheduleJune20));
+        }
+
+        //pick track here
+        int currentTrack = 0;
 		List<Track> tracks = new List<Track>();
 
+		public FavoritesViewController parent { get; set; }
+
 		public string DataObject
-		{
+        {
 			get; set;
 		}
 

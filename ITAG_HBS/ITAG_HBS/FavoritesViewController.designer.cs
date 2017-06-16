@@ -8,14 +8,22 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
     [Register ("FavoritesViewController")]
     partial class FavoritesViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton HomeButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView HotelName { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton MyEventsButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -23,18 +31,45 @@ namespace ITAG_HBS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ScheduleButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ScheduleTableViewFavs { get; set; }
+
+        [Action ("EventsButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void EventsButtonClick (UIKit.UIButton sender);
+
+        [Action ("ScheduleButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void ScheduleButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
+            if (HomeButton != null) {
+                HomeButton.Dispose ();
+                HomeButton = null;
+            }
+
             if (HotelName != null) {
                 HotelName.Dispose ();
                 HotelName = null;
             }
 
+            if (MyEventsButton != null) {
+                MyEventsButton.Dispose ();
+                MyEventsButton = null;
+            }
+
             if (PhoneNumber != null) {
                 PhoneNumber.Dispose ();
                 PhoneNumber = null;
+            }
+
+            if (ScheduleButton != null) {
+                ScheduleButton.Dispose ();
+                ScheduleButton = null;
             }
 
             if (ScheduleTableViewFavs != null) {

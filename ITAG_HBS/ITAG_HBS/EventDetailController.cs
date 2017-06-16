@@ -11,7 +11,13 @@ namespace ITAG.HBS
 {
     public partial class EventDetailController : UIViewController
     {
+        partial void UIButton13816_TouchUpInside(UIButton sender)
+        {
+            this.DismissViewController(true, null);
+        }
+
         List<Event> events = Store.Instance.Events;
+        int indexedEvent = 0;
         public EventDetailController (IntPtr handle) : base (handle)
         {
         }
@@ -19,7 +25,6 @@ namespace ITAG.HBS
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-
 
 			//Store.Instance.LoadEventsFromFile();
 			//Store.Instance.LoadTracksFromFile();
@@ -50,8 +55,20 @@ namespace ITAG.HBS
             Link.NumberOfTapsRequired = 1;
             LinkToDescription.AddGestureRecognizer(Link);
 
+
+            if (events[indexedEvent].Favorited)
+            {
+                GrayStar.Highlighted = true;
+            }
+
+            else
+            {
+                GrayStar.Highlighted = false;
+            }
+
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;

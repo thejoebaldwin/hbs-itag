@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     [Register ("Day3ScheduleController")]
     partial class Day3ScheduleController
@@ -29,6 +29,50 @@ namespace ITAG.HBS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView DayThree { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton HomeButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June20Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June21Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June23Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton MyEventsButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ScheduleButton { get; set; }
+
+        [Action ("EventButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void EventButtonClick (UIKit.UIButton sender);
+
+        [Action ("HomeButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void HomeButtonClick (UIKit.UIButton sender);
+
+        [Action ("June20ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June20ButtonClick (UIKit.UIButton sender);
+
+        [Action ("June21ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June21ButtonClick (UIKit.UIButton sender);
+
+        [Action ("June23ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June23ButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -50,6 +94,36 @@ namespace ITAG.HBS
             if (DayThree != null) {
                 DayThree.Dispose ();
                 DayThree = null;
+            }
+
+            if (HomeButton != null) {
+                HomeButton.Dispose ();
+                HomeButton = null;
+            }
+
+            if (June20Button != null) {
+                June20Button.Dispose ();
+                June20Button = null;
+            }
+
+            if (June21Button != null) {
+                June21Button.Dispose ();
+                June21Button = null;
+            }
+
+            if (June23Button != null) {
+                June23Button.Dispose ();
+                June23Button = null;
+            }
+
+            if (MyEventsButton != null) {
+                MyEventsButton.Dispose ();
+                MyEventsButton = null;
+            }
+
+            if (ScheduleButton != null) {
+                ScheduleButton.Dispose ();
+                ScheduleButton = null;
             }
         }
     }

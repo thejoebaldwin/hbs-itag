@@ -18,7 +18,8 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Avastone Technologies LLC (6L4C7E6MJ5)</CodesignKey>
+    <CodesignKey>iPhone Developer: Jeremiah Brockman (MT8M43LQH5)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -28,7 +29,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>XC iOS: net.hbs.itag2017</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -68,6 +69,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer: Joseph Baldwin (CL3N2MW2JL)</CodesignKey>
+    <CodesignKey>iPhone Developer: Jeremiah Brockman (MT8M43LQH5)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -79,7 +81,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>iOS Team Provisioning Profile: net.hbs.itag2017</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Phone|iPhone' ">
     <Optimize>false</Optimize>
@@ -100,7 +102,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Estimote.iOS">
-      <HintPath>..\Components\estimotesdkios-4.7.3.2\lib\ios-unified\Xamarin.Estimote.iOS.dll</HintPath>
+      <HintPath>..\..\HBS.ITAG\Components\estimotesdkios-4.7.3.2\lib\ios-unified\Xamarin.Estimote.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

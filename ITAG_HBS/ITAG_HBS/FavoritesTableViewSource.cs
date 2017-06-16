@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using HBS.ITAG.Model;
 using ITAG.HBS;
 
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
 	public class FavoritesTableViewSource : UITableViewSource
 	{
@@ -55,15 +55,15 @@ namespace ITAG_HBS
             }
             if(!item.ScheduleOnly)
             {
-				cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 				cell.TextLabel.TextColor = UIColor.White;
                 cell.DetailTextLabel.TextColor = UIColor.White;
 			}
             else if (item.EndTime<DateTime.Now)
 			{
-				cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
-				cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
-				cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+				cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+				cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			}
 			else
 			{
