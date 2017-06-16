@@ -212,12 +212,14 @@ namespace HBS.ITAG.Model
         private List<Track> _arrTracks;
         private List<User> _arrUsers;
         private List<string> _arrFavoriteIds;
-
+        private string _userId;
 
         private string _deviceId;
 
 
 		public Event SelectedEvent { get; set; }
+
+       
 
 		private Store() { }
         private static Store instance;
@@ -468,6 +470,19 @@ namespace HBS.ITAG.Model
             PostDataWithOperation("users", json, "DELETE");
         }
 
+        public void AddSession(string eventId, bool isEntering, Action completion)
+        {
+			_Operation = "add_session";
+			string json = "{\"user_id\":\"<user_id>\", \"event_id\":\"<event_id>\", \"entering\":\"<entering>\" }";
+			json = json.Replace("<user_id>", _userId);
+            json = json.Replace("<event_id>", eventId);
+            json = json.Replace("<entering>", isEntering.ToString());
+			_Completion = completion;
+			PostDataWithOperation("sessions", json, "POST");
+        }
+
+
+
         public void AddUser(User newUser, Action completion)
         {
             _Operation = "add_user";
@@ -648,6 +663,17 @@ namespace HBS.ITAG.Model
                             }
                             break;
                         }
+					case "new_user":
+						{
+							Dictionary<string, string> data = Utilities.ParseJson(response_json);
+                            _userId = "-1";
+                            if (data["status"] == "success")
+                            {
+                                _userId = data["user_id"];
+                                //TODO: persist this
+                            }
+							break;
+						}
                     case "get_locations":
                         {
                             Dictionary<string, string> data = Utilities.ParseJson(response_json);
