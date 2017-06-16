@@ -48,8 +48,15 @@ namespace ITAG_HBS
             PhoneNumber.AddGestureRecognizer(CallGesture);
 			//Perform any additional setup after loading the view, typically from a nib.
 
-			beaconManager = new BeaconManager();
-            beaconManager.RequestAlwaysAuthorization();
+			//beaconManager = new BeaconManager();
+			//beaconManager.RequestAlwaysAuthorization();
+
+			if (!didRegister)
+			{
+				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
+				this.PresentViewController(temp, true, null);
+				didRegister = true;
+			}
 
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
@@ -60,7 +67,7 @@ namespace ITAG_HBS
             if(!didRegister)
             {
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
-				this.PresentViewController(temp, true, null);
+				this.PresentViewController(temp,true, null);
                 didRegister = true;
             }
         }
