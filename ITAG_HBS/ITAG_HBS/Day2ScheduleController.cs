@@ -63,6 +63,14 @@ namespace HBS.ITAG
 			rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;
 			View.AddGestureRecognizer(rightSwipe);
 
+			UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);
+            RightArrow.NumberOfTapsRequired = 1;
+			D2RightArrow.AddGestureRecognizer(RightArrow);
+
+			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);
+            LeftArrow.NumberOfTapsRequired = 1;
+			D2LeftArrow.AddGestureRecognizer(LeftArrow);
+
 			for (int i = 0; i < tracks.Count; i++)
 			{
 				tracks.Remove(tracks[i]);
