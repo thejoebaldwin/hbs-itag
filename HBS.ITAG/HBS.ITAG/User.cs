@@ -9,10 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-    class User
+    class OldUser
     {
         public int Id { get; set; }
         public string State { get; set; }
@@ -25,7 +26,7 @@ namespace HBS.ITAG
         public Event[] FullFavoritedEvents { get; set; }
 
 
-        public User(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications, int[] favoritedEvents, Event[] fullFavoritedEvents)
+        public OldUser(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications, int[] favoritedEvents, Event[] fullFavoritedEvents)
         {
             Id = id;
             State = state;
@@ -39,7 +40,7 @@ namespace HBS.ITAG
 
         }
 
-        public static User FromJson(string json)
+        public static OldUser FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 
@@ -59,7 +60,7 @@ namespace HBS.ITAG
             Event[] fullFavoritedEvents = null;
 
 
-            return new User( id, state, age, gender, jobTitle, email, emailNotifications, favoritedEvents, fullFavoritedEvents);
+            return new OldUser( id, state, age, gender, jobTitle, email, emailNotifications, favoritedEvents, fullFavoritedEvents);
         }
     }
 }

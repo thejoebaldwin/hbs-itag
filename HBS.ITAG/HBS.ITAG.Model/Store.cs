@@ -5,11 +5,13 @@ using System.IO;
 using System.Net;
 using System.Globalization;
 using HBS.ITAG.Model;
+using HBS.ITAG;
+
+#if __IOS__
+using ITAG_HBS;
 using Foundation;
 using UIKit;
-using HBS.ITAG;
-using ITAG_HBS;
-
+#endif
 
 
 

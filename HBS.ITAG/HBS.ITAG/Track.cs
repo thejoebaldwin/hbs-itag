@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    public class Track
+    public class OldTrack
     {
         public string Name { get; set; }
         public int Id { get; set; }
         public DateTime TrackDate { get; set; }
         public string BeaconGuid { get; set; }
 
-        public Track (string name,int id, DateTime trackDate, string beaconGuid )
+        public OldTrack (string name,int id, DateTime trackDate, string beaconGuid )
         {
             Name = name;
             Id = id;
@@ -27,7 +27,7 @@ namespace HBS.ITAG
             BeaconGuid = beaconGuid;
         }
 
-        public static Track FromJson(string json)
+        public static OldTrack FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
 
@@ -39,7 +39,7 @@ namespace HBS.ITAG
             string beaconGuid = data["beacon_guid"];
 
 
-            return new Track(name, id, trackDate,  beaconGuid  );
+            return new OldTrack(name, id, trackDate,  beaconGuid  );
         }
 
     }

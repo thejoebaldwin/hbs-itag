@@ -15,6 +15,7 @@ using Android.Text;
 using Android.Text.Method;
 using Android.Graphics.Drawables;
 using Android;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {

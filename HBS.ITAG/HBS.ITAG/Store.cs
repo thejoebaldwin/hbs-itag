@@ -9,25 +9,26 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-    public class Store
+    public class OldStore
     {
-		private static Store instance;
+		private static OldStore instance;
 
         public List<Event> Events;
         public List<Track> Tracks;
 
-		private Store() { }
+		private OldStore() { }
 
-		public static Store Instance
+		public static OldStore Instance
 		{
 			get
 			{
 				if (instance == null)
 				{
-					instance = new Store();
+					instance = new OldStore();
                     instance.Init();
 				}
 				return instance;

@@ -115,6 +115,9 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.2.3.4.247\lib\MonoAndroid10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Estimote.Android">
+      <HintPath>..\packages\Xamarin.Estimote.Android.0.11.0.1\lib\MonoAndroid43\Xamarin.Estimote.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFeatures.cs" />
@@ -256,6 +259,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\MyEventsScrollBox.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="estimotesdkandroid">
+      <Version>0.11.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <Import Project="..\HBS.ITAG.Model\HBS.ITAG.Store.projitems" Label="Shared" Condition="Exists('..\HBS.ITAG.Model\HBS.ITAG.Store.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
