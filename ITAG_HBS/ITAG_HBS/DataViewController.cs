@@ -5,15 +5,31 @@ using HBS.ITAG;
 using UIKit;
 using HBS.ITAG.Model;
 
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
 	public partial class DataViewController : UIViewController
 	{
-		public string DataObject
+        partial void MyEventsButtonClick(UIButton sender)
+        {
+            //do nothing
+        }
+
+        partial void ScheduleButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, new Action(parent.NavigateToSchedule));
+        }
+
+        partial void HomeButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, null);
+        }
+
+        public string DataObject
 		{
 			get; set;
 		}
 
+        public FavoritesViewController parent { get; set; }
 
         protected DataViewController(IntPtr handle) : base(handle)
 		{

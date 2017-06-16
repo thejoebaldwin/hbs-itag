@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
     [Register ("PickerViewController")]
     partial class PickerViewController
@@ -33,6 +33,10 @@ namespace ITAG_HBS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitForm { get; set; }
+
+        [Action ("SubmitForm_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SubmitForm_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {

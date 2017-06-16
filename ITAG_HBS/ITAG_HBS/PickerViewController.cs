@@ -1,17 +1,19 @@
-﻿using System;
+﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
+using ITAG.HBS;
 
-namespace ITAG_HBS
+namespace HBS.ITAG
 {
 
     public partial class PickerViewController : UIViewController
     {
         User tempUser;
+
 		public PickerViewController(IntPtr handle) : base(handle)
-		{
+        {
 		}
 
 		public override void ViewDidLoad()
