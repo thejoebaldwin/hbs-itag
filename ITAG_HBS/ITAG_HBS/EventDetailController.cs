@@ -17,7 +17,6 @@ namespace ITAG.HBS
         }
 
         List<Event> events = Store.Instance.Events;
-        int indexedEvent = 0;
         public EventDetailController (IntPtr handle) : base (handle)
         {
         }
@@ -56,7 +55,7 @@ namespace ITAG.HBS
             LinkToDescription.AddGestureRecognizer(Link);
 
 
-            if (events[indexedEvent].Favorited)
+            if (Store.Instance.SelectedEvent.Favorited)
             {
                 GrayStar.Highlighted = true;
             }
@@ -72,6 +71,7 @@ namespace ITAG.HBS
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;
+            Store.Instance.SelectedEvent.Favorited = true;
             //TODO Not all webIds were linking to the correct page
 			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
 			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
@@ -81,7 +81,7 @@ namespace ITAG.HBS
 		public void UnfavoritedClick()
 		{
 			GrayStar.Highlighted = false;
-            //TODO remove event from favorites for the user
+            Store.Instance.SelectedEvent.Favorited = false;
 			ViewDidLoad();
 		}
         public void LinkClick()

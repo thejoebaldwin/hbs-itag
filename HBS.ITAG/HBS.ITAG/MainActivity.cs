@@ -22,19 +22,21 @@ namespace HBS.ITAG
             var somePref = prefs.GetBoolean( "PrefName" , false );
 
 
-            // if statement is here to set up code for later when we actually check to see if survey has already been done
+            
             if (!somePref )
             {
                 SetContentView (Resource.Layout.DemographicSurvey);
 
-                Spinner state = FindViewById<Spinner>(Resource.Id.DSspinner1);
+                Spinner techFocus = FindViewById<Spinner>(Resource.Id.DSspinner1);
+                Spinner organization = FindViewById<Spinner>(Resource.Id.DSspinner4);
                 Spinner age = FindViewById<Spinner>(Resource.Id.DSspinner2);
                 Spinner gender = FindViewById<Spinner>(Resource.Id.DSspinner3);
                 EditText jobTitle = FindViewById<EditText>(Resource.Id.DSedittext);
                 Button done = FindViewById<Button>(Resource.Id.DSbutton1);
 
-                // Sets Default Values for Spinners
-                state.SetSelection(14);
+            // Sets Default Values for Spinners
+                organization.SetSelection(0);
+                techFocus.SetSelection(0);
                 age.SetSelection(0);
                 gender.SetSelection(0);
                 
@@ -42,17 +44,18 @@ namespace HBS.ITAG
                 done.Click += (object sender, EventArgs e) =>
                 {
                     // Gets data from survey
-                    String stateAnswer = state.SelectedItem.ToString();
+                    String techFocusAnswer = techFocus.SelectedItem.ToString();
+                    String organizationAnswer = organization.SelectedItem.ToString();
                     String ageAnswer = age.SelectedItem.ToString();
                     String genderAnswer = gender.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
 
+                    
                     surveyDone = true;
                     var prefEditor = prefs.Edit();
                     prefEditor.PutBoolean("PrefName", surveyDone );
                     prefEditor.Commit();
-
-                    Console.WriteLine( prefs.GetBoolean("PrefName", false) );
+                    
 
                     StartActivity(typeof(Home));
                 };

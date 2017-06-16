@@ -26,33 +26,6 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DSrelativeLayout1"
-        android:layout_marginTop="30dp">
-        <TextView
-            android:text="State :"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/DStextView2"
-            android:layout_marginLeft="70dp"
-            android:textColor="#0e1d52"
-            android:gravity="right" />
-        <Spinner
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/DSspinner1"
-            android:layout_toRightOf="@id/DStextView2"
-            android:entries="@array/States"
-            android:layout_marginLeft="10dp"
-            android:gravity="left"
-            android:background="@drawable/gradient_spinner"
-            android:popupBackground="#0e1d52" />
-    </RelativeLayout>
-    <RelativeLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/DSrelativeLayout2"
         android:layout_marginTop="30dp">
         <TextView
@@ -61,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView3"
-            android:layout_marginLeft="79dp"
+            android:layout_marginLeft="97dp"
             android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="200dp"
@@ -87,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView4"
-            android:layout_marginLeft="52dp"
+            android:layout_marginLeft="72dp"
             android:textColor="#0e1d52" />
         <Spinner
             android:layout_width="200dp"
@@ -95,6 +68,60 @@
             android:id="@+id/DSspinner3"
             android:layout_toRightOf="@id/DStextView4"
             android:entries="@array/Gender"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:background="@drawable/gradient_spinner"
+            android:popupBackground="#0e1d52" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout1"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:text="Tech Focus :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView2"
+            android:layout_marginLeft="37dp"
+            android:textColor="#0e1d52"
+            android:gravity="right" />
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/DSspinner1"
+            android:layout_toRightOf="@id/DStextView2"
+            android:entries="@array/TechFocus"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"
+            android:background="@drawable/gradient_spinner"
+            android:popupBackground="#0e1d52" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/DSrelativeLayout4"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:text="Organization :"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DStextView5"
+            android:layout_marginLeft="27dp"
+            android:textColor="#0e1d52"
+            android:gravity="right" />
+        <Spinner
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/DSspinner4"
+            android:layout_toRightOf="@id/DStextView5"
+            android:entries="@array/Organization"
             android:layout_marginLeft="10dp"
             android:gravity="left"
             android:background="@drawable/gradient_spinner"
@@ -126,7 +153,6 @@
             android:layout_marginTop="10dp"
             android:textColor="#0e1d52" />
     </RelativeLayout>
-   
     <Button
         android:text="Done"
         android:textColor="#ffffff"
