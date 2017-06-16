@@ -43,7 +43,7 @@ namespace HBS.ITAG
 			prefEditor.Commit();
 		}
 
-		void LoadTracksFromFile()
+		 public void LoadTracksFromFile()
         {
             //open android asset text file
             StreamReader reader = new StreamReader(Android.App.Application.Context.Assets.Open("tracks.txt"));
