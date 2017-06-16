@@ -15,6 +15,7 @@ using Android.Text;
 using Android.Text.Method;
 using Android.Graphics.Drawables;
 using Android;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
@@ -52,9 +53,7 @@ namespace HBS.ITAG
             TextView link = FindViewById<TextView>(Resource.Id.EDtextView9);
             string eventWebId = events[indexedEvent].EventWebId;
             String endOfLink = "/" + newStartTime.DayOfWeek + "/#event-" + eventWebId;
-            link.TextFormatted = Html.FromHtml("" +
-                            "<a href=https://iowacountiesit.org/itag-conference/schedule/" + endOfLink + "\">Click Here</a> " +
-                            "");
+            link.TextFormatted = Html.FromHtml("" +"<a href=https://iowacountiesit.org/itag-conference/schedule/" + endOfLink + "\">Click Here</a> "+"");
             link.MovementMethod = LinkMovementMethod.Instance;
 
 

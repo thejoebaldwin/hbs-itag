@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using System.IO;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
