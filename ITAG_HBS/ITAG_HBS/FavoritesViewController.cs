@@ -105,8 +105,13 @@ namespace HBS.ITAG
             PhoneNumber.AddGestureRecognizer(CallGesture);
 			//Perform any additional setup after loading the view, typically from a nib.
 
-			//beaconManager = new BeaconManager();
-			//beaconManager.RequestAlwaysAuthorization();
+			if (ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.DEVICE)
+			{
+				beaconManager = new BeaconManager();
+				beaconManager.RequestAlwaysAuthorization();
+			}
+		
+			
 
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
@@ -142,8 +147,10 @@ namespace HBS.ITAG
 			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
 			data.parent = (UIViewController)this;
             ScheduleTableViewFavs.Source = data;
-
-   		    InitializeBeacons();
+            if (ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.DEVICE)
+            {
+                InitializeBeacons();
+            }
 		}
 
         private void InitializeBeacons()
