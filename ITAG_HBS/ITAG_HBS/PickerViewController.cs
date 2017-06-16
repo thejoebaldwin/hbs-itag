@@ -20,8 +20,10 @@ namespace HBS.ITAG
 		{
 			base.ViewDidLoad();
 			AgePickerView.Model = new StatusModel();
-            StatePickerView.Model = new TechFocusModel();
+            TechFocusPickerView.Model = new TechFocusModel();
             GenderPickerView.Model = new GenderModel();
+            OrganizationPickerView.Model = new OrganizationModel();
+
 
 
             SubmitForm.UserInteractionEnabled = true;
@@ -37,7 +39,7 @@ namespace HBS.ITAG
                                 StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
                                 GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
                                 Position.Text,
-                                TechFocusModel.TechFocus[StatePickerView.SelectedRowInComponent(0)],
+                                TechFocusModel.TechFocus[TechFocusPickerView.SelectedRowInComponent(0)],
                                 "iOS",
                                 UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
             Store.Instance.GetUsers(LoadUsersComplete);

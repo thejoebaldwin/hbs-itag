@@ -32,11 +32,11 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView StatePickerView { get; set; }
+        UIKit.UIButton SubmitForm { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SubmitForm { get; set; }
+        UIKit.UIPickerView TechFocusPickerView { get; set; }
 
         [Action ("SubmitForm_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -64,14 +64,14 @@ namespace HBS.ITAG
                 Position = null;
             }
 
-            if (StatePickerView != null) {
-                StatePickerView.Dispose ();
-                StatePickerView = null;
-            }
-
             if (SubmitForm != null) {
                 SubmitForm.Dispose ();
                 SubmitForm = null;
+            }
+
+            if (TechFocusPickerView != null) {
+                TechFocusPickerView.Dispose ();
+                TechFocusPickerView = null;
             }
         }
     }
