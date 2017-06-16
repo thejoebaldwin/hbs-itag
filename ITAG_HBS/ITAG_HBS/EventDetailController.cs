@@ -12,6 +12,7 @@ namespace ITAG.HBS
     public partial class EventDetailController : UIViewController
     {
         List<Event> events = Store.Instance.Events;
+        int indexedEvent = 0;
         public EventDetailController (IntPtr handle) : base (handle)
         {
         }
@@ -49,6 +50,17 @@ namespace ITAG.HBS
             UITapGestureRecognizer Link = new UITapGestureRecognizer(LinkClick);
             Link.NumberOfTapsRequired = 1;
             LinkToDescription.AddGestureRecognizer(Link);
+
+
+            if (events[indexedEvent].Favorited)
+            {
+                GrayStar.Highlighted = true;
+            }
+
+            else
+            {
+                GrayStar.Highlighted = false;
+            }
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
