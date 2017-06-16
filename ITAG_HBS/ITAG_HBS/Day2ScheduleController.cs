@@ -12,13 +12,12 @@ namespace HBS.ITAG
 	{
         partial void MyEventsButtonClick(UIButton sender)
         {
-            this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
+           this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
         }
 
         partial void HomeButtonClick(UIButton sender)
         {
             this.DismissViewController(false, null);
-
         }
 
         partial void June20ButtonClick(UIButton sender)

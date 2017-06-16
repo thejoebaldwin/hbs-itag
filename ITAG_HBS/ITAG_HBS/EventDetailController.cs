@@ -11,7 +11,7 @@ namespace ITAG.HBS
 {
     public partial class EventDetailController : UIViewController
     {
-        partial void UIButton13816_TouchUpInside(UIButton sender)
+        partial void HomeButtonClick(UIButton sender)
         {
             this.DismissViewController(true, null);
         }
