@@ -538,11 +538,11 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13816" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                 <rect key="frame" x="33" y="32" width="46" height="30"/>
-                                <state key="normal" title="Home">
+                                <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue id="14124" destination="67" kind="show"/>
+                                    <segue id="19186" destination="2932" kind="presentation"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="13819" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
@@ -550,9 +550,7 @@
                                 <state key="normal" image="left_arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue id="14028" destination="67" kind="show"/>
-                                </connections>
+                                <connections/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="18834" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>

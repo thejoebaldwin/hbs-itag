@@ -4,13 +4,12 @@ using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
 
-
 namespace ITAG_HBS
 {
 
     public partial class PickerViewController : UIViewController
     {
-        User tempuser;
+        User tempUser;
 		public PickerViewController(IntPtr handle) : base(handle)
 		{
 		}
@@ -30,22 +29,28 @@ namespace ITAG_HBS
 
 		private void SubmitFormClick()
 		{
-            //todo figure out what to do with id,pickerview strings and device id stuff
-
-            string[] ages = new string[] {
-            "Choose One","16 and Under","17 to 20","21 to 25","26 to 30","31 to 35","36 to 40","41 to 45","46 to 50","51 to 55","56 to 60","61 to 65","66 to 70","70 and Above"};
-			string[] States = new string[] {
-			"Choose One",
-			"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
-		};
-			string[] Gender = new string[] {
-			"Choose One",
-			"Male", "Female", "Other", "Prefer Not to Respond"
-		};
-            tempuser = new User("-1",ages[AgePickerView.SelectedRowInComponent(0)],Gender[GenderPickerView.SelectedRowInComponent(0)],Position.Text,States[StatePickerView.SelectedRowInComponent(0)],"iOS", UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
-			this.DismissViewController(true, null);
-
+            //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
+			tempUser = new User("-1",//TODO
+                                StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
+                                GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
+                                Position.Text,
+                                StateModel.States[StatePickerView.SelectedRowInComponent(0)],
+                                "iOS",
+                                UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
+            Store.Instance.GetUsers(LoadUsersComplete);
+            //Store.Instance.AddUser(tempUser, AddUserComplete);
 		}
+
+		private void LoadUsersComplete(string message)
+		{
+            Store.Instance.AddUser(tempUser, AddUserComplete);
+		}
+        private void AddUserComplete(string message)
+        {
+            this.DismissViewController(true, null);
+        }
+
+	
 
 		public override void DidReceiveMemoryWarning()
 		{
@@ -55,10 +60,21 @@ namespace ITAG_HBS
 
 	public class StatusModel : UIPickerViewModel
 	{
-		static string[] ages = new string[] {
+		public static string[] ages = new string[] {
 			"Choose One",
 			"16 and Under",
-			"17 to 20","21 to 25","26 to 30","31 to 35","36 to 40","41 to 45","46 to 50","51 to 55","56 to 60","61 to 65","66 to 70","70 and Above"
+			"17 to 20",
+            "21 to 25",
+            "26 to 30",
+            "31 to 35",
+            "36 to 40",
+            "41 to 45",
+            "46 to 50",
+            "51 to 55",
+            "56 to 60",
+            "61 to 65",
+            "66 to 70",
+            "70 and Above"
 		};
 
 		public StatusModel()
@@ -99,9 +115,59 @@ namespace ITAG_HBS
 	}
 	public class StateModel : UIPickerViewModel
 	{
-		static string[] States = new string[] {
+		public static string[] States = new string[] {
 			"Choose One",
-			"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"
+			"Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "District of Columbia",
+            "Florida",
+            "Georgia",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"
 		};
 
 		public StateModel()
@@ -145,9 +211,12 @@ namespace ITAG_HBS
 	}
 	public class GenderModel : UIPickerViewModel
 	{
-		static string[] Gender = new string[] {
+		public static string[] Gender = new string[] {
 			"Choose One",
-			"Male", "Female", "Other", "Prefer Not to Respond"
+			"Male",
+            "Female",
+            "Other",
+            "Prefer Not to Respond"
 		};
 
         public GenderModel()

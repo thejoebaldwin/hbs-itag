@@ -51,13 +51,6 @@ namespace ITAG_HBS
 			//beaconManager = new BeaconManager();
 			//beaconManager.RequestAlwaysAuthorization();
 
-			if (!didRegister)
-			{
-				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
-				this.PresentViewController(temp, true, null);
-				didRegister = true;
-			}
-
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}

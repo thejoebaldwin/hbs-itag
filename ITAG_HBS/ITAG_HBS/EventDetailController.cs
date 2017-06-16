@@ -21,7 +21,6 @@ namespace ITAG.HBS
 		{
 			base.ViewDidLoad();
 
-
 			//Store.Instance.LoadEventsFromFile();
 			//Store.Instance.LoadTracksFromFile();
 
@@ -64,6 +63,7 @@ namespace ITAG.HBS
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;
