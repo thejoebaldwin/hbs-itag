@@ -60,12 +60,8 @@ namespace HBS.ITAG
             // Favorites Button functionality
             var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
             int count = 0;
-
             
-            
-
-
-            /*if ()
+            if ( events[indexedEvent].Favorited )
             {
                 button.SetImageDrawable(GetDrawable(17301516));
                 count = 1;
@@ -74,13 +70,11 @@ namespace HBS.ITAG
             {
                 button.SetImageDrawable(GetDrawable(17301515));
                 count = 0;
-            } */
+            } 
 
 
             button.Click += (object sender, EventArgs e) =>
                 {
-
-
 
                     if (count % 2 == 0)
                     {
@@ -88,6 +82,7 @@ namespace HBS.ITAG
                         toast.Show();
                         button.SetImageDrawable(GetDrawable(17301516));
                         count++;
+                        HBS.ITAG.Model.Store.Instance.AddFavorite(events[indexedEvent]);
                     }
                     else
                     {
@@ -95,6 +90,7 @@ namespace HBS.ITAG
                         toast.Show();
                         button.SetImageDrawable(GetDrawable(17301515));
                         count++;
+                        HBS.ITAG.Model.Store.Instance.DeleteFavorite(events[indexedEvent]);
                     }
                      
                 };

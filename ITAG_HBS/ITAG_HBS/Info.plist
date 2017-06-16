@@ -34,11 +34,11 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>We'll show you different content based on which event you're in range of. </string>
+	<string>We&apos;ll show you different content based on which event you&apos;re in range of. </string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>We will monitor your location to notify you of upcoming events near you</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We'll show you different content based on which event you're in range of. </string>
+	<string>We&apos;ll show you different content based on which event you&apos;re in range of. </string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>

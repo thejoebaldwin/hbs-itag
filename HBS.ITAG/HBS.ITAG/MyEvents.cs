@@ -17,30 +17,48 @@ namespace HBS.ITAG
     public class MyEvents : Activity
     {
         private List<string> mItems;
+        private List<string> mItems2;
         private ListView mListView;
         private ListView mListView2;
+        private List<Event> events = Store.Instance.Events;
+
+        //public string clickIndex { get; set; }
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
 
+            // Populates Favorited Events table
             mListView = FindViewById<ListView>(Resource.Id.MElistView1);
-            List<Event> events = Store.Instance.Events;
+            
             mItems = new List<string>();
-            for ( int i = 0; i < 6; i++)
+            for ( int i = 0; i < events.Capacity; i++)
             {
-                 mItems.Add(events[i].Name);
+                if ( events[i].Favorited )
+                {
+                    mItems.Add(events[i].Name);
+                }
+                 
             } 
-
-
-
             MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, mItems);
             mListView.Adapter = adapter;
             mListView.ItemClick += mListView_ItemClick;
 
+            // Populates Previous Events table
+            mItems2 = new List<string>();
+            for (int i = 0; i < 6; i++)
+            {
+                if (events[i].Favorited)
+                {
+                    mItems2.Add(events[i].Name);
+                }
+
+            }
+
             mListView2 = FindViewById<ListView>(Resource.Id.MElistView2);
-            MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, mItems);
+            MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, mItems2);
             mListView2.Adapter = adapter2;
             mListView2.ItemClick += mListView2_ItemClick;
 
@@ -76,8 +94,18 @@ namespace HBS.ITAG
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //EventDetails.indexedEvent = mItems[e.Position];
+            string value = mItems[e.Position];
+
+           /* for (int i = 0; i < events.Capacity; i++)
+            {
+                if (events[i].Name == value)
+                {
+                    clickIndex = events[i].Id;
+                }
+
+            } */
             StartActivity(typeof(EventDetails));
+            
         }
 
         private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

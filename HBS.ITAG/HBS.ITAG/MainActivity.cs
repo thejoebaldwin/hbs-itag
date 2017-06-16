@@ -4,6 +4,7 @@ using Android.OS;
 using System;
 using Android.Views;
 using System.Collections;
+using Android.Content;
 
 namespace HBS.ITAG
 {
@@ -15,10 +16,14 @@ namespace HBS.ITAG
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
             
-
             
+            bool surveyDone = false;
+            var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var somePref = prefs.GetBoolean( "PrefName" , false );
+
+
             // if statement is here to set up code for later when we actually check to see if survey has already been done
-            if ( true )
+            if (!somePref )
             {
                 SetContentView (Resource.Layout.DemographicSurvey);
 
@@ -41,7 +46,14 @@ namespace HBS.ITAG
                     String ageAnswer = age.SelectedItem.ToString();
                     String genderAnswer = gender.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
-                    
+
+                    surveyDone = true;
+                    var prefEditor = prefs.Edit();
+                    prefEditor.PutBoolean("PrefName", surveyDone );
+                    prefEditor.Commit();
+
+                    Console.WriteLine( prefs.GetBoolean("PrefName", false) );
+
                     StartActivity(typeof(Home));
                 };
 
@@ -52,8 +64,8 @@ namespace HBS.ITAG
                 StartActivity(typeof(Home));
             }
             
-            
-            
+
+
         }
 
         
