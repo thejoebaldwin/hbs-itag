@@ -64,6 +64,7 @@ namespace ITAG.HBS
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
+		
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;
