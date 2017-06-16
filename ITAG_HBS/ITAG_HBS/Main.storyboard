@@ -607,11 +607,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13816">
                                 <rect key="frame" x="33" y="32" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Home">
+                                <state key="normal" title="Back">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="67" kind="show" id="14124"/>
+                                    <action selector="UIButton13816_TouchUpInside:" destination="2001" id="19206" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13819">
@@ -620,9 +620,7 @@
                                 <state key="normal" image="left_arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="67" kind="show" id="14028"/>
-                                </connections>
+                                <connections/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="18834">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
@@ -677,6 +675,7 @@
                         <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
                         <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
                         <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
+                        <outlet property="BackButton" destination="13816" id="name-outlet-13816"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -870,6 +869,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18273"/>
+                                    <action selector="HomeButtonClick:" destination="16754" id="19199" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16769">
@@ -882,6 +882,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18417"/>
+                                    <action selector="MyEventsButtonClick:" destination="16754" id="19200" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16772">
@@ -977,6 +978,9 @@
                         <outlet property="June20Button" destination="16773" id="name-outlet-16773"/>
                         <outlet property="June22Button" destination="16777" id="name-outlet-16777"/>
                         <outlet property="June23Button" destination="16780" id="name-outlet-16780"/>
+                        <outlet property="HomeButton" destination="16766" id="name-outlet-16766"/>
+                        <outlet property="MyEventsButton" destination="16769" id="name-outlet-16769"/>
+                        <outlet property="ScheduleButton" destination="16772" id="name-outlet-16772"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16787" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1019,6 +1023,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18519"/>
+                                    <action selector="HomeButtonClick:" destination="16790" id="19201" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16803">
@@ -1031,6 +1036,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18627"/>
+                                    <action selector="EventButtonClick:" destination="16790" id="19202" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16804">
@@ -1125,6 +1131,10 @@
                         <outlet property="DayThree" destination="16792" id="name-outlet-16792"/>
                         <outlet property="June21Button" destination="16806" id="name-outlet-16806"/>
                         <outlet property="June23Button" destination="16808" id="name-outlet-16808"/>
+                        <outlet property="HomeButton" destination="16802" id="name-outlet-16802"/>
+                        <outlet property="MyEventsButton" destination="16803" id="name-outlet-16803"/>
+                        <outlet property="ScheduleButton" destination="16804" id="name-outlet-16804"/>
+                        <outlet property="June20Button" destination="16805" id="name-outlet-16805"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16813" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1167,6 +1177,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18727"/>
+                                    <action selector="HomeButtonClick:" destination="16816" id="19204" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16829">
@@ -1179,6 +1190,7 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18821"/>
+                                    <action selector="MyEventsButtonClick:" destination="16816" id="19205" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16830">
@@ -1274,6 +1286,9 @@
                         <outlet property="June20Button" destination="16831" id="name-outlet-16831"/>
                         <outlet property="June21Button" destination="16832" id="name-outlet-16832"/>
                         <outlet property="June22Button" destination="16833" id="name-outlet-16833"/>
+                        <outlet property="HomeButton" destination="16828" id="name-outlet-16828"/>
+                        <outlet property="MyEventsButton" destination="16829" id="name-outlet-16829"/>
+                        <outlet property="ScheduleButton" destination="16830" id="name-outlet-16830"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16839" userLabel="First Responder" sceneMemberID="firstResponder"/>

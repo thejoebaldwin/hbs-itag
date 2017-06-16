@@ -10,6 +10,16 @@ namespace HBS.ITAG
 {
 	public partial class Day3ScheduleController : UIViewController
 	{
+        partial void EventButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
+        }
+
+        partial void HomeButtonClick(UIButton sender)
+        {
+            this.DismissViewController(false, null);
+        }
+
         partial void June23ButtonClick(UIButton sender)
         {
 			this.DismissViewController(false, new Action(parent.NavigationScheduleJune23));
@@ -22,7 +32,7 @@ namespace HBS.ITAG
 
         partial void June20ButtonClick(UIButton sender)
         {
-			this.DismissViewController(false, new Action(parent.NavigationScheduleJune20));
+            this.DismissViewController(false, new Action(parent.NavigationScheduleJune20));
         }
 
         //pick track here

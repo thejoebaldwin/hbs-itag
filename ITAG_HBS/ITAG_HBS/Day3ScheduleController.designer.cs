@@ -32,11 +32,35 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton HomeButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton June20Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton June21Button { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton June23Button { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton MyEventsButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ScheduleButton { get; set; }
+
+        [Action ("EventButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void EventButtonClick (UIKit.UIButton sender);
+
+        [Action ("HomeButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void HomeButtonClick (UIKit.UIButton sender);
 
         [Action ("June20ButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -72,6 +96,16 @@ namespace HBS.ITAG
                 DayThree = null;
             }
 
+            if (HomeButton != null) {
+                HomeButton.Dispose ();
+                HomeButton = null;
+            }
+
+            if (June20Button != null) {
+                June20Button.Dispose ();
+                June20Button = null;
+            }
+
             if (June21Button != null) {
                 June21Button.Dispose ();
                 June21Button = null;
@@ -80,6 +114,16 @@ namespace HBS.ITAG
             if (June23Button != null) {
                 June23Button.Dispose ();
                 June23Button = null;
+            }
+
+            if (MyEventsButton != null) {
+                MyEventsButton.Dispose ();
+                MyEventsButton = null;
+            }
+
+            if (ScheduleButton != null) {
+                ScheduleButton.Dispose ();
+                ScheduleButton = null;
             }
         }
     }

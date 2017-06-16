@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 
 using UIKit;
@@ -70,7 +70,7 @@ namespace HBS.ITAG
 
 		public void NavigationScheduleJune23()
 		{
-			this.PresentViewController(day1ScheduleController, false, null);
+			this.PresentViewController(day4ScheduleController, false, null);
 		}
 
 

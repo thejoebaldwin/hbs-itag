@@ -11,6 +11,11 @@ namespace ITAG.HBS
 {
     public partial class EventDetailController : UIViewController
     {
+        partial void UIButton13816_TouchUpInside(UIButton sender)
+        {
+            this.DismissViewController(true, null);
+        }
+
         List<Event> events = Store.Instance.Events;
         int indexedEvent = 0;
         public EventDetailController (IntPtr handle) : base (handle)
