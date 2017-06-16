@@ -24,7 +24,8 @@
         <image name="bluetooth.png" width="200" height="200"/>
         <image name="left_arrow.png" width="20" height="20"/>
         <image name="blueprintexample.png" width="428" height="326"/>
-        <image name="unfavoritedstar.png" width="500" height="500"/>
-        <image name="favoritedstar.png" width="500" height="500"/>
+        <image name="unfavoritedstar.png" width="64" height="64"/>
+        <image name="favoritedstar.png" width="64" height="64"/>
+        <image name="right_arrow.png" width="20" height="20"/>
     </resources>
 </document>
