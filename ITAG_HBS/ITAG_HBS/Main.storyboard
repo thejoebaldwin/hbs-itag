@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                                <rect key="frame" x="26" y="361" width="319" height="30"/>
+                                <rect key="frame" x="36" y="415" width="319" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -34,15 +34,15 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Position/Job title (Optional)" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52">
-                                <rect key="frame" x="0.0" y="411" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="441" width="375" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                 <color key="textColor" red="0.039215686274509803" green="0.047058823529411764" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="State:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1469">
-                                <rect key="frame" x="30" y="114" width="62" height="34"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Tech Focus:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1469">
+                                <rect key="frame" x="5" y="264" width="117" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.039215686274509803" green="0.047058823529411764" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +50,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Age:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1470">
-                                <rect key="frame" x="36" y="195" width="49" height="34"/>
+                                <rect key="frame" x="52" y="114" width="49" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.039215686274509803" green="0.047058823529411764" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +58,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Gender:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1471">
-                                <rect key="frame" x="9" y="274" width="80" height="34"/>
+                                <rect key="frame" x="32" y="187" width="80" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" red="0.039215686274509803" green="0.047058823529411764" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,47 +72,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15141">
-                                <rect key="frame" x="78" y="157" width="257" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15195">
                                 <rect key="frame" x="93" y="104" width="217" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15217">
-                                        <rect key="frame" x="-6" y="6" width="240" height="44"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15141">
+                                        <rect key="frame" x="16" y="16" width="257" height="52"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </pickerView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15216">
                                 <rect key="frame" x="100" y="217" width="200" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15142">
-                                        <rect key="frame" x="-13" y="-26" width="240" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <real key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </pickerView>
-                                </subviews>
+                                <subviews/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16575">
@@ -129,12 +104,46 @@
                                     <action selector="SubmitForm_TouchUpInside:" destination="BYZ-38-t0r" id="19126" eventType="touchUpInside"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15223">
-                                <rect key="frame" x="86" y="269" width="240" height="44"/>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15217">
+                                <rect key="frame" x="135" y="264" width="240" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15223">
+                                <rect key="frame" x="135" y="187" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15142">
+                                <rect key="frame" x="135" y="115" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.52941176470588236" green="0.5607843137254902" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" id="19223" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="100" y="353" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.45490196078431372" green="0.48627450980392156" blue="0.53725490196078429" alpha="1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
@@ -147,16 +156,17 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="AgePickerView" destination="15142" id="name-outlet-15142"/>
-                        <outlet property="GenderPickerView" destination="15223" id="name-outlet-15223"/>
                         <outlet property="Position" destination="11" id="name-outlet-11"/>
-                        <outlet property="StatePickerView" destination="15217" id="name-outlet-15217"/>
                         <outlet property="SubmitForm" destination="16575" id="name-outlet-16575"/>
+                        <outlet property="StatePickerView" destination="15217" id="name-outlet-15217"/>
+                        <outlet property="GenderPickerView" destination="15223" id="name-outlet-15223"/>
+                        <outlet property="AgePickerView" destination="15142" id="name-outlet-15142"/>
+                        <outlet property="OrganizationPickerView" destination="19223" id="name-outlet-19223"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-437" y="-11"/>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="66">
@@ -305,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="8"/>
+            <point key="canvasLocation" x="452" y="6"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="358">
@@ -519,7 +529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1236" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="-708"/>
+            <point key="canvasLocation" x="-405" y="-387"/>
         </scene>
         <!--Event Detail Controller-->
         <scene sceneID="2000">
@@ -607,11 +617,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13816">
                                 <rect key="frame" x="33" y="32" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Home">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="UIButton13816_TouchUpInside:" destination="2001" id="19206" eventType="touchUpInside"/>
+                                    <segue destination="67" kind="show" id="14124"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="13819">
@@ -620,7 +630,9 @@
                                 <state key="normal" image="left_arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections/>
+                                <connections>
+                                    <segue destination="67" kind="show" id="14028"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unfavoritedstar.png" highlightedImage="favoritedstar.png" translatesAutoresizingMaskIntoConstraints="NO" id="18834">
                                 <rect key="frame" x="294" y="67" width="47" height="42"/>
@@ -675,7 +687,6 @@
                         <outlet property="EventTime" destination="2070" id="name-outlet-2070"/>
                         <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
                         <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
-                        <outlet property="BackButton" destination="13816" id="name-outlet-13816"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -869,7 +880,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18273"/>
-                                    <action selector="HomeButtonClick:" destination="16754" id="19199" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16769">
@@ -882,7 +892,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18417"/>
-                                    <action selector="MyEventsButtonClick:" destination="16754" id="19200" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16772">
@@ -978,9 +987,6 @@
                         <outlet property="June20Button" destination="16773" id="name-outlet-16773"/>
                         <outlet property="June22Button" destination="16777" id="name-outlet-16777"/>
                         <outlet property="June23Button" destination="16780" id="name-outlet-16780"/>
-                        <outlet property="HomeButton" destination="16766" id="name-outlet-16766"/>
-                        <outlet property="MyEventsButton" destination="16769" id="name-outlet-16769"/>
-                        <outlet property="ScheduleButton" destination="16772" id="name-outlet-16772"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16787" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1023,7 +1029,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18519"/>
-                                    <action selector="HomeButtonClick:" destination="16790" id="19201" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16803">
@@ -1036,7 +1041,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18627"/>
-                                    <action selector="EventButtonClick:" destination="16790" id="19202" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16804">
@@ -1131,10 +1135,6 @@
                         <outlet property="DayThree" destination="16792" id="name-outlet-16792"/>
                         <outlet property="June21Button" destination="16806" id="name-outlet-16806"/>
                         <outlet property="June23Button" destination="16808" id="name-outlet-16808"/>
-                        <outlet property="HomeButton" destination="16802" id="name-outlet-16802"/>
-                        <outlet property="MyEventsButton" destination="16803" id="name-outlet-16803"/>
-                        <outlet property="ScheduleButton" destination="16804" id="name-outlet-16804"/>
-                        <outlet property="June20Button" destination="16805" id="name-outlet-16805"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16813" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1177,7 +1177,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="67" kind="show" id="18727"/>
-                                    <action selector="HomeButtonClick:" destination="16816" id="19204" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16829">
@@ -1190,7 +1189,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="359" kind="show" id="18821"/>
-                                    <action selector="MyEventsButtonClick:" destination="16816" id="19205" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16830">
@@ -1286,9 +1284,6 @@
                         <outlet property="June20Button" destination="16831" id="name-outlet-16831"/>
                         <outlet property="June21Button" destination="16832" id="name-outlet-16832"/>
                         <outlet property="June22Button" destination="16833" id="name-outlet-16833"/>
-                        <outlet property="HomeButton" destination="16828" id="name-outlet-16828"/>
-                        <outlet property="MyEventsButton" destination="16829" id="name-outlet-16829"/>
-                        <outlet property="ScheduleButton" destination="16830" id="name-outlet-16830"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16839" userLabel="First Responder" sceneMemberID="firstResponder"/>
