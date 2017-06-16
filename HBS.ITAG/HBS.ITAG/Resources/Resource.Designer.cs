@@ -3373,17 +3373,17 @@ namespace HBS.ITAG
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f080030
-			public const int ApplicationName = 2131230768;
+			// aapt resource value: 0x7f080027
+			public const int ApplicationName = 2131230759;
 			
-			// aapt resource value: 0x7f08002f
-			public const int Hello = 2131230767;
+			// aapt resource value: 0x7f080026
+			public const int Hello = 2131230758;
 			
-			// aapt resource value: 0x7f080032
-			public const int Info1 = 2131230770;
+			// aapt resource value: 0x7f080029
+			public const int Info1 = 2131230761;
 			
-			// aapt resource value: 0x7f080033
-			public const int Info2 = 2131230771;
+			// aapt resource value: 0x7f08002a
+			public const int Info2 = 2131230762;
 			
 			// aapt resource value: 0x7f08000f
 			public const int abc_action_bar_home_description = 2131230735;
@@ -3451,17 +3451,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f080025
 			public const int character_counter_pattern = 2131230757;
 			
-			// aapt resource value: 0x7f080034
-			public const int conferenceDetails = 2131230772;
-			
-			// aapt resource value: 0x7f080026
-			public const int error_no_bluetooth_enabled = 2131230758;
-			
-			// aapt resource value: 0x7f080027
-			public const int error_no_bluetooth_le = 2131230759;
-			
-			// aapt resource value: 0x7f080028
-			public const int error_no_location_permission = 2131230760;
+			// aapt resource value: 0x7f08002b
+			public const int conferenceDetails = 2131230763;
 			
 			// aapt resource value: 0x7f080000
 			public const int mr_button_content_description = 2131230720;
@@ -3508,29 +3499,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f08000e
 			public const int mr_user_route_category_name = 2131230734;
 			
-			// aapt resource value: 0x7f080029
-			public const int requesting_location_access = 2131230761;
-			
-			// aapt resource value: 0x7f08002a
-			public const int requesting_location_access_cancel = 2131230762;
-			
-			// aapt resource value: 0x7f08002b
-			public const int requesting_location_access_ok = 2131230763;
-			
-			// aapt resource value: 0x7f08002c
-			public const int requesting_location_access_rationale = 2131230764;
-			
-			// aapt resource value: 0x7f08002d
-			public const int requesting_location_permission = 2131230765;
-			
-			// aapt resource value: 0x7f08002e
-			public const int requesting_location_permission_rationale = 2131230766;
-			
 			// aapt resource value: 0x7f080022
 			public const int status_bar_notification_info_overflow = 2131230754;
 			
-			// aapt resource value: 0x7f080031
-			public const int surveyDescription = 2131230769;
+			// aapt resource value: 0x7f080028
+			public const int surveyDescription = 2131230760;
 			
 			static String()
 			{
@@ -4342,9 +4315,6 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f0a0003
 			public const int Theme_MediaRouter_LightControlPanel = 2131361795;
-			
-			// aapt resource value: 0x7f0a0172
-			public const int Theme_Transparent = 2131362162;
 			
 			// aapt resource value: 0x7f0a010e
 			public const int ThemeOverlay_AppCompat = 2131362062;

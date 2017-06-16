@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Foundation;
 using ITAG_HBS;
 using HBS.ITAG;
@@ -48,8 +48,8 @@ namespace ITAG_HBS
             PhoneNumber.AddGestureRecognizer(CallGesture);
 			//Perform any additional setup after loading the view, typically from a nib.
 
-			beaconManager = new BeaconManager();
-            beaconManager.RequestAlwaysAuthorization();
+			//beaconManager = new BeaconManager();
+            //beaconManager.RequestAlwaysAuthorization();
 
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
