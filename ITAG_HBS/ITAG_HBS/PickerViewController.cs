@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
@@ -33,7 +33,7 @@ namespace HBS.ITAG
 		private void SubmitFormClick()
 		{
             //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
-			tempUser = new User("-1",//TODO
+			tempUser = new User("-1",
                                 StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
                                 GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
                                 Position.Text,
