@@ -99,7 +99,7 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Estimote.iOS">
-      <HintPath>..\..\HBS.ITAG\Components\estimotesdkios-4.7.3.2\lib\ios-unified\Xamarin.Estimote.iOS.dll</HintPath>
+      <HintPath>..\Components\estimotesdkios-4.7.3.2\lib\ios-unified\Xamarin.Estimote.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +109,7 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

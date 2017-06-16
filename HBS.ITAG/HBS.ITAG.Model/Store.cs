@@ -368,6 +368,35 @@ namespace HBS.ITAG.Model
         }
 
 
+        public Event ProximityEvent(string major, string minor)
+        {
+            string locationId = string.Empty;
+            Event proximityEvent = null;
+            for (int i = 0; i < _arrLocations.Count; i++)
+            {
+                if (_arrLocations[i].Minor == minor && _arrLocations[i].Major == major)
+                {
+                    locationId = _arrLocations[i].Id;
+                    break;
+                }
+            }
+            if (locationId != string.Empty)
+            {
+                for (int i = 0; i < _arrEvents.Count; i++)
+                {
+                    if (_arrEvents[i].LocationId == locationId)
+                    {
+                     //   if (DateTime.Now >= _arrEvents[i].StartTime && DateTime.Now < _arrEvents[i].EndTime)
+                        {
+                            proximityEvent = _arrEvents[i];
+                            break;
+                        }
+                    }
+                }
+            }
+            return proximityEvent;
+        }
+
         public void UpdateTrack(Track updatedTrack, Action completion)
         {
             _Operation = "update_track";

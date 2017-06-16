@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Estimote;
 
 namespace ITAG_HBS
 {
@@ -8,9 +9,14 @@ namespace ITAG_HBS
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
-        // class-level declarations
+		// class-level declarations
+		const string CLOUD_APP_ID = "itag-conference-2017-360"; //"YOUR-APP-ID";
+		const string CLOUD_APP_TOKEN = "9b7e22b2f2ea4e89363c05634b4ee3a5"; //"YOUR-APP-TOKEN";
+	
 
-        public override UIWindow Window
+
+
+		public override UIWindow Window
         {
             get;
             set;
@@ -18,10 +24,17 @@ namespace ITAG_HBS
 
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+			// Override point for customization after application launch.
+			// If not required for your application you can safely delete this method
+			//   [ESTConfig setupAppID:@"itag-conference-2017-360" andAppToken:@"9b7e22b2f2ea4e89363c05634b4ee3a5"];
+			//Config.Setup(CLOUD_APP_ID, CLOUD_APP_TOKEN);
+			//TODO: register for notifications here
+			//CloudManager.SetupAppID(CLOUD_APP_ID, CLOUD_APP_TOKEN);
+			Config.Setup(CLOUD_APP_ID, CLOUD_APP_TOKEN);
+			//Config.EnableMonitoringAnalytics(true);
+			//Config.EnableRangingAnalytics(true);
 
-            return true;
+			return true;
         }
 
         public override void OnResignActivation(UIApplication application)
