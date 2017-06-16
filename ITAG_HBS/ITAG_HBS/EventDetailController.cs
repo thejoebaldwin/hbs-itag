@@ -72,7 +72,6 @@ namespace ITAG.HBS
 		{
 			GrayStar.Highlighted = true;
             Store.Instance.SelectedEvent.Favorited = true;
-            //TODO Not all webIds were linking to the correct page
 			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
 			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Unfavoritedtapgesture);
@@ -86,7 +85,7 @@ namespace ITAG.HBS
 		}
         public void LinkClick()
         {
-            //TODO WEB IDs don't match
+            //TODO Not all web ids link to the correct event
             string endofLink = "/" + Store.Instance.SelectedEvent.StartTime.DayOfWeek + "/#event-" + Store.Instance.SelectedEvent.EventWebId;
             UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"+endofLink));
         }

@@ -41,7 +41,6 @@ namespace HBS.ITAG
                                 "iOS",
                                 UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
             Store.Instance.GetUsers(LoadUsersComplete);
-            //Store.Instance.AddUser(tempUser, AddUserComplete);
 		}
 
 		private void LoadUsersComplete(string message)
