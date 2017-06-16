@@ -1,4 +1,4 @@
-﻿﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
@@ -293,7 +293,7 @@ namespace HBS.ITAG.Model
 				if (favorites != string.Empty) favorites += ",";
 				favorites += _arrFavoriteIds[i];
 			}
-			
+			//return favorites;
 #if __MOBILE__
 			// Xamarin iOS or Android-specific code
 
@@ -367,6 +367,35 @@ namespace HBS.ITAG.Model
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         }
 
+
+        public Event ProximityEvent(string major, string minor)
+        {
+            string locationId = string.Empty;
+            Event proximityEvent = null;
+            for (int i = 0; i < _arrLocations.Count; i++)
+            {
+                if (_arrLocations[i].Minor == minor && _arrLocations[i].Major == major)
+                {
+                    locationId = _arrLocations[i].Id;
+                    break;
+                }
+            }
+            if (locationId != string.Empty)
+            {
+                for (int i = 0; i < _arrEvents.Count; i++)
+                {
+                    if (_arrEvents[i].LocationId == locationId)
+                    {
+                     //   if (DateTime.Now >= _arrEvents[i].StartTime && DateTime.Now < _arrEvents[i].EndTime)
+                        {
+                            proximityEvent = _arrEvents[i];
+                            break;
+                        }
+                    }
+                }
+            }
+            return proximityEvent;
+        }
 
         public void UpdateTrack(Track updatedTrack, Action completion)
         {

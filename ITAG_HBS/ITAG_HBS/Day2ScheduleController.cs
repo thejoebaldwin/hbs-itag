@@ -89,7 +89,9 @@ namespace ITAG.HBS
 			}
 
 			//use the array contents to build the table view source
-			DayTwo.Source = new ScheduleTableViewSource(trackEvents);
+			ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);
+			data.parent = (UIViewController)this;
+            DayTwo.Source = data;
 			DayTwo.ReloadData();
 
 		}

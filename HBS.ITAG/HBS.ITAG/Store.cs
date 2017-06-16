@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -43,7 +43,8 @@ namespace HBS.ITAG
 			prefEditor.Commit();
 		}
 
-		 public void LoadTracksFromFile()
+
+		public void LoadTracksFromFile()
         {
             //open android asset text file
             StreamReader reader = new StreamReader(Android.App.Application.Context.Assets.Open("tracks.txt"));

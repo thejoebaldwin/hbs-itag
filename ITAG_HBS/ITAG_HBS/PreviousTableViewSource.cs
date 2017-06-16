@@ -3,12 +3,13 @@ using UIKit;
 using Foundation;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
+using ITAG.HBS;
 
 namespace ITAG_HBS
 {
     public class PreviousTableViewSource : UITableViewSource
     {
-
+        public UIViewController parent { get; set; }
 		List<Event> TableItems;
 
 		string CellIdentifier = "TableCell";
@@ -21,6 +22,18 @@ namespace ITAG_HBS
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
 			return TableItems.Count;
+		}
+
+		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+		{
+			tableView.DeselectRow(indexPath, true);
+			Event tempEvent = TableItems[indexPath.Row];
+			Store.Instance.SelectedEvent = tempEvent;
+			if (!Store.Instance.SelectedEvent.ScheduleOnly)
+			{
+				EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+				parent.PresentViewController(tempEventDetail, true, null);
+			}
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
