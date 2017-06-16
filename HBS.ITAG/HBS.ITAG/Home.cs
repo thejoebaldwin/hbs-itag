@@ -8,6 +8,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
@@ -29,6 +30,23 @@ namespace HBS.ITAG
             LinearLayout thirdFavorite = FindViewById<LinearLayout>(Resource.Id.third_favorite);
             LinearLayout fourthFavorite = FindViewById<LinearLayout>(Resource.Id.fourth_favorite);
             TextView noFavorites = FindViewById<TextView>(Resource.Id.no_favorites);
+            
+            itagIcon.Click += (object sender, EventArgs e) =>
+            {
+                //Toast toast = Toast.MakeText(this, beaconMessage, ToastLength.Long);
+                // toast.Show();
+
+                //StartActivity(typeof(JsonCallTester));
+
+                noFavorites.Visibility = ViewStates.Invisible;
+
+
+               firstFavorite.Visibility = ViewStates.Visible;
+               secondFavorite.Visibility = ViewStates.Visible;
+               thirdFavorite.Visibility = ViewStates.Visible;
+               fourthFavorite.Visibility = ViewStates.Visible;
+
+            };
 
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
 
@@ -54,29 +72,12 @@ namespace HBS.ITAG
             };
             
 
-
             appFeatures.Click += (sender, e) =>
             {
                 StartActivity(typeof(AppFeatures));
             };
 
-            String beaconMessage = "                     You are near: " + System.Environment.NewLine + " Building Apps with Web AppBuilder." + System.Environment.NewLine + "                 (9:00 AM Session) ";
-            itagIcon.Click += (object sender, EventArgs e) =>
-            {
-                //Toast toast = Toast.MakeText(this, beaconMessage, ToastLength.Long);
-                // toast.Show();
-
-                //StartActivity(typeof(JsonCallTester));
-
-                noFavorites.Visibility = ViewStates.Invisible;
-
-
-               firstFavorite.Visibility = ViewStates.Visible;
-               secondFavorite.Visibility = ViewStates.Visible;
-               thirdFavorite.Visibility = ViewStates.Visible;
-               fourthFavorite.Visibility = ViewStates.Visible;
-
-            };
+            
 
             firstFavorite.Click += (object sender, EventArgs e) =>
             {

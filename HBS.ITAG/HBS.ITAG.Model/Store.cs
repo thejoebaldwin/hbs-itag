@@ -7,11 +7,14 @@ using System.Globalization;
 using HBS.ITAG.Model;
 using HBS.ITAG;
 
+
 #if __IOS__
 using ITAG_HBS;
 using Foundation;
 using UIKit;
 #endif
+
+
 
 
 
@@ -295,14 +298,15 @@ namespace HBS.ITAG.Model
 				if (favorites != string.Empty) favorites += ",";
 				favorites += _arrFavoriteIds[i];
 			}
-			//return favorites;
+            //return favorites;
 #if __MOBILE__
-			// Xamarin iOS or Android-specific code
-
+            // Xamarin iOS or Android-specific code
+            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            //var somePref = prefs.GetBoolean("PrefName", false);
 #endif
 #if __IOS__
-			// iOS-specific code
-           NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+            // iOS-specific code
+            NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
 
 #endif
         }
