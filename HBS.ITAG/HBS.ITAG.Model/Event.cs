@@ -37,8 +37,8 @@ namespace HBS.ITAG.Model
             LocationId = locationId;
             ScheduleOnly = scheduleOnly;
             Favorited = false;
-            LastEntryNotified = DateTime.Now.AddYears(-1);
-			LastExitNotified = DateTime.Now.AddYears(-1);
+            LastEntryNotified = DateTime.Now.AddMinutes(-30);
+            LastExitNotified = DateTime.Now.AddMinutes(-30);
         }
 
         public static Event FromJson(string json)

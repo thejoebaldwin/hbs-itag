@@ -194,7 +194,7 @@ namespace HBS.ITAG
                 CLBeaconRegion beaconRegion = new CLBeaconRegion(new Foundation.NSUuid(PROXIMITY_UUID), ushort.Parse(tempLocation.Major), ushort.Parse(tempLocation.Minor), tempLocation.Nickname);
                 beaconRegion.NotifyOnExit = true;
                 beaconRegion.NotifyOnEntry = true;
-                //beaconRegion.NotifyEntryStateOnDisplay = true;
+                beaconRegion.NotifyEntryStateOnDisplay = true;
                 beaconManager.StartMonitoringForRegion(beaconRegion);
             }
             
@@ -272,6 +272,7 @@ namespace HBS.ITAG
         public void OnRegionExit(Event tempEvent)
         {
             int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
 			if (minutesSinceLastNotification > 5)
             {
 				Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
@@ -284,7 +285,7 @@ namespace HBS.ITAG
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
             minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
             //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-            if (Store.Instance.SelectedEvent != tempEvent)
+            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
             {
                 if (UIApplication.SharedApplication.ApplicationState == UIApplicationState.Background)
                 {
