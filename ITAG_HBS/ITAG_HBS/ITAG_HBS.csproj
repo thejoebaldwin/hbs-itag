@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFastDev>false</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>52407</IOSDebuggerPort>
@@ -110,6 +110,14 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag57x57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag114x114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag29x29.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

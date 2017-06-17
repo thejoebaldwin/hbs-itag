@@ -206,7 +206,10 @@ namespace HBS.ITAG
                    Estimote.ExitedRegionEventArgs f = e;
                    CLBeaconRegion region = f.Region;
                    Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
-                   OnRegionExit(tempEvent);
+                   if (tempEvent != null)
+                   {
+                       OnRegionExit(tempEvent);
+                   }
                }
 		   };
             //on region enter
@@ -217,7 +220,10 @@ namespace HBS.ITAG
                     Estimote.EnteredRegionEventArgs f = e;
                     CLBeaconRegion region = f.Region;
                     Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
-                    OnRegionEnter(tempEvent);
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
                 }
              };
             
