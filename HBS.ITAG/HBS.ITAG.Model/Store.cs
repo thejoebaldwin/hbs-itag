@@ -571,6 +571,7 @@ namespace HBS.ITAG.Model
                 return true;
             }
 #endif
+            return false;
         }
 
         public void SignIn(string email, string password, Action completion)
@@ -706,9 +707,12 @@ namespace HBS.ITAG.Model
                             if (data["status"] == "success")
                             {
                                 _userId = data["user_id"];
-                                //TODO: persist this
+								//TODO: persist this
+                            #if __IOS__
                                 NSUserDefaults.StandardUserDefaults.SetString(_userId, "user_id");
-                            }
+                            #endif
+
+							}
 							break;
 						}
                     case "get_locations":

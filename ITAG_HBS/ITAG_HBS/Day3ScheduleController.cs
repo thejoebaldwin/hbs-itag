@@ -10,6 +10,20 @@ namespace HBS.ITAG
 {
 	public partial class Day3ScheduleController : UIViewController
 	{
+		partial void PreviousTrackButtonClick(UIButton sender)
+		{
+
+			rightSwipeDetected();
+		}
+
+		partial void NextTrackButtonClick(UIButton sender)
+		{
+			leftSwipeDetected();
+		}
+
+       
+
+
         partial void EventButtonClick(UIButton sender)
         {
             this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
@@ -40,6 +54,7 @@ namespace HBS.ITAG
 		List<Track> tracks = new List<Track>();
 
         public FavoritesViewController parent { get; set; }
+
 
 		public string DataObject
 		{

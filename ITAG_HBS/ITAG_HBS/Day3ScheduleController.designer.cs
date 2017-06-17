@@ -38,6 +38,14 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton June23Button { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton NextTrackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton PreviousTrackButton { get; set; }
+
         [Action ("EventButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EventButtonClick (UIKit.UIButton sender);
@@ -57,6 +65,14 @@ namespace HBS.ITAG
         [Action ("June23ButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void June23ButtonClick (UIKit.UIButton sender);
+
+        [Action ("NextTrackButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NextTrackButtonClick (UIKit.UIButton sender);
+
+        [Action ("PreviousTrackButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void PreviousTrackButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -88,6 +104,16 @@ namespace HBS.ITAG
             if (June23Button != null) {
                 June23Button.Dispose ();
                 June23Button = null;
+            }
+
+            if (NextTrackButton != null) {
+                NextTrackButton.Dispose ();
+                NextTrackButton = null;
+            }
+
+            if (PreviousTrackButton != null) {
+                PreviousTrackButton.Dispose ();
+                PreviousTrackButton = null;
             }
         }
     }

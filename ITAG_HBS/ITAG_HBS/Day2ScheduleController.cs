@@ -1,3 +1,4 @@
+
 using Foundation;
 using System;
 using UIKit;
@@ -10,6 +11,19 @@ namespace HBS.ITAG
 {
 	public partial class Day2ScheduleController : UIViewController
 	{
+      
+
+	   partial void PreviousButtonClick(UIButton sender)
+		{
+
+			rightSwipeDetected();
+		}
+
+		partial void NextTrackButtonClick(UIButton sender)
+		{
+			leftSwipeDetected();
+		}
+
         partial void MyEventsButtonClick(UIButton sender)
         {
            this.DismissViewController(false, new Action(parent.NavigateToMyEvents));

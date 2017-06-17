@@ -10,6 +10,17 @@ namespace HBS.ITAG
 {
 	public partial class Day4ScheduleController : UIViewController
 	{
+		partial void PreviousTrackButtonClick(UIButton sender)
+		{
+
+			rightSwipeDetected();
+		}
+
+		partial void NextTrackButtonClick(UIButton sender)
+		{
+			leftSwipeDetected();
+		}
+
         partial void MyEventsButtonClick(UIButton sender)
         {
             this.DismissViewController(false, new Action(parent.NavigateToMyEvents));

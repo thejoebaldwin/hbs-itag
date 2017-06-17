@@ -24,19 +24,15 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView OrganizationPickerView { get; set; }
+        UIKit.UITextField PositionTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField Position { get; set; }
+        UIKit.UIPickerView StatePickerView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitForm { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView TechFocusPickerView { get; set; }
 
         [Action ("SubmitForm_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -54,24 +50,19 @@ namespace HBS.ITAG
                 GenderPickerView = null;
             }
 
-            if (OrganizationPickerView != null) {
-                OrganizationPickerView.Dispose ();
-                OrganizationPickerView = null;
+            if (PositionTitle != null) {
+                PositionTitle.Dispose ();
+                PositionTitle = null;
             }
 
-            if (Position != null) {
-                Position.Dispose ();
-                Position = null;
+            if (StatePickerView != null) {
+                StatePickerView.Dispose ();
+                StatePickerView = null;
             }
 
             if (SubmitForm != null) {
                 SubmitForm.Dispose ();
                 SubmitForm = null;
-            }
-
-            if (TechFocusPickerView != null) {
-                TechFocusPickerView.Dispose ();
-                TechFocusPickerView = null;
             }
         }
     }

@@ -1,7 +1,13 @@
 using Foundation; using System; using UIKit; using ITAG_HBS; using HBS.ITAG; using System.Collections.Generic;
 using HBS.ITAG.Model; 
 namespace HBS.ITAG {     public partial class Day1ScheduleController : UIViewController     {
-        partial void June23ButtonClick(UIButton sender)
+        partial void PreviousTrackButtonClick(UIButton sender)
+        {
+                         rightSwipeDetected();
+        }          partial void NextTrackButtonClick(UIButton sender)
+        {
+            leftSwipeDetected();
+        }          partial void June23ButtonClick(UIButton sender)
         {
             this.DismissViewController(false, new Action(parent.NavigationScheduleJune23));
         }          partial void June22ButtonClick(UIButton sender)
