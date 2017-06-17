@@ -70,6 +70,10 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void HomeButtonClick (UIKit.UIButton sender);
 
+        [Action ("June20ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June20ButtonClick (UIKit.UIButton sender);
+
         [Action ("June21ButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void June21ButtonClick (UIKit.UIButton sender);

@@ -218,7 +218,7 @@ namespace HBS.ITAG.Model
         private string _userId;
 
         private string _deviceId;
-
+        private string _notify = "true";
 
 		public Event SelectedEvent { get; set; }
 
@@ -311,6 +311,7 @@ namespace HBS.ITAG.Model
 #if __IOS__
             // iOS-specific code
             NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+			NSUserDefaults.StandardUserDefaults.Synchronize();
 
 #endif
         }
@@ -337,6 +338,7 @@ namespace HBS.ITAG.Model
 #endif
 #if __IOS__
 			NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
 		}
 
@@ -574,6 +576,31 @@ namespace HBS.ITAG.Model
             return false;
         }
 
+        public bool Notify
+        {
+            get
+            {
+#if __IOS__
+                _notify = NSUserDefaults.StandardUserDefaults.StringForKey("notify");
+                if (_notify == null)
+                {
+					_notify = "true";
+				   NSUserDefaults.StandardUserDefaults.SetString(_notify,"notify");
+					NSUserDefaults.StandardUserDefaults.Synchronize();
+                }
+#endif
+                return (_notify == "true");
+            }
+            set 
+            {
+                _notify = value.ToString().ToLower();
+#if __IOS__
+				NSUserDefaults.StandardUserDefaults.SetString(_notify, "notify");
+                NSUserDefaults.StandardUserDefaults.Synchronize();
+#endif
+			}
+        }
+
         public void SignIn(string email, string password, Action completion)
         {
             string loginJson = "{ \"email\": \"<email>\", \"password\":\"<password>\" }";
@@ -710,6 +737,7 @@ namespace HBS.ITAG.Model
 								//TODO: persist this
                             #if __IOS__
                                 NSUserDefaults.StandardUserDefaults.SetString(_userId, "user_id");
+								NSUserDefaults.StandardUserDefaults.Synchronize();
                             #endif
 
 							}

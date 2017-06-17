@@ -33,7 +33,14 @@ namespace HBS.ITAG
 
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-            return TableItems.Count;
+            if (TableItems.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return TableItems.Count;
+            }
 		}
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -63,9 +70,7 @@ namespace HBS.ITAG
 		{
             
             UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
-            Event item = TableItems[indexPath.Row];
-			cell.TextLabel.Text = item.Name;
-			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
+         
 			
 
 			//---- if there are no cells to reuse, create a new one
@@ -73,25 +78,37 @@ namespace HBS.ITAG
 			{
                 cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier); 
             }
-            if(!item.ScheduleOnly)
+            if (TableItems.Count == 0)
             {
-				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-				cell.TextLabel.TextColor = UIColor.White;
-                cell.DetailTextLabel.TextColor = UIColor.White;
-			}
-            else if (item.EndTime<DateTime.Now)
-			{
-				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-				cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-				cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-			}
-			else
-			{
-				cell.BackgroundColor = UIColor.White;
-				cell.TextLabel.TextColor = UIColor.Black;
-				cell.DetailTextLabel.TextColor = UIColor.Black;
-                cell.DetailTextLabel.Text = "Upcoming";
-			}
+				cell.TextLabel.Text = "You do not have any favorites";
+                cell.DetailTextLabel.Text = "Click Schedule to find events!";
+            }
+            else
+            {
+
+				Event item = TableItems[indexPath.Row];
+				cell.TextLabel.Text = item.Name;
+				cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
+                if (!item.ScheduleOnly)
+                {
+                    cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+                    cell.TextLabel.TextColor = UIColor.White;
+                    cell.DetailTextLabel.TextColor = UIColor.White;
+                }
+                else if (item.EndTime < DateTime.Now)
+                {
+                    cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+                    cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+                    cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+                }
+                else
+                {
+                    cell.BackgroundColor = UIColor.White;
+                    cell.TextLabel.TextColor = UIColor.Black;
+                    cell.DetailTextLabel.TextColor = UIColor.Black;
+                    cell.DetailTextLabel.Text = "Upcoming";
+                }
+            }
 
 			
             

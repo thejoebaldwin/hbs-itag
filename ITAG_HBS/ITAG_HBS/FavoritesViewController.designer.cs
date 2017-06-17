@@ -31,6 +31,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch NotifySwitch { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView PhoneNumber { get; set; }
 
         [Outlet]
@@ -48,6 +52,10 @@ namespace HBS.ITAG
         [Action ("EventsButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EventsButtonClick (UIKit.UIButton sender);
+
+        [Action ("NotifySwitchClicked:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NotifySwitchClicked (UIKit.UISwitch sender);
 
         [Action ("ScheduleButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -73,6 +81,11 @@ namespace HBS.ITAG
             if (MyEventsButton != null) {
                 MyEventsButton.Dispose ();
                 MyEventsButton = null;
+            }
+
+            if (NotifySwitch != null) {
+                NotifySwitch.Dispose ();
+                NotifySwitch = null;
             }
 
             if (PhoneNumber != null) {
