@@ -120,6 +120,7 @@
     <InterfaceDefinition Include="DataViewController.xib" />
     <InterfaceDefinition Include="FavoritesViewController.xib" />
     <InterfaceDefinition Include="PickerViewController.xib" />
+    <InterfaceDefinition Include="AboutViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -172,6 +173,10 @@
     <Compile Include="EventDetailController.cs" />
     <Compile Include="EventDetailController.designer.cs">
       <DependentUpon>EventDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutViewController.cs" />
+    <Compile Include="AboutViewController.designer.cs">
+      <DependentUpon>AboutViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

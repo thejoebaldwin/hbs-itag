@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 
 using UIKit;
@@ -13,6 +13,11 @@ namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
     public partial class FavoritesViewController : UIViewController
     {
+        partial void AboutButtonClick(UIButton sender)
+        {
+           this.PresentViewController(aboutViewController, true, null);
+        }
+
         partial void EventsButtonClick(UIButton sender)
         {
             NavigateToMyEvents();
@@ -23,7 +28,7 @@ namespace HBS.ITAG
             NavigateToSchedule();
         }
 
-        bool didRegister = false;
+
         BeaconManager beaconManager;
 
 		const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
@@ -33,6 +38,9 @@ namespace HBS.ITAG
 		public Day3ScheduleController day3ScheduleController { get; set; }
 		public Day4ScheduleController day4ScheduleController { get; set; }
         public DataViewController myEventsController { get; set; }
+
+		public AboutViewController aboutViewController { get; set; }
+        public EventDetailController eventDetailViewController { get; set; }
 
 		public string DataObject
 		{
@@ -92,7 +100,10 @@ namespace HBS.ITAG
             day4ScheduleController.parent = this;
 			myEventsController = (DataViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
+			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
+            eventDetailViewController.parent = this;
 
+            aboutViewController = (AboutViewController)this.Storyboard.InstantiateViewController("AboutViewController");
 
 			HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
@@ -116,16 +127,29 @@ namespace HBS.ITAG
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}
+
+        public void ReloadData()
+        {
+			var trackEvents = Store.Instance.Events;
+			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
+			data.parent = (UIViewController)this;
+          
+			ScheduleTableViewFavs.Source = data;
+            ScheduleTableViewFavs.ReloadData();
+        }
+
         public override void ViewDidAppear(bool animated)
         {
-			
-            if(!didRegister)
+            if (!Store.Instance.UserCreated())
             {
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
 				this.PresentViewController(temp, true, null);
-                didRegister = true;
             }
+          
         }
+
+        bool initialized = false;
+		
 
 		private void LoadTracksComplete(string message)
 		{
@@ -139,14 +163,12 @@ namespace HBS.ITAG
 
 		private void LoadLocationsComplete(string message)
 		{
-			//TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
-			//TURN OFF LOADING INDICATOR
+            //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
+            //TURN OFF LOADING INDICATOR
 
             //now load events because we have all the data
-			var trackEvents = Store.Instance.Events;
-			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
-			data.parent = (UIViewController)this;
-            ScheduleTableViewFavs.Source = data;
+            ReloadData();
+            initialized = true;
             if (ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.DEVICE)
             {
                 InitializeBeacons();
@@ -167,7 +189,7 @@ namespace HBS.ITAG
                 beaconRegion.NotifyOnExit = true;
                 beaconRegion.NotifyOnEntry = true;
                 beaconRegion.NotifyEntryStateOnDisplay = true;
-                beaconManager.StartRangingBeaconsInRegion(beaconRegion);
+                //beaconManager.StartRangingBeaconsInRegion(beaconRegion);
                 beaconManager.StartMonitoringForRegion(beaconRegion);
             }
                 //on region exit
@@ -202,6 +224,8 @@ namespace HBS.ITAG
 				   };
 				   alert.AddButton("OK");
 				   //alert.Show();
+
+                    ProximityMessage("stuff");
 
 			   };
                 //this is for when app is open, may be able to use above instead and get rid of this
@@ -254,7 +278,42 @@ namespace HBS.ITAG
 		{
 			base.ViewWillAppear(animated);
 			//dataLabel.Text = DataObject;
+
+			if (initialized)
+			{
+				ReloadData();
+			}
 		}
+
+        public void AddEventDetailViewController()
+        {
+			
+        }
+
+		public void ProximityMessage(string eventName)
+		{
+
+            Store.Instance.SelectedEvent = Store.Instance.Events[0];
+
+			var okAlertController = UIAlertController.Create("You are near an event!", eventName, UIAlertControllerStyle.Alert);
+
+			okAlertController.AddAction(UIAlertAction.Create("Dismiss", UIAlertActionStyle.Default, null));
+			//Add Action
+			// 
+			//EventDetailController tempEvent = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
+
+
+            UIAlertAction action = UIAlertAction.Create("Show Me", UIAlertActionStyle.Default, alert => this.PresentViewController(eventDetailViewController, true, null));
+			okAlertController.AddAction(action);
+
+            // Present Alert
+			PresentViewController(okAlertController, true, null);
+
+
+		}
+
     }
+
+
 }
 

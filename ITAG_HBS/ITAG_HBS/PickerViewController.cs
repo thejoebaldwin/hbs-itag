@@ -3,7 +3,7 @@ using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
-using ITAG.HBS;
+
 
 namespace HBS.ITAG
 {
@@ -42,13 +42,10 @@ namespace HBS.ITAG
                                 TechFocusModel.TechFocus[TechFocusPickerView.SelectedRowInComponent(0)],
                                 "iOS",
                                 UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
-            Store.Instance.GetUsers(LoadUsersComplete);
+			Store.Instance.AddUser(tempUser, AddUserComplete);
 		}
 
-		private void LoadUsersComplete(string message)
-		{
-            Store.Instance.AddUser(tempUser, AddUserComplete);
-		}
+	
         private void AddUserComplete(string message)
         {
             this.DismissViewController(true, null);

@@ -15,6 +15,10 @@ namespace HBS.ITAG
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton AboutButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton HomeButton { get; set; }
 
         [Outlet]
@@ -37,6 +41,10 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ScheduleTableViewFavs { get; set; }
 
+        [Action ("AboutButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AboutButtonClick (UIKit.UIButton sender);
+
         [Action ("EventsButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EventsButtonClick (UIKit.UIButton sender);
@@ -47,6 +55,11 @@ namespace HBS.ITAG
 
         void ReleaseDesignerOutlets ()
         {
+            if (AboutButton != null) {
+                AboutButton.Dispose ();
+                AboutButton = null;
+            }
+
             if (HomeButton != null) {
                 HomeButton.Dispose ();
                 HomeButton = null;

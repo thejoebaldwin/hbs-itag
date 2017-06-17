@@ -239,6 +239,7 @@ namespace HBS.ITAG.Model
 					instance = new Store("https://hbs-itag.azurewebsites.net");
 					instance.Init();
 
+
 				}
 				return instance;
 			}
@@ -300,6 +301,7 @@ namespace HBS.ITAG.Model
 				if (favorites != string.Empty) favorites += ",";
 				favorites += _arrFavoriteIds[i];
 			}
+           
             //return favorites;
 #if __MOBILE__
             // Xamarin iOS or Android-specific code
@@ -477,6 +479,21 @@ namespace HBS.ITAG.Model
         public void AddSession(string eventId, bool isEntering, Action completion)
         {
 			_Operation = "add_session";
+
+
+#if __IOS__
+            if (_userId == null || _userId == string.Empty)
+            {
+                // iOS-specific code
+                _userId = NSUserDefaults.StandardUserDefaults.StringForKey("user_id");
+                if (_userId == null)
+                {
+                    _userId = "-1";
+                }
+            }
+
+            #endif
+
 			string json = "{\"user_id\":\"<user_id>\", \"event_id\":\"<event_id>\", \"entering\":\"<entering>\" }";
 			json = json.Replace("<user_id>", _userId);
             json = json.Replace("<event_id>", eventId);
@@ -539,6 +556,21 @@ namespace HBS.ITAG.Model
 
             _Completion = completion;
             PostDataWithOperation("events", json, "PUT");
+        }
+
+        public bool UserCreated()
+        {
+#if __IOS__
+            string user_id = NSUserDefaults.StandardUserDefaults.StringForKey("user_id");
+            if (user_id == null || user_id == string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+#endif
         }
 
         public void SignIn(string email, string password, Action completion)
@@ -667,7 +699,7 @@ namespace HBS.ITAG.Model
                             }
                             break;
                         }
-					case "new_user":
+					case "add_user":
 						{
 							Dictionary<string, string> data = Utilities.ParseJson(response_json);
                             _userId = "-1";
@@ -675,6 +707,7 @@ namespace HBS.ITAG.Model
                             {
                                 _userId = data["user_id"];
                                 //TODO: persist this
+                                NSUserDefaults.StandardUserDefaults.SetString(_userId, "user_id");
                             }
 							break;
 						}

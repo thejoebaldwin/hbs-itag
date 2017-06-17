@@ -3,7 +3,6 @@ using UIKit;
 using Foundation;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
-using ITAG.HBS;
 
 namespace HBS.ITAG
 {
@@ -17,9 +16,19 @@ namespace HBS.ITAG
 
         public FavoritesTableViewSource(List<Event> items)
 		{
-            TableItems = new List<Event>(items);
+            List<Event> FilteredItems = new List<Event>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].Favorited && items[i].EndTime > DateTime.Now)
+                {
+                    FilteredItems.Add((items[i]));
+                }
+            }
+
+            TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 			
+
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -34,8 +43,19 @@ namespace HBS.ITAG
 			Store.Instance.SelectedEvent = tempEvent;
 			if (!Store.Instance.SelectedEvent.ScheduleOnly)
 			{
-                EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-				parent.PresentViewController(tempEventDetail, true, null);
+                //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+                EventDetailController tempEventDetail = null;
+                if (parent.GetType() == typeof(FavoritesViewController))
+                {
+					FavoritesViewController temp = (FavoritesViewController)parent;
+                    tempEventDetail = temp.eventDetailViewController;
+                }
+                else if (parent.GetType() == typeof(DataViewController))
+                {
+					DataViewController temp = (DataViewController)parent;
+                    tempEventDetail = temp.parent.eventDetailViewController;
+                }
+                parent.PresentViewController(tempEventDetail, true, null);
 			}
 		}
 

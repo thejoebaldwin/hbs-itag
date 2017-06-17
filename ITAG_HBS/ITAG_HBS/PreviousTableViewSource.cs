@@ -3,9 +3,9 @@ using UIKit;
 using Foundation;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
-using ITAG.HBS;
 
-namespace ITAG_HBS
+
+namespace HBS.ITAG
 {
     public class PreviousTableViewSource : UITableViewSource
     {
@@ -16,7 +16,17 @@ namespace ITAG_HBS
 
         public PreviousTableViewSource(List<Event> previousitems)
         {
-            TableItems = new List<Event>(previousitems);
+
+			List<Event> FilteredItems = new List<Event>();
+			for (int i = 0; i < previousitems.Count; i++)
+			{
+				if (previousitems[i].Favorited && previousitems[i].EndTime < DateTime.Now)
+				{
+					FilteredItems.Add((previousitems[i]));
+				}
+			}
+
+            TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
         }
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -31,8 +41,9 @@ namespace ITAG_HBS
 			Store.Instance.SelectedEvent = tempEvent;
 			if (!Store.Instance.SelectedEvent.ScheduleOnly)
 			{
-				EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-				parent.PresentViewController(tempEventDetail, true, null);
+				//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+                DataViewController temp = (DataViewController)parent;
+                parent.PresentViewController(temp.parent.eventDetailViewController, true, null);
 			}
 		}
 

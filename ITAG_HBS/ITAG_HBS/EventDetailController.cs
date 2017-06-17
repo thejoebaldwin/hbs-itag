@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using HBS.ITAG.Model;
 using System.Globalization;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     public partial class EventDetailController : UIViewController
     {
@@ -21,6 +21,8 @@ namespace ITAG.HBS
         {
         }
 
+		public FavoritesViewController parent { get; set; }
+
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
@@ -30,48 +32,79 @@ namespace ITAG.HBS
 
 			GrayStar.UserInteractionEnabled = true;
 
-			UITapGestureRecognizer Favoritedtapguesture = new UITapGestureRecognizer(FavoritedClick);
+			UITapGestureRecognizer Favoritedtapguesture = new UITapGestureRecognizer(StarClick);
 			Favoritedtapguesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Favoritedtapguesture);
 
-            EventName.Text = Store.Instance.SelectedEvent.Name;
-            EventDay.Text = Store.Instance.SelectedEvent.StartTime.DayOfWeek.ToString() + ", " + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Store.Instance.SelectedEvent.StartTime.Month) + " " + Store.Instance.SelectedEvent.StartTime.Day.ToString();
-            EventTime.Text = Store.Instance.SelectedEvent.StartTime.ToLocalTime().ToShortTimeString() + " to " + Store.Instance.SelectedEvent.EndTime.ToLocalTime().ToShortTimeString();
-            if(Store.Instance.SelectedEvent.LocationId != null && Store.Instance.SelectedEvent.LocationId != "-1")
-            {
-                EventLocation.Text = Store.Instance.Locations.Find(x => x.Id == Store.Instance.SelectedEvent.LocationId).Name.ToString();
-            }
-            else
-            {
-                EventLocation.Text = "TBD";
-            }
-
-            LinkToDescription.Text = "Click Here to redirect";
-            LinkToDescription.TextColor = UIColorExtension.FromHex(0x0000EE);
-
-            LinkToDescription.UserInteractionEnabled = true;
-            UITapGestureRecognizer Link = new UITapGestureRecognizer(LinkClick);
-            Link.NumberOfTapsRequired = 1;
-            LinkToDescription.AddGestureRecognizer(Link);
+			LinkToDescription.UserInteractionEnabled = true;
 
 
-            if (Store.Instance.SelectedEvent.Favorited)
-            {
-                GrayStar.Highlighted = true;
-            }
+			UITapGestureRecognizer Link = new UITapGestureRecognizer(LinkClick);
+			Link.NumberOfTapsRequired = 1;
+			LinkToDescription.AddGestureRecognizer(Link);
 
-            else
-            {
-                GrayStar.Highlighted = false;
-            }
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+        public void RefreshPage()
+        {
+			EventName.Text = Store.Instance.SelectedEvent.Name;
+			EventDay.Text = Store.Instance.SelectedEvent.StartTime.DayOfWeek.ToString() + ", " + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Store.Instance.SelectedEvent.StartTime.Month) + " " + Store.Instance.SelectedEvent.StartTime.Day.ToString();
+			EventTime.Text = Store.Instance.SelectedEvent.StartTime.ToLocalTime().ToShortTimeString() + " to " + Store.Instance.SelectedEvent.EndTime.ToLocalTime().ToShortTimeString();
+			if (Store.Instance.SelectedEvent.LocationId != null && Store.Instance.SelectedEvent.LocationId != "-1")
+			{
+				EventLocation.Text = Store.Instance.Locations.Find(x => x.Id == Store.Instance.SelectedEvent.LocationId).Name.ToString();
+			}
+			else
+			{
+				EventLocation.Text = "TBD";
+			}
+
+			if (Store.Instance.SelectedEvent.Favorited)
+			{
+				GrayStar.Highlighted = true;
+			}
+			else
+			{
+				GrayStar.Highlighted = false;
+			}
+			
+        }
+
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            RefreshPage();
+
+        }
+
+        private void StarClick()
+        {
+            if (Store.Instance.SelectedEvent.Favorited)
+            {
+                GrayStar.Highlighted = false;
+				Store.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
+            }
+            else
+            {
+                GrayStar.Highlighted = true;
+				Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
+            }
+
+			//parent.ReloadData();
+			//parent.myEventsController.ReloadData();
+
+        }
+
 		private void FavoritedClick()
 		{
 			GrayStar.Highlighted = true;
-            Store.Instance.SelectedEvent.Favorited = true;
+            //Store.Instance.SelectedEvent.Favorited = true;
+            Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
+            parent.ReloadData();
+            parent.myEventsController.ReloadData();
+
 			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
 			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Unfavoritedtapgesture);
@@ -80,8 +113,12 @@ namespace ITAG.HBS
 		public void UnfavoritedClick()
 		{
 			GrayStar.Highlighted = false;
-            Store.Instance.SelectedEvent.Favorited = false;
-			ViewDidLoad();
+            //Store.Instance.SelectedEvent.Favorited = false;
+            Store.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
+            parent.ReloadData();
+			parent.myEventsController.ReloadData();
+            //ViewDidLoad();
+            RefreshPage();
 		}
         public void LinkClick()
         {

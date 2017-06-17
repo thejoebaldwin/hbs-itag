@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     [Register ("EventDetailController")]
     partial class EventDetailController
