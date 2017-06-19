@@ -6,6 +6,8 @@ using Android.Views;
 using System.Collections;
 using Android.Content;
 using HBS.ITAG.Model;
+using EstimoteSdk;
+using Android;
 
 namespace HBS.ITAG
 {
@@ -16,8 +18,6 @@ namespace HBS.ITAG
         {
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
-            
-            
             bool surveyDone = false;
             var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
             var somePref = prefs.GetBoolean( "PrefName" , false );
