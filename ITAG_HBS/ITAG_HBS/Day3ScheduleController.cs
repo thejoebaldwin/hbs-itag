@@ -10,6 +10,20 @@ namespace HBS.ITAG
 {
 	public partial class Day3ScheduleController : UIViewController
 	{
+		partial void PreviousTrackButtonClick(UIButton sender)
+		{
+
+			rightSwipeDetected();
+		}
+
+		partial void NextTrackButtonClick(UIButton sender)
+		{
+			leftSwipeDetected();
+		}
+
+       
+
+
         partial void EventButtonClick(UIButton sender)
         {
             this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
@@ -41,6 +55,7 @@ namespace HBS.ITAG
 
         public FavoritesViewController parent { get; set; }
 
+
 		public string DataObject
 		{
 			get; set;
@@ -62,6 +77,14 @@ namespace HBS.ITAG
 			UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);
 			rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;
 			View.AddGestureRecognizer(rightSwipe);
+
+			UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);
+            RightArrow.NumberOfTapsRequired = 1;
+			D3RightArrow.AddGestureRecognizer(RightArrow);
+
+			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);
+            LeftArrow.NumberOfTapsRequired = 1;
+			D3LeftArrow.AddGestureRecognizer(LeftArrow);
 
 			for (int i = 0; i < tracks.Count; i++)
 			{

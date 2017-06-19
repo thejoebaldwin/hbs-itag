@@ -9,15 +9,11 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace ITAG.HBS
+namespace HBS.ITAG
 {
     [Register ("EventDetailController")]
     partial class EventDetailController
     {
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton BackButton { get; set; }
-
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView EventDay { get; set; }
@@ -42,17 +38,12 @@ namespace ITAG.HBS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LinkToDescription { get; set; }
 
-        [Action ("UIButton13816_TouchUpInside:")]
+        [Action ("HomeButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton13816_TouchUpInside (UIKit.UIButton sender);
+        partial void HomeButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (BackButton != null) {
-                BackButton.Dispose ();
-                BackButton = null;
-            }
-
             if (EventDay != null) {
                 EventDay.Dispose ();
                 EventDay = null;

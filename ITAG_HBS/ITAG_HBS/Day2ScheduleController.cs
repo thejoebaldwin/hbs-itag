@@ -1,3 +1,4 @@
+
 using Foundation;
 using System;
 using UIKit;
@@ -10,15 +11,27 @@ namespace HBS.ITAG
 {
 	public partial class Day2ScheduleController : UIViewController
 	{
+      
+
+	   partial void PreviousButtonClick(UIButton sender)
+		{
+
+			rightSwipeDetected();
+		}
+
+		partial void NextTrackButtonClick(UIButton sender)
+		{
+			leftSwipeDetected();
+		}
+
         partial void MyEventsButtonClick(UIButton sender)
         {
-            this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
+           this.DismissViewController(false, new Action(parent.NavigateToMyEvents));
         }
 
         partial void HomeButtonClick(UIButton sender)
         {
             this.DismissViewController(false, null);
-
         }
 
         partial void June20ButtonClick(UIButton sender)
@@ -63,6 +76,14 @@ namespace HBS.ITAG
 			UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);
 			rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;
 			View.AddGestureRecognizer(rightSwipe);
+
+			UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);
+            RightArrow.NumberOfTapsRequired = 1;
+			D2RightArrow.AddGestureRecognizer(RightArrow);
+
+			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);
+            LeftArrow.NumberOfTapsRequired = 1;
+			D2LeftArrow.AddGestureRecognizer(LeftArrow);
 
 			for (int i = 0; i < tracks.Count; i++)
 			{

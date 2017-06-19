@@ -19,6 +19,8 @@ namespace HBS.ITAG.Model
         public bool ScheduleOnly { get; set; }
         public string LocationId { get; set; }
         public string EventWebId { get; set; }
+        public DateTime LastEntryNotified { get; set; }
+		public DateTime LastExitNotified { get; set; }
 		public int Track { get; set; }
         public bool Favorited { get; set; }
 
@@ -35,6 +37,8 @@ namespace HBS.ITAG.Model
             LocationId = locationId;
             ScheduleOnly = scheduleOnly;
             Favorited = false;
+            LastEntryNotified = DateTime.Now.AddMinutes(-30);
+            LastExitNotified = DateTime.Now.AddMinutes(-30);
         }
 
         public static Event FromJson(string json)

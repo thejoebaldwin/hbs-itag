@@ -24,11 +24,7 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView OrganizationPickerView { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField Position { get; set; }
+        UIKit.UITextField PositionTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -54,14 +50,9 @@ namespace HBS.ITAG
                 GenderPickerView = null;
             }
 
-            if (OrganizationPickerView != null) {
-                OrganizationPickerView.Dispose ();
-                OrganizationPickerView = null;
-            }
-
-            if (Position != null) {
-                Position.Dispose ();
-                Position = null;
+            if (PositionTitle != null) {
+                PositionTitle.Dispose ();
+                PositionTitle = null;
             }
 
             if (StatePickerView != null) {

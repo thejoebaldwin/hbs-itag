@@ -1,15 +1,66 @@
 using Foundation; using System; using UIKit; using ITAG_HBS; using HBS.ITAG; using System.Collections.Generic;
 using HBS.ITAG.Model; 
 namespace HBS.ITAG {     public partial class Day1ScheduleController : UIViewController     {
-        partial void June23ButtonClick(UIButton sender)
+        partial void June20ButtonClick(UIButton sender)
         {
-            this.DismissViewController(false, new Action(parent.NavigationScheduleJune23));
+            June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June20Button.TitleLabel.TextColor = UIColor.White;  			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+            June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+            June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+            June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			currentTrack = 0;
+			CurrentTrackDate = DateTime.Parse("6/20/17");
+			ReloadData();
+        }          private DateTime CurrentTrackDate;
+        partial void PreviousTrackButtonClick(UIButton sender)
+        {
+                         rightSwipeDetected();
+        }          partial void NextTrackButtonClick(UIButton sender)
+        {
+            leftSwipeDetected();
+        }          partial void June23ButtonClick(UIButton sender)
+        {
+			//this.DismissViewController(false, new Action(parent.NavigationScheduleJune23));
+			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+
+			June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June23Button.SetTitleColor(UIColor.White, UIControlState.Normal);
+  
+			//cell.BackgroundColor = 
+			//cell.TextLabel.TextColor = UIColor.White; 
+			currentTrack = 0;
+			CurrentTrackDate = DateTime.Parse("6/23/17");             ReloadData();
         }          partial void June22ButtonClick(UIButton sender)
         {
-                this.DismissViewController(false, new Action(parent.NavigationScheduleJune22));
+			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+
+			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June22Button.SetTitleColor(UIColor.White, UIControlState.Normal);
+			             June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52); 
+			currentTrack = 0;
+			CurrentTrackDate = DateTime.Parse("6/22/17");
+			ReloadData();
         }          partial void June21ButtonClick(UIButton sender)
         {
-            this.DismissViewController(false, new Action(parent.NavigationScheduleJune21));
+			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			             June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+              June21Button.SetTitleColor(UIColor.White, UIControlState.Normal); 
+			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			currentTrack = 0;
+            CurrentTrackDate = DateTime.Parse("6/21/17");
+			ReloadData();
         }          partial void MyEventsButtonClick(UIButton sender)
         {
             this.DismissViewController(false, new Action(parent.NavigateToMyEvents));         }          partial void HomeButtonClick(UIButton sender)
@@ -19,23 +70,68 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
         //pick track here
         int currentTrack = 0;         List<Track> tracks = new List<Track>();
 
-        public FavoritesViewController parent { get; set; }          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }
-         public override void ViewDidLoad()         {             base.ViewDidLoad();             // Perform any additional setup after loading the view, typically from a nib.              UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              for (int i = 0; i < tracks.Count; i++)             {                 tracks.Remove(tracks[i]);             }              //get tracks for day 1             tracks = new List<Track>();             foreach(var t in Store.Instance.Tracks)             {                 if (t.TrackDate == DateTime.Parse("6/20/2017"))                 {                     tracks.Add(t);                 }             }
-
-            //Somehow filter to the correct track             //var name = this.GetType();              //Arrows on Page for Tracks             if(currentTrack == 0)             {                 D1LeftArrow.Hidden = true;             }             else             {                 D1LeftArrow.Hidden = false;             }             if(currentTrack == tracks.Count - 1 || tracks.Count == 0)             {                 D1RightArrow.Hidden = true;             }             else             {                 D1RightArrow.Hidden = false;             }
-
-			//get events for current track
-			if (tracks.Count == 0)
+        public FavoritesViewController parent { get; set; }          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }           private void ReloadData()         {
+          
+			//get tracks for day 1
+			tracks = new List<Track>();
+			foreach (var t in Store.Instance.Tracks)
 			{
-				tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
-			}              Day1TrackName.Text = tracks[currentTrack].Name;             List<Event> trackEvents = new List<Event>();             trackEvents = new List<Event>();             foreach(var e in Store.Instance.Events)             {                 if (e.TrackId == tracks[currentTrack].Id)                 {                     trackEvents.Add(e);                 }             }              ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);             data.parent = (UIViewController) this;
-            DayOne.Source = data;
-			DayOne.ReloadData();          }           private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ViewDidLoad();             }             else             {                 return;             }         }
+				if (t.TrackDate == CurrentTrackDate)
+				{
+					tracks.Add(t);
+				}
+			}
+
+
+			//Arrows on Page for Tracks
+			if (currentTrack == 0)
+			{
+				D1LeftArrow.Hidden = true;
+			}
+			else
+			{
+				D1LeftArrow.Hidden = false;
+			}
+			if (currentTrack == tracks.Count - 1 || tracks.Count == 0)
+			{
+				D1RightArrow.Hidden = true;
+			}
+			else
+			{
+				D1RightArrow.Hidden = false;
+			}
+
+            //get events for current track              List<Event> trackEvents = new List<Event>();
+            if (tracks.Count == 0)
+            {
+                Day1TrackName.Text = string.Empty;
+                tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
+            }             else             {
+				Day1TrackName.Text = tracks[currentTrack].Name;
+
+				trackEvents = new List<Event>();
+				foreach (var e in Store.Instance.Events)
+				{
+					if (e.TrackId == tracks[currentTrack].Id)
+					{
+						trackEvents.Add(e);
+					}
+				}             }
+           
+			ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);
+			data.parent = (UIViewController)this;
+			DayOne.Source = data;
+			DayOne.ReloadData();         }
+         public override void ViewDidLoad()         {             base.ViewDidLoad();             // Perform any additional setup after loading the view, typically from a nib.              UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);             RightArrow.NumberOfTapsRequired = 1;             D1RightArrow.AddGestureRecognizer(RightArrow);
+
+			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);             LeftArrow.NumberOfTapsRequired = 1;
+			D1LeftArrow.AddGestureRecognizer(LeftArrow);              CurrentTrackDate = DateTime.Parse("06/20/17");
+			currentTrack = 0;            ReloadData();          }            private void leftSwipeDetected ()         {             if (currentTrack != tracks.Count - 1)             {                 currentTrack++;                 ReloadData();             }             else             {                 return;             }         }
 
 		private void rightSwipeDetected()
 		{
 			if (currentTrack != 0)
 			{
-				currentTrack--;                 ViewDidLoad();
+				currentTrack--;                 ReloadData();
 			}             else             {                 return;             }
 		}          public override void DidReceiveMemoryWarning()         {             base.DidReceiveMemoryWarning();             // Release any cached data, images, etc that aren't in use.         }          public override void ViewWillAppear(bool animated)         {             base.ViewWillAppear(animated);         }     } } 

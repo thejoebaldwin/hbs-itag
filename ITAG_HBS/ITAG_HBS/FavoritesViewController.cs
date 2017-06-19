@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 
 using UIKit;
@@ -13,6 +13,16 @@ namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
     public partial class FavoritesViewController : UIViewController
     {
+        partial void NotifySwitchClicked(UISwitch sender)
+        {
+            Store.Instance.Notify = NotifySwitch.On;
+        }
+
+        partial void AboutButtonClick(UIButton sender)
+        {
+           this.PresentViewController(aboutViewController, true, null);
+        }
+
         partial void EventsButtonClick(UIButton sender)
         {
             NavigateToMyEvents();
@@ -23,7 +33,7 @@ namespace HBS.ITAG
             NavigateToSchedule();
         }
 
-        bool didRegister = false;
+
         BeaconManager beaconManager;
 
 		const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
@@ -33,6 +43,9 @@ namespace HBS.ITAG
 		public Day3ScheduleController day3ScheduleController { get; set; }
 		public Day4ScheduleController day4ScheduleController { get; set; }
         public DataViewController myEventsController { get; set; }
+
+		public AboutViewController aboutViewController { get; set; }
+        public EventDetailController eventDetailViewController { get; set; }
 
 		public string DataObject
 		{
@@ -78,6 +91,7 @@ namespace HBS.ITAG
         {
             base.ViewDidLoad();
 
+            NotifySwitch.On = Store.Instance.Notify;
 
 			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
@@ -92,7 +106,10 @@ namespace HBS.ITAG
             day4ScheduleController.parent = this;
 			myEventsController = (DataViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
+			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
+            eventDetailViewController.parent = this;
 
+            aboutViewController = (AboutViewController)this.Storyboard.InstantiateViewController("AboutViewController");
 
 			HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
@@ -116,16 +133,29 @@ namespace HBS.ITAG
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}
+
+        public void ReloadData()
+        {
+			var trackEvents = Store.Instance.Events;
+			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
+			data.parent = (UIViewController)this;
+          
+			ScheduleTableViewFavs.Source = data;
+            ScheduleTableViewFavs.ReloadData();
+        }
+
         public override void ViewDidAppear(bool animated)
         {
-			
-            if(!didRegister)
+            if (!Store.Instance.UserCreated())
             {
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
 				this.PresentViewController(temp, true, null);
-                didRegister = true;
             }
+          
         }
+
+        bool initialized = false;
+		
 
 		private void LoadTracksComplete(string message)
 		{
@@ -139,14 +169,12 @@ namespace HBS.ITAG
 
 		private void LoadLocationsComplete(string message)
 		{
-			//TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
-			//TURN OFF LOADING INDICATOR
+            //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
+            //TURN OFF LOADING INDICATOR
 
             //now load events because we have all the data
-			var trackEvents = Store.Instance.Events;
-			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
-			data.parent = (UIViewController)this;
-            ScheduleTableViewFavs.Source = data;
+            ReloadData();
+            initialized = true;
             if (ObjCRuntime.Runtime.Arch == ObjCRuntime.Arch.DEVICE)
             {
                 InitializeBeacons();
@@ -162,75 +190,50 @@ namespace HBS.ITAG
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
             {
                 Location tempLocation = Store.Instance.Locations[i];
-                    //create new region
+                //create new region
                 CLBeaconRegion beaconRegion = new CLBeaconRegion(new Foundation.NSUuid(PROXIMITY_UUID), ushort.Parse(tempLocation.Major), ushort.Parse(tempLocation.Minor), tempLocation.Nickname);
                 beaconRegion.NotifyOnExit = true;
                 beaconRegion.NotifyOnEntry = true;
                 beaconRegion.NotifyEntryStateOnDisplay = true;
-                beaconManager.StartRangingBeaconsInRegion(beaconRegion);
                 beaconManager.StartMonitoringForRegion(beaconRegion);
             }
-                //on region exit
+            
+            //on region exit
 		    beaconManager.ExitedRegion += (sender, e) =>
 		   {
-			   var notification = new UILocalNotification();
-			   Estimote.ExitedRegionEventArgs f =  e;
-			   CLBeaconRegion region = f.Region;
-
-			   UIAlertView alert = new UIAlertView()
-			   {
-				   Title = "alert title",
-				   Message = "Exiting region:" + region.Major + "," + region.Minor
-		       };
-			   alert.AddButton("OK");
-			   //alert.Show();
+               if (Store.Instance.Notify)
+               {
+                   Estimote.ExitedRegionEventArgs f = e;
+                   CLBeaconRegion region = f.Region;
+                   Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
+                   if (tempEvent != null)
+                   {
+                       OnRegionExit(tempEvent);
+                   }
+               }
 		   };
-                //on region enter
-			   beaconManager.EnteredRegion += (sender, e) =>
-			   {
-				   var notification = new UILocalNotification();
-
-
-
-                    Estimote.EnteredRegionEventArgs f =  e;
-				   CLBeaconRegion region = f.Region;
-
-				   UIAlertView alert = new UIAlertView()
-				   {
-					   Title = "alert title",
-					   Message = "Entering region:" + region.Major + "," + region.Minor
-				   };
-				   alert.AddButton("OK");
-				   //alert.Show();
-
-			   };
-                //this is for when app is open, may be able to use above instead and get rid of this
-			beaconManager.RangedBeacons += (sender, e) =>
+            //on region enter
+			beaconManager.EnteredRegion += (sender, e) =>
 			{
-				if (e.Beacons.Length == 0)
-					return;
-
-                Foundation.NSNumber major = e.Beacons[0].Major;
-				Foundation.NSNumber minor = e.Beacons[0].Minor;
-                Event proximityEvent = Store.Instance.ProximityEvent(major.ToString(), minor.ToString());
-                if (proximityEvent != null){
-                    //TODO: prompt user for dismiss/load event
-                    //TODO: check if current visible view controller is detail page, and if selected event = proximity event
-                    //       if yes then display "you are near this event" message on that screen
-                    //TODO: submit new session to web service
-
-                    UIAlertView alert = new UIAlertView()
+                if (Store.Instance.Notify)
+                {
+                    Estimote.EnteredRegionEventArgs f = e;
+                    CLBeaconRegion region = f.Region;
+                    Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
+                    if (tempEvent != null)
                     {
-                        Title = "alert title",
-                        Message = proximityEvent.Name
-					};
-					alert.AddButton("OK");
-					//alert.Show();
-				}
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+             };
+            
+		
+           });
+        }
 
-			};
-
-                });
+        private void OnSessionAddComplete(string message)
+        {
+            
         }
 
         private void HotelMapClick()
@@ -254,7 +257,101 @@ namespace HBS.ITAG
 		{
 			base.ViewWillAppear(animated);
 			//dataLabel.Text = DataObject;
+
+			if (initialized)
+			{
+				ReloadData();
+			}
 		}
+
+        public void AddEventDetailViewController()
+        {
+			
+        }
+
+        public void OnRegionExit(Event tempEvent)
+        {
+            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+			if (minutesSinceLastNotification > 5)
+            {
+				Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
+                tempEvent.LastExitNotified = DateTime.Now;
+            }
+        }
+
+		public void OnRegionEnter(Event tempEvent)
+		{
+            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+            {
+                if (UIApplication.SharedApplication.ApplicationState == UIApplicationState.Background)
+                {
+                    Store.Instance.SelectedEvent = tempEvent;
+                    var notification = new UILocalNotification();
+                    notification.FireDate = NSDate.FromTimeIntervalSinceNow(0);
+                    string message = string.Format("You are near an event in progress:{0}", tempEvent.Name);
+                    // configure the alert
+                    notification.AlertAction = "You are near an event!";
+                    notification.AlertBody = message;
+                    // modify the badge
+                    notification.ApplicationIconBadgeNumber = 1;
+                    // set the sound to be the default sound
+                    notification.SoundName = UILocalNotification.DefaultSoundName;
+                    // schedule it
+                    UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+                }
+                else
+                {
+                    var okAlertController = UIAlertController.Create("You are near an event!", tempEvent.Name, UIAlertControllerStyle.Alert);
+                    okAlertController.AddAction(UIAlertAction.Create("Dismiss", UIAlertActionStyle.Default, null));
+
+                    UIAlertAction action = UIAlertAction.Create("Show Me", UIAlertActionStyle.Default, alert => {
+                        Store.Instance.SelectedEvent = tempEvent;
+                        if (this.PresentedViewController != null && this.PresentedViewController == this.eventDetailViewController)
+                        {
+                            //refresh page if already on detail view controller
+                            eventDetailViewController.RefreshPage();
+						}
+                        else
+                        {
+                            if (this.PresentedViewController != null)
+                            {
+								
+								this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
+							}
+                            else
+                            {
+   						      this.PresentViewController(eventDetailViewController, true, null);
+                            }
+                           
+						}
+
+                    });
+                    okAlertController.AddAction(action);
+                    // Present Alert
+                    //
+                    if (this.PresentedViewController != null)
+                    {
+                        this.PresentedViewController.PresentViewController(okAlertController, true, null);
+                    }
+                    else
+                    {
+                        this.PresentViewController(okAlertController, true, null);
+                    }
+                }
+                tempEvent.LastEntryNotified = DateTime.Now;
+				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
+				
+            }
+          
+		}
+
     }
+
+
+
 }
 

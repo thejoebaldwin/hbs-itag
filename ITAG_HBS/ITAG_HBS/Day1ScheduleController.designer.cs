@@ -56,11 +56,23 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton NextTrackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton PreviousBackButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ScheduleButton { get; set; }
 
         [Action ("HomeButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void HomeButtonClick (UIKit.UIButton sender);
+
+        [Action ("June20ButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void June20ButtonClick (UIKit.UIButton sender);
 
         [Action ("June21ButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -77,6 +89,14 @@ namespace HBS.ITAG
         [Action ("MyEventsButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void MyEventsButtonClick (UIKit.UIButton sender);
+
+        [Action ("NextTrackButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NextTrackButtonClick (UIKit.UIButton sender);
+
+        [Action ("PreviousTrackButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void PreviousTrackButtonClick (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -128,6 +148,16 @@ namespace HBS.ITAG
             if (MyEventsButton != null) {
                 MyEventsButton.Dispose ();
                 MyEventsButton = null;
+            }
+
+            if (NextTrackButton != null) {
+                NextTrackButton.Dispose ();
+                NextTrackButton = null;
+            }
+
+            if (PreviousBackButton != null) {
+                PreviousBackButton.Dispose ();
+                PreviousBackButton = null;
             }
 
             if (ScheduleButton != null) {

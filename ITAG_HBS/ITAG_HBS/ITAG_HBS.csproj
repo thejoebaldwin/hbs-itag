@@ -18,7 +18,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Avastone Technologies LLC (6L4C7E6MJ5)</CodesignKey>
+    <CodesignKey>iPhone Developer: Jeremiah Brockman (MT8M43LQH5)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -28,7 +28,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>XC iOS: net.hbs.itag2017</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: net.hbs.itag2017</CodesignProvision>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -71,7 +71,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFastDev>false</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>52407</IOSDebuggerPort>
@@ -110,6 +110,14 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag58x58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag87x87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag80x80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag120x120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag57x57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag114x114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag180x180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag29x29.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -120,6 +128,7 @@
     <InterfaceDefinition Include="DataViewController.xib" />
     <InterfaceDefinition Include="FavoritesViewController.xib" />
     <InterfaceDefinition Include="PickerViewController.xib" />
+    <InterfaceDefinition Include="AboutViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -172,6 +181,10 @@
     <Compile Include="EventDetailController.cs" />
     <Compile Include="EventDetailController.designer.cs">
       <DependentUpon>EventDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AboutViewController.cs" />
+    <Compile Include="AboutViewController.designer.cs">
+      <DependentUpon>AboutViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

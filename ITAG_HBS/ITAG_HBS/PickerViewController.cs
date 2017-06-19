@@ -1,9 +1,9 @@
-﻿﻿using System;
+﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
-using ITAG.HBS;
+using System.Drawing;
 
 namespace HBS.ITAG
 {
@@ -20,34 +20,63 @@ namespace HBS.ITAG
 		{
 			base.ViewDidLoad();
 			AgePickerView.Model = new StatusModel();
-            StatePickerView.Model = new TechFocusModel();
+            //TechFocusPickerView.Model = new TechFocusModel();
+            StatePickerView.Model = new StateModel();
             GenderPickerView.Model = new GenderModel();
+           // OrganizationPickerView.Model = new OrganizationModel();
+
 
 
             SubmitForm.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
             SubmitFormGesture.NumberOfTapsRequired = 1;
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
+
+
+
+			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float) this.View.Frame.Size.Width, 44.0f));
+
+			toolbar.TintColor = UIColor.White;
+			toolbar.BarStyle = UIBarStyle.Black;
+
+			toolbar.Translucent = true;
+
+			
+
+			toolbar.Items = new UIBarButtonItem[]{
+	
+		new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+		new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
+			this.PositionTitle.ResignFirstResponder();
+	})
+	 };
+			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
+			this.PositionTitle.InputAccessoryView = toolbar;
+
+		}
+
+		public void AddBarButtonText(object sender, EventArgs e)
+		{
+			var barButtonItem = sender as UIBarButtonItem;
+			if (barButtonItem != null)
+				this.PositionTitle.Text += barButtonItem.Title;
+
 		}
 
 		private void SubmitFormClick()
 		{
             //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
-			tempUser = new User("-1",//TODO
+			tempUser = new User("-1",
                                 StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
                                 GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
-                                Position.Text,
-                                TechFocusModel.TechFocus[StatePickerView.SelectedRowInComponent(0)],
+                                PositionTitle.Text,
+                                StateModel.States[StatePickerView.SelectedRowInComponent(0)],
                                 "iOS",
                                 UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
-            Store.Instance.GetUsers(LoadUsersComplete);
-            //Store.Instance.AddUser(tempUser, AddUserComplete);
+			Store.Instance.AddUser(tempUser, AddUserComplete);
 		}
 
-		private void LoadUsersComplete(string message)
-		{
-            Store.Instance.AddUser(tempUser, AddUserComplete);
-		}
+	
         private void AddUserComplete(string message)
         {
             this.DismissViewController(true, null);
@@ -256,6 +285,50 @@ namespace HBS.ITAG
 			//pickerView.SelectedRowInComponent(2));
 
 
+		}
+
+		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
+		{
+			if (component == 0)
+				return 220f;
+			else
+				return 30f;
+		}
+	}
+
+	public class StateModel : UIPickerViewModel
+	{
+		public static string[] States = new string[] {
+			"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+		};
+
+		public StateModel()
+		{
+
+		}
+
+		public override nint GetComponentCount(UIPickerView v)
+		{
+			return 1;
+		}
+
+		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
+		{
+			return States.Length;
+		}
+
+		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
+		{
+			return States[row];
+		}
+
+		public override void Selected(UIPickerView pickerView, nint row, nint component)
+		{
+
+			//lbl.Text = String.Format("{0} : {1} : {2}",
+			//names[pickerView.SelectedRowInComponent(0)],
+			//pickerView.SelectedRowInComponent(1),
+			//pickerView.SelectedRowInComponent(2));
 		}
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)

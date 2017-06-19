@@ -15,6 +15,10 @@ namespace HBS.ITAG
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton AboutButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton HomeButton { get; set; }
 
         [Outlet]
@@ -24,6 +28,10 @@ namespace HBS.ITAG
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton MyEventsButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISwitch NotifySwitch { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -37,9 +45,17 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ScheduleTableViewFavs { get; set; }
 
+        [Action ("AboutButtonClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void AboutButtonClick (UIKit.UIButton sender);
+
         [Action ("EventsButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EventsButtonClick (UIKit.UIButton sender);
+
+        [Action ("NotifySwitchClicked:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void NotifySwitchClicked (UIKit.UISwitch sender);
 
         [Action ("ScheduleButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -47,6 +63,11 @@ namespace HBS.ITAG
 
         void ReleaseDesignerOutlets ()
         {
+            if (AboutButton != null) {
+                AboutButton.Dispose ();
+                AboutButton = null;
+            }
+
             if (HomeButton != null) {
                 HomeButton.Dispose ();
                 HomeButton = null;
@@ -60,6 +81,11 @@ namespace HBS.ITAG
             if (MyEventsButton != null) {
                 MyEventsButton.Dispose ();
                 MyEventsButton = null;
+            }
+
+            if (NotifySwitch != null) {
+                NotifySwitch.Dispose ();
+                NotifySwitch = null;
             }
 
             if (PhoneNumber != null) {

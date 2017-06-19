@@ -39,17 +39,31 @@ namespace HBS.ITAG
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			// Perform any additional setup after loading the view, typically from a nib.
-
-			//create the tableview contents
-			
-            var trackEvents = Store.Instance.Events;
-			ScheduleTableView2.Source = new PreviousTableViewSource(trackEvents);
-            ScheduleTableView.Source = new FavoritesTableViewSource(trackEvents);
-           
-
-
+            // Perform any additional setup after loading the view, typically from a nib.
+            //create the tableview contents
+            //ReloadData();
 		}
+
+        public override void ViewDidAppear(bool animated)
+        {
+            ReloadData();
+        }
+
+        public void ReloadData()
+        {
+            var trackEvents = Store.Instance.Events;
+            PreviousTableViewSource pastEvents = new PreviousTableViewSource(trackEvents);
+            FavoritesTableViewSource upcomingEvents = new FavoritesTableViewSource(trackEvents);
+            pastEvents.parent = this;
+            upcomingEvents.parent = this;
+            if (ScheduleTableView2 != null)
+            {
+                ScheduleTableView2.Source = pastEvents;
+                ScheduleTableView.ReloadData();
+                ScheduleTableView.Source = upcomingEvents;
+                ScheduleTableView.ReloadData();
+            }
+        }
 
 		public override void DidReceiveMemoryWarning()
 		{
