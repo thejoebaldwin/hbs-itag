@@ -45,25 +45,25 @@ namespace HBS.ITAG
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			tableView.DeselectRow(indexPath, true);
-			Event tempEvent = TableItems[indexPath.Row];
-			Store.Instance.SelectedEvent = tempEvent;
-			if (!Store.Instance.SelectedEvent.ScheduleOnly)
-			{
+            tableView.DeselectRow(indexPath, true);
+            Event tempEvent = TableItems[indexPath.Row];
+            Store.Instance.SelectedEvent = tempEvent;
+            if (!Store.Instance.SelectedEvent.ScheduleOnly)
+            {
                 //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
                 EventDetailController tempEventDetail = null;
                 if (parent.GetType() == typeof(FavoritesViewController))
                 {
-					FavoritesViewController temp = (FavoritesViewController)parent;
+                    FavoritesViewController temp = (FavoritesViewController)parent;
                     tempEventDetail = temp.eventDetailViewController;
                 }
                 else if (parent.GetType() == typeof(DataViewController))
                 {
-					DataViewController temp = (DataViewController)parent;
+                    DataViewController temp = (DataViewController)parent;
                     tempEventDetail = temp.parent.eventDetailViewController;
                 }
                 parent.PresentViewController(tempEventDetail, true, null);
-			}
+            }
 		}
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -95,24 +95,21 @@ namespace HBS.ITAG
                     cell.TextLabel.TextColor = UIColor.White;
                     cell.DetailTextLabel.TextColor = UIColor.White;
                 }
-                else if (item.EndTime < DateTime.Now)
+                else//(item.EndTime < DateTime.Now)
                 {
                     cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
                     cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
                     cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
                 }
-                else
+                /*else
                 {
                     cell.BackgroundColor = UIColor.White;
                     cell.TextLabel.TextColor = UIColor.Black;
                     cell.DetailTextLabel.TextColor = UIColor.Black;
                     cell.DetailTextLabel.Text = "Upcoming";
-                }
+                }*/
             }
-
-			
-            
-			    return cell;
+            return cell;
 		}
 	}
 }
