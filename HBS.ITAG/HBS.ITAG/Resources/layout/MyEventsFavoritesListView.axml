@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eventItem"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_height="150px"
+    android:background="@drawable/primaryBox">
   <TextView
       android:text="Text"
       android:textColor="@android:color/white"
-      android:textAppearance="?android:attr/textAppearanceSmall"
-      android:layout_height="150px"
+      android:layout_height="60px"
       android:layout_width="fill_parent"
-      android:background="@drawable/primaryBox"
       android:gravity="center"
-      android:id="@+id/MElistViewTextView1"/>
+      android:id="@+id/MElistViewTextView1"
+      android:textSize="30px"
+      android:paddingTop="20px" />
+  <TextView
+      android:text="subtext"
+      android:textColor="@android:color/white"
+      android:layout_height="50px"
+      android:layout_width="fill_parent"
+      android:gravity="center"
+      android:id="@+id/faveEventTime"
+      android:layout_marginBottom="17.5dp"
+      android:textSize="25px" />
 </LinearLayout>

@@ -2430,26 +2430,26 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700cb
 			public const int MElistView1 = 2131165387;
 			
-			// aapt resource value: 0x7f0700cd
-			public const int MElistView2 = 2131165389;
-			
 			// aapt resource value: 0x7f0700ce
-			public const int MElistViewTextView1 = 2131165390;
+			public const int MElistView2 = 2131165390;
 			
-			// aapt resource value: 0x7f0700cf
-			public const int MElistViewTextView2 = 2131165391;
+			// aapt resource value: 0x7f0700d1
+			public const int MElistViewTextView1 = 2131165393;
+			
+			// aapt resource value: 0x7f0700d2
+			public const int MElistViewTextView2 = 2131165394;
 			
 			// aapt resource value: 0x7f0700ca
 			public const int MEtextView2 = 2131165386;
 			
-			// aapt resource value: 0x7f0700cc
-			public const int MEtextView6 = 2131165388;
+			// aapt resource value: 0x7f0700cd
+			public const int MEtextView6 = 2131165389;
 			
 			// aapt resource value: 0x7f07006f
 			public const int Title = 2131165295;
 			
-			// aapt resource value: 0x7f0700d0
-			public const int action0 = 2131165392;
+			// aapt resource value: 0x7f0700d3
+			public const int action0 = 2131165395;
 			
 			// aapt resource value: 0x7f07005a
 			public const int action_bar = 2131165274;
@@ -2475,8 +2475,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07005b
 			public const int action_context_bar = 2131165275;
 			
-			// aapt resource value: 0x7f0700d4
-			public const int action_divider = 2131165396;
+			// aapt resource value: 0x7f0700d7
+			public const int action_divider = 2131165399;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -2529,8 +2529,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700ab
 			public const int calendar = 2131165355;
 			
-			// aapt resource value: 0x7f0700d1
-			public const int cancel_action = 2131165393;
+			// aapt resource value: 0x7f0700d4
+			public const int cancel_action = 2131165396;
 			
 			// aapt resource value: 0x7f07002b
 			public const int center = 2131165227;
@@ -2544,8 +2544,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070052
 			public const int checkbox = 2131165266;
 			
-			// aapt resource value: 0x7f0700d7
-			public const int chronometer = 2131165399;
+			// aapt resource value: 0x7f0700da
+			public const int chronometer = 2131165402;
 			
 			// aapt resource value: 0x7f070033
 			public const int clip_horizontal = 2131165235;
@@ -2568,131 +2568,131 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07004f
 			public const int customPanel = 2131165263;
 			
-			// aapt resource value: 0x7f0700e3
-			public const int d1t1left_arrow = 2131165411;
-			
-			// aapt resource value: 0x7f0700e5
-			public const int d1t1right_arrow = 2131165413;
-			
-			// aapt resource value: 0x7f0700e7
-			public const int d1t2left_arrow = 2131165415;
+			// aapt resource value: 0x7f0700e6
+			public const int d1t1left_arrow = 2131165414;
 			
 			// aapt resource value: 0x7f0700e8
-			public const int d1t2right_arrow = 2131165416;
+			public const int d1t1right_arrow = 2131165416;
 			
 			// aapt resource value: 0x7f0700ea
-			public const int d1t3left_arrow = 2131165418;
+			public const int d1t2left_arrow = 2131165418;
 			
 			// aapt resource value: 0x7f0700eb
-			public const int d1t3right_arrow = 2131165419;
-			
-			// aapt resource value: 0x7f0700ee
-			public const int d2t1left_arrow = 2131165422;
-			
-			// aapt resource value: 0x7f0700ef
-			public const int d2t1right_arrow = 2131165423;
-			
-			// aapt resource value: 0x7f0700f1
-			public const int d2t2left_arrow = 2131165425;
-			
-			// aapt resource value: 0x7f0700f2
-			public const int d2t2right_arrow = 2131165426;
-			
-			// aapt resource value: 0x7f0700f4
-			public const int d2t3left_arrow = 2131165428;
-			
-			// aapt resource value: 0x7f0700f5
-			public const int d2t3right_arrow = 2131165429;
-			
-			// aapt resource value: 0x7f0700f8
-			public const int d3t1left_arrow = 2131165432;
-			
-			// aapt resource value: 0x7f0700f9
-			public const int d3t1right_arrow = 2131165433;
-			
-			// aapt resource value: 0x7f0700fb
-			public const int d3t2left_arrow = 2131165435;
-			
-			// aapt resource value: 0x7f0700fc
-			public const int d3t2right_arrow = 2131165436;
-			
-			// aapt resource value: 0x7f0700fe
-			public const int d3t3left_arrow = 2131165438;
-			
-			// aapt resource value: 0x7f070101
-			public const int d4t1left_arrow = 2131165441;
-			
-			// aapt resource value: 0x7f070102
-			public const int d4t1right_arrow = 2131165442;
-			
-			// aapt resource value: 0x7f070104
-			public const int d4t2left_arrow = 2131165444;
-			
-			// aapt resource value: 0x7f070105
-			public const int d4t2right_arrow = 2131165445;
-			
-			// aapt resource value: 0x7f070107
-			public const int d4t3left_arrow = 2131165447;
-			
-			// aapt resource value: 0x7f0700ff
-			public const int day_four = 2131165439;
-			
-			// aapt resource value: 0x7f0700e0
-			public const int day_four_btn = 2131165408;
-			
-			// aapt resource value: 0x7f0700e1
-			public const int day_one = 2131165409;
-			
-			// aapt resource value: 0x7f0700dd
-			public const int day_one_btn = 2131165405;
-			
-			// aapt resource value: 0x7f0700f6
-			public const int day_three = 2131165430;
-			
-			// aapt resource value: 0x7f0700df
-			public const int day_three_btn = 2131165407;
-			
-			// aapt resource value: 0x7f0700ec
-			public const int day_two = 2131165420;
-			
-			// aapt resource value: 0x7f0700de
-			public const int day_two_btn = 2131165406;
-			
-			// aapt resource value: 0x7f070100
-			public const int dayfourTrack1 = 2131165440;
-			
-			// aapt resource value: 0x7f070103
-			public const int dayfourTrack2 = 2131165443;
-			
-			// aapt resource value: 0x7f070106
-			public const int dayfourTrack3 = 2131165446;
-			
-			// aapt resource value: 0x7f0700e2
-			public const int dayoneTrack1 = 2131165410;
-			
-			// aapt resource value: 0x7f0700e6
-			public const int dayoneTrack2 = 2131165414;
-			
-			// aapt resource value: 0x7f0700e9
-			public const int dayoneTrack3 = 2131165417;
-			
-			// aapt resource value: 0x7f0700f7
-			public const int daythreeTrack1 = 2131165431;
-			
-			// aapt resource value: 0x7f0700fa
-			public const int daythreeTrack2 = 2131165434;
-			
-			// aapt resource value: 0x7f0700fd
-			public const int daythreeTrack3 = 2131165437;
+			public const int d1t2right_arrow = 2131165419;
 			
 			// aapt resource value: 0x7f0700ed
-			public const int daytwoTrack1 = 2131165421;
+			public const int d1t3left_arrow = 2131165421;
+			
+			// aapt resource value: 0x7f0700ee
+			public const int d1t3right_arrow = 2131165422;
+			
+			// aapt resource value: 0x7f0700f1
+			public const int d2t1left_arrow = 2131165425;
+			
+			// aapt resource value: 0x7f0700f2
+			public const int d2t1right_arrow = 2131165426;
+			
+			// aapt resource value: 0x7f0700f4
+			public const int d2t2left_arrow = 2131165428;
+			
+			// aapt resource value: 0x7f0700f5
+			public const int d2t2right_arrow = 2131165429;
+			
+			// aapt resource value: 0x7f0700f7
+			public const int d2t3left_arrow = 2131165431;
+			
+			// aapt resource value: 0x7f0700f8
+			public const int d2t3right_arrow = 2131165432;
+			
+			// aapt resource value: 0x7f0700fb
+			public const int d3t1left_arrow = 2131165435;
+			
+			// aapt resource value: 0x7f0700fc
+			public const int d3t1right_arrow = 2131165436;
+			
+			// aapt resource value: 0x7f0700fe
+			public const int d3t2left_arrow = 2131165438;
+			
+			// aapt resource value: 0x7f0700ff
+			public const int d3t2right_arrow = 2131165439;
+			
+			// aapt resource value: 0x7f070101
+			public const int d3t3left_arrow = 2131165441;
+			
+			// aapt resource value: 0x7f070104
+			public const int d4t1left_arrow = 2131165444;
+			
+			// aapt resource value: 0x7f070105
+			public const int d4t1right_arrow = 2131165445;
+			
+			// aapt resource value: 0x7f070107
+			public const int d4t2left_arrow = 2131165447;
+			
+			// aapt resource value: 0x7f070108
+			public const int d4t2right_arrow = 2131165448;
+			
+			// aapt resource value: 0x7f07010a
+			public const int d4t3left_arrow = 2131165450;
+			
+			// aapt resource value: 0x7f070102
+			public const int day_four = 2131165442;
+			
+			// aapt resource value: 0x7f0700e3
+			public const int day_four_btn = 2131165411;
+			
+			// aapt resource value: 0x7f0700e4
+			public const int day_one = 2131165412;
+			
+			// aapt resource value: 0x7f0700e0
+			public const int day_one_btn = 2131165408;
+			
+			// aapt resource value: 0x7f0700f9
+			public const int day_three = 2131165433;
+			
+			// aapt resource value: 0x7f0700e2
+			public const int day_three_btn = 2131165410;
+			
+			// aapt resource value: 0x7f0700ef
+			public const int day_two = 2131165423;
+			
+			// aapt resource value: 0x7f0700e1
+			public const int day_two_btn = 2131165409;
+			
+			// aapt resource value: 0x7f070103
+			public const int dayfourTrack1 = 2131165443;
+			
+			// aapt resource value: 0x7f070106
+			public const int dayfourTrack2 = 2131165446;
+			
+			// aapt resource value: 0x7f070109
+			public const int dayfourTrack3 = 2131165449;
+			
+			// aapt resource value: 0x7f0700e5
+			public const int dayoneTrack1 = 2131165413;
+			
+			// aapt resource value: 0x7f0700e9
+			public const int dayoneTrack2 = 2131165417;
+			
+			// aapt resource value: 0x7f0700ec
+			public const int dayoneTrack3 = 2131165420;
+			
+			// aapt resource value: 0x7f0700fa
+			public const int daythreeTrack1 = 2131165434;
+			
+			// aapt resource value: 0x7f0700fd
+			public const int daythreeTrack2 = 2131165437;
+			
+			// aapt resource value: 0x7f070100
+			public const int daythreeTrack3 = 2131165440;
 			
 			// aapt resource value: 0x7f0700f0
-			public const int daytwoTrack2 = 2131165424;
+			public const int daytwoTrack1 = 2131165424;
 			
 			// aapt resource value: 0x7f0700f3
-			public const int daytwoTrack3 = 2131165427;
+			public const int daytwoTrack2 = 2131165427;
+			
+			// aapt resource value: 0x7f0700f6
+			public const int daytwoTrack3 = 2131165430;
 			
 			// aapt resource value: 0x7f070058
 			public const int decor_content_parent = 2131165272;
@@ -2724,14 +2724,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
-			// aapt resource value: 0x7f0700dc
-			public const int end_padder = 2131165404;
+			// aapt resource value: 0x7f0700df
+			public const int end_padder = 2131165407;
 			
 			// aapt resource value: 0x7f070023
 			public const int enterAlways = 2131165219;
 			
 			// aapt resource value: 0x7f070024
 			public const int enterAlwaysCollapsed = 2131165220;
+			
+			// aapt resource value: 0x7f0700d0
+			public const int eventItem = 2131165392;
 			
 			// aapt resource value: 0x7f070025
 			public const int exitUntilCollapsed = 2131165221;
@@ -2741,6 +2744,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f070051
 			public const int expanded_menu = 2131165265;
+			
+			// aapt resource value: 0x7f0700cc
+			public const int faveEventTime = 2131165388;
 			
 			// aapt resource value: 0x7f0700a1
 			public const int favorites_header = 2131165345;
@@ -2793,8 +2799,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07003f
 			public const int image = 2131165247;
 			
-			// aapt resource value: 0x7f0700db
-			public const int info = 2131165403;
+			// aapt resource value: 0x7f0700de
+			public const int info = 2131165406;
 			
 			// aapt resource value: 0x7f07009f
 			public const int itag_icon = 2131165343;
@@ -2805,11 +2811,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
 			
-			// aapt resource value: 0x7f0700d5
-			public const int line1 = 2131165397;
+			// aapt resource value: 0x7f0700d8
+			public const int line1 = 2131165400;
 			
-			// aapt resource value: 0x7f0700d9
-			public const int line3 = 2131165401;
+			// aapt resource value: 0x7f0700dc
+			public const int line3 = 2131165404;
 			
 			// aapt resource value: 0x7f0700a9
 			public const int linearLayout1 = 2131165353;
@@ -2820,8 +2826,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070041
 			public const int list_item = 2131165249;
 			
-			// aapt resource value: 0x7f0700d3
-			public const int media_actions = 2131165395;
+			// aapt resource value: 0x7f0700d6
+			public const int media_actions = 2131165398;
 			
 			// aapt resource value: 0x7f07001d
 			public const int middle = 2131165213;
@@ -2927,6 +2933,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f070029
 			public const int pin = 2131165225;
+			
+			// aapt resource value: 0x7f0700cf
+			public const int prevEventTime = 2131165391;
 			
 			// aapt resource value: 0x7f0700ac
 			public const int profileimage = 2131165356;
@@ -3036,8 +3045,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070031
 			public const int start = 2131165233;
 			
-			// aapt resource value: 0x7f0700d2
-			public const int status_bar_latest_event_content = 2131165394;
+			// aapt resource value: 0x7f0700d5
+			public const int status_bar_latest_event_content = 2131165397;
 			
 			// aapt resource value: 0x7f070065
 			public const int submit_area = 2131165285;
@@ -3045,11 +3054,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f0700da
-			public const int text = 2131165402;
+			// aapt resource value: 0x7f0700dd
+			public const int text = 2131165405;
 			
-			// aapt resource value: 0x7f0700d8
-			public const int text2 = 2131165400;
+			// aapt resource value: 0x7f0700db
+			public const int text2 = 2131165403;
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
@@ -3057,8 +3066,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700a6
 			public const int third_favorite = 2131165350;
 			
-			// aapt resource value: 0x7f0700d6
-			public const int time = 2131165398;
+			// aapt resource value: 0x7f0700d9
+			public const int time = 2131165401;
 			
 			// aapt resource value: 0x7f070043
 			public const int title = 2131165251;
@@ -3075,8 +3084,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070087
 			public const int touch_outside = 2131165319;
 			
-			// aapt resource value: 0x7f0700e4
-			public const int track_title = 2131165412;
+			// aapt resource value: 0x7f0700e7
+			public const int track_title = 2131165415;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;

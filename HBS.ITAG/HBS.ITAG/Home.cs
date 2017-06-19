@@ -113,7 +113,7 @@ namespace HBS.ITAG
             //Store.Instance.LoadEventsFromFile();
             //Store.Instance.LoadTracksFromFile();
 
-        
+            OnServiceReady();
         }
 
 		private void LoadTracksComplete(string message)
@@ -130,8 +130,8 @@ namespace HBS.ITAG
 		{
             if (!isEmulator())
             {
-			InitializeBeacons();
-                }
+			    InitializeBeacons();
+            }
 		}
 
 		private void InitializeBeacons()
