@@ -1,3 +1,5 @@
+#define __ANDROID__
+
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,13 +10,18 @@ using HBS.ITAG.Model;
 using HBS.ITAG;
 
 
+
+#if __ANDROID__
+// Android-specific code
+using Android.Content;
+
+#endif
+
 #if __IOS__
 using ITAG_HBS;
 using Foundation;
 using UIKit;
 #endif
-
-
 
 
 
@@ -301,14 +308,15 @@ namespace HBS.ITAG.Model
 				favorites += _arrFavoriteIds[i];
 			}
             //return favorites;
-#if __MOBILE__
+#if __ANDROID__
             // Xamarin iOS or Android-specific code
-            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-            //var somePref = prefs.GetBoolean("PrefName", false);
+            var prefs = Android.App.Application.Context.GetSharedPreferences("Favorites", FileCreationMode.Private);
+            var somePref = prefs.GetBoolean("PrefName", false);
+            
 #endif
 #if __IOS__
-            // iOS-specific code
-            NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+        // iOS-specific code
+        NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
 
 #endif
         }

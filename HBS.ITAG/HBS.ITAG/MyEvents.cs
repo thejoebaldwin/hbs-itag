@@ -95,15 +95,15 @@ namespace HBS.ITAG
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             string value = mItems[e.Position];
-
-           /* for (int i = 0; i < events.Capacity; i++)
+            /*
+           for (int i = 0; i < events.Capacity; i++)
             {
                 if (events[i].Name == value)
                 {
                     clickIndex = events[i].Id;
                 }
 
-            } */
+            } */ 
             StartActivity(typeof(EventDetails));
             
         }

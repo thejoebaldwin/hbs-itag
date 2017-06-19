@@ -5,6 +5,7 @@ using System;
 using Android.Views;
 using System.Collections;
 using Android.Content;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
@@ -50,6 +51,7 @@ namespace HBS.ITAG
                     String genderAnswer = gender.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
 
+                    //User newUser = new User( , ageAnswer, genderAnswer, jobTitleAnswer, techFocusAnswer, organizationAnswer, );
                     
                     surveyDone = true;
                     var prefEditor = prefs.Edit();

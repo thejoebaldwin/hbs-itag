@@ -15,28 +15,26 @@ namespace HBS.ITAG
 {
     class OldUser
     {
-        public int Id { get; set; }
-        public string State { get; set; }
+        public string Id { get; set; }
         public string Age { get; set; }
         public string Gender { get; set; }
-        public string JobTitle { get; set; }
-        public string Email { get; set; }
-        public Boolean EmailNotifications { get; set; }
-        public int[] FavoritedEvents { get; set; }
-        public Event[] FullFavoritedEvents { get; set; }
+        public string PositionTitle { get; set; }
+        public string DeviceId { get; set; }
+        public string DeviceType { get; set; }
+        public string TechFocus { get; set; }
+        public string OrganizationAnswer { get; set; }
 
 
-        public OldUser(int id, string state, string age, string gender, string jobTitle, string email, Boolean emailNotifications, int[] favoritedEvents, Event[] fullFavoritedEvents)
+        public OldUser( string id, string age, string gender, string positionTitle, string deviceId, string deviceType, string techFocus, string organizationAnswer)
         {
             Id = id;
-            State = state;
             Age = age;
             Gender = gender;
-            JobTitle = jobTitle;
-            Email = email;
-            EmailNotifications = emailNotifications;
-            FavoritedEvents = favoritedEvents;
-            FullFavoritedEvents = fullFavoritedEvents;
+            PositionTitle = positionTitle;
+            DeviceId = deviceId;
+            DeviceType = deviceType;
+            TechFocus = techFocus;
+            OrganizationAnswer = organizationAnswer;
 
         }
 
@@ -59,8 +57,8 @@ namespace HBS.ITAG
             int[] favoritedEvents = null;
             Event[] fullFavoritedEvents = null;
 
-
-            return new OldUser( id, state, age, gender, jobTitle, email, emailNotifications, favoritedEvents, fullFavoritedEvents);
+            return null;
+            //return new OldUser( id, state, age, gender, jobTitle, email, emailNotifications, favoritedEvents, fullFavoritedEvents);
         }
     }
 }
