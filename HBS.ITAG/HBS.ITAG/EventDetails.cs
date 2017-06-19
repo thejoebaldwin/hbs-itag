@@ -16,6 +16,7 @@ using Android.Text.Method;
 using Android.Graphics.Drawables;
 using Android;
 using HBS.ITAG.Model;
+using System.Globalization;
 
 namespace HBS.ITAG
 {
@@ -34,64 +35,88 @@ namespace HBS.ITAG
 
             // Sets Event name
             TextView name = FindViewById<TextView>(Resource.Id.EDtextView3);
-            String newText = events[indexedEvent].Name;
-            Char[] newTextArr = newText.ToCharArray();
-            name.SetText(newTextArr, 0, newTextArr.Length);
+            name.Text = Store.Instance.SelectedEvent.Name;
+            //String newText = events[indexedEvent].Name;
+            //Char[] newTextArr = newText.ToCharArray();
+            //name.SetText(newTextArr, 0, newTextArr.Length);
 
             //Sets Event time
             TextView time = FindViewById<TextView>(Resource.Id.EDtextView5);
-            DateTime newStartTime = events[indexedEvent].StartTime;
-            DateTime newEndTime = events[indexedEvent].EndTime;
-            String temp = newStartTime.ToShortTimeString().ToString() + "  to  " + newEndTime.ToShortTimeString().ToString();
-            Char[] newTimeArr = temp.ToCharArray();
-            time.SetText(newTimeArr, 0, newTimeArr.Length);
+            TextView day = FindViewById<TextView>(Resource.Id.eventDay);
+            day.Text = Store.Instance.SelectedEvent.StartTime.DayOfWeek.ToString() + ", " + CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Store.Instance.SelectedEvent.StartTime.Month) + " " + Store.Instance.SelectedEvent.StartTime.Day.ToString();
+            time.Text = Store.Instance.SelectedEvent.StartTime.ToLocalTime().ToShortTimeString() + " to " + Store.Instance.SelectedEvent.EndTime.ToLocalTime().ToShortTimeString();
+            //DateTime newStartTime = events[indexedEvent].StartTime;
+            //DateTime newEndTime = events[indexedEvent].EndTime;
+            //String temp = newStartTime.ToShortTimeString().ToString() + "  to  " + newEndTime.ToShortTimeString().ToString();
+            //Char[] newTimeArr = temp.ToCharArray();
+            //time.SetText(newTimeArr, 0, newTimeArr.Length);
 
             //Sets Event location
             TextView location = FindViewById<TextView>(Resource.Id.EDtextView7);
+            if(Store.Instance.SelectedEvent.LocationId != null && Store.Instance.SelectedEvent.LocationId != "-1")
+            {
+                location.Text = Store.Instance.Locations.Find(x => x.Id == Store.Instance.SelectedEvent.LocationId).Name.ToString();
+            }
+            else
+            {
+                location.Text = "TBD";
+            }
 
             // Sets up link on the bottom of page
             TextView link = FindViewById<TextView>(Resource.Id.EDtextView9);
-            string eventWebId = events[indexedEvent].EventWebId;
-            String endOfLink = "/" + newStartTime.DayOfWeek + "/#event-" + eventWebId;
-            link.TextFormatted = Html.FromHtml("" +"<a href=https://iowacountiesit.org/itag-conference/schedule/" + endOfLink + "\">Click Here</a> "+"");
+
+            String endOfLink = "/" + Store.Instance.SelectedEvent.StartTime.DayOfWeek + "/#event-" + Store.Instance.SelectedEvent.EventWebId;
+            link.TextFormatted = Html.FromHtml("" +"<a href=https://iowacountiesit.org/itag-conference/schedule/" + endOfLink + "\">Link to Full Description</a> "+"");
             link.MovementMethod = LinkMovementMethod.Instance;
 
 
             // Favorites Button functionality
             var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
-            int count = 0;
             
-            if ( events[indexedEvent].Favorited )
+            if ( Store.Instance.SelectedEvent.Favorited )
             {
                 button.SetImageDrawable(GetDrawable(17301516));
-                count = 1;
             }
             else
             {
                 button.SetImageDrawable(GetDrawable(17301515));
-                count = 0;
             } 
 
 
             button.Click += (object sender, EventArgs e) =>
                 {
-
-                    if (count % 2 == 0)
+                    if(Store.Instance.SelectedEvent.Favorited)
                     {
-                        Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
-                        toast.Show();
-                        button.SetImageDrawable(GetDrawable(17301516));
-                        count++;
-                        HBS.ITAG.Model.Store.Instance.AddFavorite(events[indexedEvent]);
-                    }
-                    else
-                    {
+                        Store.Instance.SelectedEvent.Favorited = false;
                         Toast toast = Toast.MakeText(this, "Removed from Favorites", ToastLength.Short);
                         toast.Show();
                         button.SetImageDrawable(GetDrawable(17301515));
-                        count++;
-                        HBS.ITAG.Model.Store.Instance.DeleteFavorite(events[indexedEvent]);
+                        HBS.ITAG.Model.Store.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
                     }
+                    else
+                    {
+                        Store.Instance.SelectedEvent.Favorited = true;
+                        Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
+                        toast.Show();
+                        button.SetImageDrawable(GetDrawable(17301516));
+                        HBS.ITAG.Model.Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
+                    }
+                    //if (count % 2 == 0)
+                    //{
+                    //    Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
+                    //    toast.Show();
+                    //    button.SetImageDrawable(GetDrawable(17301516));
+                    //    count++;
+                    //    HBS.ITAG.Model.Store.Instance.AddFavorite(events[indexedEvent]);
+                    //}
+                    //else
+                    //{
+                    //    Toast toast = Toast.MakeText(this, "Removed from Favorites", ToastLength.Short);
+                    //    toast.Show();
+                    //    button.SetImageDrawable(GetDrawable(17301515));
+                    //    count++;
+                    //    HBS.ITAG.Model.Store.Instance.DeleteFavorite(events[indexedEvent]);
+                    //}
                      
                 };
            

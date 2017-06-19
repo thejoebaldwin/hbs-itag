@@ -111,7 +111,8 @@ namespace HBS.ITAG
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Event value = favoritedEvents[e.Position];
+            //Event value = favoritedEvents[e.Position];
+            Store.Instance.SelectedEvent = favoritedEvents[e.Position];
             /*
            for (int i = 0; i < events.Capacity; i++)
             {
@@ -127,6 +128,7 @@ namespace HBS.ITAG
 
         private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            Store.Instance.SelectedEvent = previousEvents[e.Position];
             StartActivity(typeof(EventDetails));
         }
     }

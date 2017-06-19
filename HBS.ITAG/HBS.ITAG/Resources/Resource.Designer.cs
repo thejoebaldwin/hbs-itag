@@ -2364,11 +2364,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070096
 			public const int EDrelativeLayout3 = 2131165334;
 			
-			// aapt resource value: 0x7f070099
-			public const int EDrelativeLayout4 = 2131165337;
+			// aapt resource value: 0x7f07009a
+			public const int EDrelativeLayout4 = 2131165338;
 			
-			// aapt resource value: 0x7f07009c
-			public const int EDrelativeLayout5 = 2131165340;
+			// aapt resource value: 0x7f07009d
+			public const int EDrelativeLayout5 = 2131165341;
 			
 			// aapt resource value: 0x7f070091
 			public const int EDtextView1 = 2131165329;
@@ -2382,17 +2382,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070097
 			public const int EDtextView4 = 2131165335;
 			
-			// aapt resource value: 0x7f070098
-			public const int EDtextView5 = 2131165336;
-			
-			// aapt resource value: 0x7f07009a
-			public const int EDtextView6 = 2131165338;
+			// aapt resource value: 0x7f070099
+			public const int EDtextView5 = 2131165337;
 			
 			// aapt resource value: 0x7f07009b
-			public const int EDtextView7 = 2131165339;
+			public const int EDtextView6 = 2131165339;
 			
-			// aapt resource value: 0x7f07009d
-			public const int EDtextView8 = 2131165341;
+			// aapt resource value: 0x7f07009c
+			public const int EDtextView7 = 2131165340;
 			
 			// aapt resource value: 0x7f07009e
 			public const int EDtextView9 = 2131165342;
@@ -2732,6 +2729,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f070024
 			public const int enterAlwaysCollapsed = 2131165220;
+			
+			// aapt resource value: 0x7f070098
+			public const int eventDay = 2131165336;
 			
 			// aapt resource value: 0x7f0700d0
 			public const int eventItem = 2131165392;
