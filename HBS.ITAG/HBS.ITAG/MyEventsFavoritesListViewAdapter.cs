@@ -9,29 +9,30 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-    class MyEventsFavoritesListViewAdapter : BaseAdapter<string>
+    class MyEventsFavoritesListViewAdapter : BaseAdapter<Event>
     {
 
-        private List<string> mItems;
+        private List<Event> tableItems;
         private Context mContext;
 
         public override int Count
         {
-            get { return mItems.Count; }
+            get { return tableItems.Count; }
         }
 
-        public MyEventsFavoritesListViewAdapter(Context context, List<string> items)
+        public MyEventsFavoritesListViewAdapter(Context context, int layout, List<Event> events)
         {
-            mItems = items;
+            tableItems = events;
             mContext = context;
         }
 
-        public override string this[int position]
+        public override Event this[int position]
         {
-            get { return mItems[position]; }
+            get { return tableItems[position]; }
         }
 
         public override long GetItemId(int position)
@@ -46,12 +47,28 @@ namespace HBS.ITAG
             if (row == null)
             {
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.MyEventsFavoritesListView, null, false);
+                //LayoutInflater inflater = (LayoutInflater)mContext.GetSystemService(Context.LayoutInflaterService);
             }
+            LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.eventItem);
+            TextView eventName = row.FindViewById<TextView>(Resource.Id.MElistViewTextView1);
+            TextView eventTime = row.FindViewById<TextView>(Resource.Id.faveEventTime);
+            eventName.Text = tableItems[position].Name;
+            eventTime.Text = tableItems[position].StartTime.ToLocalTime().ToShortTimeString() + " - " + tableItems[position].EndTime.ToLocalTime().ToShortTimeString();
 
-            TextView txtname = row.FindViewById<TextView>(Resource.Id.MElistViewTextView1);
-            txtname.Text = mItems[position];
-
+            if (tableItems[position].ScheduleOnly)
+            {
+                eventItem.SetBackgroundResource(Resource.Drawable.secondaryBox);
+            }
+            else
+            {
+                eventItem.SetBackgroundResource(Resource.Drawable.primaryBox);
+            }
             return row;
         }
+    }
+    public class ViewHolder
+    {
+        public TextView txtName;
+        public TextView eventTime;
     }
 }

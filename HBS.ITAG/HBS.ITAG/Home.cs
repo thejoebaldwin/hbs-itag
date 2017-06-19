@@ -168,6 +168,7 @@ namespace HBS.ITAG
                     }
                 }
             };
+            OnServiceReady();
         }
 
         private IntPtr getApplicationContext()
@@ -189,8 +190,8 @@ namespace HBS.ITAG
 		{
             if (!isEmulator())
             {
-			InitializeBeacons();
-                }
+			    InitializeBeacons();
+            }
 		}
 
 		private void InitializeBeacons()
