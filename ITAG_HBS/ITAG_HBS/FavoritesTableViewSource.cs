@@ -46,23 +46,26 @@ namespace HBS.ITAG
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
             tableView.DeselectRow(indexPath, true);
-            Event tempEvent = TableItems[indexPath.Row];
-            Store.Instance.SelectedEvent = tempEvent;
-            if (!Store.Instance.SelectedEvent.ScheduleOnly)
+            if (TableItems.Count != 0)
             {
-                //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-                EventDetailController tempEventDetail = null;
-                if (parent.GetType() == typeof(FavoritesViewController))
+                Event tempEvent = TableItems[indexPath.Row];
+                Store.Instance.SelectedEvent = tempEvent;
+                if (!Store.Instance.SelectedEvent.ScheduleOnly)
                 {
-                    FavoritesViewController temp = (FavoritesViewController)parent;
-                    tempEventDetail = temp.eventDetailViewController;
+                    //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+                    EventDetailController tempEventDetail = null;
+                    if (parent.GetType() == typeof(FavoritesViewController))
+                    {
+                        FavoritesViewController temp = (FavoritesViewController)parent;
+                        tempEventDetail = temp.eventDetailViewController;
+                    }
+                    else if (parent.GetType() == typeof(DataViewController))
+                    {
+                        DataViewController temp = (DataViewController)parent;
+                        tempEventDetail = temp.parent.eventDetailViewController;
+                    }
+                    parent.PresentViewController(tempEventDetail, true, null);
                 }
-                else if (parent.GetType() == typeof(DataViewController))
-                {
-                    DataViewController temp = (DataViewController)parent;
-                    tempEventDetail = temp.parent.eventDetailViewController;
-                }
-                parent.PresentViewController(tempEventDetail, true, null);
             }
 		}
 
@@ -82,6 +85,7 @@ namespace HBS.ITAG
             {
 				cell.TextLabel.Text = "You do not have any favorites";
                 cell.DetailTextLabel.Text = "Click Schedule to find events!";
+                cell.Selected = false;
             }
             else
             {
