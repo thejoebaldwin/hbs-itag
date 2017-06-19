@@ -9,14 +9,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using SQLite;
+//using SQLite;
 
 namespace HBS.ITAG
 {
     class Favorites
     {
         
-        [PrimaryKey]
+        //[PrimaryKey]
         public int key { get; set; }
         public string name { get; set; }
         public Boolean value { get; set; }
