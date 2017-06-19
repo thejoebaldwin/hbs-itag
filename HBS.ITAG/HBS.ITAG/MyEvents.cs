@@ -27,6 +27,7 @@ namespace HBS.ITAG
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
 
