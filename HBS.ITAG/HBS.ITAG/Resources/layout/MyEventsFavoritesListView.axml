@@ -5,22 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="150px"
     android:background="@drawable/primaryBox">
-  <TextView
-      android:text="Text"
-      android:textColor="@android:color/white"
-      android:layout_height="60px"
-      android:layout_width="fill_parent"
-      android:gravity="center"
-      android:id="@+id/MElistViewTextView1"
-      android:textSize="30px"
-      android:paddingTop="20px" />
-  <TextView
-      android:text="subtext"
-      android:textColor="@android:color/white"
-      android:layout_height="50px"
-      android:layout_width="fill_parent"
-      android:gravity="center"
-      android:id="@+id/faveEventTime"
-      android:layout_marginBottom="17.5dp"
-      android:textSize="25px" />
+    <TextView
+        android:text="Text"
+        android:textColor="@android:color/white"
+        android:layout_height="60px"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:id="@+id/MElistViewTextView1"
+        android:textSize="30px"
+        android:paddingTop="20px" />
+    <TextView
+        android:text="subtext"
+        android:textColor="@android:color/white"
+        android:layout_height="50px"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:id="@+id/faveEventTime"
+        android:layout_marginBottom="17.5dp"
+        android:textSize="25px" />
 </LinearLayout>

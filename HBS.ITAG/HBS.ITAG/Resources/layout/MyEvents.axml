@@ -15,17 +15,17 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal" />
-  <ListView
+    <ListView
         android:id="@+id/MElistView1"
         android:layout_gravity="center"
         android:layout_width="300dp"
-        android:layout_height="140dp"/>
-  <ListView
-    android:id="@+id/faveEventTime"
-    android:layout_gravity="center"
-    android:layout_height="140dp"
-    android:layout_width="300dp"/>
-  <!--
+        android:layout_height="170dp" />
+    <ListView
+        android:id="@+id/faveEventTime"
+        android:layout_gravity="center"
+        android:layout_height="0dp"
+        android:layout_width="300dp" />
+<!--
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
@@ -119,17 +119,17 @@
         android:id="@+id/MEtextView6"
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal" />
-  <ListView
+    <ListView
         android:id="@+id/MElistView2"
         android:layout_gravity="center"
         android:layout_width="300dp"
-        android:layout_height="140dp"/>
-  <ListView
-    android:id="@+id/prevEventTime"
-    android:layout_gravity="center"
-    android:layout_height="140dp"
-    android:layout_width="300dp"/>
-  <!--
+        android:layout_height="170dp" />
+    <ListView
+        android:id="@+id/prevEventTime"
+        android:layout_gravity="center"
+        android:layout_height="0dp"
+        android:layout_width="300dp" />
+<!--
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"
