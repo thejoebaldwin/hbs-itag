@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="11">
@@ -159,10 +159,12 @@
                         <outlet property="GenderPickerView" destination="15223" id="name-outlet-15223"/>
                         <outlet property="AgePickerView" destination="15142" id="name-outlet-15142"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="750"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-458" y="307"/>
+            <point key="canvasLocation" x="-482" y="456"/>
         </scene>
         <!--Favorites View Controller-->
         <scene sceneID="66">
@@ -173,7 +175,7 @@
                         <viewControllerLayoutGuide type="bottom" id="65"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="68">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="2017 ITAG Conference" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="302">
@@ -326,6 +328,8 @@
                         <outlet property="AboutButton" destination="1230" id="name-outlet-1230"/>
                         <outlet property="NotifySwitch" destination="19457" id="name-outlet-19457"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="675"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,18 +344,18 @@
                         <viewControllerLayoutGuide type="bottom" id="357"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="360">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="812">
-                                <rect key="frame" x="0.0" y="597" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="605" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="813">
-                                <rect key="frame" x="30" y="597" width="83" height="80"/>
+                                <rect key="frame" x="31" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="house.png">
@@ -364,7 +368,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="814">
-                                <rect key="frame" x="146" y="597" width="83" height="80"/>
+                                <rect key="frame" x="149" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="calendar.png">
@@ -377,7 +381,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="817">
-                                <rect key="frame" x="261" y="597" width="83" height="80"/>
+                                <rect key="frame" x="274" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="profile.png">
@@ -456,7 +460,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1232"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1235">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="794"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="TURN ON BLUETOOTH FOR IMPROVED FUNCTIONALITY" textAlignment="right" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1278">
@@ -546,6 +550,8 @@
                     <connections>
                         <outlet property="BackButton" destination="1280" id="name-outlet-1280"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="500" height="794"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1236" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -560,7 +566,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1999"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2002">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2061">
@@ -709,6 +715,8 @@
                         <outlet property="GrayStar" destination="18834" id="name-outlet-18834"/>
                         <outlet property="LinkToDescription" destination="19019" id="name-outlet-19019"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="675"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2003" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -723,7 +731,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2930"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2956">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Day 1 Track Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3088">
@@ -734,14 +742,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2964">
-                                <rect key="frame" x="0.0" y="598" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="605" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.070588235294117646" blue="0.25490196078431371" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2959">
-                                <rect key="frame" x="35" y="587" width="83" height="80"/>
+                                <rect key="frame" x="31" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="house.png">
@@ -753,7 +761,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2963">
-                                <rect key="frame" x="255" y="587" width="83" height="80"/>
+                                <rect key="frame" x="274" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="profile.png">
@@ -765,7 +773,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2962">
-                                <rect key="frame" x="146" y="587" width="83" height="80"/>
+                                <rect key="frame" x="149" y="594" width="83" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Button" image="calendar.png">
@@ -886,6 +894,8 @@
                         <outlet property="PreviousBackButton" destination="19339" id="name-outlet-19339"/>
                         <outlet property="NextTrackButton" destination="19337" id="name-outlet-19337"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="675"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2934" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -900,7 +910,7 @@
                         <viewControllerLayoutGuide type="bottom" id="16786"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16764">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Day 2 Track Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16758">
@@ -1084,6 +1094,8 @@
                         <outlet property="PreviousTrackButton" destination="19359" id="name-outlet-19359"/>
                         <outlet property="NextTrackButton" destination="19360" id="name-outlet-19360"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="675"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16787" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1098,7 +1110,7 @@
                         <viewControllerLayoutGuide type="bottom" id="16812"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16800">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Day 3 Track Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16794">
@@ -1256,6 +1268,8 @@
                         <outlet property="PreviousTrackButton" destination="19361" id="name-outlet-19361"/>
                         <outlet property="NextTrackButton" destination="19362" id="name-outlet-19362"/>
                     </connections>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="675"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16813" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1270,7 +1284,7 @@
                         <viewControllerLayoutGuide type="bottom" id="16838"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="16826">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="675"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Day 4 Track Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16820">
