@@ -84,7 +84,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Phone|iPhone' ">
     <Optimize>false</Optimize>
     <OutputPath>bin\iPhone\Phone</OutputPath>
-    <DefineConstants></DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -109,15 +110,33 @@
     <ImageAsset Include="Assets.xcassets\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag58x58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag87x87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag80x80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag120x120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag57x57.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag114x114.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag180x180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag29x29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag58x58.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag87x87.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag80x80.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag120x120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag57x57.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag114x114.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag180x180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\itag29x29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

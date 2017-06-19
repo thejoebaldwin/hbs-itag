@@ -150,7 +150,8 @@ namespace HBS.ITAG
 			//on region exit
 		   beaconManager.ExitedRegion += (sender, e) =>
 	       {
-		    if (Store.Instance.Notify)
+                Toast.MakeText(this, "Exited", ToastLength.Long).Show();
+               if (Store.Instance.Notify)
 		    {
           
 			  Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
@@ -164,7 +165,8 @@ namespace HBS.ITAG
 
 			beaconManager.EnteredRegion += (sender, e) =>
 		 {
-			 if (Store.Instance.Notify)
+             Toast.MakeText(this, "Entered", ToastLength.Long).Show();
+             if (Store.Instance.Notify)
 			 {
 				 Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
 				 if (tempEvent != null)
@@ -185,7 +187,8 @@ namespace HBS.ITAG
 			{
 				Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
 				tempEvent.LastExitNotified = DateTime.Now;
-			}
+                
+            }
 		}
 
 
@@ -193,12 +196,14 @@ namespace HBS.ITAG
 		{
 			int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
 			minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+            
 			//don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
 			if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
 			{
-				//TODO: If app open, ask user if they want to see the information
+                //TODO: If app open, ask user if they want to see the information
                 //      if app closed, add notification that event is in range
-				tempEvent.LastEntryNotified = DateTime.Now;
+                
+                tempEvent.LastEntryNotified = DateTime.Now;
 				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
 
 			}
