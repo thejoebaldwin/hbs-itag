@@ -1,9 +1,10 @@
-﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
 using System.Drawing;
+using CoreAnimation;
 
 namespace HBS.ITAG
 {
@@ -33,7 +34,6 @@ namespace HBS.ITAG
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
 
 
-
 			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float) this.View.Frame.Size.Width, 44.0f));
 
 			toolbar.TintColor = UIColor.White;
@@ -52,7 +52,6 @@ namespace HBS.ITAG
 	 };
 			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
 			this.PositionTitle.InputAccessoryView = toolbar;
-
 		}
 
 		public void AddBarButtonText(object sender, EventArgs e)
@@ -92,10 +91,10 @@ namespace HBS.ITAG
 
 	public class StatusModel : UIPickerViewModel
 	{
-		public static string[] ages = new string[] {
-			"Choose One",
-			"16 and Under",
-			"17 to 20",
+        public static string[] ages = new string[] {
+            "Choose One",
+            "16 and Under",
+            "17 to 20",
             "21 to 25",
             "26 to 30",
             "31 to 35",
@@ -107,7 +106,7 @@ namespace HBS.ITAG
             "61 to 65",
             "66 to 70",
             "70 and Above"
-		};
+        };
 
 		public StatusModel()
 		{
@@ -134,8 +133,9 @@ namespace HBS.ITAG
 
             //pickerView.SelectedRowInComponent(1),
             //pickerView.SelectedRowInComponent(2));
-           
-		}
+
+
+        }
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
 		{
@@ -143,6 +143,14 @@ namespace HBS.ITAG
 				return 220f;
 			else
 				return 30f;
+		}
+		public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
+		{
+			UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
+			lbl.Font = UIFont.SystemFontOfSize(16f);
+			lbl.TextAlignment = UITextAlignment.Center;
+            lbl.Text = ages[row];
+			return lbl;
 		}
 	}
 	public class TechFocusModel : UIPickerViewModel
@@ -244,6 +252,14 @@ namespace HBS.ITAG
 			else
 				return 30f;
 		}
+		public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
+		{
+			UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
+			lbl.Font = UIFont.SystemFontOfSize(16f);
+			lbl.TextAlignment = UITextAlignment.Center;
+            lbl.Text = Gender[row];
+			return lbl;
+		}
 	}
 	public class OrganizationModel : UIPickerViewModel
 	{
@@ -294,6 +310,7 @@ namespace HBS.ITAG
 			else
 				return 30f;
 		}
+
 	}
 
 	public class StateModel : UIPickerViewModel
@@ -338,6 +355,14 @@ namespace HBS.ITAG
 			else
 				return 30f;
 		}
+        public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
+        {
+            UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
+            lbl.Font = UIFont.SystemFontOfSize(16f);
+            lbl.TextAlignment = UITextAlignment.Center;
+            lbl.Text = States[row];
+            return lbl;
+        }
 	}
 }
 

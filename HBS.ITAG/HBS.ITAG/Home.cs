@@ -24,7 +24,11 @@ namespace HBS.ITAG
     [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Home : Activity, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
     {
-        BeaconManager beaconManager;
+        // private const UUID ESTIMOTE_PROXIMITY_UUID = UUID.FromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+        // private const Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
+        
+        BeaconManager beaconManager; 
+        
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
             ListView favoritedList;
             List<Event> favoritedEvents;
@@ -41,7 +45,7 @@ namespace HBS.ITAG
             }
             return isEmulator;
         }
-
+        
         public void OnServiceReady()
         {
             if (!isEmulator())
@@ -50,6 +54,16 @@ namespace HBS.ITAG
             }
             Store.Instance.GetTracks(LoadTracksComplete);
         }
+        
+       // public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+       // {
+       //     PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+       // }
+        
+
+
+
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -61,7 +75,7 @@ namespace HBS.ITAG
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Home);
             SystemRequirementsChecker.CheckWithDefaultDialogs(this);
-            
+
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
             ImageView itagIcon = FindViewById<ImageView>(Resource.Id.itag_icon);
             TextView favoritesHeader = FindViewById<TextView>(Resource.Id.favorites_header);
@@ -108,9 +122,23 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(AppFeatures));
             };
+
+
+
+
+            //Store.Instance.LoadEventsFromFile();
+            //Store.Instance.LoadTracksFromFile();
+
+
+
             beaconManager = new BeaconManager(this);
+            //EstimoteSdk.SystemRequirementsChecker.CheckWithDefaultDialogs(this);
+            //Console.WriteLine( "Permissions : " + EstimoteSdk.SystemRequirementsHelper.CheckAllPermissions(Application.Context));
             beaconManager.SetBackgroundScanPeriod(1000, 0);
 
+            //beaconManager.StartEddystoneScanning();
+            //beaconManager.Connect();
+        
             beaconManager.StartMonitoring(new Region(
                         "monitored region",
                         (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
@@ -119,8 +147,16 @@ namespace HBS.ITAG
 
 
 
-            //StartService(new Intent(this, typeof(EstimoteMonitoringService)));
+           
 
+            // beaconManager.StartMonitoring(new Region(
+            //        "monitored region",
+            //        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
+            //      17998, 11342));
+            
+
+
+            
             beaconManager.ExitedRegion += (sender, e) =>
             {
                 Toast.MakeText(this, "Exited", ToastLength.Long).Show();
@@ -148,6 +184,10 @@ namespace HBS.ITAG
                     }
                 }
             };
+
+            beaconManager.Connect(this);
+
+            //OnServiceReady();
             OnServiceReady();
             LoadData();
         }
@@ -181,109 +221,80 @@ namespace HBS.ITAG
                     favoritedEvents.Add(e);
                 }
             }
-            if (favoritedEvents.Count != 0)
-            {
-                favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-            }
-            else
-            {
-                favoritedEvents.Add(new Event("No Favorites Selected", "-1", DateTime.Now, DateTime.Parse("6/29/2017"),"" , "Please select an event on the schedule page to add to your favorites", "", "", null, true));
-            }
-            
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
-            favoritedList.Adapter = adapter;
-            favoritedList.ItemClick += favoriteClick;
-        }
+		}
 
-        private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            if(!favoritedEvents[e.Position].ScheduleOnly)
-            {
-                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                StartActivity(typeof(EventDetails));
-            }
-        }
-
-        private IntPtr getApplicationContext()
-        {
-            throw new NotImplementedException();
-        }
-       
-
-        private void InitializeBeacons()
-        {
+		private void InitializeBeacons()
+		{
             //run on main thread
-
+            //Region beaconRegion = new Region("test", null, null, null);
+            //beaconManager.StartMonitoring(beaconRegion);
             //loop through all location entries
+
+
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
-            {
-                Location tempLocation = Store.Instance.Locations[i];
+				{
+					Location tempLocation = Store.Instance.Locations[i];
                 //create new region
-                Region beaconRegion = new Region(tempLocation.Nickname, PROXIMITY_UUID, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
+                Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
+                Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor );
+                //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
                 beaconManager.StartMonitoring(beaconRegion);
-            }
 
-            //on region exit
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                Toast.MakeText(this, "Exited", ToastLength.Long).Show();
-                if (Store.Instance.Notify)
-                {
+                
 
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-                    }
                 }
-            };
 
-
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                Toast.MakeText(this, "Entered", ToastLength.Long).Show();
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
 
 
         }
 
         public void OnRegionExit(Event tempEvent)
         {
+            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
             int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
             minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
             if (minutesSinceLastNotification > 5)
             {
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
                 tempEvent.LastExitNotified = DateTime.Now;
-	        }
+            }
         }
 
-
-        public void OnRegionEnter(Event tempEvent)
-        {
-            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-
-            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+            private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
             {
-                //TODO: If app open, ask user if they want to see the information
-                //      if app closed, add notification that event is in range
-
-                tempEvent.LastEntryNotified = DateTime.Now;
-                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
+                if (!favoritedEvents[e.Position].ScheduleOnly)
+                {
+                    Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                    StartActivity(typeof(EventDetails));
+                }
             }
 
-        }
+            public void OnRegionEnter(Event tempEvent)
+            {
+                Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+                int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+                minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+
+                //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+                if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+                {
+                    //TODO: If app open, ask user if they want to see the information
+                    //      if app closed, add notification that event is in range
+
+                    tempEvent.LastEntryNotified = DateTime.Now;
+                    Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
+
+                }
+            }
+
+
+
+       
+            
+
+        
+     
+       
 
         public void OnSessionAddComplete(string message)
         {
