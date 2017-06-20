@@ -148,6 +148,7 @@
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Store.cs" />
+    <Compile Include="ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />

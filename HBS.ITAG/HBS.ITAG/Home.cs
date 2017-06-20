@@ -24,8 +24,10 @@ namespace HBS.ITAG
     [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Home : Activity, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
     {
-
-        BeaconManager beaconManager;
+        // private const UUID ESTIMOTE_PROXIMITY_UUID = UUID.FromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+        // private const Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
+        
+        BeaconManager beaconManager; 
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
         public bool isEmulator()
@@ -38,7 +40,7 @@ namespace HBS.ITAG
             }
             return isEmulator;
         }
-
+        
         public void OnServiceReady()
         {
             if (!isEmulator())
@@ -47,11 +49,14 @@ namespace HBS.ITAG
             }
             Store.Instance.GetTracks(LoadTracksComplete);
         }
+        
+       // public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+       // {
+       //     PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+       // }
+        
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-        {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+
 
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -60,7 +65,7 @@ namespace HBS.ITAG
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Home);
             SystemRequirementsChecker.CheckWithDefaultDialogs(this);
-            
+
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
             ImageView itagIcon = FindViewById<ImageView>(Resource.Id.itag_icon);
             TextView favoritesHeader = FindViewById<TextView>(Resource.Id.favorites_header);
@@ -128,19 +133,26 @@ namespace HBS.ITAG
             //Store.Instance.LoadTracksFromFile();
 
 
+
             beaconManager = new BeaconManager(this);
+            //EstimoteSdk.SystemRequirementsChecker.CheckWithDefaultDialogs(this);
+            //Console.WriteLine( "Permissions : " + EstimoteSdk.SystemRequirementsHelper.CheckAllPermissions(Application.Context));
             beaconManager.SetBackgroundScanPeriod(1000, 0);
 
-            beaconManager.StartMonitoring(new Region(
-                        "monitored region",
-                        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
-                        17998, 11342));
+            //beaconManager.StartEddystoneScanning();
+            //beaconManager.Connect();
+        
+
+           
+
+            // beaconManager.StartMonitoring(new Region(
+            //        "monitored region",
+            //        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
+            //      17998, 11342));
             
-        
-        
 
-            //StartService(new Intent(this, typeof(EstimoteMonitoringService)));
 
+            
             beaconManager.ExitedRegion += (sender, e) =>
             {
                 Toast.MakeText(this, "Exited", ToastLength.Long).Show();
@@ -168,7 +180,10 @@ namespace HBS.ITAG
                     }
                 }
             };
-            OnServiceReady();
+
+            beaconManager.Connect(this);
+
+            //OnServiceReady();
         }
 
         private IntPtr getApplicationContext()
@@ -196,25 +211,33 @@ namespace HBS.ITAG
 
 		private void InitializeBeacons()
 		{
-			//run on main thread
-		
-			   //loop through all location entries
-			   for (int i = 0; i < Store.Instance.Locations.Count; i++)
+            //run on main thread
+            //Region beaconRegion = new Region("test", null, null, null);
+            //beaconManager.StartMonitoring(beaconRegion);
+            //loop through all location entries
+
+
+            for (int i = 0; i < Store.Instance.Locations.Count; i++)
 				{
 					Location tempLocation = Store.Instance.Locations[i];
-                   //create new region
-                    Region beaconRegion = new Region(tempLocation.Nickname, PROXIMITY_UUID,System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
-                    beaconManager.StartMonitoring(beaconRegion);
-				}
+                //create new region
+                Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
+                Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor );
+                //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
+                beaconManager.StartMonitoring(beaconRegion);
 
-			
+                
+
+                }
 
 
-		}
+
+        }
 
 		public void OnRegionExit(Event tempEvent)
 		{
-			int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
 			minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
 			if (minutesSinceLastNotification > 5)
 			{
@@ -227,7 +250,8 @@ namespace HBS.ITAG
 
 		public void OnRegionEnter(Event tempEvent)
 		{
-			int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+            Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
 			minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
             
 			//don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
@@ -247,9 +271,9 @@ namespace HBS.ITAG
         {
             
         }
+        
 
+        
 
-
-
-	}
-}
+        }
+    }
