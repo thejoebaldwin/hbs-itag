@@ -36,141 +36,14 @@
         android:text="Favorites"
         android:paddingBottom="5dp"
         android:textStyle="bold" />
-    <RelativeLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/HomeRelativeLayout1"
-        android:gravity="center_horizontal">
-        <TextView
-            android:id="@+id/no_favorites"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@android:color/black"
-            android:background="@drawable/secondarybox"
-            android:text="\n\nNo Favorites Selected\n\nPlease select an event on the schedule page to add to your favorites\n\n"
-            android:visibility="visible" />
-        <LinearLayout
-            android:id="@+id/first_favorite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/primaryBox"
-            android:orientation="horizontal"
-            android:visibility="invisible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textColor="@android:color/white"
-                android:maxLines="2"
-                android:lines="2"
-                android:text="Building Apps with Web AppBuilder\n9:00 am - 10:30 am"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="@android:color/white"
-                android:text="In Progress..."
-                android:paddingBottom="20dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/second_favorite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/secondaryBox"
-            android:orientation="horizontal"
-            android:layout_below="@id/first_favorite"
-            android:visibility="invisible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textColor="@android:color/black"
-                android:maxLines="2"
-                android:lines="2"
-                android:text="Basic Python Workshop\n10:45 am - 12:00 pm"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="@android:color/black"
-                android:text="Upcoming"
-                android:paddingBottom="20dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/third_favorite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/secondaryBox"
-            android:orientation="horizontal"
-            android:layout_below="@id/second_favorite"
-            android:visibility="invisible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textColor="@android:color/black"
-                android:maxLines="2"
-                android:lines="2"
-                android:text="Drones! - The Process\n11:30 am - 12:00 pm"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="@android:color/black"
-                android:text="Upcoming"
-                android:paddingBottom="20dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/fourth_favorite"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/secondaryBox"
-            android:orientation="horizontal"
-            android:layout_below="@id/third_favorite"
-            android:visibility="invisible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="left"
-                android:textColor="@android:color/black"
-                android:maxLines="2"
-                android:lines="2"
-                android:text="The Dark Web\n1:30 pm - 3:00 pm"
-                android:paddingLeft="10dp"
-                android:paddingBottom="5dp"
-                android:paddingTop="5dp" />
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:textColor="@android:color/black"
-                android:text="Upcoming"
-                android:paddingBottom="20dp"
-                android:paddingTop="5dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-    </RelativeLayout>
+    <ListView
+        android:id="@+id/favoritedList"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center|bottom"
         android:orientation="vertical">
@@ -180,8 +53,8 @@
             android:layout_height="106.0dp"
             android:gravity="center"
             android:textColor="@android:color/black"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/conferenceDetails" />
         <GridLayout
             android:layout_width="match_parent"

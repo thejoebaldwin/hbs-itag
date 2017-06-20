@@ -133,6 +133,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Schedule.cs" />
+    <Compile Include="scheduleAdapter.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="User.cs" />
@@ -167,6 +168,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MyEventsPreviousEventsListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\scheduleListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -21,8 +21,6 @@ namespace HBS.ITAG
         private ListView favoritedList;
         private ListView previousList;
         private List<Event> events = new List<Event>(Store.Instance.Events);
-
-        //public string clickIndex { get; set; }
         
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -38,20 +36,14 @@ namespace HBS.ITAG
 
             foreach(var e in events)
             {
-                //if(e.Favorited && e.EndTime.Ticks <= DateTime.Now.Ticks)
-                //{
+                if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
+                {
                     favoritedEvents.Add(e);
-                //}
+                }
             }
-            //for (int i = 0; i < events.Capacity; i++)
-            //{
-            //    if (events[i].Favorited)
-            //    {
-            //        mItems.Add(events[i].Name);
-            //    }
 
-            //}
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, Android.Resource.Layout.SimpleListItem2, favoritedEvents);
+            favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
             favoritedList.Adapter = adapter;
             favoritedList.ItemClick += mListView_ItemClick;
 
@@ -60,21 +52,13 @@ namespace HBS.ITAG
 
             foreach(var e in events)
             {
-               // if(e.Favorited && e.EndTime.Ticks > DateTime.Now.Ticks)
-                //{
+                if (e.Favorited && e.EndTime.Ticks < DateTime.Now.Ticks)
+                {
                     previousEvents.Add(e);
-               // }
+                }
             }
-            //for (int i = 0; i < events.Count; i++)
-            //{
-            //    if (events[i].Favorited)
-            //    {
-            //        mItems2.Add(events[i].Name);
-            //    }
 
-            //}
-            
-
+            previousEvents.Sort((y, x) => x.EndTime.Ticks.CompareTo(y.EndTime.Ticks));
             previousList = FindViewById<ListView>(Resource.Id.MElistView2);
             MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
             previousList.Adapter = adapter2;
@@ -112,25 +96,20 @@ namespace HBS.ITAG
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            //Event value = favoritedEvents[e.Position];
-            Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-            /*
-           for (int i = 0; i < events.Capacity; i++)
+            if (!favoritedEvents[e.Position].ScheduleOnly)
             {
-                if (events[i].Name == value)
-                {
-                    clickIndex = events[i].Id;
-                }
-
-            } */ 
-            StartActivity(typeof(EventDetails));
-            
+                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                StartActivity(typeof(EventDetails));
+            }
         }
 
         private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Store.Instance.SelectedEvent = previousEvents[e.Position];
-            StartActivity(typeof(EventDetails));
+            if(!previousEvents[e.Position].ScheduleOnly)
+            {
+                Store.Instance.SelectedEvent = previousEvents[e.Position];
+                StartActivity(typeof(EventDetails));
+            }
         }
     }
 }
