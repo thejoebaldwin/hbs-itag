@@ -10,18 +10,50 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
+using EstimoteSdk;
+using Android.Icu.Util;
+using Android;
+using Xamarin.Forms.PlatformConfiguration;
+using Android.Support.V4.App;
+using Permission = Android.Content.PM.Permission;
+using Plugin.Permissions;
+using Android.Support.V4.Content;
+using Java.Util;
 
 namespace HBS.ITAG
 {
     [Activity(Label = "My Events", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class MyEvents : Activity
+    public class MyEvents : Activity, BeaconManager.IServiceReadyCallback
     {
         private List<Event> favoritedEvents;
         private List<Event> previousEvents;
         private ListView favoritedList;
         private ListView previousList;
         private List<Event> events = new List<Event>(Store.Instance.Events);
-        
+
+        BeaconManager beaconManager;
+        const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
+        public bool isEmulator()
+        {
+            string fing = Build.Fingerprint;
+            bool isEmulator = false;
+            if (fing != null)
+            {
+                isEmulator = fing.Contains("vbox") || fing.Contains("generic");
+            }
+            return isEmulator;
+        }
+
+        public void OnServiceReady()
+        {
+            if (!isEmulator())
+            {
+
+            }
+            InitializeBeacons();
+            //Store.Instance.GetTracks(LoadTracksComplete);
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -72,23 +104,124 @@ namespace HBS.ITAG
 
             Homeimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(Home));
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
 
             ImageButton Scheduleimagebutton = FindViewById<ImageButton>(Resource.Id.calendar);
 
             Scheduleimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(Schedule));
+                Intent i = new Intent(Application.Context, typeof(Schedule));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
 
             ImageButton Profileimagebutton = FindViewById<ImageButton>(Resource.Id.profileimage);
 
             Profileimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(MyEvents));
+                Intent i = new Intent(Application.Context, typeof(MyEvents));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
-            
+
+            beaconManager = new BeaconManager(this);
+            beaconManager.SetBackgroundScanPeriod(1000, 0);
+
+            beaconManager.ExitedRegion += (sender, e) =>
+            {
+
+                if (Store.Instance.Notify)
+                {
+
+                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+                    if (tempEvent != null)
+                    {
+                        OnRegionExit(tempEvent);
+                    }
+                }
+            };
+
+
+            beaconManager.EnteredRegion += (sender, e) =>
+            {
+
+                if (Store.Instance.Notify)
+                {
+                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+            };
+
+            beaconManager.Connect(this);
+
+        }
+
+        private void InitializeBeacons()
+        {
+            //run on main thread
+            //Region beaconRegion = new Region("test", null, null, null);
+            //beaconManager.StartMonitoring(beaconRegion);
+            //loop through all location entries
+
+            Region beaconRegionTest = new Region("test", null, null, null);
+            beaconManager.StartMonitoring(beaconRegionTest);
+            for (int i = 0; i < Store.Instance.Locations.Count; i++)
+            {
+                Location tempLocation = Store.Instance.Locations[i];
+                //create new region
+                Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
+                Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
+                //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
+                beaconManager.StartMonitoring(beaconRegion);
+
+            }
+
+
+
+        }
+
+        public void OnRegionExit(Event tempEvent)
+        {
+            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+            if (minutesSinceLastNotification > 5)
+            {
+                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
+                tempEvent.LastExitNotified = DateTime.Now;
+            }
+        }
+
+
+        public void OnRegionEnter(Event tempEvent)
+        {
+            Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+
+            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+            {
+                //TODO: If app open, ask user if they want to see the information
+                //      if app closed, add notification that event is in range
+
+                tempEvent.LastEntryNotified = DateTime.Now;
+                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
+
+            }
+        }
+
+
+
+        public void OnSessionAddComplete(string message)
+        {
+
         }
 
 

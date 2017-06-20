@@ -119,7 +119,9 @@ namespace HBS.ITAG
 
             Profileimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(MyEvents));
+                Intent i = new Intent(Application.Context, typeof(MyEvents));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
 
 
@@ -127,41 +129,25 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(AppFeatures));
             };
-
-
-
-
-            //Store.Instance.LoadEventsFromFile();
-            //Store.Instance.LoadTracksFromFile();
-
-
-
-            beaconManager = new BeaconManager(this);
+            
             //EstimoteSdk.SystemRequirementsChecker.CheckWithDefaultDialogs(this);
             //Console.WriteLine( "Permissions : " + EstimoteSdk.SystemRequirementsHelper.CheckAllPermissions(Application.Context));
-            beaconManager.SetBackgroundScanPeriod(1000, 0);
 
             //beaconManager.StartEddystoneScanning();
             //beaconManager.Connect();
-        
-           
 
-
-
-
-           
 
             // beaconManager.StartMonitoring(new Region(
             //        "monitored region",
             //        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
             //      17998, 11342));
-            
 
 
-            
+            beaconManager = new BeaconManager(this);
+            beaconManager.SetBackgroundScanPeriod(1000, 0);
             beaconManager.ExitedRegion += (sender, e) =>
             {
-                Toast.MakeText(this, "Exited", ToastLength.Long).Show();
+                
                 if (Store.Instance.Notify)
                 {
 
@@ -176,7 +162,7 @@ namespace HBS.ITAG
 
             beaconManager.EnteredRegion += (sender, e) =>
             {
-                Toast.MakeText(this, "Entered", ToastLength.Long).Show();
+                
                 if (Store.Instance.Notify)
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
