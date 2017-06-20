@@ -10,20 +10,26 @@ using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
-
+using Android.Icu.Util;
+using Android;
+using Xamarin.Forms.PlatformConfiguration;
+using Android.Support.V4.App;
+using Permission = Android.Content.PM.Permission;
+using Plugin.Permissions;
+using Android.Support.V4.Content;
+using Java.Util;
 
 namespace HBS.ITAG
 {
     [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class Home : Activity, BeaconManager.IServiceReadyCallback
+    public class Home : Activity, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
     {
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
-        ListView favoritedList;
-        List<Event> favoritedEvents;
-        List<Event> events;
-        TextView noFavorites;
+            ListView favoritedList;
+            List<Event> favoritedEvents;
+            List<Event> events;
+            TextView noFavorites;
 
         public bool isEmulator()
         {
@@ -40,17 +46,22 @@ namespace HBS.ITAG
         {
             if (!isEmulator())
             {
-                beaconManager = new BeaconManager(this);
+
             }
             Store.Instance.GetTracks(LoadTracksComplete);
         }
-
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+            
         protected override void OnCreate(Bundle savedInstanceState)
         {
             RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Home);
-
+            SystemRequirementsChecker.CheckWithDefaultDialogs(this);
+            
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
             ImageView itagIcon = FindViewById<ImageView>(Resource.Id.itag_icon);
             TextView favoritesHeader = FindViewById<TextView>(Resource.Id.favorites_header);
@@ -67,7 +78,6 @@ namespace HBS.ITAG
 
                 //StartActivity(typeof(JsonCallTester));
 
-                noFavorites.Visibility = ViewStates.Invisible;
             };
 
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
@@ -98,7 +108,46 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(AppFeatures));
             };
+            beaconManager = new BeaconManager(this);
+            beaconManager.SetBackgroundScanPeriod(1000, 0);
 
+            beaconManager.StartMonitoring(new Region(
+                        "monitored region",
+                        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
+                        17998, 11342));
+
+
+
+
+            //StartService(new Intent(this, typeof(EstimoteMonitoringService)));
+
+            beaconManager.ExitedRegion += (sender, e) =>
+            {
+                Toast.MakeText(this, "Exited", ToastLength.Long).Show();
+                if (Store.Instance.Notify)
+                {
+
+                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+                    if (tempEvent != null)
+                    {
+                        OnRegionExit(tempEvent);
+                    }
+                }
+            };
+
+
+            beaconManager.EnteredRegion += (sender, e) =>
+            {
+                Toast.MakeText(this, "Entered", ToastLength.Long).Show();
+                if (Store.Instance.Notify)
+                {
+                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+            };
             OnServiceReady();
             LoadData();
         }
@@ -140,7 +189,7 @@ namespace HBS.ITAG
             {
                 favoritedEvents.Add(new Event("No Favorites Selected", "-1", DateTime.Now, DateTime.Parse("6/29/2017"),"" , "Please select an event on the schedule page to add to your favorites", "", "", null, true));
             }
-
+            
             MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
             favoritedList.Adapter = adapter;
             favoritedList.ItemClick += favoriteClick;
@@ -154,6 +203,12 @@ namespace HBS.ITAG
                 StartActivity(typeof(EventDetails));
             }
         }
+
+        private IntPtr getApplicationContext()
+        {
+            throw new NotImplementedException();
+        }
+       
 
         private void InitializeBeacons()
         {
@@ -208,8 +263,7 @@ namespace HBS.ITAG
             {
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
                 tempEvent.LastExitNotified = DateTime.Now;
-
-            }
+	        }
         }
 
 
