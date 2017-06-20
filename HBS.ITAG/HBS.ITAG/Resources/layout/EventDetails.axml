@@ -61,7 +61,9 @@
             android:layout_below="@id/EDtextView2"
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp"
-            android:textColor="#0e1d52" />
+            android:textColor="#0e1d52"
+            android:layout_marginLeft="20dp"
+            android:gravity="right" />
     </RelativeLayout>
     <RelativeLayout
         android:minWidth="25px"
@@ -79,7 +81,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
             android:textColor="#0e1d52" />
-      <TextView
+        <TextView
             android:text="9:00am to 10:30am"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
