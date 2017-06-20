@@ -112,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFeatures.cs" />
+    <Compile Include="BeaconService.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventDetails.cs" />
     <Compile Include="Favorites.cs" />

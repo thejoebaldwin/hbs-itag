@@ -28,7 +28,7 @@ namespace HBS.ITAG
         // private const Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
         
         BeaconManager beaconManager; 
-        BeaconManager beaconManager;
+        
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
             ListView favoritedList;
             List<Event> favoritedEvents;
@@ -125,10 +125,6 @@ namespace HBS.ITAG
 
 
 
-            firstFavorite.Click += (object sender, EventArgs e) =>
-            {
-                StartActivity(typeof(EventDetails));
-            };
 
             //Store.Instance.LoadEventsFromFile();
             //Store.Instance.LoadTracksFromFile();
@@ -252,137 +248,53 @@ namespace HBS.ITAG
 
         }
 
-		public void OnRegionExit(Event tempEvent)
-		{
-            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
-			minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-			if (minutesSinceLastNotification > 5)
-			{
-				Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
-				tempEvent.LastExitNotified = DateTime.Now;
-                
-            if (favoritedEvents.Count != 0)
-            {
-                favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-            }
-            else
-            {
-                favoritedEvents.Add(new Event("No Favorites Selected", "-1", DateTime.Now, DateTime.Parse("6/29/2017"),"" , "Please select an event on the schedule page to add to your favorites", "", "", null, true));
-            }
-            
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
-            favoritedList.Adapter = adapter;
-            favoritedList.ItemClick += favoriteClick;
-        }
-
-        private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            if(!favoritedEvents[e.Position].ScheduleOnly)
-            {
-                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                StartActivity(typeof(EventDetails));
-            }
-        }
-
-		public void OnRegionEnter(Event tempEvent)
-		{
-            Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-			minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-            
-			//don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-			if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
-			{
-                //TODO: If app open, ask user if they want to see the information
-                //      if app closed, add notification that event is in range
-                
-                tempEvent.LastEntryNotified = DateTime.Now;
-				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-        private IntPtr getApplicationContext()
-        {
-            throw new NotImplementedException();
-        }
-       
-
-        private void InitializeBeacons()
-        {
-            //run on main thread
-
-            //loop through all location entries
-            for (int i = 0; i < Store.Instance.Locations.Count; i++)
-            {
-                Location tempLocation = Store.Instance.Locations[i];
-                //create new region
-                Region beaconRegion = new Region(tempLocation.Nickname, PROXIMITY_UUID, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
-                beaconManager.StartMonitoring(beaconRegion);
-            }
-
-            //on region exit
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                Toast.MakeText(this, "Exited", ToastLength.Long).Show();
-                if (Store.Instance.Notify)
-                {
-
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-                    }
-                }
-            };
-
-
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                Toast.MakeText(this, "Entered", ToastLength.Long).Show();
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
-
-
-        }
-
         public void OnRegionExit(Event tempEvent)
         {
+            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
             int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
             minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
             if (minutesSinceLastNotification > 5)
             {
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
                 tempEvent.LastExitNotified = DateTime.Now;
-	        }
+            }
         }
-        
 
-        
-
-        }
-    }
-        public void OnRegionEnter(Event tempEvent)
-        {
-            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-
-            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+            private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
             {
-                //TODO: If app open, ask user if they want to see the information
-                //      if app closed, add notification that event is in range
-
-                tempEvent.LastEntryNotified = DateTime.Now;
-                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
+                if (!favoritedEvents[e.Position].ScheduleOnly)
+                {
+                    Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                    StartActivity(typeof(EventDetails));
+                }
             }
 
-        }
+            public void OnRegionEnter(Event tempEvent)
+            {
+                Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+                int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+                minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+
+                //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+                if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
+                {
+                    //TODO: If app open, ask user if they want to see the information
+                    //      if app closed, add notification that event is in range
+
+                    tempEvent.LastEntryNotified = DateTime.Now;
+                    Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
+
+                }
+            }
+
+
+
+       
+            
+
+        
+     
+       
 
         public void OnSessionAddComplete(string message)
         {
