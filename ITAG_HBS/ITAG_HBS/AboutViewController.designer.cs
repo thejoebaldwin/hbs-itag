@@ -18,6 +18,10 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BackButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView BluetoothMsg { get; set; }
+
         [Action ("BackButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButtonClick (UIKit.UIButton sender);
@@ -27,6 +31,11 @@ namespace HBS.ITAG
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
+            }
+
+            if (BluetoothMsg != null) {
+                BluetoothMsg.Dispose ();
+                BluetoothMsg = null;
             }
         }
     }

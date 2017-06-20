@@ -1,5 +1,6 @@
 ﻿using System;
-
+using Foundation;
+using CoreLocation;
 using UIKit;
 
 namespace HBS.ITAG
@@ -23,8 +24,17 @@ namespace HBS.ITAG
 
         public override void ViewDidLoad()
         {
+            BluetoothMsg.UserInteractionEnabled = true;
+            UITapGestureRecognizer BluetoothMsgGesture = new UITapGestureRecognizer(BluetoothMsgClick);
+            BluetoothMsgGesture.NumberOfTapsRequired = 1;
+            BluetoothMsg.AddGestureRecognizer(BluetoothMsgGesture);
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+        }
+
+        private void BluetoothMsgClick()
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"prefs:root=General"));
         }
 
         public override void DidReceiveMemoryWarning()
