@@ -13,13 +13,18 @@ using HBS.ITAG.Model;
 namespace HBS.ITAG
 {
     [Activity(Label = "Schedule", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class Schedule : Activity
+    public class Schedule : Activity, GestureDetector.IOnGestureListener
     {
         private List<Event> events = new List<Event>(Store.Instance.Events);
         private List<Event> trackEvents = new List<Event>();
         private List<Track> tracks = new List<Track>();
         private DateTime CurrentTrackDate;
         private int CurrentTrack;
+        private int d1track;
+        private int d2track;
+        private int d3track;
+        private int d4track;
+        private bool d1, d2, d3, d4;
         private ListView scheduleList;
 
         ImageView leftArrow;
@@ -30,14 +35,71 @@ namespace HBS.ITAG
         Button day4btn;
         TextView trackTitle;
 
+        GestureDetector gestureDetector;
+
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            gestureDetector.OnTouchEvent(e);
+            return false;
+        }
+
+        public bool OnDown(MotionEvent e)
+        {
+            return false;
+        }
+
+        public bool OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
+        {
+            if(e1.RawX - 50 > e2.RawX)
+            {
+                //left swipe
+                nextTrack();
+            }
+            if(e2.RawX - 50 > e1.RawX)
+            {
+                //right swipe
+                previousTrack();
+            }
+            return true;
+        }
+
+        public void OnLongPress(MotionEvent e)
+        {
+        }
+
+        public bool OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+        {
+            return false;
+        }
+
+        public void OnShowPress(MotionEvent e)
+        {
+        }
+
+        public bool OnSingleTapUp(MotionEvent e)
+        {
+            return false;
+        }
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Schedule);
 
+            gestureDetector = new GestureDetector(this);
+
             CurrentTrackDate = DateTime.Parse("6/20/2017");
             CurrentTrack = 0;
+            d1track = 0;
+            d2track = 0;
+            d3track = 0;
+            d4track = 0;
+            d1 = true;
+            d2 = false;
+            d3 = false;
+            d4 = false;
             scheduleList = FindViewById<ListView>(Resource.Id.eventList);
 
             leftArrow = FindViewById<ImageView>(Resource.Id.leftArrow);
@@ -100,10 +162,9 @@ namespace HBS.ITAG
             };
         }
 
-
         private void nextTrack()
         {
-            if(tracks[CurrentTrack + 1] != null)
+            if (tracks.Count > CurrentTrack + 1)
             {
                 CurrentTrack++;
                 ReloadData();
@@ -112,7 +173,7 @@ namespace HBS.ITAG
 
         private void previousTrack()
         {
-            if(tracks[CurrentTrack - 1] != null)
+            if (CurrentTrack >= 1)
             {
                 CurrentTrack--;
                 ReloadData();
@@ -126,7 +187,29 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
-            CurrentTrack = 0;
+            if(d2)
+            {
+                d2track = CurrentTrack;
+                d2 = false;
+                d1 = true;
+            }
+            else if(d3)
+            {
+                d3track = CurrentTrack;
+                d3 = false;
+                d1 = true;
+            }
+            else if(d4)
+            {
+                d4track = CurrentTrack;
+                d4 = false;
+                d1 = true;
+            }
+            else
+            {
+                d1track = CurrentTrack;
+            }
+            CurrentTrack = d1track;
             ReloadData();
         }
 
@@ -137,7 +220,29 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
-            CurrentTrack = 0;
+            if (d1)
+            {
+                d1track = CurrentTrack;
+                d1 = false;
+                d2 = true;
+            }
+            else if (d3)
+            {
+                d3track = CurrentTrack;
+                d3 = false;
+                d2 = true;
+            }
+            else if (d4)
+            {
+                d4track = CurrentTrack;
+                d4 = false;
+                d2 = true;
+            }
+            else
+            {
+                d2track = CurrentTrack;
+            }
+            CurrentTrack = d2track;
             ReloadData();
         }
 
@@ -148,7 +253,29 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
-            CurrentTrack = 0;
+            if (d1)
+            {
+                d1track = CurrentTrack;
+                d1 = false;
+                d3 = true;
+            }
+            else if (d2)
+            {
+                d2track = CurrentTrack;
+                d2 = false;
+                d3 = true;
+            }
+            else if (d4)
+            {
+                d4track = CurrentTrack;
+                d4 = false;
+                d3 = true;
+            }
+            else
+            {
+                d3track = CurrentTrack;
+            }
+            CurrentTrack = d3track;
             ReloadData();
         }
 
@@ -159,22 +286,44 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.selected_day);
-            CurrentTrack = 0;
+            if (d1)
+            {
+                d1track = CurrentTrack;
+                d1 = false;
+                d4 = true;
+            }
+            else if (d2)
+            {
+                d2track = CurrentTrack;
+                d2 = false;
+                d4 = true;
+            }
+            else if (d3)
+            {
+                d3track = CurrentTrack;
+                d3 = false;
+                d4 = true;
+            }
+            else
+            {
+                d4track = CurrentTrack;
+            }
+            CurrentTrack = d4track;
             ReloadData();
         }
 
         private void ReloadData()
         {
             tracks = new List<Track>();
-            foreach(var t in Store.Instance.Tracks)
+            foreach (var t in Store.Instance.Tracks)
             {
-                if(t.TrackDate == CurrentTrackDate)
+                if (t.TrackDate == CurrentTrackDate)
                 {
                     tracks.Add(t);
                 }
             }
 
-            if(tracks.Count == 0)
+            if (tracks.Count == 0)
             {
                 //trackName.Text = string.Empty;
                 tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
@@ -185,7 +334,7 @@ namespace HBS.ITAG
             {
                 trackTitle.Text = tracks[CurrentTrack].Name;
 
-                if(CurrentTrack == 0)
+                if (CurrentTrack == 0)
                 {
                     leftArrow.Visibility = ViewStates.Invisible;
                 }
@@ -194,36 +343,36 @@ namespace HBS.ITAG
                     leftArrow.Visibility = ViewStates.Visible;
                 }
 
-                if(CurrentTrack == tracks.Count - 1 || tracks.Count == 0)
-                {
-                    rightArrow.Visibility = ViewStates.Invisible;
-                }
-                else
+                if (CurrentTrack + 1 < tracks.Count)
                 {
                     rightArrow.Visibility = ViewStates.Visible;
                 }
+                else
+                {
+                    rightArrow.Visibility = ViewStates.Invisible;
+                }
 
                 trackEvents = new List<Event>();
-                foreach(var e in events)
+                foreach (var e in events)
                 {
-                    if(e.TrackId == tracks[CurrentTrack].Id)
+                    if (e.TrackId == tracks[CurrentTrack].Id)
                     {
                         trackEvents.Add(e);
                     }
                 }
 
                 trackEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-                
+
             }
 
             ScheduleAdapter adapter = new ScheduleAdapter(this, trackEvents);
             scheduleList.Adapter = adapter;
             scheduleList.ItemClick += eventClick;
         }
-
+        
         private void eventClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if(!trackEvents[e.Position].ScheduleOnly)
+            if (!trackEvents[e.Position].ScheduleOnly)
             {
                 Store.Instance.SelectedEvent = trackEvents[e.Position];
                 StartActivity(typeof(EventDetails));

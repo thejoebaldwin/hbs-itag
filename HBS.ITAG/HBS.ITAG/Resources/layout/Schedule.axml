@@ -38,19 +38,19 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="30dp">
+        android:layout_height="60dp">
         <ImageView
             android:id="@+id/leftArrow"
             android:src="@drawable/left_arrow"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:visibility="visible"
             android:layout_marginRight="0.0dp"
             android:layout_marginLeft="5.0dp"
             android:layout_marginTop="5px" />
         <TextView
-            android:layout_width="344dp"
-            android:layout_height="wrap_content"
+            android:layout_width="304dp"
+            android:layout_height="40dp"
             android:id="@+id/track_title"
             android:text="Track Name"
             android:background="@android:color/white"
@@ -59,12 +59,13 @@
             android:layout_marginTop="7px"
             android:layout_marginBottom="10px"
             android:layout_marginLeft="0.0dp"
-            android:layout_marginRight="0.0dp" />
+            android:layout_marginRight="0.0dp"
+            android:textSize="25dp" />
         <ImageView
             android:id="@+id/rightArrow"
             android:src="@drawable/right_arrow"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:gravity="right"
             android:layout_marginRight="5dp"
             android:layout_marginLeft="-5dp"
@@ -75,7 +76,7 @@
         android:id="@+id/eventList"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="420dp" />
+        android:layout_height="385dp" />
 <!--
     <RelativeLayout
         android:layout_width="fill_parent"
