@@ -52,7 +52,8 @@ namespace HBS.ITAG
             {
 
             }
-            Store.Instance.GetTracks(LoadTracksComplete);
+            InitializeBeacons();
+            //Store.Instance.GetTracks(LoadTracksComplete);
         }
         
        // public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
@@ -186,7 +187,8 @@ namespace HBS.ITAG
                 }
             };
 
-            beaconManager.Connect(this);
+            //beaconManager.Connect(this);
+            Store.Instance.GetTracks(LoadTracksComplete);
 
             //OnServiceReady();
             //OnServiceReady();
@@ -212,7 +214,8 @@ namespace HBS.ITAG
         {
             if (!isEmulator())
             {
-                InitializeBeacons();
+                beaconManager.Connect(this);
+                //InitializeBeacons();
             }
         }
 
@@ -237,7 +240,8 @@ namespace HBS.ITAG
             //beaconManager.StartMonitoring(beaconRegion);
             //loop through all location entries
 
-
+            Region beaconRegionTest = new Region( "test", null, null, null);
+            beaconManager.StartMonitoring(beaconRegionTest);
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
 				{
 					Location tempLocation = Store.Instance.Locations[i];
