@@ -52,7 +52,9 @@ namespace HBS.ITAG
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
             Homeimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(Home));
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
 
             ImageButton Scheduleimagebutton = FindViewById<ImageButton>(Resource.Id.calendar);

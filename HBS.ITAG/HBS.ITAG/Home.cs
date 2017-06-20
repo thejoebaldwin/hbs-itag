@@ -100,14 +100,18 @@ namespace HBS.ITAG
 
             Homeimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(Home));
-            };
+            Intent i = new Intent(Application.Context, typeof(Home));
+            i.SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(i);
+    };
 
             ImageButton Scheduleimagebutton = FindViewById<ImageButton>(Resource.Id.calendar);
 
             Scheduleimagebutton.Click += (sender, e) =>
             {
-                StartActivity(typeof(Schedule));
+                Intent i = new Intent(Application.Context, typeof(Schedule));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             };
 
             ImageButton Profileimagebutton = FindViewById<ImageButton>(Resource.Id.profileimage);
@@ -139,10 +143,7 @@ namespace HBS.ITAG
             //beaconManager.StartEddystoneScanning();
             //beaconManager.Connect();
         
-            beaconManager.StartMonitoring(new Region(
-                        "monitored region",
-                        (string)UUID.FromString("b9407f30-f5f8-466e-aff9-25556b57fe6d"),
-                        17998, 11342));
+           
 
 
 
@@ -188,8 +189,13 @@ namespace HBS.ITAG
             beaconManager.Connect(this);
 
             //OnServiceReady();
-            OnServiceReady();
-            LoadData();
+            //OnServiceReady();
+            //LoadData();
+        }
+
+        public void OnResume()
+        {
+            base.OnResume();
         }
 
         private void LoadTracksComplete(string message)
@@ -210,6 +216,7 @@ namespace HBS.ITAG
             }
         }
 
+        /*
         private void LoadData()
         {
             events = new List<Event>(Store.Instance.Events);
@@ -221,7 +228,7 @@ namespace HBS.ITAG
                     favoritedEvents.Add(e);
                 }
             }
-		}
+		} */
 
 		private void InitializeBeacons()
 		{
@@ -286,11 +293,6 @@ namespace HBS.ITAG
 
                 }
             }
-
-
-
-       
-            
 
         
      
