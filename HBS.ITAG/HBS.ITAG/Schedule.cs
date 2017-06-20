@@ -98,6 +98,7 @@ namespace HBS.ITAG
             };
         }
 
+
         private void nextTrack()
         {
             if(tracks[CurrentTrack + 1] != null)
@@ -123,6 +124,7 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
+            CurrentTrack = 0;
             ReloadData();
         }
 
@@ -133,6 +135,7 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
+            CurrentTrack = 0;
             ReloadData();
         }
 
@@ -143,6 +146,7 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.unselected_day);
+            CurrentTrack = 0;
             ReloadData();
         }
 
@@ -153,14 +157,12 @@ namespace HBS.ITAG
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day4btn.SetBackgroundResource(Resource.Drawable.selected_day);
+            CurrentTrack = 0;
             ReloadData();
         }
 
         private void ReloadData()
         {
-            //TODO update day buttons
-            
-
             tracks = new List<Track>();
             foreach(var t in Store.Instance.Tracks)
             {
