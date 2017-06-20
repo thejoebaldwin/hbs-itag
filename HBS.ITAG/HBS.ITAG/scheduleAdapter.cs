@@ -12,7 +12,7 @@ using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-    class MyEventsFavoritesListViewAdapter : BaseAdapter<Event>
+    class ScheduleAdapter : BaseAdapter<Event>
     {
 
         private List<Event> tableItems;
@@ -23,9 +23,9 @@ namespace HBS.ITAG
             get { return tableItems.Count; }
         }
 
-        public MyEventsFavoritesListViewAdapter(Context context, List<Event> events)
+        public ScheduleAdapter(Context context, List<Event> items)
         {
-            tableItems = events;
+            tableItems = items;
             mContext = context;
         }
 
@@ -45,18 +45,14 @@ namespace HBS.ITAG
 
             if (row == null)
             {
-                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.MyEventsFavoritesListView, null, false);
-                //LayoutInflater inflater = (LayoutInflater)mContext.GetSystemService(Context.LayoutInflaterService);
+                row = LayoutInflater.From(mContext).Inflate(Resource.Layout.scheduleListView, null, false);
             }
-            LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.eventItem);
-            TextView eventName = row.FindViewById<TextView>(Resource.Id.MElistViewTextView1);
-            TextView eventTime = row.FindViewById<TextView>(Resource.Id.faveEventTime);
+            LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.e);
+            TextView eventName = row.FindViewById<TextView>(Resource.Id.eName);
+            TextView eventTime = row.FindViewById<TextView>(Resource.Id.eTime);
             eventName.Text = tableItems[position].Name;
             eventTime.Text = tableItems[position].StartTime.ToLocalTime().ToShortTimeString() + " - " + tableItems[position].EndTime.ToLocalTime().ToShortTimeString();
-            if(tableItems[position].Name == "No Favorites Selected" )
-            {
-                eventTime.Text = "Favorites selectable via Schedule Page";
-            }
+
             if (tableItems[position].ScheduleOnly)
             {
                 eventItem.SetBackgroundResource(Resource.Drawable.secondaryBox);
