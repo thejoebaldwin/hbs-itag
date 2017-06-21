@@ -43,6 +43,12 @@ namespace HBS.ITAG
 			Link.NumberOfTapsRequired = 1;
 			LinkToDescription.AddGestureRecognizer(Link);
 
+            //ReminderText.UserInteractionEnabled = true;
+
+           // UITapGestureRecognizer Reminder = new UITapGestureRecognizer(ReminderClick);
+           // Reminder.NumberOfTapsRequired = 1;
+           // ReminderText.AddGestureRecognizer(Reminder);
+
 
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
@@ -126,5 +132,10 @@ namespace HBS.ITAG
             string endofLink = "/" + Store.Instance.SelectedEvent.StartTime.DayOfWeek + "/#event-" + Store.Instance.SelectedEvent.EventWebId;
             UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"+endofLink));
         }
+
+        //public void ReminderClick()
+        //{
+          //  UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString: @"x-apple-reminder://CREATE_NEW/Reminder"));
+       // }
     }
 }
