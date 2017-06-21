@@ -11,7 +11,7 @@ using Android;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "HBS.ITAG", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    [Activity(Label = "HBS.ITAG", MainLauncher = true, Icon = "@drawable/itag_icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
