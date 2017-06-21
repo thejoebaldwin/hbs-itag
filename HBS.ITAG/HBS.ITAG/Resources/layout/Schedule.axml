@@ -76,7 +76,7 @@
         android:id="@+id/eventList"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="385dp" />
+        android:layout_height="391dp" />
 <!--
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -1697,7 +1697,7 @@
                 android:layout_width="200.0dp"
                 android:layout_height="120.0dp"
                 android:layout_marginRight="-70.0dp"
-                android:layout_marginLeft="-50.0dp"
+                android:layout_marginLeft="-40.0dp"
                 android:background="#0e1d52"
                 android:layout_marginTop="-35dp"
                 android:scaleType="fitCenter"
@@ -1707,7 +1707,7 @@
                 android:id="@+id/calendar"
                 android:layout_width="134dp"
                 android:layout_height="120dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="33dp"
                 android:layout_marginTop="-33.0dp"
                 android:background="#0e1d52"
                 android:scaleType="fitCenter"
@@ -1719,7 +1719,6 @@
                 android:layout_width="124.5dp"
                 android:layout_height="120dp"
                 android:layout_marginRight="0.0dp"
-                android:layout_marginLeft="-10.0dp"
                 android:layout_marginTop="-33.0dp"
                 android:background="#0e1d52"
                 android:scaleType="fitCenter"
