@@ -266,11 +266,11 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_features.png" translatesAutoresizingMaskIntoConstraints="NO" id="1229">
-                                <rect key="frame" x="298" y="33" width="54" height="51"/>
+                                <rect key="frame" x="300" y="33" width="37" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1230">
-                                <rect key="frame" x="289" y="33" width="68" height="51"/>
+                                <rect key="frame" x="293" y="33" width="50" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -505,28 +505,28 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="How does it work?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1419">
-                                <rect key="frame" x="0.0" y="130" width="375" height="31"/>
+                                <rect key="frame" x="0.0" y="126" width="375" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Where are the beacons?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1420">
-                                <rect key="frame" x="-3" y="280" width="375" height="33"/>
+                                <rect key="frame" x="-3" y="291" width="375" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="Why is it helpful?" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1421">
-                                <rect key="frame" x="0.0" y="477" width="375" height="33"/>
+                                <rect key="frame" x="0.0" y="483" width="375" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1422">
-                                <rect key="frame" x="16" y="156" width="360" height="137"/>
+                                <rect key="frame" x="16" y="153" width="360" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This app uses location powered technology to give you the most accurate information. There are beacons scattered around the conference which pinpoint your location and communicate with our software to get you to the correct session in the correct place. Beacons use Bluetooth to send signals to cellular devices so that communication and sharing can occur.</string>
@@ -534,7 +534,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1423">
-                                <rect key="frame" x="16" y="506" width="360" height="150"/>
+                                <rect key="frame" x="16" y="510" width="360" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">This app allows you to see when/where sessions are occurring and what each session is about. You can add sessions to your favorites which will appear in the scheduling tab. The favorites area will show you the sessions which are currently occurring and the upcoming sessions that you are interested in. This app is meant to make your involvement in the ITAG convention as simple and easy as possible.</string>
@@ -542,7 +542,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="blueprintexample.png" translatesAutoresizingMaskIntoConstraints="NO" id="1424">
-                                <rect key="frame" x="16" y="314" width="343" height="172"/>
+                                <rect key="frame" x="16" y="320" width="343" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
