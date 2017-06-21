@@ -199,7 +199,7 @@ namespace HBS.ITAG
             };
 
             beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 0);
+            beaconManager.SetBackgroundScanPeriod(1000, 1);
 
             beaconManager.ExitedRegion += (sender, e) =>
             {

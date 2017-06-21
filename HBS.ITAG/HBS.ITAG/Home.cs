@@ -62,9 +62,7 @@ namespace HBS.ITAG
        //     PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
        // }
         
-
-
-
+            
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
         {
@@ -86,15 +84,6 @@ namespace HBS.ITAG
             favoritedList = FindViewById<ListView>(Resource.Id.favoritedList);
 
             favoritedEvents = new List<Event>();
-
-            itagIcon.Click += (object sender, EventArgs e) =>
-            {
-                //Toast toast = Toast.MakeText(this, beaconMessage, ToastLength.Long);
-                // toast.Show();
-
-                //StartActivity(typeof(JsonCallTester));
-
-            };
 
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
 
@@ -145,7 +134,7 @@ namespace HBS.ITAG
 
 
             beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 0);
+            beaconManager.SetBackgroundScanPeriod(1000, 1);
             beaconManager.ExitedRegion += (sender, e) =>
             {
                 
@@ -166,6 +155,7 @@ namespace HBS.ITAG
                 
                 if (Store.Instance.Notify)
                 {
+                    //Event tempEvent = new Event(Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString()));
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
                     if (tempEvent != null)
                     {
@@ -174,9 +164,9 @@ namespace HBS.ITAG
                 }
             };
 
-            //beaconManager.Connect(this);
+            
             Store.Instance.GetTracks(LoadTracksComplete);
-
+            //beaconManager.Connect(this);
             //OnServiceReady();
             //OnServiceReady();
             //LoadData();
@@ -236,8 +226,8 @@ namespace HBS.ITAG
             //beaconManager.StartMonitoring(beaconRegion);
             //loop through all location entries
 
-            Region beaconRegionTest = new Region( "test", null, null, null);
-            beaconManager.StartMonitoring(beaconRegionTest);
+            //Region beaconRegionTest = new Region( "test", null, null, null);
+            //beaconManager.StartMonitoring(beaconRegionTest);
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
 				{
 					Location tempLocation = Store.Instance.Locations[i];
@@ -267,40 +257,36 @@ namespace HBS.ITAG
             }
         }
 
-            private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
+        private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            if (!favoritedEvents[e.Position].ScheduleOnly)
             {
-                if (!favoritedEvents[e.Position].ScheduleOnly)
-                {
-                    Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                    //StartActivity(typeof(EventDetails));
+                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                //StartActivity(typeof(EventDetails));
 
-				    Intent i = new Intent(Application.Context, typeof(EventDetails));
-				    i.SetFlags(ActivityFlags.ReorderToFront);
-				    StartActivity(i);
-                }
+				Intent i = new Intent(Application.Context, typeof(EventDetails));
+				i.SetFlags(ActivityFlags.ReorderToFront);
+				StartActivity(i);
             }
+        }
 
-            public void OnRegionEnter(Event tempEvent)
+        public void OnRegionEnter(Event tempEvent)
+        {
+            Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
+
+            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
             {
-                Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-                int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-                minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
+                //TODO: If app open, ask user if they want to see the information
+                //      if app closed, add notification that event is in range
 
-                //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-                if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
-                {
-                    //TODO: If app open, ask user if they want to see the information
-                    //      if app closed, add notification that event is in range
+                tempEvent.LastEntryNotified = DateTime.Now;
+                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
 
-                    tempEvent.LastEntryNotified = DateTime.Now;
-                    Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
-                }
             }
-
-        
-     
-       
+        }
 
         public void OnSessionAddComplete(string message)
         {

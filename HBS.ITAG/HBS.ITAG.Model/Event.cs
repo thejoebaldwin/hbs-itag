@@ -8,6 +8,7 @@ namespace HBS.ITAG.Model
 
     public class Event
     {
+        private Event @event;
 
         public string Name { get; set; }
         public string Id { get; set; }

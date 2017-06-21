@@ -397,7 +397,7 @@ namespace HBS.ITAG.Model
 			{
 				for (int i = 0; i < _arrEvents.Count; i++)
 				{
-					if (_arrEvents[i].LocationId == locationId)
+                    if (_arrEvents[i].LocationId == locationId)
 					{
 						if (DateTime.Now >= _arrEvents[i].StartTime && DateTime.Now < _arrEvents[i].EndTime)
 						{
