@@ -51,12 +51,17 @@ namespace HBS.ITAG
             LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.eventItem);
             TextView eventName = row.FindViewById<TextView>(Resource.Id.MElistViewTextView1);
             TextView eventTime = row.FindViewById<TextView>(Resource.Id.faveEventTime);
-            eventName.Text = tableItems[position].Name;
-            eventTime.Text = tableItems[position].StartTime.ToLocalTime().ToShortTimeString() + " - " + tableItems[position].EndTime.ToLocalTime().ToShortTimeString();
-            if(tableItems[position].Name == "No Favorites Selected" )
+            if (tableItems[position].Name == null)
             {
+                eventName.Text = "No Favorites Selected";
                 eventTime.Text = "Favorites selectable via Schedule Page";
             }
+            else
+            {
+                eventName.Text = tableItems[position].Name;
+                eventTime.Text = tableItems[position].StartTime.ToLocalTime().ToShortTimeString() + " - " + tableItems[position].EndTime.ToLocalTime().ToShortTimeString();
+            }
+
             if (tableItems[position].ScheduleOnly)
             {
                 eventItem.SetBackgroundResource(Resource.Drawable.secondaryBox);

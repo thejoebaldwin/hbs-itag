@@ -29,20 +29,7 @@ namespace HBS.ITAG
             TextView Header2 = FindViewById<TextView>(Resource.Id.Header2);
             ImageView Blueprintimage = FindViewById<ImageView>(Resource.Id.blueprintexample);
             TextView Header3 = FindViewById<TextView>(Resource.Id.Header3);
-            TextView BackHomeButton = FindViewById<TextView>(Resource.Id.backhomebutton);
-            
 
-            BackHomeButton.Click += (sender, e) =>
-            {
-                StartActivity(typeof(Home));
-            };
-
-            ImageView BackHomeArrow = FindViewById<ImageView>(Resource.Id.arrowbutton);
-
-            BackHomeArrow.Click += (sender, e) =>
-            {
-                StartActivity(typeof(Home));
-            };
         }
     }
 }

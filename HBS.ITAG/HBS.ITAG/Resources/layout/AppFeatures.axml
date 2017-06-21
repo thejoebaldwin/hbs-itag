@@ -31,22 +31,6 @@
             android:layout_marginBottom="-15.0dp" />
     </GridLayout>
     <GridLayout
-        android:layout_marginTop="10dp">
-        <ImageView
-            android:id="@+id/arrowbutton"
-            android:src="@drawable/left_arrow"
-            android:scaleX="0.85"
-            android:scaleY="0.85"
-            android:layout_marginTop="2dp" />
-        <TextView
-            android:text="  Home"
-            android:id="@+id/backhomebutton"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#0e1d52"
-            android:gravity="center"
-            android:layout_marginTop="3.0dp" />
-    </GridLayout>
-    <GridLayout
         android:layout_marginRight="0.0dp"
         android:layout_marginTop="-5.0dp"
         android:layout_marginBottom="0.0dp"

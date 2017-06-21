@@ -8,19 +8,20 @@
     <TextView
         android:text="Text"
         android:textColor="@android:color/white"
-        android:layout_height="60px"
+        android:layout_height="40dp"
         android:layout_width="fill_parent"
         android:gravity="center"
         android:id="@+id/MElistViewTextView1"
-        android:textSize="30px"
-        android:paddingTop="20px" />
+        android:textSize="10dp"
+        android:paddingTop="20px"
+        android:layout_marginBottom="-10dp" />
     <TextView
         android:text="subtext"
         android:textColor="@android:color/white"
-        android:layout_height="50px"
+        android:layout_height="25dp"
         android:layout_width="fill_parent"
         android:gravity="center"
         android:id="@+id/faveEventTime"
         android:layout_marginBottom="17.5dp"
-        android:textSize="25px" />
+        android:textSize="10dp" />
 </LinearLayout>

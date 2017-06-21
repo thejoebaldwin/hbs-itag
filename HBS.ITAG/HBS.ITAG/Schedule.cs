@@ -62,7 +62,6 @@ namespace HBS.ITAG
         {
             if (!isEmulator())
             {
-
             }
             InitializeBeacons();
             //Store.Instance.GetTracks(LoadTracksComplete);
@@ -214,8 +213,6 @@ namespace HBS.ITAG
                     }
                 }
             };
-
-
             beaconManager.EnteredRegion += (sender, e) =>
             {
                 
@@ -228,9 +225,7 @@ namespace HBS.ITAG
                     }
                 }
             };
-
             beaconManager.Connect(this);
-
         }
 
         private void InitializeBeacons()
@@ -250,11 +245,7 @@ namespace HBS.ITAG
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
                 //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
                 beaconManager.StartMonitoring(beaconRegion);
-                
             }
-
-
-
         }
 
         public void OnRegionExit(Event tempEvent)
@@ -268,7 +259,6 @@ namespace HBS.ITAG
                 tempEvent.LastExitNotified = DateTime.Now;
             }
         }
-        
 
         public void OnRegionEnter(Event tempEvent)
         {
@@ -284,12 +274,9 @@ namespace HBS.ITAG
 
                 tempEvent.LastEntryNotified = DateTime.Now;
                 Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
             }
         }
-
-       
-
+        
         public void OnSessionAddComplete(string message)
         {
 
@@ -493,9 +480,7 @@ namespace HBS.ITAG
                         trackEvents.Add(e);
                     }
                 }
-
                 trackEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-
             }
 
             ScheduleAdapter adapter = new ScheduleAdapter(this, trackEvents);
@@ -513,7 +498,6 @@ namespace HBS.ITAG
 				Intent i = new Intent(Application.Context, typeof(EventDetails));
 				i.SetFlags(ActivityFlags.ReorderToFront);
 				StartActivity(i);
-
             }
         }
     }

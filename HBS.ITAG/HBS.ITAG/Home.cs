@@ -34,7 +34,6 @@ namespace HBS.ITAG
             ListView favoritedList;
             List<Event> favoritedEvents;
             List<Event> events;
-            TextView noFavorites;
 
         public bool isEmulator()
         {
@@ -206,6 +205,7 @@ namespace HBS.ITAG
         {
             events = new List<Event>(Store.Instance.Events);
             favoritedEvents = new List<Event>();
+
             foreach (var e in events)
             {
                 if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
@@ -213,6 +213,12 @@ namespace HBS.ITAG
                     favoritedEvents.Add(e);
                 }
             }
+
+            if (favoritedEvents.Count == 0)
+            {
+                favoritedEvents.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
+            }
+
             MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(Application.Context, favoritedEvents);
             favoritedList.Adapter = adapter;
             favoritedList.ItemClick += favoriteClick;
@@ -236,13 +242,7 @@ namespace HBS.ITAG
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor );
                 //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
                 beaconManager.StartMonitoring(beaconRegion);
-
-                
-
                 }
-
-
-
         }
 
         public void OnRegionExit(Event tempEvent)
