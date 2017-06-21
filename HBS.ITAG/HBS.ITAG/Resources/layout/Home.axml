@@ -78,12 +78,12 @@
                 android:id="@+id/calendar"
                 android:layout_width="134dp"
                 android:layout_height="121.5dp"
-                android:layout_marginLeft="32dp"
                 android:layout_marginTop="-33.0dp"
                 android:background="#0e1d52"
                 android:scaleType="fitCenter"
                 android:padding="20dp"
-                android:layout_marginRight="0.0dp" />
+                android:layout_marginRight="0.0dp"
+                android:layout_marginLeft="24dp" />
             <ImageButton
                 android:src="@drawable/profile"
                 android:id="@+id/profileimage"
@@ -93,7 +93,8 @@
                 android:layout_marginTop="-33.0dp"
                 android:background="#0e1d52"
                 android:scaleType="fitCenter"
-                android:padding="20dp" />
+                android:padding="20dp"
+                android:layout_marginLeft="-8dp" />
         </GridLayout>
     </LinearLayout>
 </LinearLayout>
