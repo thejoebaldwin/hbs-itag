@@ -10,7 +10,7 @@ using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
-using Android.Icu.Util;
+//using Android.Icu.Util;
 using Android;
 using Xamarin.Forms.PlatformConfiguration;
 using Android.Support.V4.App;
@@ -508,7 +508,12 @@ namespace HBS.ITAG
             if (!trackEvents[e.Position].ScheduleOnly)
             {
                 Store.Instance.SelectedEvent = trackEvents[e.Position];
-                StartActivity(typeof(EventDetails));
+                //StartActivity(typeof(EventDetails));
+
+				Intent i = new Intent(Application.Context, typeof(EventDetails));
+				i.SetFlags(ActivityFlags.ReorderToFront);
+				StartActivity(i);
+
             }
         }
     }

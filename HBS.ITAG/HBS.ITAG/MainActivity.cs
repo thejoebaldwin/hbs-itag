@@ -26,7 +26,9 @@ namespace HBS.ITAG
             
             if (!somePref )
             {
-                SetContentView (Resource.Layout.DemographicSurvey);
+                
+
+                SetContentView (HBS.ITAG.Resource.Layout.DemographicSurvey);
 
                 Spinner techFocus = FindViewById<Spinner>(Resource.Id.DSspinner1);
                 Spinner organization = FindViewById<Spinner>(Resource.Id.DSspinner4);

@@ -10,7 +10,7 @@ using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
-using Android.Icu.Util;
+//using Android.Icu.Util;
 using Android;
 using Xamarin.Forms.PlatformConfiguration;
 using Android.Support.V4.App;
@@ -18,6 +18,7 @@ using Permission = Android.Content.PM.Permission;
 using Plugin.Permissions;
 using Android.Support.V4.Content;
 using Java.Util;
+using Java.Lang;
 
 namespace HBS.ITAG
 {
@@ -101,10 +102,10 @@ namespace HBS.ITAG
 
             Homeimagebutton.Click += (sender, e) =>
             {
-            Intent i = new Intent(Application.Context, typeof(Home));
-            i.SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(i);
-    };
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
+            };
 
             ImageButton Scheduleimagebutton = FindViewById<ImageButton>(Resource.Id.calendar);
 
@@ -181,9 +182,10 @@ namespace HBS.ITAG
             //LoadData();
         }
 
-        public void OnResume()
+        protected override void OnResume()
         {
             base.OnResume();
+            LoadData();
         }
 
         private void LoadTracksComplete(string message)
@@ -198,6 +200,10 @@ namespace HBS.ITAG
 
         private void LoadLocationsComplete(string message)
         {
+            //LoadData();
+            OldStore.Instance.InitializeFavorites();
+            RunOnUiThread(() => LoadData());
+
             if (!isEmulator())
             {
                 beaconManager.Connect(this);
@@ -205,7 +211,7 @@ namespace HBS.ITAG
             }
         }
 
-        /*
+
         private void LoadData()
         {
             events = new List<Event>(Store.Instance.Events);
@@ -217,7 +223,11 @@ namespace HBS.ITAG
                     favoritedEvents.Add(e);
                 }
             }
-		} */
+            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(Application.Context, favoritedEvents);
+            favoritedList.Adapter = adapter;
+            favoritedList.ItemClick += favoriteClick;
+
+		} 
 
 		private void InitializeBeacons()
 		{
@@ -249,7 +259,7 @@ namespace HBS.ITAG
         {
             Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
             int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+            minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
             if (minutesSinceLastNotification > 5)
             {
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
@@ -262,7 +272,11 @@ namespace HBS.ITAG
                 if (!favoritedEvents[e.Position].ScheduleOnly)
                 {
                     Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                    StartActivity(typeof(EventDetails));
+                    //StartActivity(typeof(EventDetails));
+
+				    Intent i = new Intent(Application.Context, typeof(EventDetails));
+				    i.SetFlags(ActivityFlags.ReorderToFront);
+				    StartActivity(i);
                 }
             }
 
@@ -270,7 +284,7 @@ namespace HBS.ITAG
             {
                 Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
                 int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-                minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+                minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
 
                 //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
                 if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)

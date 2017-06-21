@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
-using Android.Icu.Util;
+//using Android.Icu.Util;
 using Android;
 using Xamarin.Forms.PlatformConfiguration;
 using Android.Support.V4.App;
@@ -55,6 +55,51 @@ namespace HBS.ITAG
             //Store.Instance.GetTracks(LoadTracksComplete);
         }
 
+        protected override void OnResume()
+        {
+            base.OnResume();
+            LoadData();
+
+        }
+
+        private void LoadData()
+        {
+			favoritedEvents = new List<Event>();
+
+			foreach (var e in events)
+			{
+				if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
+				{
+					favoritedEvents.Add(e);
+				}
+			}
+
+			favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+			MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
+			favoritedList.Adapter = adapter;
+
+			previousEvents = new List<Event>();
+
+			foreach (var e in events)
+			{
+				if (e.Favorited && e.EndTime.Ticks < DateTime.Now.Ticks)
+				{
+					previousEvents.Add(e);
+				}
+			}
+
+			previousEvents.Sort((y, x) => x.EndTime.Ticks.CompareTo(y.EndTime.Ticks));
+			previousList = FindViewById<ListView>(Resource.Id.MElistView2);
+			MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
+			previousList.Adapter = adapter2;
+
+			favoritedList.ItemClick += mListView_ItemClick;
+
+			// Populates Previous Events table
+
+			previousList.ItemClick += mListView2_ItemClick;
+        }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
@@ -64,37 +109,8 @@ namespace HBS.ITAG
             // Populates Favorited Events table
             favoritedList = FindViewById<ListView>(Resource.Id.MElistView1);
             
-            favoritedEvents = new List<Event>();
-
-            foreach(var e in events)
-            {
-                if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
-                {
-                    favoritedEvents.Add(e);
-                }
-            }
-
-            favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
-            favoritedList.Adapter = adapter;
-            favoritedList.ItemClick += mListView_ItemClick;
-
-            // Populates Previous Events table
-            previousEvents = new List<Event>();
-
-            foreach(var e in events)
-            {
-                if (e.Favorited && e.EndTime.Ticks < DateTime.Now.Ticks)
-                {
-                    previousEvents.Add(e);
-                }
-            }
-
-            previousEvents.Sort((y, x) => x.EndTime.Ticks.CompareTo(y.EndTime.Ticks));
-            previousList = FindViewById<ListView>(Resource.Id.MElistView2);
-            MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
-            previousList.Adapter = adapter2;
-            previousList.ItemClick += mListView2_ItemClick;
+         
+          
 
             
 
@@ -232,7 +248,10 @@ namespace HBS.ITAG
             if (!favoritedEvents[e.Position].ScheduleOnly)
             {
                 Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                StartActivity(typeof(EventDetails));
+				//StartActivity(typeof(EventDetails));
+				Intent i = new Intent(Application.Context, typeof(EventDetails));
+				i.SetFlags(ActivityFlags.ReorderToFront);
+				StartActivity(i);
             }
         }
 
@@ -241,7 +260,11 @@ namespace HBS.ITAG
             if(!previousEvents[e.Position].ScheduleOnly)
             {
                 Store.Instance.SelectedEvent = previousEvents[e.Position];
-                StartActivity(typeof(EventDetails));
+                //StartActivity(typeof(EventDetails));
+
+				Intent i = new Intent(Application.Context, typeof(EventDetails));
+				i.SetFlags(ActivityFlags.ReorderToFront);
+				StartActivity(i);
             }
         }
     }

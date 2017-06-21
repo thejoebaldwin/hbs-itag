@@ -34,6 +34,92 @@ namespace HBS.ITAG
 				return instance;
 			}
 		}
+        private ArrayList _arrFavoriteIds;
+
+        public void InitializeFavorites()
+        {
+            if (_arrFavoriteIds == null)
+            {
+                var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+                string favorites = prefs.GetString("favorites", string.Empty);
+                string[] arrFavorites = favorites.Split(',');
+                _arrFavoriteIds = new ArrayList();
+                for (int i = 0; i < arrFavorites.Length; i++)
+                {
+                    _arrFavoriteIds.Add(arrFavorites[i]);
+                }
+                if (Store.Instance.Events != null)
+                {
+                    for (int i = 0; i < Store.Instance.Events.Count; i++)
+                    {
+                        if (IsFavorite(Store.Instance.Events[i]))
+                        {
+                            Store.Instance.Events[i].Favorited = true;
+                        }
+                    }
+                }
+            }
+        }
+
+		public bool IsFavorite(Event favoriteEvent)
+		{
+			bool isFavorite = false;
+			for (int i = 0; i < _arrFavoriteIds.Count; i++)
+			{
+				if ((string) _arrFavoriteIds[i] == favoriteEvent.Id)
+				{
+					isFavorite = true;
+					break;
+				}
+			}
+			return isFavorite;
+		}
+
+
+		public void AddFavorite(Event favoriteEvent)
+		{
+			favoriteEvent.Favorited = true;
+			if (!_arrFavoriteIds.Contains(favoriteEvent.Id))
+			{
+				_arrFavoriteIds.Add(favoriteEvent.Id);
+			}
+			string favorites = string.Empty;
+			for (int i = 0; i < _arrFavoriteIds.Count; i++)
+			{
+				if (favorites != string.Empty) favorites += ",";
+				favorites += _arrFavoriteIds[i];
+			}
+
+			var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+			var prefEditor = prefs.Edit();
+			prefEditor.PutString("favorites", favorites);
+			prefEditor.Commit();
+		}
+
+
+
+		public void DeleteFavorite(Event favoriteEvent)
+		{
+			favoriteEvent.Favorited = false;
+			if (_arrFavoriteIds.Contains(favoriteEvent.Id))
+			{
+				_arrFavoriteIds.Remove(favoriteEvent.Id);
+			}
+
+			string favorites = string.Empty;
+			for (int i = 0; i < _arrFavoriteIds.Count; i++)
+			{
+				if (favorites != string.Empty) favorites += ",";
+				favorites += _arrFavoriteIds[i];
+			}
+
+			var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+			var prefEditor = prefs.Edit();
+			prefEditor.PutString("favorites", favorites);
+			prefEditor.Commit();
+
+
+		}
 
 
 		public void SaveKey(string key, string value)
