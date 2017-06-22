@@ -23,7 +23,6 @@ namespace HBS.ITAG
     [Activity(Label = "EventDetails", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class EventDetails : Activity
     {
-
         protected override void OnResume()
         {
             base.OnResume();
@@ -33,7 +32,7 @@ namespace HBS.ITAG
         private void LoadData()
         {
 			List<Event> events = Store.Instance.Events;
-			int indexedEvent = 0;
+			//int indexedEvent = 0;
 
 			// Sets Event name
 			TextView name = FindViewById<TextView>(Resource.Id.EDtextView3);
@@ -121,7 +120,6 @@ namespace HBS.ITAG
 					//    count++;
 					//    HBS.ITAG.Model.Store.Instance.DeleteFavorite(events[indexedEvent]);
 					//}
-
 				};
 
 		}
@@ -131,9 +129,6 @@ namespace HBS.ITAG
             RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EventDetails);
-
-           
-           
             
         }
     }

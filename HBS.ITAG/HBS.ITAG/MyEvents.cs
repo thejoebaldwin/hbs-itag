@@ -30,7 +30,6 @@ namespace HBS.ITAG
         private ListView favoritedList;
         private ListView previousList;
         private List<Event> events = new List<Event>(Store.Instance.Events);
-
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
@@ -49,7 +48,6 @@ namespace HBS.ITAG
         {
             if (!isEmulator())
             {
-
             }
             InitializeBeacons();
             //Store.Instance.GetTracks(LoadTracksComplete);
@@ -59,7 +57,6 @@ namespace HBS.ITAG
         {
             base.OnResume();
             LoadData();
-
         }
 
         private void LoadData()
@@ -108,11 +105,6 @@ namespace HBS.ITAG
 
             // Populates Favorited Events table
             favoritedList = FindViewById<ListView>(Resource.Id.MElistView1);
-            
-         
-          
-
-            
 
             // Code for nav bar
 
@@ -143,12 +135,11 @@ namespace HBS.ITAG
                 StartActivity(i);
             };
 
+            // beacon code
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
-
             beaconManager.ExitedRegion += (sender, e) =>
             {
-
                 if (Store.Instance.Notify)
                 {
 
@@ -159,11 +150,9 @@ namespace HBS.ITAG
                     }
                 }
             };
-
-
+            
             beaconManager.EnteredRegion += (sender, e) =>
             {
-
                 if (Store.Instance.Notify)
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
@@ -173,7 +162,6 @@ namespace HBS.ITAG
                     }
                 }
             };
-
             beaconManager.Connect(this);
 
         }
@@ -181,10 +169,7 @@ namespace HBS.ITAG
         private void InitializeBeacons()
         {
             //run on main thread
-            //Region beaconRegion = new Region("test", null, null, null);
-            //beaconManager.StartMonitoring(beaconRegion);
             //loop through all location entries
-
             Region beaconRegionTest = new Region("test", null, null, null);
             beaconManager.StartMonitoring(beaconRegionTest);
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
@@ -195,11 +180,7 @@ namespace HBS.ITAG
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
                 //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
                 beaconManager.StartMonitoring(beaconRegion);
-
             }
-
-
-
         }
 
         public void OnRegionExit(Event tempEvent)
@@ -213,7 +194,6 @@ namespace HBS.ITAG
                 tempEvent.LastExitNotified = DateTime.Now;
             }
         }
-
 
         public void OnRegionEnter(Event tempEvent)
         {
@@ -229,18 +209,14 @@ namespace HBS.ITAG
 
                 tempEvent.LastEntryNotified = DateTime.Now;
                 Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
             }
         }
-
-
 
         public void OnSessionAddComplete(string message)
         {
 
         }
-
-
+        
         // Code for clicking items on ListView
 
         private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)

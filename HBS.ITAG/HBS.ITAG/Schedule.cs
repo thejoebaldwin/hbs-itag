@@ -197,9 +197,9 @@ namespace HBS.ITAG
                 day4btnClick();
             };
 
+            // beacon code
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
-
             beaconManager.ExitedRegion += (sender, e) =>
             {
                 
@@ -231,10 +231,7 @@ namespace HBS.ITAG
         private void InitializeBeacons()
         {
             //run on main thread
-            //Region beaconRegion = new Region("test", null, null, null);
-            //beaconManager.StartMonitoring(beaconRegion);
             //loop through all location entries
-
             Region beaconRegionTest = new Region("test", null, null, null);
             beaconManager.StartMonitoring(beaconRegionTest);
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
@@ -482,7 +479,6 @@ namespace HBS.ITAG
                 }
                 trackEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
             }
-
             ScheduleAdapter adapter = new ScheduleAdapter(this, trackEvents);
             scheduleList.Adapter = adapter;
             scheduleList.ItemClick += eventClick;
