@@ -96,6 +96,7 @@ namespace HBS.ITAG
             {
                 GrayStar.Highlighted = true;
 				Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
+                ReminderClick();
             }
 
 			//parent.ReloadData();
@@ -133,9 +134,14 @@ namespace HBS.ITAG
             UIApplication.SharedApplication.OpenUrl(new NSUrl("https://iowacountiesit.org/itag-conference/schedule/"+endofLink));
         }
 
-        //public void ReminderClick()
-        //{
-          //  UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString: @"x-apple-reminder://CREATE_NEW/Reminder"));
-       // }
+        public void ReminderClick()
+        {
+			UILocalNotification notification = new UILocalNotification();
+			notification.FireDate = (NSDate)Store.Instance.SelectedEvent.StartTime.AddMinutes(-15);
+			//notification.AlertTitle = "Alert Title"; // required for Apple Watch notifications
+			notification.AlertAction = "View Alert";
+			notification.AlertBody = Store.Instance.SelectedEvent.Name + " is starting in 15 minutes!";
+			UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+        }
     }
 }
