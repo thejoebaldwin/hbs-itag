@@ -53,6 +53,10 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void EventsButtonClick (UIKit.UIButton sender);
 
+        [Action ("HomeButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void HomeButton_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("NotifySwitchClicked:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void NotifySwitchClicked (UIKit.UISwitch sender);
