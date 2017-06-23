@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Foundation;
 using CoreLocation;
 using UIKit;
@@ -7,11 +7,6 @@ namespace HBS.ITAG
 {
     public partial class AboutViewController : UIViewController
     {
-        partial void BackButtonClick(UIButton sender)
-        {
-            this.DismissViewController(true, null);
-        }
-
 		protected AboutViewController(IntPtr handle) : base(handle)
         {
 			// Note: this .ctor should not contain any initialization logic.
@@ -30,13 +25,33 @@ namespace HBS.ITAG
             BluetoothMsgGesture.NumberOfTapsRequired = 1;
             BluetoothMsg.AddGestureRecognizer(BluetoothMsgGesture);
 
-            // Perform any additional setup after loading the view, typically from a nib.
-        }
+            BackButton.UserInteractionEnabled = true;
+			UITapGestureRecognizer BackButtonGesture = new UITapGestureRecognizer(BackButtonClick);
+			BackButtonGesture.NumberOfTapsRequired = 1;
+            BackButton.AddGestureRecognizer(BackButtonGesture);
+
+			BackArrow.UserInteractionEnabled = true;
+			UITapGestureRecognizer BackArrowGesture = new UITapGestureRecognizer(BackArrowClick);
+			BackArrowGesture.NumberOfTapsRequired = 1;
+            BackArrow.AddGestureRecognizer(BackArrowGesture);
+
+			// Perform any additional setup after loading the view, typically from a nib.
+		}
 
         private void BluetoothMsgClick()
         {
             UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"App-prefs:root=Bluetooth"));
         }
+
+        private void BackButtonClick()
+        {
+            this.DismissViewController(true,null);
+        }
+
+		private void BackArrowClick()
+		{
+			this.DismissViewController(true, null);
+		}
 
         public override void DidReceiveMemoryWarning()
         {

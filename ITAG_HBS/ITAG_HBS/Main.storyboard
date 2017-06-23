@@ -262,7 +262,7 @@
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMinX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1230">
-                                <rect key="frame" x="68" y="33" width="50" height="40"/>
+                                <rect key="frame" x="294" y="29" width="50" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -537,6 +537,7 @@
                     <connections>
                         <outlet property="BackButton" destination="1280" id="name-outlet-1280"/>
                         <outlet property="BluetoothMsg" destination="1278" id="name-outlet-1278"/>
+                        <outlet property="BackArrow" destination="1281" id="name-outlet-1281"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
