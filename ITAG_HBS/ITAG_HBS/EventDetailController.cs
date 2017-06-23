@@ -11,11 +11,6 @@ namespace HBS.ITAG
 {
     public partial class EventDetailController : UIViewController
     {
-        partial void HomeButtonClick(UIButton sender)
-        {
-            this.DismissViewController(true, null);
-        }
-
         List<Event> events = Store.Instance.Events;
         public EventDetailController (IntPtr handle) : base (handle)
         {
@@ -31,17 +26,24 @@ namespace HBS.ITAG
 			//Store.Instance.LoadTracksFromFile();
 
 			GrayStar.UserInteractionEnabled = true;
-
 			UITapGestureRecognizer Favoritedtapguesture = new UITapGestureRecognizer(StarClick);
 			Favoritedtapguesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Favoritedtapguesture);
 
 			LinkToDescription.UserInteractionEnabled = true;
-
-
 			UITapGestureRecognizer Link = new UITapGestureRecognizer(LinkClick);
 			Link.NumberOfTapsRequired = 1;
 			LinkToDescription.AddGestureRecognizer(Link);
+
+            BackEventArrow.UserInteractionEnabled = true;
+            UITapGestureRecognizer BackEventArrowGesture = new UITapGestureRecognizer(BackEventArrowClick);
+            BackEventArrowGesture.NumberOfTapsRequired = 1;
+            BackEventArrow.AddGestureRecognizer(BackEventArrowGesture);
+
+            BackEventButton.UserInteractionEnabled = true;
+			UITapGestureRecognizer BackEventButtonGesture = new UITapGestureRecognizer(BackEventArrowClick);
+			BackEventButtonGesture.NumberOfTapsRequired = 1;
+			BackEventButton.AddGestureRecognizer(BackEventButtonGesture);
 
             //ReminderText.UserInteractionEnabled = true;
 
@@ -142,6 +144,11 @@ namespace HBS.ITAG
 			notification.AlertAction = "View Alert";
 			notification.AlertBody = Store.Instance.SelectedEvent.Name + " is starting in 15 minutes!";
 			UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+        }
+
+        public void BackEventArrowClick()
+        {
+            this.DismissViewController(true, null);
         }
     }
 }

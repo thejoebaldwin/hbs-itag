@@ -14,6 +14,14 @@ namespace HBS.ITAG
     [Register ("EventDetailController")]
     partial class EventDetailController
     {
+		[Outlet]
+		[GeneratedCode("iOS Designer", "1.0")]
+		UIKit.UIButton BackEventArrow { get; set; }
+
+		[Outlet]
+		[GeneratedCode("iOS Designer", "1.0")]
+		UIKit.UIButton BackEventButton { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView EventDay { get; set; }
@@ -38,11 +46,15 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LinkToDescription { get; set; }
 
-        [Action ("HomeButtonClick:")]
+        [Action ("BackEventButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void HomeButtonClick (UIKit.UIButton sender);
+        partial void BackEventButtonClick (UIKit.UIButton sender);
 
-        void ReleaseDesignerOutlets ()
+		[Action("BackEventArrowClick:")]
+		[GeneratedCode("iOS Designer", "1.0")]
+		partial void BackEventArrowClick(UIKit.UIButton sender);
+
+		void ReleaseDesignerOutlets ()
         {
             if (EventDay != null) {
                 EventDay.Dispose ();
@@ -73,6 +85,18 @@ namespace HBS.ITAG
                 LinkToDescription.Dispose ();
                 LinkToDescription = null;
             }
+
+            if (BackEventArrow != null)
+			{
+                BackEventArrow.Dispose();
+                BackEventArrow = null;
+			}
+
+            if (BackEventButton != null)
+			{
+                BackEventButton.Dispose();
+                BackEventButton = null;
+			}
         }
     }
 }
