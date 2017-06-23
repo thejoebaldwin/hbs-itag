@@ -59,7 +59,7 @@ namespace HBS.ITAG
             if (ScheduleTableView2 != null)
             {
                 ScheduleTableView2.Source = pastEvents;
-                ScheduleTableView.ReloadData();
+                ScheduleTableView2.ReloadData();
                 ScheduleTableView.Source = upcomingEvents;
                 ScheduleTableView.ReloadData();
             }

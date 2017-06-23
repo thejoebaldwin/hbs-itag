@@ -20,7 +20,7 @@ namespace HBS.ITAG
 
         partial void AboutButtonClick(UIButton sender)
         {
-           this.PresentViewController(aboutViewController, true, null);
+            this.PresentViewController(aboutViewController, true, null);
         }
 
         partial void EventsButtonClick(UIButton sender)
@@ -110,6 +110,7 @@ namespace HBS.ITAG
             eventDetailViewController.parent = this;
 
             aboutViewController = (AboutViewController)this.Storyboard.InstantiateViewController("AboutViewController");
+
 
 			HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
