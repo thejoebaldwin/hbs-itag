@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using Foundation;
 using CoreLocation;
 using UIKit;
@@ -30,6 +30,11 @@ namespace HBS.ITAG
             BluetoothMsgGesture.NumberOfTapsRequired = 1;
             BluetoothMsg.AddGestureRecognizer(BluetoothMsgGesture);
 
+            BackButton.UserInteractionEnabled = true;
+			UITapGestureRecognizer BackButtonGesture = new UITapGestureRecognizer(BackButtonClick);
+			BackButtonGesture.NumberOfTapsRequired = 1;
+            BackButton.AddGestureRecognizer(BackButtonGesture);
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -37,6 +42,11 @@ namespace HBS.ITAG
         {
             UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"App-prefs:root=Bluetooth"));
         }
+
+		private void BackButtonClick()
+		{
+			UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString: @"App-prefs:root=Bluetooth"));
+		}
 
         public override void DidReceiveMemoryWarning()
         {
