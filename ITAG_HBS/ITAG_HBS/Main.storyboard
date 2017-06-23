@@ -537,7 +537,7 @@
                     <connections>
                         <outlet property="BackButton" destination="1280" id="name-outlet-1280"/>
                         <outlet property="BluetoothMsg" destination="1278" id="name-outlet-1278"/>
-                        <outlet property="BackButton" destination="1281" id="name-outlet-1281"/>
+                        <outlet property="BackArrow" destination="1281" id="name-outlet-1281"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

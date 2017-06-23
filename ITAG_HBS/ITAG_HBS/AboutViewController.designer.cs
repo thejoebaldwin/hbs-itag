@@ -16,6 +16,10 @@ namespace HBS.ITAG
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackArrow { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton BackButton { get; set; }
 
         [Outlet]
@@ -26,8 +30,17 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButtonClick (UIKit.UIButton sender);
 
+		[Action("BackArrowClick:")]
+		[GeneratedCode("iOS Designer", "1.0")]
+		partial void BackArrowClick(UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (BackArrow != null) {
+                BackArrow.Dispose ();
+                BackArrow = null;
+            }
+
             if (BackButton != null) {
                 BackButton.Dispose ();
                 BackButton = null;
