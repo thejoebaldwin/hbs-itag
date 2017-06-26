@@ -15,8 +15,9 @@ namespace HBS.ITAG
         ListView favoritedList;
         List<Event> favoritedEvents;
         List<Event> events;
-        
-            
+        public static bool notificationRequest;
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -29,6 +30,7 @@ namespace HBS.ITAG
             favoritedList = FindViewById<ListView>(Resource.Id.favoritedList);
             favoritedEvents = new List<Event>();
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
+            Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
 
             // Nav bar code
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
@@ -64,9 +66,19 @@ namespace HBS.ITAG
             };
             
             Store.Instance.GetTracks(LoadTracksComplete);
-
-
             StartService(new Intent(this, typeof(SimpleService)));
+
+            notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
+                 if (!notificationSwitch.Checked)
+                 {
+                    StopService(new Intent(this, typeof(SimpleService)));
+                 }
+                 else
+                 {
+                    StartService(new Intent(this, typeof(SimpleService)));
+                 }
+            };
+
         }
 
         protected override void OnResume()

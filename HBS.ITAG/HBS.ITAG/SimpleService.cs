@@ -52,9 +52,7 @@ namespace HBS.ITAG
             };
             beaconManager.Connect(this);
         }
-
-       
-
+        
         public void OnServiceReady()
         {
             InitializeBeacons();
@@ -139,8 +137,9 @@ namespace HBS.ITAG
 
         public override void OnDestroy()
         {
+            beaconManager.Disconnect();
             base.OnDestroy();
         }
-        
+
     }
 }

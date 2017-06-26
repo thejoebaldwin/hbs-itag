@@ -131,5 +131,7 @@ namespace HBS.ITAG
             SetContentView(Resource.Layout.EventDetails);
             
         }
+        
+
     }
 }
