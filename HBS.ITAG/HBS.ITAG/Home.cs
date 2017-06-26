@@ -25,38 +25,17 @@ using Com.Tapadoo.Alerter;
 namespace HBS.ITAG
 {
     [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@style/Theme.AppCompat.NoActionBar")]
-    public class Home : AppCompatActivity, Android.Views.View.IOnClickListener, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
+    public class Home : AppCompatActivity, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
     {
         BeaconManager beaconManager; 
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         ListView favoritedList;
         List<Event> favoritedEvents;
         List<Event> events;
-
-        public bool isEmulator()
-        {
-            string fing = Build.Fingerprint;
-            bool isEmulator = false;
-            if (fing != null)
-            {
-                isEmulator = fing.Contains("vbox") || fing.Contains("generic");
-            }
-            return isEmulator;
-        }
         
         public void OnServiceReady()
         {
-            if (!isEmulator())
-            {
-
-            }
             InitializeBeacons();
-            //Store.Instance.GetTracks(LoadTracksComplete);
-        }
-        
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
-        {
-            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
             
         protected override void OnCreate(Bundle savedInstanceState)
@@ -114,7 +93,6 @@ namespace HBS.ITAG
                 {
 
                     Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-                    //Toast.MakeText(this, "You are leaving the event : Test.", ToastLength.Long).Show();
 
                     if (tempEvent != null)
                     {
@@ -130,38 +108,6 @@ namespace HBS.ITAG
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
 
-                    /*
-                    Bundle valueSend = new Bundle();
-                    valueSend.PutString("sendContent", "This is content send from activity 1.");
-
-                    Intent newIntent = new Intent(this, typeof(EventDetails));
-                    newIntent.PutExtras(valueSend);
-
-                    Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
-                    stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-                    stackBuilder.AddNextIntent(newIntent);
-
-                    PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
-
-                    Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
-                    .SetAutoCancel(true)
-                    .SetContentIntent(resultPendingIntent)
-                    .SetContentTitle("Itag Conference")
-                    .SetSmallIcon(Resource.Drawable.itag_icon)
-                    .SetContentText("You are near the event : Test. Click for more details.");
-
-                    NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
-                    notificationManager.Notify(1, builder.Build());
-
-
-                    Alerter.Create(this).SetTitle("Event: Test Nearby")
-                        .SetText("Click for more details.")
-                        .SetOnClickListener(this)
-                        .SetIcon(Resource.Drawable.wifiTower)
-                        .SetBackgroundColor(Resource.Color.material_blue_grey_950)
-                        .Show();
-                        */
-
                     if (tempEvent != null)
                     {
                         OnRegionEnter(tempEvent);
@@ -170,12 +116,6 @@ namespace HBS.ITAG
             };
             Store.Instance.GetTracks(LoadTracksComplete);
             StartService(new Intent(this, typeof(SimpleService)));
-            //beaconManager.Connect(this);
-            //OnServiceReady();
-            //OnServiceReady();
-            //LoadData();
-
-
         }
 
         protected override void OnResume()
@@ -199,12 +139,8 @@ namespace HBS.ITAG
             //LoadData();
             OldStore.Instance.InitializeFavorites();
             RunOnUiThread(() => LoadData());
-
-            if (!isEmulator())
-            {
-                beaconManager.Connect(this);
-                //InitializeBeacons();
-            }
+            beaconManager.Connect(this);
+            //InitializeBeacons();
         }
 
         private void LoadData()
@@ -275,9 +211,7 @@ namespace HBS.ITAG
 
         public void OnRegionEnter(Event tempEvent)
         {
-            //Toast.MakeText(this, "You are near the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-
-            
+            Store.Instance.SelectedEvent = tempEvent;
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
@@ -295,18 +229,7 @@ namespace HBS.ITAG
             .SetPriority((int)NotificationPriority.High);
             NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
             notificationManager.Notify(1, builder.Build());
-
-            /*
-            Alerter.Create(this).SetTitle("Event: " + tempEvent.Name + " Nearby")
-                .SetText("Click for more details.")
-                .SetOnClickListener(this)
-                .SetIcon(Resource.Drawable.wifiTower)
-                .SetBackgroundColor(Resource.Color.material_blue_grey_950)
-                .Show();
-                */
-
-
-
+            
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
             minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
 
@@ -325,13 +248,6 @@ namespace HBS.ITAG
         public void OnSessionAddComplete(string message)
         {
 
-        }
-
-        public void OnClick(View v)
-        {
-            Intent i = new Intent(Application.Context, typeof(EventDetails));
-            i.SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(i);
         }
 
         public void Dispose()

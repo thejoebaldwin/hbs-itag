@@ -200,28 +200,27 @@ namespace HBS.ITAG.Model
 	}
 
 
-	public class Store
-	{
-		System.Net.HttpWebRequest _Request;
-		string _AccessToken;
-		string _UserId;
-		string _ConnectionUrl;
-		string _Response = string.Empty;
-		string _Operation = "";
-		public delegate void Action(string message);
-		private Action _Completion;
-		private List<Event> _arrEvents;
-		private List<Location> _arrLocations;
-		private List<Track> _arrTracks;
-		private List<User> _arrUsers;
-		private List<string> _arrFavoriteIds;
-		private string _userId;
+    public class Store
+    {
+        System.Net.HttpWebRequest _Request;
+        string _AccessToken;
+        string _UserId;
+        string _ConnectionUrl;
+        string _Response = string.Empty;
+        string _Operation = "";
+        public delegate void Action(string message);
+        private Action _Completion;
+        private List<Event> _arrEvents;
+        private List<Location> _arrLocations;
+        private List<Track> _arrTracks;
+        private List<User> _arrUsers;
+        private List<string> _arrFavoriteIds;
+        private string _userId;
 
-		private string _deviceId;
-		private string _notify = "true";
+        private string _deviceId;
+        private string _notify = "true";
 
-		public Event SelectedEvent { get; set; }
-
+        public Event SelectedEvent { get; set; }
 
 
 		private Store() { }
