@@ -12,22 +12,18 @@ namespace HBS.ITAG
     public partial class PickerViewController : UIViewController
     {
         User tempUser;
-        string SelectedInput;
 		public PickerViewController(IntPtr handle) : base(handle)
         {
 		}
-
 		public override void ViewDidLoad()
 		{
 			base.ViewDidLoad();
-			AgePickerView.Model = new StatusModel();
-            AgePickerView.ShowSelectionIndicator = true;
+            AgePickerView.Model = new AgesModel();
+			AgeTextView.InputView = AgePickerView;
             //TechFocusPickerView.Model = new TechFocusModel();
             StatePickerView.Model = new StateModel();
             GenderPickerView.Model = new GenderModel();
             // OrganizationPickerView.Model = new OrganizationModel();
-
-
 
             SubmitForm.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
@@ -54,7 +50,6 @@ namespace HBS.ITAG
 			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
 			this.PositionTitle.InputAccessoryView = toolbar;
             this.AgePickerView.RemoveFromSuperview();
-            this.AgeTextView.InputView = AgePickerView;
             this.AgeTextView.InputAccessoryView = toolbar;
 		}
 
@@ -64,15 +59,15 @@ namespace HBS.ITAG
 			if (barButtonItem != null)
 				this.PositionTitle.Text += barButtonItem.Title;
             var agetextitem = sender as UIBarButtonItem;
-            if (agetextitem != null)
-                this.AgeTextView.Text += agetextitem.Title;
+           if (agetextitem != null)
+              this.AgeTextView.Text += agetextitem.Title;
 		}
 
 		private void SubmitFormClick()
 		{
             //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
 			tempUser = new User("-1",
-                                StatusModel.ages[AgePickerView.SelectedRowInComponent(0)],
+                                AgesModel.ages[AgePickerView.SelectedRowInComponent(0)],
                                 GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
                                 PositionTitle.Text,
                                 StateModel.States[StatePickerView.SelectedRowInComponent(0)],
@@ -95,8 +90,9 @@ namespace HBS.ITAG
 		}
 	}
 
-	public class StatusModel : UIPickerViewModel
+	public class AgesModel : UIPickerViewModel
 	{
+        public string SelectedInput;
         public static string[] ages = new string[] {
             "Choose One",
             "16 and Under",
@@ -114,7 +110,7 @@ namespace HBS.ITAG
             "70 and Above"
         };
 
-		public StatusModel()
+		public AgesModel()
 		{
             
 		}
@@ -133,13 +129,19 @@ namespace HBS.ITAG
 		{
             return ages[row];
 		}
-		public override void Selected(UIPickerView pickerView, nint row, nint component)
+        public override void Selected(UIPickerView pickerView, nint row, nint component)
 		{
             //lbl.Text = String.Format("{0} : {1} : {2}",
 
             //pickerView.SelectedRowInComponent(1),
             //pickerView.SelectedRowInComponent(2));
             //pickerView.SelectedRowInComponent(0);
+            SelectedRow(ages[row]);
+        }
+
+        public string SelectedRow(string input)
+        {
+            return SelectedInput;
         }
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
@@ -149,13 +151,13 @@ namespace HBS.ITAG
 			else
 				return 30f;
 		}
-		public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
+        public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
 		{
 			UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
 			lbl.Font = UIFont.SystemFontOfSize(16f);
 			lbl.TextAlignment = UITextAlignment.Center;
             lbl.Text = ages[row];
-			return lbl;
+            return lbl;
 		}
 	}
 	public class TechFocusModel : UIPickerViewModel
@@ -265,6 +267,9 @@ namespace HBS.ITAG
             lbl.Text = Gender[row];
 			return lbl;
 		}
+
+
+      
 	}
 	public class OrganizationModel : UIPickerViewModel
 	{
