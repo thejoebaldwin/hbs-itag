@@ -294,20 +294,21 @@ namespace HBS.ITAG
             .SetAutoCancel(true)
             .SetContentIntent(resultPendingIntent)
             .SetContentTitle("Itag Conference")
-                    .SetSmallIcon(Resource.Drawable.itag_icon)
-            .SetContentText("You are near : " + tempEvent.Name + ". Click for more details.");
-
+            .SetSmallIcon(Resource.Drawable.itag_icon)
+            .SetContentText("You are near : " + tempEvent.Name + ". Click for more details.")
+            .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate)
+            .SetPriority((int)NotificationPriority.High);
             NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
             notificationManager.Notify(1, builder.Build());
 
-
+            /*
             Alerter.Create(this).SetTitle("Event: " + tempEvent.Name + " Nearby")
                 .SetText("Click for more details.")
                 .SetOnClickListener(this)
                 .SetIcon(Resource.Drawable.wifiTower)
                 .SetBackgroundColor(Resource.Color.material_blue_grey_950)
                 .Show();
-
+                */
 
 
 
