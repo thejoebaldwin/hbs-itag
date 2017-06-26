@@ -169,18 +169,13 @@ namespace HBS.ITAG
                 }
             };
             Store.Instance.GetTracks(LoadTracksComplete);
+            StartService(new Intent(this, typeof(SimpleService)));
             //beaconManager.Connect(this);
             //OnServiceReady();
             //OnServiceReady();
             //LoadData();
-            
 
-        }
 
-        public AsyncTask BeaconsNotifyInBackground()
-        {
-
-            return null;
         }
 
         protected override void OnResume()
