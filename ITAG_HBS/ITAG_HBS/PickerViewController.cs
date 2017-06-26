@@ -12,7 +12,7 @@ namespace HBS.ITAG
     public partial class PickerViewController : UIViewController
     {
         User tempUser;
-
+        string SelectedInput;
 		public PickerViewController(IntPtr handle) : base(handle)
         {
 		}
@@ -21,10 +21,11 @@ namespace HBS.ITAG
 		{
 			base.ViewDidLoad();
 			AgePickerView.Model = new StatusModel();
+            AgePickerView.ShowSelectionIndicator = true;
             //TechFocusPickerView.Model = new TechFocusModel();
             StatePickerView.Model = new StateModel();
             GenderPickerView.Model = new GenderModel();
-           // OrganizationPickerView.Model = new OrganizationModel();
+            // OrganizationPickerView.Model = new OrganizationModel();
 
 
 
@@ -34,24 +35,27 @@ namespace HBS.ITAG
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
 
 
-			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float) this.View.Frame.Size.Width, 44.0f));
+			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f,0.0f, (float) this.View.Frame.Size.Width, 44.0f));
 
 			toolbar.TintColor = UIColor.White;
 			toolbar.BarStyle = UIBarStyle.Black;
 
-			toolbar.Translucent = true;
+            toolbar.Translucent = true;
 
-			
 
-			toolbar.Items = new UIBarButtonItem[]{
-	
+            toolbar.Items = new UIBarButtonItem[]{
 		new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
 		new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
 			this.PositionTitle.ResignFirstResponder();
+            this.AgeTextView.ResignFirstResponder();
 	})
 	 };
+
 			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
 			this.PositionTitle.InputAccessoryView = toolbar;
+            this.AgePickerView.RemoveFromSuperview();
+            this.AgeTextView.InputView = AgePickerView;
+            this.AgeTextView.InputAccessoryView = toolbar;
 		}
 
 		public void AddBarButtonText(object sender, EventArgs e)
@@ -59,7 +63,9 @@ namespace HBS.ITAG
 			var barButtonItem = sender as UIBarButtonItem;
 			if (barButtonItem != null)
 				this.PositionTitle.Text += barButtonItem.Title;
-
+            var agetextitem = sender as UIBarButtonItem;
+            if (agetextitem != null)
+                this.AgeTextView.Text += agetextitem.Title;
 		}
 
 		private void SubmitFormClick()
@@ -133,8 +139,7 @@ namespace HBS.ITAG
 
             //pickerView.SelectedRowInComponent(1),
             //pickerView.SelectedRowInComponent(2));
-
-
+            //pickerView.SelectedRowInComponent(0);
         }
 
 		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
