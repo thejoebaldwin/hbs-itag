@@ -20,6 +20,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField AgeTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView GenderPickerView { get; set; }
 
         [Outlet]
@@ -43,6 +47,11 @@ namespace HBS.ITAG
             if (AgePickerView != null) {
                 AgePickerView.Dispose ();
                 AgePickerView = null;
+            }
+
+            if (AgeTextView != null) {
+                AgeTextView.Dispose ();
+                AgeTextView = null;
             }
 
             if (GenderPickerView != null) {
