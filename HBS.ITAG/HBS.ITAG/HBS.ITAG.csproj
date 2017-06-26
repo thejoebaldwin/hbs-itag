@@ -116,7 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppFeatures.cs" />
-    <Compile Include="BeaconService.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventDetails.cs" />
     <Compile Include="Home.cs" />
@@ -135,7 +134,6 @@
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Store.cs" />
-    <Compile Include="ViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GettingStarted.Xamarin" />

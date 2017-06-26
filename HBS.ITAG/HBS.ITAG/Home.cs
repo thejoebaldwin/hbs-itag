@@ -15,8 +15,6 @@ namespace HBS.ITAG
         ListView favoritedList;
         List<Event> favoritedEvents;
         List<Event> events;
-        public static bool notificationRequest;
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -65,9 +63,11 @@ namespace HBS.ITAG
                 StartActivity(typeof(AppFeatures));
             };
             
+            // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
             StartService(new Intent(this, typeof(SimpleService)));
 
+            // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
                  if (!notificationSwitch.Checked)
                  {
@@ -78,7 +78,6 @@ namespace HBS.ITAG
                     StartService(new Intent(this, typeof(SimpleService)));
                  }
             };
-
         }
 
         protected override void OnResume()
@@ -99,11 +98,8 @@ namespace HBS.ITAG
 
         private void LoadLocationsComplete(string message)
         {
-            //LoadData();
             OldStore.Instance.InitializeFavorites();
             RunOnUiThread(() => LoadData());
-            //beaconManager.Connect(this);
-            //InitializeBeacons();
         }
 
         private void LoadData()
@@ -135,22 +131,16 @@ namespace HBS.ITAG
             if (!favoritedEvents[e.Position].ScheduleOnly)
             {
                 Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                //StartActivity(typeof(EventDetails));
-
 				Intent i = new Intent(Application.Context, typeof(EventDetails));
 				i.SetFlags(ActivityFlags.ReorderToFront);
 				StartActivity(i);
             }
         }
-       
+
         public void OnSessionAddComplete(string message)
         {
 
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Util;
 using Android.Widget;
 using EstimoteSdk;
 using HBS.ITAG.Model;
@@ -24,7 +22,6 @@ namespace HBS.ITAG
             beaconManager.SetBackgroundScanPeriod(1000, 1);
             beaconManager.ExitedRegion += (sender, e) =>
             {
-
                 if (Store.Instance.Notify)
                 {
 
@@ -39,7 +36,6 @@ namespace HBS.ITAG
 
             beaconManager.EnteredRegion += (sender, e) =>
             {
-
                 if (Store.Instance.Notify)
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
@@ -67,10 +63,8 @@ namespace HBS.ITAG
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
             {
                 Location tempLocation = Store.Instance.Locations[i];
-                //create new region
                 Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
-                //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
                 beaconManager.StartMonitoring(beaconRegion);
             }
         }
@@ -94,7 +88,6 @@ namespace HBS.ITAG
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
             stackBuilder.AddNextIntent(newIntent);
-
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
             Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
@@ -105,6 +98,7 @@ namespace HBS.ITAG
             .SetContentText("You are near : " + tempEvent.Name + ". Click for more details.")
             .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate)
             .SetPriority((int)NotificationPriority.High);
+
             NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
             notificationManager.Notify(1, builder.Build());
             

@@ -30,15 +30,11 @@ namespace HBS.ITAG
         public static OldTrack FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
-
             //dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-
             string name = data["name"];
             int id = System.Convert.ToInt32(data["track_id"]);
             DateTime trackDate = DateTime.Parse(data["track_date"]);
             string beaconGuid = data["beacon_guid"];
-
-
             return new OldTrack(name, id, trackDate,  beaconGuid  );
         }
 

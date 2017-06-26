@@ -30,10 +30,7 @@ namespace HBS.ITAG
         public static Session FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Client.Utilities.ParseJson(json);
-
             //dynamic data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-
-
             int id = System.Convert.ToInt32(data["user_id"]);
             DateTime time = DateTime.Parse(data["track_date"]);
             int eventId = System.Convert.ToInt32(data["event_id"]);

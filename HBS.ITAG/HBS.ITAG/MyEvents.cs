@@ -1,24 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
-using EstimoteSdk;
-//using Android.Icu.Util;
-using Android;
-using Xamarin.Forms.PlatformConfiguration;
-using Android.Support.V4.App;
-using Permission = Android.Content.PM.Permission;
-using Plugin.Permissions;
-using Android.Support.V4.Content;
-using Java.Util;
 
 namespace HBS.ITAG
 {
@@ -71,8 +57,8 @@ namespace HBS.ITAG
             favoritedList.ItemClick += mListView_ItemClick;
 
             // Populates Previous Events table
-
             previousList.ItemClick += mListView2_ItemClick;
+
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -123,7 +109,6 @@ namespace HBS.ITAG
                 if (!favoritedEvents[e.Position].ScheduleOnly)
                 {
                     Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-                    //StartActivity(typeof(EventDetails));
                     Intent i = new Intent(Application.Context, typeof(EventDetails));
                     i.SetFlags(ActivityFlags.ReorderToFront);
                     StartActivity(i);
@@ -135,8 +120,6 @@ namespace HBS.ITAG
                 if (!previousEvents[e.Position].ScheduleOnly)
                 {
                     Store.Instance.SelectedEvent = previousEvents[e.Position];
-                    //StartActivity(typeof(EventDetails));
-
                     Intent i = new Intent(Application.Context, typeof(EventDetails));
                     i.SetFlags(ActivityFlags.ReorderToFront);
                     StartActivity(i);
