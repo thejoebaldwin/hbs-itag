@@ -53,6 +53,8 @@ namespace HBS.ITAG
             beaconManager.Connect(this);
         }
 
+       
+
         public void OnServiceReady()
         {
             InitializeBeacons();
@@ -89,6 +91,7 @@ namespace HBS.ITAG
 
         public void OnRegionEnter(Event tempEvent)
         {
+            Store.Instance.SelectedEvent = tempEvent;
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));

@@ -1,46 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
-//using Android.Icu.Util;
-using Android;
-using Xamarin.Forms.PlatformConfiguration;
-using Android.Support.V4.App;
-using Permission = Android.Content.PM.Permission;
-using Plugin.Permissions;
-using Android.Support.V4.Content;
-using Java.Util;
-using Java.Lang;
-using Android.Support.V7.App;
-using Com.Tapadoo.Alerter;
 
 namespace HBS.ITAG
 {
-    [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, Theme = "@style/Theme.AppCompat.NoActionBar")]
-    public class Home : AppCompatActivity, BeaconManager.IServiceReadyCallback, ActivityCompat.IOnRequestPermissionsResultCallback
+    [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
+    public class Home : Activity
     {
-        BeaconManager beaconManager; 
-        const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         ListView favoritedList;
         List<Event> favoritedEvents;
         List<Event> events;
         
-        public void OnServiceReady()
-        {
-            InitializeBeacons();
-        }
             
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.Home);
             SystemRequirementsChecker.CheckWithDefaultDialogs(this);
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
@@ -82,39 +62,10 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(AppFeatures));
             };
-
-            // Code for Beacons
-            beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 1);
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                
-                if (Store.Instance.Notify)
-                {
-
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-                    }
-                }
-            };
             
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
             Store.Instance.GetTracks(LoadTracksComplete);
+
+
             StartService(new Intent(this, typeof(SimpleService)));
         }
 
@@ -139,7 +90,7 @@ namespace HBS.ITAG
             //LoadData();
             OldStore.Instance.InitializeFavorites();
             RunOnUiThread(() => LoadData());
-            beaconManager.Connect(this);
+            //beaconManager.Connect(this);
             //InitializeBeacons();
         }
 
@@ -166,36 +117,7 @@ namespace HBS.ITAG
             favoritedList.ItemClick += favoriteClick;
 
 		} 
-
-		private void InitializeBeacons()
-		{
-            //run on main thread
-            //loop through all location entries
-            //Region beaconRegionTest = new Region( "test", null, null, null);
-            //beaconManager.StartMonitoring(beaconRegionTest);
-            for (int i = 0; i < Store.Instance.Locations.Count; i++)
-				{
-				    Location tempLocation = Store.Instance.Locations[i];
-                    //create new region
-                    Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
-                    Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor );
-                    //Region beaconRegion = new Region(tempLocation.Nickname, null, null, null);
-                    beaconManager.StartMonitoring(beaconRegion);
-                }
-        }
-
-        public void OnRegionExit(Event tempEvent)
-        {
-            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
-            if (minutesSinceLastNotification > 5)
-            {
-                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
-                tempEvent.LastExitNotified = DateTime.Now;
-            }
-        }
-
+        
         private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             if (!favoritedEvents[e.Position].ScheduleOnly)
@@ -208,43 +130,7 @@ namespace HBS.ITAG
 				StartActivity(i);
             }
         }
-
-        public void OnRegionEnter(Event tempEvent)
-        {
-            Store.Instance.SelectedEvent = tempEvent;
-            Intent newIntent = new Intent(this, typeof(EventDetails));
-            Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
-            stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-            stackBuilder.AddNextIntent(newIntent);
-
-            PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
-
-            Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
-            .SetAutoCancel(true)
-            .SetContentIntent(resultPendingIntent)
-            .SetContentTitle("Itag Conference")
-            .SetSmallIcon(Resource.Drawable.itag_icon)
-            .SetContentText("You are near : " + tempEvent.Name + ". Click for more details.")
-            .SetDefaults((int)NotificationDefaults.Sound | (int)NotificationDefaults.Vibrate)
-            .SetPriority((int)NotificationPriority.High);
-            NotificationManager notificationManager = (NotificationManager)GetSystemService(Context.NotificationService);
-            notificationManager.Notify(1, builder.Build());
-            
-            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = System.Math.Abs(minutesSinceLastNotification);
-
-            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
-            if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
-            {
-                //TODO: If app open, ask user if they want to see the information
-                //      if app closed, add notification that event is in range
-
-                tempEvent.LastEntryNotified = DateTime.Now;
-                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-
-            }
-        }
-
+       
         public void OnSessionAddComplete(string message)
         {
 
