@@ -44,9 +44,10 @@ namespace HBS.ITAG
         Button day4btn;
         TextView trackTitle;
 
-        BeaconManager beaconManager;
-        const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+        //BeaconManager beaconManager;
+        //const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
+            /*
         public bool isEmulator()
         {
             string fing = Build.Fingerprint;
@@ -56,8 +57,9 @@ namespace HBS.ITAG
                 isEmulator = fing.Contains("vbox") || fing.Contains("generic");
             }
             return isEmulator;
-        }
+        } */
 
+        /*
         public void OnServiceReady()
         {
             if (!isEmulator())
@@ -65,7 +67,7 @@ namespace HBS.ITAG
             }
             InitializeBeacons();
             //Store.Instance.GetTracks(LoadTracksComplete);
-        }
+        }*/
 
         GestureDetector gestureDetector;
 
@@ -198,6 +200,7 @@ namespace HBS.ITAG
             };
 
             // beacon code
+            /*
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
             beaconManager.ExitedRegion += (sender, e) =>
@@ -226,8 +229,9 @@ namespace HBS.ITAG
                 }
             };
             beaconManager.Connect(this);
+            */
         }
-
+        /*
         private void InitializeBeacons()
         {
             //run on main thread
@@ -277,7 +281,7 @@ namespace HBS.ITAG
         public void OnSessionAddComplete(string message)
         {
 
-        }
+        }*/
 
         private void nextTrack()
         {

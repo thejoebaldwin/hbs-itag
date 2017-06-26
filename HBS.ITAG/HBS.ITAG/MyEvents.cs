@@ -23,15 +23,15 @@ using Java.Util;
 namespace HBS.ITAG
 {
     [Activity(Label = "My Events", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
-    public class MyEvents : Activity, BeaconManager.IServiceReadyCallback
+    public class MyEvents : Activity //,BeaconManager.IServiceReadyCallback
     {
         private List<Event> favoritedEvents;
         private List<Event> previousEvents;
         private ListView favoritedList;
         private ListView previousList;
         private List<Event> events = new List<Event>(Store.Instance.Events);
-        BeaconManager beaconManager;
-        const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+        //BeaconManager beaconManager;
+        //const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
         public bool isEmulator()
         {
@@ -44,6 +44,7 @@ namespace HBS.ITAG
             return isEmulator;
         }
 
+        /*
         public void OnServiceReady()
         {
             if (!isEmulator())
@@ -51,7 +52,7 @@ namespace HBS.ITAG
             }
             InitializeBeacons();
             //Store.Instance.GetTracks(LoadTracksComplete);
-        }
+        }*/
 
         protected override void OnResume()
         {
@@ -61,40 +62,40 @@ namespace HBS.ITAG
 
         private void LoadData()
         {
-			favoritedEvents = new List<Event>();
+            favoritedEvents = new List<Event>();
 
-			foreach (var e in events)
-			{
-				if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
-				{
-					favoritedEvents.Add(e);
-				}
-			}
+            foreach (var e in events)
+            {
+                if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
+                {
+                    favoritedEvents.Add(e);
+                }
+            }
 
-			favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-			MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
-			favoritedList.Adapter = adapter;
+            favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
+            favoritedList.Adapter = adapter;
 
-			previousEvents = new List<Event>();
+            previousEvents = new List<Event>();
 
-			foreach (var e in events)
-			{
-				if (e.Favorited && e.EndTime.Ticks < DateTime.Now.Ticks)
-				{
-					previousEvents.Add(e);
-				}
-			}
+            foreach (var e in events)
+            {
+                if (e.Favorited && e.EndTime.Ticks < DateTime.Now.Ticks)
+                {
+                    previousEvents.Add(e);
+                }
+            }
 
-			previousEvents.Sort((y, x) => x.EndTime.Ticks.CompareTo(y.EndTime.Ticks));
-			previousList = FindViewById<ListView>(Resource.Id.MElistView2);
-			MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
-			previousList.Adapter = adapter2;
+            previousEvents.Sort((y, x) => x.EndTime.Ticks.CompareTo(y.EndTime.Ticks));
+            previousList = FindViewById<ListView>(Resource.Id.MElistView2);
+            MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
+            previousList.Adapter = adapter2;
 
-			favoritedList.ItemClick += mListView_ItemClick;
+            favoritedList.ItemClick += mListView_ItemClick;
 
-			// Populates Previous Events table
+            // Populates Previous Events table
 
-			previousList.ItemClick += mListView2_ItemClick;
+            previousList.ItemClick += mListView2_ItemClick;
         }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -136,6 +137,7 @@ namespace HBS.ITAG
             };
 
             // beacon code
+            /*
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
             beaconManager.ExitedRegion += (sender, e) =>
@@ -163,9 +165,9 @@ namespace HBS.ITAG
                 }
             };
             beaconManager.Connect(this);
-
+            */
         }
-
+        /*
         private void InitializeBeacons()
         {
             //run on main thread
@@ -215,33 +217,34 @@ namespace HBS.ITAG
         public void OnSessionAddComplete(string message)
         {
 
-        }
+        }*/
+
+            // Code for clicking items on ListView
+
+            private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+            {
+                if (!favoritedEvents[e.Position].ScheduleOnly)
+                {
+                    Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                    //StartActivity(typeof(EventDetails));
+                    Intent i = new Intent(Application.Context, typeof(EventDetails));
+                    i.SetFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(i);
+                }
+            }
+
+            private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+            {
+                if (!previousEvents[e.Position].ScheduleOnly)
+                {
+                    Store.Instance.SelectedEvent = previousEvents[e.Position];
+                    //StartActivity(typeof(EventDetails));
+
+                    Intent i = new Intent(Application.Context, typeof(EventDetails));
+                    i.SetFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(i);
+                }
+            }
         
-        // Code for clicking items on ListView
-
-        private void mListView_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            if (!favoritedEvents[e.Position].ScheduleOnly)
-            {
-                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
-				//StartActivity(typeof(EventDetails));
-				Intent i = new Intent(Application.Context, typeof(EventDetails));
-				i.SetFlags(ActivityFlags.ReorderToFront);
-				StartActivity(i);
-            }
-        }
-
-        private void mListView2_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            if(!previousEvents[e.Position].ScheduleOnly)
-            {
-                Store.Instance.SelectedEvent = previousEvents[e.Position];
-                //StartActivity(typeof(EventDetails));
-
-				Intent i = new Intent(Application.Context, typeof(EventDetails));
-				i.SetFlags(ActivityFlags.ReorderToFront);
-				StartActivity(i);
-            }
-        }
     }
 }

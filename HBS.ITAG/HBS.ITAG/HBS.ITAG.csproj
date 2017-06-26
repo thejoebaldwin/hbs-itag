@@ -130,6 +130,7 @@
     <Compile Include="Schedule.cs" />
     <Compile Include="scheduleAdapter.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="SimpleService.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
