@@ -71,11 +71,29 @@ namespace HBS.ITAG
                 new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
                 new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
                 {
+					if(this.AgeTextView.ResignFirstResponder())
+					{
+						this.AgeTextView.Text = ages[(int)this.AgePickerView.SelectedRowInComponent(0)];
+					}
+					else if(this.GenderTextView.ResignFirstResponder())
+					{
+						this.GenderTextView.Text = genders[(int)this.GenderPickerView.SelectedRowInComponent(0)];
+					}
+					else if(this.TechFocusTextView.ResignFirstResponder())
+					{
+						this.TechFocusTextView.Text = techFoci[(int)this.TechFocusPickerView.SelectedRowInComponent(0)];
+					}
+					else
+					{
+						this.OrganizationTextView.Text = organizations[(int)this.OrganizationPickerView.SelectedRowInComponent(0)];
+					}
+
                     this.PositionTitle.ResignFirstResponder();
+                    var uno = this.AgeTextView.ResignFirstResponder();
                     this.AgeTextView.ResignFirstResponder();
-                    this.GenderTextView.ResignFirstResponder();
-                    this.TechFocusTextView.ResignFirstResponder();
-                    this.OrganizationTextView.ResignFirstResponder();
+					this.GenderTextView.ResignFirstResponder();
+					this.TechFocusTextView.ResignFirstResponder();
+					this.OrganizationTextView.ResignFirstResponder();
                 })
              };
             this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
