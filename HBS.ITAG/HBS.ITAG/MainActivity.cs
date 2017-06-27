@@ -24,7 +24,7 @@ namespace HBS.ITAG
             var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
             var somePref = prefs.GetBoolean( "PrefName" , false );
             
-            if (!somePref )
+            if (!somePref)
             {
                 SetContentView (HBS.ITAG.Resource.Layout.DemographicSurvey);
                 Spinner techFocus = FindViewById<Spinner>(Resource.Id.DSspinner1);
@@ -50,14 +50,14 @@ namespace HBS.ITAG
                     String organizationAnswer = organization.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
 
-                    /*
+                    
                     Store.Instance.AddUser(
                         new User("-1", ageAnswer, 
                         genderAnswer, techFocusAnswer, 
                         organizationAnswer, jobTitleAnswer, 
                         "Android", Android.OS.Build.Serial), AddUserComplete);
-                        */
-
+                        
+                    
                     surveyDone = true;
                     var prefEditor = prefs.Edit();
                     prefEditor.PutBoolean("PrefName", surveyDone );
