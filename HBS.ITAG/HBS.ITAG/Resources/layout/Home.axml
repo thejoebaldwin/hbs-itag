@@ -40,13 +40,22 @@
         android:id="@+id/favoritedList"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="200dp" />
+        android:layout_height="150dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center|bottom"
         android:orientation="vertical">
+        <Switch
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notify Me of Nearby Events    "
+            android:textColor="@color/foreground_material_light"
+            android:layout_gravity="center"
+            android:checked="true"
+            android:clickable="true" />
         <TextView
             android:id="@+id/conference_details"
             android:layout_width="fill_parent"

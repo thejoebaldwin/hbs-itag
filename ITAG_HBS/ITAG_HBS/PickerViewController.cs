@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
@@ -59,14 +59,14 @@ namespace HBS.ITAG
         {
 		}
 
-		public override void ViewDidLoad()
-		{
-			base.ViewDidLoad();
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
 
-			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
-			toolbar.TintColor = UIColor.White;
-			toolbar.BarStyle = UIBarStyle.Black;
-			toolbar.Translucent = true;
+            UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
+            toolbar.TintColor = UIColor.White;
+            toolbar.BarStyle = UIBarStyle.Black;
+            toolbar.Translucent = true;
             toolbar.Items = new UIBarButtonItem[]{
                 new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
                 new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
@@ -76,16 +76,16 @@ namespace HBS.ITAG
                     this.GenderTextView.ResignFirstResponder();
                     this.TechFocusTextView.ResignFirstResponder();
                     this.OrganizationTextView.ResignFirstResponder();
-				})
-			 };
-			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
-			this.PositionTitle.InputAccessoryView = toolbar;
+                })
+             };
+            this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.PositionTitle.InputAccessoryView = toolbar;
 
-			this.AgePickerView.RemoveFromSuperview();
-			this.AgeTextView.InputView = AgePickerView;
-			this.AgeTextView.InputAccessoryView = toolbar;
-			var agePickerViewModel = new AgeModel(ages);
-			agePickerViewModel.ageChanged += (sender, e) => 
+            this.AgePickerView.RemoveFromSuperview();
+            this.AgeTextView.InputView = AgePickerView;
+            this.AgeTextView.InputAccessoryView = toolbar;
+            var agePickerViewModel = new AgeModel(ages);
+            agePickerViewModel.ageChanged += (sender, e) =>
             {
                 AgeTextView.Text = agePickerViewModel.selectedAge;
             };
@@ -104,41 +104,41 @@ namespace HBS.ITAG
 
             //Uncomment below code and create TextView and Picker view to include State on Survey Page
 
-			//this.StatePickerView.RemoveFromSuperview();
-			//this.StateTextView.InputView = StatePickerView;
-			//this.StateTextView.InputAccessoryView = toolbar;
-			//var statePickerViewModel = new StateModel(states);
-			//statePickerViewModel.stateChanged += (sender, e) =>
-			//{
-			//	StateTextView.Text = statePickerViewModel.selectedState;
-			//};
-			//StatePickerView.Model = statePickerViewModel;
+            //this.StatePickerView.RemoveFromSuperview();
+            //this.StateTextView.InputView = StatePickerView;
+            //this.StateTextView.InputAccessoryView = toolbar;
+            //var statePickerViewModel = new StateModel(states);
+            //statePickerViewModel.stateChanged += (sender, e) =>
+            //{
+            //	StateTextView.Text = statePickerViewModel.selectedState;
+            //};
+            //StatePickerView.Model = statePickerViewModel;
 
-			this.TechFocusPickerView.RemoveFromSuperview();
-			this.TechFocusTextView.InputView = TechFocusPickerView;
-			this.TechFocusTextView.InputAccessoryView = toolbar;
-			var techFocusPickerViewModel = new TechFocusModel(techFoci);
-			techFocusPickerViewModel.techFocusChanged += (sender, e) =>
-			{
-				TechFocusTextView.Text = techFocusPickerViewModel.selectedTechFocus;
-			};
-			TechFocusPickerView.Model = techFocusPickerViewModel;
+            this.TechFocusPickerView.RemoveFromSuperview();
+            this.TechFocusTextView.InputView = TechFocusPickerView;
+            this.TechFocusTextView.InputAccessoryView = toolbar;
+            var techFocusPickerViewModel = new TechFocusModel(techFoci);
+            techFocusPickerViewModel.techFocusChanged += (sender, e) =>
+            {
+                TechFocusTextView.Text = techFocusPickerViewModel.selectedTechFocus;
+            };
+            TechFocusPickerView.Model = techFocusPickerViewModel;
 
-			this.OrganizationPickerView.RemoveFromSuperview();
-			this.OrganizationTextView.InputView = OrganizationPickerView;
-			this.OrganizationTextView.InputAccessoryView = toolbar;
-			var organizationPickerViewModel = new OrganizationModel(organizations);
-			organizationPickerViewModel.organizationChanged += (sender, e) =>
-			{
-				OrganizationTextView.Text = organizationPickerViewModel.selectedOrganization;
-			};
-			OrganizationPickerView.Model = organizationPickerViewModel;
+            this.OrganizationPickerView.RemoveFromSuperview();
+            this.OrganizationTextView.InputView = OrganizationPickerView;
+            this.OrganizationTextView.InputAccessoryView = toolbar;
+            var organizationPickerViewModel = new OrganizationModel(organizations);
+            organizationPickerViewModel.organizationChanged += (sender, e) =>
+            {
+                OrganizationTextView.Text = organizationPickerViewModel.selectedOrganization;
+            };
+            OrganizationPickerView.Model = organizationPickerViewModel;
 
             SubmitForm.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
             SubmitFormGesture.NumberOfTapsRequired = 1;
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
-		}
+        }
 
 		public void AddBarButtonText(object sender, EventArgs e)
 		{
@@ -146,8 +146,8 @@ namespace HBS.ITAG
 			if (barButtonItem != null)
 				this.PositionTitle.Text += barButtonItem.Title;
             var agetextitem = sender as UIBarButtonItem;
-            if (agetextitem != null)
-                this.AgeTextView.Text += agetextitem.Title;
+           if (agetextitem != null)
+              this.AgeTextView.Text += agetextitem.Title;
 		}
 
 		private void SubmitFormClick()
