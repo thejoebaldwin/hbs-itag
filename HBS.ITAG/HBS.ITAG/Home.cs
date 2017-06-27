@@ -136,11 +136,5 @@ namespace HBS.ITAG
 				StartActivity(i);
             }
         }
-
-        public void OnSessionAddComplete(string message)
-        {
-
-        }
-
     }
 }

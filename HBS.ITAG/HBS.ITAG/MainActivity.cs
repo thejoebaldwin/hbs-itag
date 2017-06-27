@@ -44,13 +44,20 @@ namespace HBS.ITAG
                 done.Click += (object sender, EventArgs e) =>
                 {
                     // Gets data from survey
-                    String techFocusAnswer = techFocus.SelectedItem.ToString();
-                    String organizationAnswer = organization.SelectedItem.ToString();
                     String ageAnswer = age.SelectedItem.ToString();
                     String genderAnswer = gender.SelectedItem.ToString();
+                    String techFocusAnswer = techFocus.SelectedItem.ToString();
+                    String organizationAnswer = organization.SelectedItem.ToString();
                     String jobTitleAnswer = jobTitle.Text;
 
-                    //User newUser = new User( , ageAnswer, genderAnswer, jobTitleAnswer, techFocusAnswer, organizationAnswer, );
+                    /*
+                    Store.Instance.AddUser(
+                        new User("-1", ageAnswer, 
+                        genderAnswer, techFocusAnswer, 
+                        organizationAnswer, jobTitleAnswer, 
+                        "Android", Android.OS.Build.Serial), AddUserComplete);
+                        */
+
                     surveyDone = true;
                     var prefEditor = prefs.Edit();
                     prefEditor.PutBoolean("PrefName", surveyDone );
@@ -64,6 +71,11 @@ namespace HBS.ITAG
                 StartActivity(typeof(Home));
             }
         }
+
+        private void AddUserComplete(string message)
+        {
+        }
+
     }
 }
 
