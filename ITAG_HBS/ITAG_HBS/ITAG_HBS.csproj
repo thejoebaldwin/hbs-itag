@@ -205,6 +205,11 @@
     <Compile Include="AboutViewController.designer.cs">
       <DependentUpon>AboutViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgeModel.cs" />
+    <Compile Include="GenderModel.cs" />
+    <Compile Include="TechFocusModel.cs" />
+    <Compile Include="OrganizationModel.cs" />
+    <Compile Include="StateModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />

@@ -20,7 +20,7 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField AgeTextView { get; set; }
+        UIKit.UITextView AgeTextView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -28,15 +28,31 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField PositionTitle { get; set; }
+        UIKit.UITextView GenderTextView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIPickerView StatePickerView { get; set; }
+        UIKit.UIPickerView OrganizationPickerView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView OrganizationTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView PositionTitle { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitForm { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView TechFocusPickerView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView TechFocusTextView { get; set; }
 
         [Action ("SubmitForm_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -59,19 +75,39 @@ namespace HBS.ITAG
                 GenderPickerView = null;
             }
 
+            if (GenderTextView != null) {
+                GenderTextView.Dispose ();
+                GenderTextView = null;
+            }
+
+            if (OrganizationPickerView != null) {
+                OrganizationPickerView.Dispose ();
+                OrganizationPickerView = null;
+            }
+
+            if (OrganizationTextView != null) {
+                OrganizationTextView.Dispose ();
+                OrganizationTextView = null;
+            }
+
             if (PositionTitle != null) {
                 PositionTitle.Dispose ();
                 PositionTitle = null;
             }
 
-            if (StatePickerView != null) {
-                StatePickerView.Dispose ();
-                StatePickerView = null;
-            }
-
             if (SubmitForm != null) {
                 SubmitForm.Dispose ();
                 SubmitForm = null;
+            }
+
+            if (TechFocusPickerView != null) {
+                TechFocusPickerView.Dispose ();
+                TechFocusPickerView = null;
+            }
+
+            if (TechFocusTextView != null) {
+                TechFocusTextView.Dispose ();
+                TechFocusTextView = null;
             }
         }
     }

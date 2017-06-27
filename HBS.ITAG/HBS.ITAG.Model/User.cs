@@ -15,6 +15,10 @@ namespace HBS.ITAG.Model
         public string DeviceId { get; set; }
         public string DeviceType { get; set; }
 
+        //new objects for updated survey page
+        public string TechFocus { get; set; }
+        public string Organization { get; set; }
+
         public User(string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId)
         {
             Id = id;
@@ -22,6 +26,18 @@ namespace HBS.ITAG.Model
             Gender = gender;
             PositionTitle = positionTitle;
             State = state;
+            DeviceType = deviceType;
+            DeviceId = deviceId;
+        }
+
+        public User(string id, string age, string gender, string techFocus, string organization, string positionTitle, string deviceType, string deviceId)
+        {
+            Id = id;
+            Age = age;
+            Gender = gender;
+            TechFocus = techFocus;
+            Organization = organization;
+            PositionTitle = positionTitle;
             DeviceType = deviceType;
             DeviceId = deviceId;
         }
