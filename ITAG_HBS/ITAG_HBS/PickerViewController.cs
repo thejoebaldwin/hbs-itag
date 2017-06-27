@@ -1,57 +1,162 @@
-﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using CoreGraphics;
 using HBS.ITAG.Model;
 using System.Drawing;
 using CoreAnimation;
+using System.Collections.Generic;
 
 namespace HBS.ITAG
 {
-
     public partial class PickerViewController : UIViewController
     {
         User tempUser;
+		public List<string> ages = new List<string>
+		{
+			"16 and Under",
+			"17 to 20",
+			"21 to 25",
+			"26 to 30",
+			"31 to 35",
+			"36 to 40",
+			"41 to 45",
+			"46 to 50",
+			"51 to 55",
+			"56 to 60",
+			"61 to 65",
+			"66 to 70",
+			"70 and Above"
+		};
+        public List<string> genders = new List<string>
+        {
+			"Male",
+			"Female",
+			"Other",
+			"Prefer Not to Respond"
+        };
+        public List<string> techFoci = new List<string>
+        {
+			"IT",
+			"GIS",
+			"Both",
+			"None"
+        };
+        public List<string> organizations = new List<string>
+        {
+			"IGIC",
+			"ICIT",
+			"Both",
+			"None"
+        };
+
+        public List<string> states = new List<string>
+        {
+            "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+        };
+
 		public PickerViewController(IntPtr handle) : base(handle)
         {
 		}
-		public override void ViewDidLoad()
-		{
-			base.ViewDidLoad();
-            AgePickerView.Model = new AgesModel();
-			AgeTextView.InputView = AgePickerView;
-            //TechFocusPickerView.Model = new TechFocusModel();
-            StatePickerView.Model = new StateModel();
-            GenderPickerView.Model = new GenderModel();
-            // OrganizationPickerView.Model = new OrganizationModel();
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+
+            UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
+            toolbar.TintColor = UIColor.White;
+            toolbar.BarStyle = UIBarStyle.Black;
+            toolbar.Translucent = true;
+            toolbar.Items = new UIBarButtonItem[]{
+                new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+                new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
+                {
+					if(this.AgeTextView.ResignFirstResponder())
+					{
+						this.AgeTextView.Text = ages[(int)this.AgePickerView.SelectedRowInComponent(0)];
+					}
+					else if(this.GenderTextView.ResignFirstResponder())
+					{
+						this.GenderTextView.Text = genders[(int)this.GenderPickerView.SelectedRowInComponent(0)];
+					}
+					else if(this.TechFocusTextView.ResignFirstResponder())
+					{
+						this.TechFocusTextView.Text = techFoci[(int)this.TechFocusPickerView.SelectedRowInComponent(0)];
+					}
+					else
+					{
+						this.OrganizationTextView.Text = organizations[(int)this.OrganizationPickerView.SelectedRowInComponent(0)];
+					}
+
+                    this.PositionTitle.ResignFirstResponder();
+                    var uno = this.AgeTextView.ResignFirstResponder();
+                    this.AgeTextView.ResignFirstResponder();
+					this.GenderTextView.ResignFirstResponder();
+					this.TechFocusTextView.ResignFirstResponder();
+					this.OrganizationTextView.ResignFirstResponder();
+                })
+             };
+            this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.PositionTitle.InputAccessoryView = toolbar;
+
+            this.AgePickerView.RemoveFromSuperview();
+            this.AgeTextView.InputView = AgePickerView;
+            this.AgeTextView.InputAccessoryView = toolbar;
+            var agePickerViewModel = new AgeModel(ages);
+            agePickerViewModel.ageChanged += (sender, e) =>
+            {
+                AgeTextView.Text = agePickerViewModel.selectedAge;
+            };
+            AgePickerView.Model = agePickerViewModel;
+
+            this.GenderPickerView.RemoveFromSuperview();
+            this.GenderTextView.InputView = GenderPickerView;
+            this.GenderTextView.InputAccessoryView = toolbar;
+            var genderPickerViewModel = new GenderModel(genders);
+            genderPickerViewModel.genderChanged += (sender, e) =>
+            {
+                GenderTextView.Text = genderPickerViewModel.selectedGender;
+            };
+            GenderPickerView.Model = genderPickerViewModel;
+
+
+            //Uncomment below code and create TextView and Picker view to include State on Survey Page
+
+            //this.StatePickerView.RemoveFromSuperview();
+            //this.StateTextView.InputView = StatePickerView;
+            //this.StateTextView.InputAccessoryView = toolbar;
+            //var statePickerViewModel = new StateModel(states);
+            //statePickerViewModel.stateChanged += (sender, e) =>
+            //{
+            //	StateTextView.Text = statePickerViewModel.selectedState;
+            //};
+            //StatePickerView.Model = statePickerViewModel;
+
+            this.TechFocusPickerView.RemoveFromSuperview();
+            this.TechFocusTextView.InputView = TechFocusPickerView;
+            this.TechFocusTextView.InputAccessoryView = toolbar;
+            var techFocusPickerViewModel = new TechFocusModel(techFoci);
+            techFocusPickerViewModel.techFocusChanged += (sender, e) =>
+            {
+                TechFocusTextView.Text = techFocusPickerViewModel.selectedTechFocus;
+            };
+            TechFocusPickerView.Model = techFocusPickerViewModel;
+
+            this.OrganizationPickerView.RemoveFromSuperview();
+            this.OrganizationTextView.InputView = OrganizationPickerView;
+            this.OrganizationTextView.InputAccessoryView = toolbar;
+            var organizationPickerViewModel = new OrganizationModel(organizations);
+            organizationPickerViewModel.organizationChanged += (sender, e) =>
+            {
+                OrganizationTextView.Text = organizationPickerViewModel.selectedOrganization;
+            };
+            OrganizationPickerView.Model = organizationPickerViewModel;
 
             SubmitForm.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitFormGesture = new UITapGestureRecognizer(SubmitFormClick);
             SubmitFormGesture.NumberOfTapsRequired = 1;
             SubmitForm.AddGestureRecognizer(SubmitFormGesture);
-
-
-			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f,0.0f, (float) this.View.Frame.Size.Width, 44.0f));
-
-			toolbar.TintColor = UIColor.White;
-			toolbar.BarStyle = UIBarStyle.Black;
-
-            toolbar.Translucent = true;
-
-
-            toolbar.Items = new UIBarButtonItem[]{
-		new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
-		new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate {
-			this.PositionTitle.ResignFirstResponder();
-            this.AgeTextView.ResignFirstResponder();
-	})
-	 };
-
-			this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
-			this.PositionTitle.InputAccessoryView = toolbar;
-            this.AgePickerView.RemoveFromSuperview();
-            this.AgeTextView.InputAccessoryView = toolbar;
-		}
+        }
 
 		public void AddBarButtonText(object sender, EventArgs e)
 		{
@@ -63,316 +168,87 @@ namespace HBS.ITAG
               this.AgeTextView.Text += agetextitem.Title;
 		}
 
-		private void SubmitFormClick()
-		{
-            //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
-			tempUser = new User("-1",
-                                AgesModel.ages[AgePickerView.SelectedRowInComponent(0)],
-                                GenderModel.Gender[GenderPickerView.SelectedRowInComponent(0)],
-                                PositionTitle.Text,
-                                StateModel.States[StatePickerView.SelectedRowInComponent(0)],
-                                "iOS",
-                                UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
-			Store.Instance.AddUser(tempUser, AddUserComplete);
+        private void SubmitFormClick()
+        {
+            if(this.AgeTextView.Text == "Choose One" || this.GenderTextView.Text == "Choose One" || this.TechFocusTextView.Text == "Choose One" || this.OrganizationTextView.Text == "Choose One")
+            {
+	            if (this.AgeTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.AgeTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.AgeTextView.Layer.BorderWidth = 2;
+	                    this.AgeTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+					this.AgeTextView.Layer.BorderWidth = 0;
+                }
+	            if (this.GenderTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.GenderTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.GenderTextView.Layer.BorderWidth = 2;
+	                    this.GenderTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.GenderTextView.Layer.BorderWidth = 0;
+                }
+	            if (this.TechFocusTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.TechFocusTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.TechFocusTextView.Layer.BorderWidth = 2;
+	                    this.TechFocusTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.TechFocusTextView.Layer.BorderWidth = 0;
+                }
+                if(this.OrganizationTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.OrganizationTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.OrganizationTextView.Layer.BorderWidth = 2;
+	                    this.OrganizationTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.OrganizationTextView.Layer.BorderWidth = 0;
+                }
+            }
+            else
+            {
+				tempUser = new User("-1",
+							ages[(int)AgePickerView.SelectedRowInComponent(0)],
+							genders[(int)GenderPickerView.SelectedRowInComponent(0)],
+							techFoci[(int)TechFocusPickerView.SelectedRowInComponent(0)],
+							organizations[(int)OrganizationPickerView.SelectedRowInComponent(0)],
+							PositionTitle.Text,
+							//StateModel.States[StatePickerView.SelectedRowInComponent(0)],
+							"iOS",
+							UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
+				Store.Instance.AddUser(tempUser, AddUserComplete);
+            }
 		}
-
 	
         private void AddUserComplete(string message)
         {
             this.DismissViewController(true, null);
         }
 
-	
-
 		public override void DidReceiveMemoryWarning()
 		{
 			base.DidReceiveMemoryWarning();
 		}
-	}
-
-	public class AgesModel : UIPickerViewModel
-	{
-        public string SelectedInput;
-        public static string[] ages = new string[] {
-            "Choose One",
-            "16 and Under",
-            "17 to 20",
-            "21 to 25",
-            "26 to 30",
-            "31 to 35",
-            "36 to 40",
-            "41 to 45",
-            "46 to 50",
-            "51 to 55",
-            "56 to 60",
-            "61 to 65",
-            "66 to 70",
-            "70 and Above"
-        };
-
-		public AgesModel()
-		{
-            
-		}
-
-		public override nint GetComponentCount(UIPickerView v)
-		{
-			return 1;
-		}
-
-		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
-		{
-            return ages.Length;
-		}
-
-		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-		{
-            return ages[row];
-		}
-        public override void Selected(UIPickerView pickerView, nint row, nint component)
-		{
-            //lbl.Text = String.Format("{0} : {1} : {2}",
-
-            //pickerView.SelectedRowInComponent(1),
-            //pickerView.SelectedRowInComponent(2));
-            //pickerView.SelectedRowInComponent(0);
-            SelectedRow(ages[row]);
-        }
-
-        public string SelectedRow(string input)
-        {
-            return SelectedInput;
-        }
-
-		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
-		{
-			if (component == 0)
-				return 220f;
-			else
-				return 30f;
-		}
-        public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
-		{
-			UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
-			lbl.Font = UIFont.SystemFontOfSize(16f);
-			lbl.TextAlignment = UITextAlignment.Center;
-            lbl.Text = ages[row];
-            return lbl;
-		}
-	}
-	public class TechFocusModel : UIPickerViewModel
-	{
-		public static string[] TechFocus = new string[] {
-			"Choose One",
-			"IT",
-            "GIS",
-            "Both",
-            "None"
-         
-		};
-
-		public TechFocusModel()
-		{
-
-		}
-
-		public override nint GetComponentCount(UIPickerView v)
-		{
-			return 1;
-		}
-
-		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
-		{
-            return TechFocus.Length;
-		}
-
-		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-		{
-            return TechFocus[row];
-		}
-
-		public override void Selected(UIPickerView pickerView, nint row, nint component)
-		{
-
-			//lbl.Text = String.Format("{0} : {1} : {2}",
-			//names[pickerView.SelectedRowInComponent(0)],
-			//pickerView.SelectedRowInComponent(1),
-			//pickerView.SelectedRowInComponent(2));
-
-
-		}
-
-		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
-		{
-			if (component == 0)
-				return 220f;
-			else
-				return 30f;
-		}
-	}
-	public class GenderModel : UIPickerViewModel
-	{
-		public static string[] Gender = new string[] {
-			"Choose One",
-			"Male",
-            "Female",
-            "Other",
-            "Prefer Not to Respond"
-		};
-
-        public GenderModel()
-		{
-
-		}
-
-		public override nint GetComponentCount(UIPickerView v)
-		{
-			return 1;
-		}
-
-		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
-		{
-            return Gender.Length;
-		}
-
-		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-		{
-            return Gender[row];
-		}
-
-		public override void Selected(UIPickerView pickerView, nint row, nint component)
-		{
-
-			//lbl.Text = String.Format("{0} : {1} : {2}",
-			//names[pickerView.SelectedRowInComponent(0)],
-			//pickerView.SelectedRowInComponent(1),
-			//pickerView.SelectedRowInComponent(2));
-
-
-		}
-
-
-		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
-		{
-			if (component == 0)
-				return 220f;
-			else
-				return 30f;
-		}
-		public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
-		{
-			UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
-			lbl.Font = UIFont.SystemFontOfSize(16f);
-			lbl.TextAlignment = UITextAlignment.Center;
-            lbl.Text = Gender[row];
-			return lbl;
-		}
-
-
-      
-	}
-	public class OrganizationModel : UIPickerViewModel
-	{
-		public static string[] Organization = new string[] {
-			"Choose One",
-			"IGIC",
-			"ICIT",
-			"Both",
-			"None"
-
-		};
-
-		public OrganizationModel()
-		{
-
-		}
-
-		public override nint GetComponentCount(UIPickerView v)
-		{
-			return 1;
-		}
-
-		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
-		{
-            return Organization.Length;
-		}
-
-		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-		{
-            return Organization[row];
-		}
-
-		public override void Selected(UIPickerView pickerView, nint row, nint component)
-		{
-
-			//lbl.Text = String.Format("{0} : {1} : {2}",
-			//names[pickerView.SelectedRowInComponent(0)],
-			//pickerView.SelectedRowInComponent(1),
-			//pickerView.SelectedRowInComponent(2));
-
-
-		}
-
-		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
-		{
-			if (component == 0)
-				return 220f;
-			else
-				return 30f;
-		}
-
-	}
-
-	public class StateModel : UIPickerViewModel
-	{
-		public static string[] States = new string[] {
-			"AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
-		};
-
-		public StateModel()
-		{
-
-		}
-
-		public override nint GetComponentCount(UIPickerView v)
-		{
-			return 1;
-		}
-
-		public override nint GetRowsInComponent(UIPickerView pickerView, nint component)
-		{
-			return States.Length;
-		}
-
-		public override string GetTitle(UIPickerView pickerView, nint row, nint component)
-		{
-			return States[row];
-		}
-
-		public override void Selected(UIPickerView pickerView, nint row, nint component)
-		{
-
-			//lbl.Text = String.Format("{0} : {1} : {2}",
-			//names[pickerView.SelectedRowInComponent(0)],
-			//pickerView.SelectedRowInComponent(1),
-			//pickerView.SelectedRowInComponent(2));
-		}
-
-		public override nfloat GetComponentWidth(UIPickerView pickerView, nint component)
-		{
-			if (component == 0)
-				return 220f;
-			else
-				return 30f;
-		}
-        public override UIView GetView(UIPickerView pickerView, nint row, nint component, UIView view)
-        {
-            UILabel lbl = new UILabel(new RectangleF(0, 0, 130f, 40f));
-            lbl.Font = UIFont.SystemFontOfSize(16f);
-            lbl.TextAlignment = UITextAlignment.Center;
-            lbl.Text = States[row];
-            return lbl;
-        }
 	}
 }
 

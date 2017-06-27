@@ -509,11 +509,13 @@ namespace HBS.ITAG.Model
 		public void AddUser(User newUser, Action completion)
 		{
 			_Operation = "add_user";
-			string json = "{\"user_id\":\"<user_id>\", \"gender\":\"<gender>\", \"age\":\"<age>\",\"state\":\"<state>\",";
+			string json = "{\"user_id\":\"<user_id>\", \"gender\":\"<gender>\", \"age\":\"<age>\",\"tech_focus\":\"<tech_focus>\", \"organization\":\"<organization>\" ,\"state\":\"<state>\",";
 			json += "\"position_title\":\"<position_title>\",\"device_type\":\"<device_type>\",\"device_id\":\"<device_id>\"    }";
 			json = json.Replace("<user_id>", newUser.Id);
 			json = json.Replace("<gender>", newUser.Gender);
 			json = json.Replace("<age>", newUser.Age);
+            json = json.Replace("<tech_focus>", newUser.TechFocus);
+            json = json.Replace("<organization>", newUser.Organization);
 			json = json.Replace("<state>", newUser.State);
 			json = json.Replace("<position_title>", newUser.PositionTitle);
 			json = json.Replace("<device_type>", newUser.DeviceType);
