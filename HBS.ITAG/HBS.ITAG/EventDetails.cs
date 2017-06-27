@@ -7,6 +7,7 @@ using Android.Text;
 using Android.Text.Method;
 using HBS.ITAG.Model;
 using System.Globalization;
+using Android.Content;
 
 namespace HBS.ITAG
 {
@@ -51,8 +52,8 @@ namespace HBS.ITAG
 			link.MovementMethod = LinkMovementMethod.Instance;
 
 
-			// Favorites Button functionality
-			var button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
+            // Favorites Button functionality
+            ImageButton button = FindViewById<ImageButton>(Resource.Id.EDimageButton1);
 
 			if (Store.Instance.SelectedEvent.Favorited)
 			{
@@ -69,16 +70,14 @@ namespace HBS.ITAG
 					if (Store.Instance.SelectedEvent.Favorited)
 					{
 						Store.Instance.SelectedEvent.Favorited = false;
-						Toast toast = Toast.MakeText(this, "Removed from Favorites", ToastLength.Short);
-						toast.Show();
+						Toast.MakeText(this, "Removed from Favorites", ToastLength.Short).Show();
 						button.SetImageDrawable(GetDrawable(17301515));
 						OldStore.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
 					}
 					else
 					{
 						Store.Instance.SelectedEvent.Favorited = true;
-						Toast toast = Toast.MakeText(this, "Added to Favorites", ToastLength.Short);
-						toast.Show();
+						Toast.MakeText(this, "Added to Favorites", ToastLength.Short).Show();
 						button.SetImageDrawable(GetDrawable(17301516));
 						OldStore.Instance.AddFavorite(Store.Instance.SelectedEvent);
 					}

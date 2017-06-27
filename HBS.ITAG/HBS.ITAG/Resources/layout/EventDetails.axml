@@ -9,40 +9,41 @@
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
         android:id="@+id/EDrelativeLayout1"
-        android:layout_marginTop="50dp">
+        android:background="#0e1d52">
         <TextView
             android:text="Event Details :"
-            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/EDtextView1"
             android:layout_marginLeft="20dp"
-            android:textColor="#0e1d52" />
+            android:textColor="#ffffff"
+            android:layout_centerVertical="true" />
         <ImageButton
             android:src="@android:drawable/btn_star_big_off"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/EDimageButton1"
             android:layout_toRightOf="@id/EDtextView1"
-            android:layout_marginLeft="175dp"
+            android:layout_marginLeft="135dp"
             android:layout_centerVertical="true"
             android:background="#00ffffff" />
     </RelativeLayout>
     <View
         android:layout_width="fill_parent"
-        android:layout_height="2dp"
-        android:background="#bf1e2d"
-        android:layout_marginTop="10dp" />
+        android:layout_height="8dp"
+        android:background="#99A1AC"
+        android:layout_gravity="bottom" />
     <RelativeLayout
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EDrelativeLayout2"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="40dp">
         <TextView
             android:text="Event Name :"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -146,4 +147,19 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="20dp" />
     </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical">
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="8dp"
+            android:background="#99A1AC" />
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:background="#0e1d52" />
+    </LinearLayout>
 </LinearLayout>

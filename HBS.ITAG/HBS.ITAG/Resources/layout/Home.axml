@@ -55,7 +55,7 @@
             android:textColor="@color/foreground_material_light"
             android:layout_gravity="center"
             android:checked="true"
-            android:clickable="true"/>
+            android:clickable="true" />
         <TextView
             android:id="@+id/conference_details"
             android:layout_width="fill_parent"
