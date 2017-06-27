@@ -168,19 +168,76 @@ namespace HBS.ITAG
               this.AgeTextView.Text += agetextitem.Title;
 		}
 
-		private void SubmitFormClick()
-		{
-            //string id, string age, string gender, string positionTitle, string state, string deviceType, string deviceId
-			tempUser = new User("-1",
-                                ages[(int)AgePickerView.SelectedRowInComponent(0)],
-                                genders[(int)GenderPickerView.SelectedRowInComponent(0)],
-	                            techFoci[(int)TechFocusPickerView.SelectedRowInComponent(0)],
-	                            organizations[(int)OrganizationPickerView.SelectedRowInComponent(0)],
-                                PositionTitle.Text,
-                                //StateModel.States[StatePickerView.SelectedRowInComponent(0)],
-                                "iOS",
-                                UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
-			Store.Instance.AddUser(tempUser, AddUserComplete);
+        private void SubmitFormClick()
+        {
+            if(this.AgeTextView.Text == "Choose One" || this.GenderTextView.Text == "Choose One" || this.TechFocusTextView.Text == "Choose One" || this.OrganizationTextView.Text == "Choose One")
+            {
+	            if (this.AgeTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.AgeTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.AgeTextView.Layer.BorderWidth = 2;
+	                    this.AgeTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+					this.AgeTextView.Layer.BorderWidth = 0;
+                }
+	            if (this.GenderTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.GenderTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.GenderTextView.Layer.BorderWidth = 2;
+	                    this.GenderTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.GenderTextView.Layer.BorderWidth = 0;
+                }
+	            if (this.TechFocusTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.TechFocusTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.TechFocusTextView.Layer.BorderWidth = 2;
+	                    this.TechFocusTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.TechFocusTextView.Layer.BorderWidth = 0;
+                }
+                if(this.OrganizationTextView.Text == "Choose One")
+	            {
+	                InvokeOnMainThread(() =>
+	                {
+	                    this.OrganizationTextView.Layer.BorderColor = UIColor.Red.CGColor;
+	                    this.OrganizationTextView.Layer.BorderWidth = 2;
+	                    this.OrganizationTextView.Layer.CornerRadius = 5;
+	                });
+	            }
+                else
+                {
+                    this.OrganizationTextView.Layer.BorderWidth = 0;
+                }
+            }
+            else
+            {
+				tempUser = new User("-1",
+							ages[(int)AgePickerView.SelectedRowInComponent(0)],
+							genders[(int)GenderPickerView.SelectedRowInComponent(0)],
+							techFoci[(int)TechFocusPickerView.SelectedRowInComponent(0)],
+							organizations[(int)OrganizationPickerView.SelectedRowInComponent(0)],
+							PositionTitle.Text,
+							//StateModel.States[StatePickerView.SelectedRowInComponent(0)],
+							"iOS",
+							UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString());
+				Store.Instance.AddUser(tempUser, AddUserComplete);
+            }
 		}
 	
         private void AddUserComplete(string message)
