@@ -16,18 +16,26 @@
         android:layout_marginBottom="20dp"
         android:layout_gravity="center_horizontal" />
   <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+      android:layout_width="320dp"
+      android:layout_height="170dp"
         android:background="@drawable/ListViewBorder"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal">
-    <ListView
-        android:id="@+id/MElistView1"
-        android:layout_gravity="center"
-        android:layout_width="300dp"
-        android:layout_height="170dp"
-        android:layout_margin="10dp"/>
-  </LinearLayout>
+        <ListView
+            android:id="@+id/MElistView1"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp" />
+        <TextView
+            android:text="No Favorited Events Available"
+            android:textColor="#0e1d52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MEtextViewNoFavorites"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75dp" />
+    </LinearLayout>
     <TextView
         android:text="Previous Events"
         android:layout_marginBottom="20dp"
@@ -40,8 +48,8 @@
         android:layout_marginTop="20dp"
         android:layout_gravity="center_horizontal" />
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="170dp"
         android:background="@drawable/ListViewBorder"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal">
@@ -49,8 +57,16 @@
             android:id="@+id/MElistView2"
             android:layout_gravity="center"
             android:layout_width="300dp"
-            android:layout_height="170dp"
+            android:layout_height="150dp"
             android:layout_margin="10dp" />
+        <TextView
+            android:text="No Previous Events Available"
+            android:textColor="#0e1d52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MEtextViewNoPrevious"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="75dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
