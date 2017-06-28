@@ -13,7 +13,6 @@ namespace HBS.ITAG
     {
         public HomeViewController parent { get; set; }
         public EventSurvey survey = new EventSurvey();
-        public event EventHandler firstAnswerChanged;
 
         public EventSurveyController (IntPtr handle) : base (handle)
         {
@@ -22,16 +21,50 @@ namespace HBS.ITAG
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            QuestionOneRating.Value = 3;
+            QuestionTwoRating.Value = 3;
+            QuestionThreeRating.Value = 3;
+            QuestionFourRating.Value = 3;
         }
 
-		public override void ViewDidAppear(bool animated)
-		{
-			base.ViewDidAppear(animated);
-			RefreshPage();
+        public override void ViewDidAppear(bool animated)
+        {
+            base.ViewDidAppear(animated);
+            RefreshPage();
             SubmitButton.UserInteractionEnabled = true;
             UITapGestureRecognizer SubmitSurvey = new UITapGestureRecognizer(SubmitSurveyClick);
             SubmitSurvey.NumberOfTapsRequired = 1;
             SubmitButton.AddGestureRecognizer(SubmitSurvey);
+
+            QuestionOneRating.ValueChanged += HandleValueChanged;
+            QuestionTwoRating.ValueChanged += HandleValueChanged;
+            QuestionThreeRating.ValueChanged += HandleValueChanged;
+            QuestionFourRating.ValueChanged += HandleValueChanged;
+        }
+
+		void HandleValueChanged(object sender, EventArgs e)
+		{
+            var rating = (UISlider)sender;
+            if (rating.Value >= 4.5)
+            {
+                rating.Value = 5;
+            }
+		    else if (rating.Value >= 3.5)
+            {
+                rating.Value = 4;
+            }
+            else if (rating.Value >= 2.5)
+            {
+                rating.Value = 3;
+            }
+            else if (rating.Value >= 1.5)
+            {
+                rating.Value = 2;
+            }
+            else
+            {
+                rating.Value = 1;
+            }
 		}
 
 		public void RefreshPage()

@@ -20,7 +20,19 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider QuestionFourRating { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider QuestionOneRating { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider QuestionThreeRating { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider QuestionTwoRating { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -33,9 +45,24 @@ namespace HBS.ITAG
                 EventName = null;
             }
 
+            if (QuestionFourRating != null) {
+                QuestionFourRating.Dispose ();
+                QuestionFourRating = null;
+            }
+
             if (QuestionOneRating != null) {
                 QuestionOneRating.Dispose ();
                 QuestionOneRating = null;
+            }
+
+            if (QuestionThreeRating != null) {
+                QuestionThreeRating.Dispose ();
+                QuestionThreeRating = null;
+            }
+
+            if (QuestionTwoRating != null) {
+                QuestionTwoRating.Dispose ();
+                QuestionTwoRating = null;
             }
 
             if (SubmitButton != null) {
