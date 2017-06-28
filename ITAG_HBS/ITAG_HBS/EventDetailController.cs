@@ -16,7 +16,7 @@ namespace HBS.ITAG
         {
         }
 
-		public FavoritesViewController parent { get; set; }
+		public HomeViewController parent { get; set; }
 
 		public override void ViewDidLoad()
 		{

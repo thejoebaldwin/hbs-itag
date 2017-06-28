@@ -7,7 +7,7 @@ using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-	public partial class DataViewController : UIViewController
+	public partial class MyEventsViewController : UIViewController
 	{
         partial void MyEventsButtonClick(UIButton sender)
         {
@@ -29,9 +29,9 @@ namespace HBS.ITAG
 			get; set;
 		}
 
-        public FavoritesViewController parent { get; set; }
+        public HomeViewController parent { get; set; }
 
-        protected DataViewController(IntPtr handle) : base(handle)
+        protected MyEventsViewController(IntPtr handle) : base(handle)
 		{
 			// Note: this .ctor should not contain any initialization logic.
 		}

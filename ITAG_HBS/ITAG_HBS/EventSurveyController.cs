@@ -7,7 +7,7 @@ namespace HBS.ITAG
 {
     public partial class EventSurveyController : UIViewController
     {
-        public FavoritesViewController parent { get; set; }
+        public HomeViewController parent { get; set; }
         public EventSurvey survey = new EventSurvey();
 
         public EventSurveyController (IntPtr handle) : base (handle)

@@ -12,7 +12,7 @@ using UIKit;
 namespace HBS.ITAG
 {
     [Register ("AboutViewController")]
-    partial class AboutViewController
+    partial class AppFeaturesViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

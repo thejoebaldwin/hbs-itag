@@ -10,7 +10,7 @@ using CoreLocation;
 
 namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
-    public partial class FavoritesViewController : UIViewController
+    public partial class HomeViewController : UIViewController
     {
         partial void NotifySwitchClicked(UISwitch sender)
         {
@@ -42,9 +42,9 @@ namespace HBS.ITAG
 		public Day2ScheduleController day2ScheduleController { get; set; }
 		public Day3ScheduleController day3ScheduleController { get; set; }
 		public Day4ScheduleController day4ScheduleController { get; set; }
-        public DataViewController myEventsController { get; set; }
+        public MyEventsViewController myEventsController { get; set; }
 
-		public AboutViewController aboutViewController { get; set; }
+		public AppFeaturesViewController aboutViewController { get; set; }
         public EventDetailController eventDetailViewController { get; set; }
 
 		public string DataObject
@@ -52,7 +52,7 @@ namespace HBS.ITAG
 			get; set;
 		}
 
-        public FavoritesViewController(IntPtr handle) : base(handle)
+        public HomeViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -104,12 +104,12 @@ namespace HBS.ITAG
             day3ScheduleController.parent = this;
 			day4ScheduleController = (Day4ScheduleController)this.Storyboard.InstantiateViewController("Day4ScheduleController");
             day4ScheduleController.parent = this;
-			myEventsController = (DataViewController)this.Storyboard.InstantiateViewController("DataViewController");
+			myEventsController = (MyEventsViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
 			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
             eventDetailViewController.parent = this;
 
-            aboutViewController = (AboutViewController)this.Storyboard.InstantiateViewController("AboutViewController");
+            aboutViewController = (AppFeaturesViewController)this.Storyboard.InstantiateViewController("AboutViewController");
 
 
 			HotelName.UserInteractionEnabled = true;

@@ -144,10 +144,10 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="DataViewController.xib" />
+    <InterfaceDefinition Include="MyEventsViewController.xib" />
     <InterfaceDefinition Include="FavoritesViewController.xib" />
     <InterfaceDefinition Include="PickerViewController.xib" />
-    <InterfaceDefinition Include="AboutViewController.xib" />
+    <InterfaceDefinition Include="AppFeaturesViewController.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -166,13 +166,13 @@
     <Compile Include="Utilities.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="ScheduleTableViewSource.cs" />
-    <Compile Include="DataViewController.cs" />
-    <Compile Include="DataViewController.designer.cs">
-      <DependentUpon>DataViewController.cs</DependentUpon>
+    <Compile Include="MyEventsViewController.cs" />
+    <Compile Include="MyEventsViewController.designer.cs">
+      <DependentUpon>MyEventsViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="FavoritesViewController.cs" />
-    <Compile Include="FavoritesViewController.designer.cs">
-      <DependentUpon>FavoritesViewController.cs</DependentUpon>
+    <Compile Include="HomeViewController.cs" />
+    <Compile Include="HomeViewController.designer.cs">
+      <DependentUpon>HomeViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UIColorExtension.cs" />
     <Compile Include="Day1ScheduleController.cs" />
@@ -201,9 +201,9 @@
     <Compile Include="EventDetailController.designer.cs">
       <DependentUpon>EventDetailController.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutViewController.cs" />
-    <Compile Include="AboutViewController.designer.cs">
-      <DependentUpon>AboutViewController.cs</DependentUpon>
+    <Compile Include="AppFeaturesViewController.cs" />
+    <Compile Include="AppFeaturesViewController.designer.cs">
+      <DependentUpon>AppFeaturesViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="AgeModel.cs" />
     <Compile Include="GenderModel.cs" />

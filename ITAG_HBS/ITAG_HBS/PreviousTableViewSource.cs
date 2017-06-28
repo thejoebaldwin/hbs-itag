@@ -48,7 +48,7 @@ namespace HBS.ITAG
 			if (!Store.Instance.SelectedEvent.ScheduleOnly)
 			{
 				//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-                DataViewController temp = (DataViewController)parent;
+                MyEventsViewController temp = (MyEventsViewController)parent;
                 parent.PresentViewController(temp.parent.eventDetailViewController, true, null);
 			}
 		}

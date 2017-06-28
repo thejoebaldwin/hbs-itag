@@ -5,15 +5,15 @@ using UIKit;
 
 namespace HBS.ITAG
 {
-    public partial class AboutViewController : UIViewController
+    public partial class AppFeaturesViewController : UIViewController
     {
-		protected AboutViewController(IntPtr handle) : base(handle)
+		protected AppFeaturesViewController(IntPtr handle) : base(handle)
         {
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
 
-		public AboutViewController() : base("AboutViewController", null)
+		public AppFeaturesViewController() : base("AboutViewController", null)
         {
         }
 

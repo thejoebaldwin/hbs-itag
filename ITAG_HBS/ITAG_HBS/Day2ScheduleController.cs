@@ -53,7 +53,7 @@ namespace HBS.ITAG
         int currentTrack = 0;
 		List<Track> tracks = new List<Track>();
 
-        public FavoritesViewController parent { get; set; }
+        public HomeViewController parent { get; set; }
 
 		public string DataObject
 		{

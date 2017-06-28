@@ -11,7 +11,7 @@ using System.CodeDom.Compiler;
 namespace HBS.ITAG
 {
     [Register ("FavoritesViewController")]
-    partial class FavoritesViewController
+    partial class HomeViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
