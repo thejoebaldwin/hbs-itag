@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Widget;
 using EstimoteSdk;
 using HBS.ITAG.Model;
+using System.Threading.Tasks;
 
 namespace HBS.ITAG
 {
@@ -14,6 +15,24 @@ namespace HBS.ITAG
 
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
+        /*
+        public override StartCommandResult OnStartCommand(Android.Content.Intent intent, StartCommandFlags flags, int startId)
+        {
+            new Task(() => {
+                beaconManager.Connect(this);
+            }).Start();
+            return StartCommandResult.Sticky;
+        }
+
+        void StartServiceInForeground()
+        {
+            var ongoing = new Notification(Resource.Drawable.Icon, "Notification");
+            var pendingIntent = PendingIntent.GetActivity(this, 0, new Intent(this, typeof(MainActivity)), 0);
+            ongoing.SetLatestEventInfo(this, "Notification", "SimpleService is running in the foreground", pendingIntent);
+
+            StartForeground((int)NotificationFlags.AutoCancel, null);
+        }*/
 
         public override void OnCreate()
         {
