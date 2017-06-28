@@ -48,11 +48,13 @@ namespace HBS.ITAG.Model
             string id = data["user_id"];
             string age = data["age"];
             string gender = data["gender"];
+            string techFocus = data["tech_focus"];
+            string organization = data["organization"];
             string positionTitle = data["position_title"];
             string state = data["state"];
             string deviceType = data["device_type"];
             string deviceId = data["device_id"];
-            return new User(id, age, gender, positionTitle, state, deviceType, deviceId);
+            return new User(id, age, gender, techFocus, organization, positionTitle, deviceType, deviceId);
         }
     }
 }

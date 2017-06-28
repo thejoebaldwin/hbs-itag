@@ -1,6 +1,5 @@
 ﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
-
 using UIKit;
 using HBS.ITAG.Model;
 using Estimote;
@@ -25,6 +24,7 @@ namespace HBS.ITAG
 
         partial void EventsButtonClick(UIButton sender)
         {
+            //This will now be changed to survey page
             NavigateToMyEvents();
         }
 
@@ -138,15 +138,16 @@ namespace HBS.ITAG
         public void ReloadData()
         {
 			var trackEvents = Store.Instance.Events;
-			FavoritesTableViewSource data = new FavoritesTableViewSource(trackEvents);
-			data.parent = (UIViewController)this;
+			ToDoTableViewSource data = new ToDoTableViewSource(trackEvents);
+			data.parent =this;
           
-			ScheduleTableViewFavs.Source = data;
-            ScheduleTableViewFavs.ReloadData();
+            ToDoTableView.Source = data;
+            ToDoTableView.ReloadData();
         }
 
         public override void ViewDidAppear(bool animated)
         {
+            ReloadData();
             if (!Store.Instance.UserCreated())
             {
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
@@ -345,7 +346,6 @@ namespace HBS.ITAG
                 }
                 tempEvent.LastEntryNotified = DateTime.Now;
 				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-				
             }
           
 		}
