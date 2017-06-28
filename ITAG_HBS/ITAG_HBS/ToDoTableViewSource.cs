@@ -8,13 +8,12 @@ namespace HBS.ITAG
 {
 	public class ToDoTableViewSource : UITableViewSource
 	{
-		//THIS IS FOR THE MY EVENTS PAGE//
 		public UIViewController parent { get; set; }
 		List<Event> TableItems;
 
 		string CellIdentifier = "TableCell";
 
-        public ToDoTableViewSource(List<Event> items)
+		public ToDoTableViewSource(List<Event> items)
 		{
 			List<Event> FilteredItems = new List<Event>();
 			for (int i = 0; i < items.Count; i++)
@@ -24,6 +23,7 @@ namespace HBS.ITAG
 					FilteredItems.Add((items[i]));
 				}
 			}
+
 			TableItems = new List<Event>(FilteredItems);
 			TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 		}
@@ -51,14 +51,14 @@ namespace HBS.ITAG
 				{
 					//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
 					EventDetailController tempEventDetail = null;
-					if (parent.GetType() == typeof(FavoritesViewController))
+					if (parent.GetType() == typeof(HomeViewController))
 					{
-						FavoritesViewController temp = (FavoritesViewController)parent;
+						HomeViewController temp = (HomeViewController)parent;
 						tempEventDetail = temp.eventDetailViewController;
 					}
-					else if (parent.GetType() == typeof(DataViewController))
+					else if (parent.GetType() == typeof(MyEventsViewController))
 					{
-						DataViewController temp = (DataViewController)parent;
+						MyEventsViewController temp = (MyEventsViewController)parent;
 						tempEventDetail = temp.parent.eventDetailViewController;
 					}
 					parent.PresentViewController(tempEventDetail, true, null);
@@ -78,10 +78,12 @@ namespace HBS.ITAG
 			{
 				cell.TextLabel.Text = "You do not have any surveys to complete";
 				cell.TextLabel.AdjustsFontSizeToFitWidth = true;
+				cell.DetailTextLabel.Text = "Click Schedule to find events!";
 				cell.Selected = false;
 			}
 			else
 			{
+
 				Event item = TableItems[indexPath.Row];
 				cell.TextLabel.Text = item.Name;
 				cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
@@ -97,8 +99,16 @@ namespace HBS.ITAG
 					cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 					cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 				}
+				/*else
+                {
+                    cell.BackgroundColor = UIColor.White;
+                    cell.TextLabel.TextColor = UIColor.Black;
+                    cell.DetailTextLabel.TextColor = UIColor.Black;
+                    cell.DetailTextLabel.Text = "Upcoming";
+                }*/
 			}
 			return cell;
 		}
 	}
 }
+
