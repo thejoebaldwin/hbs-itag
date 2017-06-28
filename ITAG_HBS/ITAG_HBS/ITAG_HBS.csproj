@@ -210,6 +210,11 @@
     <Compile Include="TechFocusModel.cs" />
     <Compile Include="OrganizationModel.cs" />
     <Compile Include="StateModel.cs" />
+    <Compile Include="EventSurveyController.cs" />
+    <Compile Include="EventSurveyController.designer.cs">
+      <DependentUpon>EventSurveyController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventSurvey.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
