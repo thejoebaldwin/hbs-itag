@@ -20,6 +20,20 @@ namespace HBS.ITAG
             base.OnCreate();
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
+
+            beaconManager.EnteredRegion += (sender, e) =>
+            {
+                if (Store.Instance.Notify)
+                {
+                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+                    
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+            };
+
             beaconManager.ExitedRegion += (sender, e) =>
             {
                 if (Store.Instance.Notify)
@@ -34,18 +48,6 @@ namespace HBS.ITAG
                 }
             };
 
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-                    
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
             beaconManager.Connect(this);
         }
         
@@ -66,18 +68,6 @@ namespace HBS.ITAG
                 Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
                 beaconManager.StartMonitoring(beaconRegion);
-            }
-        }
-
-        public void OnRegionExit(Event tempEvent)
-        {
-            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
-            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-            if (minutesSinceLastNotification > 5)
-            {
-                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
-                tempEvent.LastExitNotified = DateTime.Now;
             }
         }
 
@@ -116,11 +106,22 @@ namespace HBS.ITAG
             }
         }
 
+        public void OnRegionExit(Event tempEvent)
+        {
+            Toast.MakeText(this, "You are leaving the event : " + tempEvent.Name + ".", ToastLength.Long).Show();
+            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+            if (minutesSinceLastNotification > 5)
+            {
+                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
+                tempEvent.LastExitNotified = DateTime.Now;
+            }
+        }
+
         public void OnSessionAddComplete(string message)
         {
 
         }
-
         
         public override IBinder OnBind(Intent intent)
         {

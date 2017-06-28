@@ -5,6 +5,7 @@ using Android.Content;
 using Android.OS;
 using Android.Widget;
 using HBS.ITAG.Model;
+using Android.Views;
 
 namespace HBS.ITAG
 {
@@ -15,6 +16,8 @@ namespace HBS.ITAG
         private List<Event> previousEvents;
         private ListView favoritedList;
         private ListView previousList;
+        private TextView noFavorites;
+        private TextView noPrevious;
         private List<Event> events = new List<Event>(Store.Instance.Events);
 
         protected override void OnResume()
@@ -36,8 +39,21 @@ namespace HBS.ITAG
             }
 
             favoritedEvents.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+            favoritedList = FindViewById<ListView>(Resource.Id.MElistView1);
             MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(this, favoritedEvents);
             favoritedList.Adapter = adapter;
+
+            noFavorites = FindViewById<TextView>(Resource.Id.MEtextViewNoFavorites);
+            if (favoritedEvents.Count == 0)
+            {
+                noFavorites.Visibility = ViewStates.Visible;
+                favoritedList.Visibility = ViewStates.Gone;
+            }
+            else
+            {
+                noFavorites.Visibility = ViewStates.Gone;
+                favoritedList.Visibility = ViewStates.Visible;
+            }
 
             previousEvents = new List<Event>();
 
@@ -54,9 +70,22 @@ namespace HBS.ITAG
             MyEventsPreviousEventsListViewAdapter adapter2 = new MyEventsPreviousEventsListViewAdapter(this, previousEvents);
             previousList.Adapter = adapter2;
 
+            noPrevious = FindViewById<TextView>(Resource.Id.MEtextViewNoPrevious);
+            if (previousEvents.Count == 0)
+            {
+                noPrevious.Visibility = ViewStates.Visible;
+                previousList.Visibility = ViewStates.Gone;
+            }
+            else
+            {
+                noPrevious.Visibility = ViewStates.Gone;
+                previousList.Visibility = ViewStates.Visible;
+            }
+
+           
+
             favoritedList.ItemClick += mListView_ItemClick;
 
-            // Populates Previous Events table
             previousList.ItemClick += mListView2_ItemClick;
 
         }
@@ -66,9 +95,6 @@ namespace HBS.ITAG
             RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
-
-            // Populates Favorited Events table
-            favoritedList = FindViewById<ListView>(Resource.Id.MElistView1);
 
             // Code for nav bar
 

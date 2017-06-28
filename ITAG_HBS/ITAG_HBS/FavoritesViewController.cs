@@ -25,6 +25,7 @@ namespace HBS.ITAG
 
         partial void EventsButtonClick(UIButton sender)
         {
+            //This will now be changed to survey page
             NavigateToMyEvents();
         }
 
