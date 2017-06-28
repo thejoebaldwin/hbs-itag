@@ -27,6 +27,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView HotEventTableView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton MyEventsButton { get; set; }
 
         [Outlet]
@@ -43,7 +47,7 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView ScheduleTableViewFavs { get; set; }
+        UIKit.UITableView ToDoTableView { get; set; }
 
         [Action ("AboutButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -78,6 +82,11 @@ namespace HBS.ITAG
                 HotelName = null;
             }
 
+            if (HotEventTableView != null) {
+                HotEventTableView.Dispose ();
+                HotEventTableView = null;
+            }
+
             if (MyEventsButton != null) {
                 MyEventsButton.Dispose ();
                 MyEventsButton = null;
@@ -98,9 +107,9 @@ namespace HBS.ITAG
                 ScheduleButton = null;
             }
 
-            if (ScheduleTableViewFavs != null) {
-                ScheduleTableViewFavs.Dispose ();
-                ScheduleTableViewFavs = null;
+            if (ToDoTableView != null) {
+                ToDoTableView.Dispose ();
+                ToDoTableView = null;
             }
         }
     }

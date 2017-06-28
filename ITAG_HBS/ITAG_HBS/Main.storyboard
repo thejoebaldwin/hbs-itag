@@ -341,18 +341,10 @@
                             <view contentMode="scaleToFill" id="19640" key="tableHeaderView">
                                 <rect key="frame" x="22" y="161" width="330" height="65"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <subviews/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.090196078431372548" green="0.023529411764705882" blue="0.42352941176470588" alpha="1"/>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="19639" text="Hot Event Here" editable="NO">
-                                <rect key="frame" x="31" y="168" width="312" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hottest Event Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19644">
-                                <rect key="frame" x="22" y="139" width="160" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hottest Event Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="19644">
+                                <rect key="frame" x="0.0" y="139" width="373" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17" weight="semibold"/>
                                 <nil key="textColor"/>
@@ -365,12 +357,13 @@
                     <connections>
                         <outlet property="HotelName" destination="304" id="name-outlet-304"/>
                         <outlet property="PhoneNumber" destination="307" id="name-outlet-307"/>
-                        <outlet property="ScheduleTableViewFavs" destination="14952" id="name-outlet-14952"/>
+                        <outlet property="ToDoTableView" destination="14952" id="name-outlet-14952"/>
                         <outlet property="HomeButton" destination="368" id="name-outlet-368"/>
                         <outlet property="ScheduleButton" destination="369" id="name-outlet-369"/>
                         <outlet property="MyEventsButton" destination="370" id="name-outlet-370"/>
                         <outlet property="AboutButton" destination="1230" id="name-outlet-1230"/>
                         <outlet property="NotifySwitch" destination="19457" id="name-outlet-19457"/>
+                        <outlet property="HotEventTableView" destination="19656" id="name-outlet-19656"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

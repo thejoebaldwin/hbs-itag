@@ -18,6 +18,8 @@ namespace HBS.ITAG
         private ListView previousList;
         private TextView noFavorites;
         private TextView noPrevious;
+        private ImageView noFavoritesImage;
+        private ImageView noPreviousImage;
         private List<Event> events = new List<Event>(Store.Instance.Events);
 
         protected override void OnResume()
@@ -44,14 +46,17 @@ namespace HBS.ITAG
             favoritedList.Adapter = adapter;
 
             noFavorites = FindViewById<TextView>(Resource.Id.MEtextViewNoFavorites);
+            noFavoritesImage = FindViewById<ImageView>(Resource.Id.MEnoFavoritesImage);
             if (favoritedEvents.Count == 0)
             {
                 noFavorites.Visibility = ViewStates.Visible;
+                noFavoritesImage.Visibility = ViewStates.Visible;
                 favoritedList.Visibility = ViewStates.Gone;
             }
             else
             {
                 noFavorites.Visibility = ViewStates.Gone;
+                noFavoritesImage.Visibility = ViewStates.Gone;
                 favoritedList.Visibility = ViewStates.Visible;
             }
 
@@ -71,14 +76,17 @@ namespace HBS.ITAG
             previousList.Adapter = adapter2;
 
             noPrevious = FindViewById<TextView>(Resource.Id.MEtextViewNoPrevious);
+            noPreviousImage = FindViewById<ImageView>(Resource.Id.MEnoPreviousImage);
             if (previousEvents.Count == 0)
             {
                 noPrevious.Visibility = ViewStates.Visible;
+                noPreviousImage.Visibility = ViewStates.Visible;
                 previousList.Visibility = ViewStates.Gone;
             }
             else
             {
                 noPrevious.Visibility = ViewStates.Gone;
+                noPreviousImage.Visibility = ViewStates.Gone;
                 previousList.Visibility = ViewStates.Visible;
             }
 

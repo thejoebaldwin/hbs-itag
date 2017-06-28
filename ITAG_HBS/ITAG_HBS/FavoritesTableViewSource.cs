@@ -8,7 +8,6 @@ namespace HBS.ITAG
 {
 	public class FavoritesTableViewSource : UITableViewSource
 	{
-        //THIS IS FOR THE MY EVENTS PAGE//
         public UIViewController parent { get; set; }
         List<Event> TableItems;
 		
@@ -27,8 +26,6 @@ namespace HBS.ITAG
 
             TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
-			
-
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -71,11 +68,7 @@ namespace HBS.ITAG
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
-            
             UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
-         
-			
-
 			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
@@ -83,7 +76,7 @@ namespace HBS.ITAG
             }
             if (TableItems.Count == 0)
             {
-				cell.TextLabel.Text = "You do not have any surveys to complete";
+                cell.TextLabel.Text = "You do not have any upcoming events";
                 cell.TextLabel.AdjustsFontSizeToFitWidth = true;
                 cell.DetailTextLabel.Text = "Click Schedule to find events!";
                 cell.Selected = false;
