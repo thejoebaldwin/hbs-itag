@@ -15,17 +15,18 @@ namespace HBS.ITAG
 
 		public ToDoTableViewSource(List<Event> items)
 		{
-			List<Event> FilteredItems = new List<Event>();
-			for (int i = 0; i < items.Count; i++)
-			{
-				if (items[i].Favorited && items[i].EndTime > DateTime.Now)
-				{
-					FilteredItems.Add((items[i]));
-				}
-			}
+            TableItems = items;
+			//List<Event> FilteredItems = new List<Event>();
+			//for (int i = 0; i < items.Count; i++)
+			//{
+			//	if (items[i].Favorited && items[i].EndTime > DateTime.Now)
+			//	{
+			//		FilteredItems.Add((items[i]));
+			//	}
+			//}
 
-			TableItems = new List<Event>(FilteredItems);
-			TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+			//TableItems = new List<Event>(FilteredItems);
+			//TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
@@ -49,19 +50,27 @@ namespace HBS.ITAG
 				Store.Instance.SelectedEvent = tempEvent;
 				if (!Store.Instance.SelectedEvent.ScheduleOnly)
 				{
-					//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-					EventDetailController tempEventDetail = null;
-					if (parent.GetType() == typeof(HomeViewController))
-					{
-						HomeViewController temp = (HomeViewController)parent;
-						tempEventDetail = temp.eventDetailViewController;
-					}
-					else if (parent.GetType() == typeof(MyEventsViewController))
-					{
-						MyEventsViewController temp = (MyEventsViewController)parent;
-						tempEventDetail = temp.parent.eventDetailViewController;
-					}
-					parent.PresentViewController(tempEventDetail, true, null);
+                    //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+
+                    EventSurveyController tempEventSurvey = null;
+                    if(parent.GetType() == typeof(HomeViewController))
+                    {
+                        HomeViewController temp = (HomeViewController)parent;
+                        tempEventSurvey = temp.eventSurveyController;
+                    }
+                    parent.PresentViewController(tempEventSurvey, true, null);
+					//EventDetailController tempEventDetail = null;
+					//if (parent.GetType() == typeof(HomeViewController))
+					//{
+					//	HomeViewController temp = (HomeViewController)parent;
+					//	tempEventDetail = temp.eventDetailViewController;
+					//}
+					//else if (parent.GetType() == typeof(MyEventsViewController))
+					//{
+					//	MyEventsViewController temp = (MyEventsViewController)parent;
+					//	tempEventDetail = temp.parent.eventDetailViewController;
+					//}
+					//parent.PresentViewController(tempEventDetail, true, null);
 				}
 			}
 		}

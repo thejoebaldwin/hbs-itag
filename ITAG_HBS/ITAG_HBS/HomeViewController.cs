@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
@@ -86,7 +86,6 @@ namespace HBS.ITAG
 			this.PresentViewController(day4ScheduleController, false, null);
 		}
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -108,9 +107,10 @@ namespace HBS.ITAG
             myEventsController.parent = this;
 			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
             eventDetailViewController.parent = this;
+            eventSurveyController = (EventSurveyController)this.Storyboard.InstantiateViewController("EventSurveyController");
+            eventSurveyController.parent = this;
 
             aboutViewController = (AppFeaturesViewController)this.Storyboard.InstantiateViewController("AboutViewController");
-
 
 			HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
@@ -128,18 +128,16 @@ namespace HBS.ITAG
 				beaconManager = new BeaconManager();
 				beaconManager.RequestAlwaysAuthorization();
 			}
-		
-			
-
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}
 
         public void ReloadData()
         {
-			var trackEvents = Store.Instance.Events;
-			ToDoTableViewSource data = new ToDoTableViewSource(trackEvents);
-			data.parent =this;
+            //TODO make toDoList find the events needed to get surveys for
+			var toDoList = Store.Instance.Events;
+			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
+			data.parent = this;
           
             ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
