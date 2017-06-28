@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
@@ -43,9 +43,9 @@ namespace HBS.ITAG
 		public Day3ScheduleController day3ScheduleController { get; set; }
 		public Day4ScheduleController day4ScheduleController { get; set; }
         public MyEventsViewController myEventsController { get; set; }
-
 		public AppFeaturesViewController aboutViewController { get; set; }
         public EventDetailController eventDetailViewController { get; set; }
+        public EventSurveyController eventSurveyController { get; set; }
 
 		public string DataObject
 		{
@@ -153,11 +153,9 @@ namespace HBS.ITAG
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
 				this.PresentViewController(temp, true, null);
             }
-          
         }
 
         bool initialized = false;
-		
 
 		private void LoadTracksComplete(string message)
 		{
@@ -227,10 +225,7 @@ namespace HBS.ITAG
                         OnRegionEnter(tempEvent);
                     }
                 }
-             };
-            
-		
-           });
+             };          });
         }
 
         private void OnSessionAddComplete(string message)
@@ -316,21 +311,19 @@ namespace HBS.ITAG
                         {
                             //refresh page if already on detail view controller
                             eventDetailViewController.RefreshPage();
-						}
+                        }
                         else
                         {
                             if (this.PresentedViewController != null)
                             {
-								
-								this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
-							}
+
+                                this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
+                            }
                             else
                             {
-   						      this.PresentViewController(eventDetailViewController, true, null);
+                                this.PresentViewController(eventDetailViewController, true, null);
                             }
-                           
-						}
-
+                        }
                     });
                     okAlertController.AddAction(action);
                     // Present Alert
@@ -347,12 +340,6 @@ namespace HBS.ITAG
                 tempEvent.LastEntryNotified = DateTime.Now;
 				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
             }
-          
 		}
-
     }
-
-
-
 }
-
