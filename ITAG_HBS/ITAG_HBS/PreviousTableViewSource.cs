@@ -4,7 +4,6 @@ using Foundation;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
 
-
 namespace HBS.ITAG
 {
     public class PreviousTableViewSource : UITableViewSource
@@ -16,7 +15,6 @@ namespace HBS.ITAG
 
         public PreviousTableViewSource(List<Event> previousitems)
         {
-
 			List<Event> FilteredItems = new List<Event>();
 			for (int i = 0; i < previousitems.Count; i++)
 			{
@@ -29,9 +27,17 @@ namespace HBS.ITAG
             TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
         }
+
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-			return TableItems.Count;
+            if (TableItems.Count==0)
+            {
+                return 1;
+            }
+            else
+            {
+                return TableItems.Count;
+            }
 		}
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
@@ -50,39 +56,46 @@ namespace HBS.ITAG
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
 		{
 			UITableViewCell cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
-		    Event item = TableItems[indexPath.Row];
-			cell.TextLabel.Text = item.Name;
-			cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
-			//---- if there are no cells to reuse, create a new one
 			if (cell == null)
 			{
 				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			}
-			if (!item.ScheduleOnly)
-			{
-				cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-				cell.TextLabel.TextColor = UIColor.White;
-                cell.DetailTextLabel.TextColor = UIColor.White;
 
-			}
-			else if (item.ScheduleOnly)
-			{
-                //cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
-                //cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
-                //cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+            if (TableItems.Count == 0)
+            {
+                cell.TextLabel.Text = "You do not have any previous events";
+                cell.TextLabel.AdjustsFontSizeToFitWidth = true;
+                cell.Selected = false;
+            }
+            else
+            {
+				Event item = TableItems[indexPath.Row];
+				cell.TextLabel.Text = item.Name;
+				cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
+				//---- if there are no cells to reuse, create a new one
 
-			}
-			else
-			{
-				cell.BackgroundColor = UIColor.White;
-				cell.TextLabel.TextColor = UIColor.Black;
-				cell.DetailTextLabel.TextColor = UIColor.Black;
-			}
+				if (!item.ScheduleOnly)
+				{
+					cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+					cell.TextLabel.TextColor = UIColor.White;
+					cell.DetailTextLabel.TextColor = UIColor.White;
 
-			
+				}
+				else if (item.ScheduleOnly)
+				{
+					//cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
+					//cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
+					//cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
 
+				}
+				else
+				{
+					cell.BackgroundColor = UIColor.White;
+					cell.TextLabel.TextColor = UIColor.Black;
+					cell.DetailTextLabel.TextColor = UIColor.Black;
+				}
+            }
 			return cell;
 		}
     }
-
 }
