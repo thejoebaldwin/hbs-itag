@@ -138,10 +138,10 @@ namespace HBS.ITAG
         public void ReloadData()
         {
 			var trackEvents = Store.Instance.Events;
-			ToDoTableViewSource data = new ToDoTableViewSource(trackEvents);
-			data.parent =this;
+			//ToDoTableViewSource data = new ToDoTableViewSource(trackEvents);
+			//data.parent =this;
           
-            ToDoTableView.Source = data;
+           // ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
         }
 
