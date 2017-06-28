@@ -83,7 +83,8 @@ namespace HBS.ITAG
             }
             if (TableItems.Count == 0)
             {
-				cell.TextLabel.Text = "You do not have any favorites";
+				cell.TextLabel.Text = "You do not have any surveys to complete";
+                cell.TextLabel.AdjustsFontSizeToFitWidth = true;
                 cell.DetailTextLabel.Text = "Click Schedule to find events!";
                 cell.Selected = false;
             }
