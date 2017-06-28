@@ -20,6 +20,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UISlider QuestionOneRating { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitButton { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -27,6 +31,11 @@ namespace HBS.ITAG
             if (EventName != null) {
                 EventName.Dispose ();
                 EventName = null;
+            }
+
+            if (QuestionOneRating != null) {
+                QuestionOneRating.Dispose ();
+                QuestionOneRating = null;
             }
 
             if (SubmitButton != null) {

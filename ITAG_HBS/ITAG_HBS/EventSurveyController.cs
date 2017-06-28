@@ -13,6 +13,7 @@ namespace HBS.ITAG
     {
         public HomeViewController parent { get; set; }
         public EventSurvey survey = new EventSurvey();
+        public event EventHandler firstAnswerChanged;
 
         public EventSurveyController (IntPtr handle) : base (handle)
         {
@@ -21,7 +22,6 @@ namespace HBS.ITAG
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
         }
 
 		public override void ViewDidAppear(bool animated)

@@ -1516,14 +1516,14 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="19702" text="Question Number One:">
-                                <rect key="frame" x="10" y="141" width="238" height="46"/>
+                                <rect key="frame" x="10" y="141" width="349" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="5" id="19709">
-                                <rect key="frame" x="28" y="214" width="310" height="31"/>
+                                <rect key="frame" x="34" y="183" width="310" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                         </subviews>
@@ -1532,6 +1532,7 @@
                     <connections>
                         <outlet property="EventName" destination="19663" id="19662"/>
                         <outlet property="SubmitButton" destination="19689" id="name-outlet-19689"/>
+                        <outlet property="QuestionOneRating" destination="19709" id="name-outlet-19709"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
