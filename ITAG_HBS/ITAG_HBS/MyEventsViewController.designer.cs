@@ -11,7 +11,7 @@ using System.CodeDom.Compiler;
 namespace HBS.ITAG
 {
     [Register ("DataViewController")]
-    partial class DataViewController
+    partial class MyEventsViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

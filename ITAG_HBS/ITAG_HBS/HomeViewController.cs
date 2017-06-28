@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
@@ -10,7 +10,7 @@ using CoreLocation;
 
 namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
-    public partial class FavoritesViewController : UIViewController
+    public partial class HomeViewController : UIViewController
     {
         partial void NotifySwitchClicked(UISwitch sender)
         {
@@ -42,17 +42,17 @@ namespace HBS.ITAG
 		public Day2ScheduleController day2ScheduleController { get; set; }
 		public Day3ScheduleController day3ScheduleController { get; set; }
 		public Day4ScheduleController day4ScheduleController { get; set; }
-        public DataViewController myEventsController { get; set; }
-
-		public AboutViewController aboutViewController { get; set; }
+        public MyEventsViewController myEventsController { get; set; }
+		public AppFeaturesViewController aboutViewController { get; set; }
         public EventDetailController eventDetailViewController { get; set; }
+        public EventSurveyController eventSurveyController { get; set; }
 
 		public string DataObject
 		{
 			get; set;
 		}
 
-        public FavoritesViewController(IntPtr handle) : base(handle)
+        public HomeViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -86,7 +86,6 @@ namespace HBS.ITAG
 			this.PresentViewController(day4ScheduleController, false, null);
 		}
 
-
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -104,13 +103,14 @@ namespace HBS.ITAG
             day3ScheduleController.parent = this;
 			day4ScheduleController = (Day4ScheduleController)this.Storyboard.InstantiateViewController("Day4ScheduleController");
             day4ScheduleController.parent = this;
-			myEventsController = (DataViewController)this.Storyboard.InstantiateViewController("DataViewController");
+			myEventsController = (MyEventsViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
 			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
             eventDetailViewController.parent = this;
+            eventSurveyController = (EventSurveyController)this.Storyboard.InstantiateViewController("EventSurveyController");
+            eventSurveyController.parent = this;
 
-            aboutViewController = (AboutViewController)this.Storyboard.InstantiateViewController("AboutViewController");
-
+            aboutViewController = (AppFeaturesViewController)this.Storyboard.InstantiateViewController("AboutViewController");
 
 			HotelName.UserInteractionEnabled = true;
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
@@ -128,20 +128,18 @@ namespace HBS.ITAG
 				beaconManager = new BeaconManager();
 				beaconManager.RequestAlwaysAuthorization();
 			}
-		
-			
-
 			//TODO: TURN ON LOADING INDICATOR
 			Store.Instance.GetTracks(LoadTracksComplete);
 		}
 
         public void ReloadData()
         {
-			var trackEvents = Store.Instance.Events;
-			//ToDoTableViewSource data = new ToDoTableViewSource(trackEvents);
-			//data.parent =this;
+            //TODO make toDoList find the events needed to get surveys for
+			var toDoList = Store.Instance.Events;
+			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
+			data.parent = this;
           
-           // ToDoTableView.Source = data;
+            ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
         }
 
@@ -153,11 +151,9 @@ namespace HBS.ITAG
 				PickerViewController temp = (PickerViewController)this.Storyboard.InstantiateViewController("pickerview");
 				this.PresentViewController(temp, true, null);
             }
-          
         }
 
         bool initialized = false;
-		
 
 		private void LoadTracksComplete(string message)
 		{
@@ -227,10 +223,7 @@ namespace HBS.ITAG
                         OnRegionEnter(tempEvent);
                     }
                 }
-             };
-            
-		
-           });
+             };          });
         }
 
         private void OnSessionAddComplete(string message)
@@ -316,21 +309,19 @@ namespace HBS.ITAG
                         {
                             //refresh page if already on detail view controller
                             eventDetailViewController.RefreshPage();
-						}
+                        }
                         else
                         {
                             if (this.PresentedViewController != null)
                             {
-								
-								this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
-							}
+
+                                this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
+                            }
                             else
                             {
-   						      this.PresentViewController(eventDetailViewController, true, null);
+                                this.PresentViewController(eventDetailViewController, true, null);
                             }
-                           
-						}
-
+                        }
                     });
                     okAlertController.AddAction(action);
                     // Present Alert
@@ -347,12 +338,6 @@ namespace HBS.ITAG
                 tempEvent.LastEntryNotified = DateTime.Now;
 				Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
             }
-          
 		}
-
     }
-
-
-
 }
-

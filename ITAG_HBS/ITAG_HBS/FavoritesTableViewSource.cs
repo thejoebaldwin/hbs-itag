@@ -51,14 +51,14 @@ namespace HBS.ITAG
                 {
                     //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
                     EventDetailController tempEventDetail = null;
-                    if (parent.GetType() == typeof(FavoritesViewController))
+                    if (parent.GetType() == typeof(HomeViewController))
                     {
-                        FavoritesViewController temp = (FavoritesViewController)parent;
+                        HomeViewController temp = (HomeViewController)parent;
                         tempEventDetail = temp.eventDetailViewController;
                     }
-                    else if (parent.GetType() == typeof(DataViewController))
+                    else if (parent.GetType() == typeof(MyEventsViewController))
                     {
-                        DataViewController temp = (DataViewController)parent;
+                        MyEventsViewController temp = (MyEventsViewController)parent;
                         tempEventDetail = temp.parent.eventDetailViewController;
                     }
                     parent.PresentViewController(tempEventDetail, true, null);

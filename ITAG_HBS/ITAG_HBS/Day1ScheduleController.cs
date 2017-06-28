@@ -70,7 +70,7 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
         //pick track here
         int currentTrack = 0;         List<Track> tracks = new List<Track>();
 
-        public FavoritesViewController parent { get; set; }          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }           private void ReloadData()         {
+        public HomeViewController parent { get; set; }          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }           private void ReloadData()         {
           
 			//get tracks for day 1
 			tracks = new List<Track>();
