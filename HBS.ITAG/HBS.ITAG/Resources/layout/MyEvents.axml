@@ -27,14 +27,24 @@
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_margin="10dp" />
+        <ImageView
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:id="@+id/MEnoFavoritesImage"
+             android:src="@drawable/noFavoriteImage"
+             android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+             android:layout_marginTop="40dp"/>
         <TextView
-            android:text="No Favorited Events Available"
+            android:text="                 No Favorites Selected\n\nFavorites selectable via Schedule Page"
+            android:textSize="10dp"
             android:textColor="#0e1d52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/MEtextViewNoFavorites"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="75dp" />
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"/>
     </LinearLayout>
     <TextView
         android:text="Previous Events"
@@ -59,14 +69,24 @@
             android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_margin="10dp" />
+        <ImageView
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:id="@+id/MEnoPreviousImage"
+             android:src="@drawable/noPreviousImage"
+             android:scaleType="fitCenter"
+            android:layout_gravity="center_horizontal"
+             android:layout_marginTop="40dp"/>
         <TextView
-            android:text="No Previous Events Available"
+            android:text="           No Previous Events Available\n\nEvents Attended Will Be Displayed Here"
             android:textColor="#0e1d52"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/MEtextViewNoPrevious"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="75dp"/>
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="10dp"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"

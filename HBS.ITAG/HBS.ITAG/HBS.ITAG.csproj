@@ -279,7 +279,10 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\EmptyFolder.png" />
+    <AndroidResource Include="Resources\drawable\noFavoriteImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\noPreviousImage.png" />
   </ItemGroup>
   <Import Project="..\HBS.ITAG.Model\HBS.ITAG.Store.projitems" Label="Shared" Condition="Exists('..\HBS.ITAG.Model\HBS.ITAG.Store.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
