@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
@@ -137,11 +137,14 @@ namespace HBS.ITAG
             //TODO make toDoList find the events needed to get surveys for
 			var toDoList = Store.Instance.Events;
 			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
+            HotEventTableViewSource HotEventData = new HotEventTableViewSource(toDoList);
 			data.parent = this;
-          
+            HotEventData.parent = this;
+
             ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
-        }
+            HotEventTableView.Source = HotEventData;
+            HotEventTableView.ReloadData();        }
 
         public override void ViewDidAppear(bool animated)
         {

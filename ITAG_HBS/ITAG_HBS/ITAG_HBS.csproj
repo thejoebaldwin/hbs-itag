@@ -216,6 +216,7 @@
     </Compile>
     <Compile Include="EventSurvey.cs" />
     <Compile Include="ToDoTableViewSource.cs" />
+    <Compile Include="HotEventTableViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\house.png" />
