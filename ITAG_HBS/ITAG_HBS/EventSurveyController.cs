@@ -112,6 +112,7 @@ namespace HBS.ITAG
             survey.usefulness = 0;
             survey.overall = 0;
             survey.otherComments = "";
+            //TODO Save Survey to Back End
             //Store.Instance.AddSurvey(survey);
 			this.DismissViewController(true, null);
 		}

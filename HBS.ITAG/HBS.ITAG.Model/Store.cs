@@ -14,10 +14,6 @@ using Foundation;
 using UIKit;
 #endif
 
-
-
-
-
 namespace HBS.ITAG.Model
 {
 	public class Utilities
@@ -222,7 +218,6 @@ namespace HBS.ITAG.Model
 
         public Event SelectedEvent { get; set; }
 
-
 		private Store() { }
 		private static Store instance;
 
@@ -238,12 +233,20 @@ namespace HBS.ITAG.Model
 					instance = new Store("https://hbs-itag-test.azurewebsites.net");
 					//instance = new Store("https://hbs-itag.azurewebsites.net");
 					instance.Init();
-
-
 				}
 				return instance;
 			}
 		}
+
+        public void AddPerson(Event eventAddingPeople)
+        {
+            eventAddingPeople.NumberOfPeople++;
+        }
+
+        public void RemovePerson(Event eventRemovingPeople)
+        {
+            eventRemovingPeople.NumberOfPeople--;
+        }
 
 		public void Init()
 		{
@@ -315,8 +318,6 @@ namespace HBS.ITAG.Model
 
 #endif
 		}
-
-
 
 		public void DeleteFavorite(Event favoriteEvent)
 		{

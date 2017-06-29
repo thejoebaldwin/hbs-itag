@@ -43,7 +43,7 @@ namespace HBS.ITAG
 			tableView.DeselectRow(indexPath, true);
             if (hotEvent != null)
 			{
-				Event tempEvent = TableItems[indexPath.Row];
+				Event tempEvent = hotEvent;
 				Store.Instance.SelectedEvent = tempEvent;
 				if (!Store.Instance.SelectedEvent.ScheduleOnly)
 				{

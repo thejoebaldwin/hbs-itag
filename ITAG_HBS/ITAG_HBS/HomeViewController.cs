@@ -7,11 +7,14 @@ using Estimote;
 using HBS.ITAG;
 
 using CoreLocation;
+using System.Collections.Generic;
 
 namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
     public partial class HomeViewController : UIViewController
     {
+        //TODO MAKE TO DO LIST POPULATE LIKE FAVORITES!
+        List<Event> toDoList = new List<Event>();
         partial void NotifySwitchClicked(UISwitch sender)
         {
             Store.Instance.Notify = NotifySwitch.On;
@@ -133,9 +136,9 @@ namespace HBS.ITAG
         public void ReloadData()
         {
             //TODO make toDoList find the events needed to get surveys for
-			var toDoList = Store.Instance.Events;
+			
 			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
-            HotEventTableViewSource HotEventData = new HotEventTableViewSource(toDoList);
+            HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
             HotEventData.parent = this;
 
@@ -212,7 +215,13 @@ namespace HBS.ITAG
                    Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
                    if (tempEvent != null)
                    {
-                       OnRegionExit(tempEvent);
+                        OnRegionExit(tempEvent);
+                        if(!toDoList.Contains(tempEvent))
+	                    {
+	                        toDoList.Add(tempEvent);
+	                    }
+                        Store.Instance.RemovePerson(tempEvent);
+                        ReloadData();
                    }
                }
 		   };
@@ -226,7 +235,9 @@ namespace HBS.ITAG
                     Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
                     if (tempEvent != null)
                     {
+                        Store.Instance.AddPerson(tempEvent);
                         OnRegionEnter(tempEvent);
+                        ReloadData();
                     }
                 }
              };
