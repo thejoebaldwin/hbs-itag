@@ -18,8 +18,6 @@ namespace HBS.ITAG
         public string EventWebId { get; set; }
         public Boolean ScheduleOnly { get; set; }
 
-
-
         public EventOld(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, int track ,string eventWebId, Boolean scheduleOnly)
         {
             Name = name;

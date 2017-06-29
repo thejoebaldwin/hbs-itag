@@ -339,20 +339,20 @@
                                 </connections>
                             </switch>
                             <view contentMode="scaleToFill" id="19640" key="tableHeaderView">
-                                <rect key="frame" x="22" y="161" width="330" height="65"/>
+                                <rect key="frame" x="22" y="161" width="330" height="55"/>
                                 <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="0.090196078431372548" green="0.023529411764705882" blue="0.42352941176470588" alpha="1"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="19722">
-                                        <rect key="frame" x="6" y="8" width="317" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="19722" scrollEnabled="NO">
+                                        <rect key="frame" x="6" y="8" width="317" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="19723">
-                                                <rect key="frame" x="0.0" y="28" width="317" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="317" height="40"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="19723" id="19724">
-                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="317" height="40"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
@@ -1564,7 +1564,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="19702" text="Question Number One:" editable="NO" selectable="NO" scrollEnabled="NO">
                                 <rect key="frame" x="10" y="100" width="349" height="32"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                               <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -1629,6 +1629,7 @@
                         <outlet property="QuestionThreeRating" destination="19759" id="name-outlet-19759"/>
                         <outlet property="QuestionFourRating" destination="19762" id="name-outlet-19762"/>
                         <outlet property="OtherComments" destination="19777" id="name-outlet-19777"/>
+                        <outlet property="Q1Numbers" destination="19748" id="name-outlet-19748"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

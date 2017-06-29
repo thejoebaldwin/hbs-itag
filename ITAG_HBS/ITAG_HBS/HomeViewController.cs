@@ -24,7 +24,6 @@ namespace HBS.ITAG
 
         partial void EventsButtonClick(UIButton sender)
         {
-            //This will now be changed to survey page
             NavigateToMyEvents();
         }
 
@@ -32,7 +31,6 @@ namespace HBS.ITAG
         {
             NavigateToSchedule();
         }
-
 
         BeaconManager beaconManager;
 
@@ -144,7 +142,12 @@ namespace HBS.ITAG
             ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
             HotEventTableView.Source = HotEventData;
-            HotEventTableView.ReloadData();        }
+            HotEventTableView.ReloadData();
+
+            //TODO figure out how to make badgeIcon number the number of surveys to complete
+            //var badgeIcons = new UILocalNotification();
+            //badgeIcons.ApplicationIconBadgeNumber = toDoList.Count;
+        }
 
         public override void ViewDidAppear(bool animated)
         {
@@ -226,7 +229,8 @@ namespace HBS.ITAG
                         OnRegionEnter(tempEvent);
                     }
                 }
-             };          });
+             };
+            });
         }
 
         private void OnSessionAddComplete(string message)
@@ -290,12 +294,12 @@ namespace HBS.ITAG
                     Store.Instance.SelectedEvent = tempEvent;
                     var notification = new UILocalNotification();
                     notification.FireDate = NSDate.FromTimeIntervalSinceNow(0);
-                    string message = string.Format("You are near an event in progress:{0}", tempEvent.Name);
+                    string message = string.Format("You are near an event in progress: {0}", tempEvent.Name);
                     // configure the alert
                     notification.AlertAction = "You are near an event!";
                     notification.AlertBody = message;
                     // modify the badge
-                    notification.ApplicationIconBadgeNumber = 1;
+                    notification.ApplicationIconBadgeNumber = 0;
                     // set the sound to be the default sound
                     notification.SoundName = UILocalNotification.DefaultSoundName;
                     // schedule it
