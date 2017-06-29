@@ -6,6 +6,7 @@ using ITAG_HBS;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
 using System.Globalization;
+using System.Drawing;
 
 namespace HBS.ITAG
 {
@@ -21,10 +22,34 @@ namespace HBS.ITAG
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            OtherComments.Started += (sender, e) =>
+            {
+                View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y - 175, View.Frame.Size.Width, View.Frame.Size.Height);
+            };
+
+			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
+			toolbar.TintColor = UIColor.White;
+			toolbar.BarStyle = UIBarStyle.Black;
+			toolbar.Translucent = true;
+            toolbar.Items = new UIBarButtonItem[]{
+                new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
+				new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
+				{
+                    View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y + 175, View.Frame.Size.Width, View.Frame.Size.Height);
+                    this.OtherComments.ResignFirstResponder();
+				})
+			 };
+			this.OtherComments.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            //OtherComments.
+            this.OtherComments.InputAccessoryView = toolbar;
             QuestionOneRating.Value = 3;
             QuestionTwoRating.Value = 3;
             QuestionThreeRating.Value = 3;
             QuestionFourRating.Value = 3;
+            OtherComments.Text = "";
+			OtherComments.Layer.BorderColor = UIColorExtension.FromHex(0x0E1D52).CGColor;
+			OtherComments.Layer.BorderWidth = 1;
         }
 
         public override void ViewDidAppear(bool animated)
@@ -35,7 +60,8 @@ namespace HBS.ITAG
             UITapGestureRecognizer SubmitSurvey = new UITapGestureRecognizer(SubmitSurveyClick);
             SubmitSurvey.NumberOfTapsRequired = 1;
             SubmitButton.AddGestureRecognizer(SubmitSurvey);
-
+			OtherComments.Layer.BorderColor = UIColorExtension.FromHex(0x0E1D52).CGColor;
+			OtherComments.Layer.BorderWidth = 1;
             QuestionOneRating.ValueChanged += HandleValueChanged;
             QuestionTwoRating.ValueChanged += HandleValueChanged;
             QuestionThreeRating.ValueChanged += HandleValueChanged;

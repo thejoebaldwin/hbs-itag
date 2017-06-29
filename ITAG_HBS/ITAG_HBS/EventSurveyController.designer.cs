@@ -20,6 +20,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView OtherComments { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider QuestionFourRating { get; set; }
 
         [Outlet]
@@ -43,6 +47,11 @@ namespace HBS.ITAG
             if (EventName != null) {
                 EventName.Dispose ();
                 EventName = null;
+            }
+
+            if (OtherComments != null) {
+                OtherComments.Dispose ();
+                OtherComments = null;
             }
 
             if (QuestionFourRating != null) {
