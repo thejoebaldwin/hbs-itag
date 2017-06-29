@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using UIKit;
 using Foundation;
 using System.Collections.Generic;
@@ -6,23 +6,23 @@ using HBS.ITAG.Model;
 
 namespace HBS.ITAG
 {
-	public class ToDoTableViewSource : UITableViewSource
+	public class HotEventTableViewSource : UITableViewSource
 	{
 		public UIViewController parent { get; set; }
 		List<Event> TableItems;
 
 		string CellIdentifier = "TableCell";
 
-		public ToDoTableViewSource(List<Event> items)
+        public HotEventTableViewSource(List<Event> items)
 		{
-            TableItems = items;
+			TableItems = items;
 			//List<Event> FilteredItems = new List<Event>();
 			//for (int i = 0; i < items.Count; i++)
 			//{
-			//	if (items[i].Favorited && items[i].EndTime > DateTime.Now)
-			//	{
-			//		FilteredItems.Add((items[i]));
-			//	}
+			//  if (items[i].Favorited && items[i].EndTime > DateTime.Now)
+			//  {
+			//      FilteredItems.Add((items[i]));
+			//  }
 			//}
 
 			//TableItems = new List<Event>(FilteredItems);
@@ -50,25 +50,25 @@ namespace HBS.ITAG
 				Store.Instance.SelectedEvent = tempEvent;
 				if (!Store.Instance.SelectedEvent.ScheduleOnly)
 				{
-                    //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+					//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
 
-                    EventSurveyController tempEventSurvey = null;
-                    if(parent.GetType() == typeof(HomeViewController))
-                    {
-                        HomeViewController temp = (HomeViewController)parent;
-                        tempEventSurvey = temp.eventSurveyController;
-                    }
-                    parent.PresentViewController(tempEventSurvey, true, null);
+					EventSurveyController tempEventSurvey = null;
+					if (parent.GetType() == typeof(HomeViewController))
+					{
+						HomeViewController temp = (HomeViewController)parent;
+						tempEventSurvey = temp.eventSurveyController;
+					}
+					parent.PresentViewController(tempEventSurvey, true, null);
 					//EventDetailController tempEventDetail = null;
 					//if (parent.GetType() == typeof(HomeViewController))
 					//{
-					//	HomeViewController temp = (HomeViewController)parent;
-					//	tempEventDetail = temp.eventDetailViewController;
+					//  HomeViewController temp = (HomeViewController)parent;
+					//  tempEventDetail = temp.eventDetailViewController;
 					//}
 					//else if (parent.GetType() == typeof(MyEventsViewController))
 					//{
-					//	MyEventsViewController temp = (MyEventsViewController)parent;
-					//	tempEventDetail = temp.parent.eventDetailViewController;
+					//  MyEventsViewController temp = (MyEventsViewController)parent;
+					//  tempEventDetail = temp.parent.eventDetailViewController;
 					//}
 					//parent.PresentViewController(tempEventDetail, true, null);
 				}
@@ -85,9 +85,9 @@ namespace HBS.ITAG
 			}
 			if (TableItems.Count == 0)
 			{
-				cell.TextLabel.Text = "You do not have any surveys to complete";
+				cell.TextLabel.Text = "There are no hot events yet";
 				cell.TextLabel.AdjustsFontSizeToFitWidth = true;
-				cell.DetailTextLabel.Text = "Click Schedule to find events!";
+				cell.DetailTextLabel.Text = "Go to the Schedule to see potentially hot events";
 				cell.Selected = false;
 			}
 			else
