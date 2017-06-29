@@ -26,6 +26,13 @@ namespace HBS.ITAG
             OtherComments.Started += (sender, e) =>
             {
                 View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y - 175, View.Frame.Size.Width, View.Frame.Size.Height);
+                Q1Numbers.Hidden = true;
+            };
+
+            OtherComments.Ended += (sender, e) =>
+            {
+                View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y + 175, View.Frame.Size.Width, View.Frame.Size.Height);
+                Q1Numbers.Hidden = false;
             };
 
 			UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
@@ -36,7 +43,6 @@ namespace HBS.ITAG
                 new UIBarButtonItem(UIBarButtonSystemItem.FlexibleSpace),
 				new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
 				{
-                    View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y + 175, View.Frame.Size.Width, View.Frame.Size.Height);
                     this.OtherComments.ResignFirstResponder();
 				})
 			 };

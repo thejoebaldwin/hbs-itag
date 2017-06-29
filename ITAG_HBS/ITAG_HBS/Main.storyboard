@@ -1562,7 +1562,7 @@
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="19702" text="Question Number One:" editable="NO" selectable="NO" scrollEnabled="NO">
-                                <rect key="frame" x="10" y="100" width="349" height="54"/>
+                                <rect key="frame" x="10" y="102" width="349" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1629,6 +1629,7 @@
                         <outlet property="QuestionThreeRating" destination="19759" id="name-outlet-19759"/>
                         <outlet property="QuestionFourRating" destination="19762" id="name-outlet-19762"/>
                         <outlet property="OtherComments" destination="19777" id="name-outlet-19777"/>
+                        <outlet property="Q1Numbers" destination="19748" id="name-outlet-19748"/>
                     </connections>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

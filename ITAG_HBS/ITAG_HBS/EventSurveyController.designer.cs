@@ -24,6 +24,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView Q1Numbers { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider QuestionFourRating { get; set; }
 
         [Outlet]
@@ -52,6 +56,11 @@ namespace HBS.ITAG
             if (OtherComments != null) {
                 OtherComments.Dispose ();
                 OtherComments = null;
+            }
+
+            if (Q1Numbers != null) {
+                Q1Numbers.Dispose ();
+                Q1Numbers = null;
             }
 
             if (QuestionFourRating != null) {
