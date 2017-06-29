@@ -9,68 +9,51 @@ namespace HBS.ITAG
 	public class HotEventTableViewSource : UITableViewSource
 	{
 		public UIViewController parent { get; set; }
-		List<Event> TableItems;
+        List<Event> TableItems;
+        Event hotEvent;
 
 		string CellIdentifier = "TableCell";
 
         public HotEventTableViewSource(List<Event> items)
 		{
 			TableItems = items;
-			//List<Event> FilteredItems = new List<Event>();
-			//for (int i = 0; i < items.Count; i++)
-			//{
-			//  if (items[i].Favorited && items[i].EndTime > DateTime.Now)
-			//  {
-			//      FilteredItems.Add((items[i]));
-			//  }
-			//}
-
-			//TableItems = new List<Event>(FilteredItems);
-			//TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
+            foreach(var item in TableItems)
+            {
+                if(item.NumberOfPeople != 0)
+                {
+                    if(hotEvent == null)
+                    {
+                        hotEvent = item;
+                    }
+                    else if(item.NumberOfPeople > hotEvent.NumberOfPeople)
+                    {
+                        hotEvent = item;
+                    }
+                }
+            }
 		}
 
 		public override nint RowsInSection(UITableView tableview, nint section)
 		{
-			if (TableItems.Count == 0)
-			{
-				return 1;
-			}
-			else
-			{
-				return TableItems.Count;
-			}
+            return 1;
 		}
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
 			tableView.DeselectRow(indexPath, true);
-			if (TableItems.Count != 0)
+            if (hotEvent != null)
 			{
 				Event tempEvent = TableItems[indexPath.Row];
 				Store.Instance.SelectedEvent = tempEvent;
 				if (!Store.Instance.SelectedEvent.ScheduleOnly)
 				{
-					//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-
-					EventSurveyController tempEventSurvey = null;
+					EventDetailController tempEventDetails = null;
 					if (parent.GetType() == typeof(HomeViewController))
 					{
 						HomeViewController temp = (HomeViewController)parent;
-						tempEventSurvey = temp.eventSurveyController;
+                        tempEventDetails = temp.eventDetailViewController;
 					}
-					parent.PresentViewController(tempEventSurvey, true, null);
-					//EventDetailController tempEventDetail = null;
-					//if (parent.GetType() == typeof(HomeViewController))
-					//{
-					//  HomeViewController temp = (HomeViewController)parent;
-					//  tempEventDetail = temp.eventDetailViewController;
-					//}
-					//else if (parent.GetType() == typeof(MyEventsViewController))
-					//{
-					//  MyEventsViewController temp = (MyEventsViewController)parent;
-					//  tempEventDetail = temp.parent.eventDetailViewController;
-					//}
-					//parent.PresentViewController(tempEventDetail, true, null);
+					parent.PresentViewController(tempEventDetails, true, null);
 				}
 			}
 		}
@@ -83,38 +66,31 @@ namespace HBS.ITAG
 			{
 				cell = new UITableViewCell(UITableViewCellStyle.Subtitle, CellIdentifier);
 			}
-			if (TableItems.Count == 0)
+			if (hotEvent == null)
 			{
-				cell.TextLabel.Text = "There are no hot events yet";
+				cell.TextLabel.Text = "Nobody is attending any of the events yet";
 				cell.TextLabel.AdjustsFontSizeToFitWidth = true;
-				cell.DetailTextLabel.Text = "Go to the Schedule to see potentially hot events";
+				cell.DetailTextLabel.Text = "";
 				cell.Selected = false;
+                cell.BackgroundColor = UIColorExtension.FromHex(0x99a1ac);
 			}
 			else
 			{
-
-				Event item = TableItems[indexPath.Row];
+				Event item = hotEvent;
 				cell.TextLabel.Text = item.Name;
-				cell.DetailTextLabel.Text = item.StartTime.ToLocalTime().ToShortTimeString() + " - " + item.EndTime.ToLocalTime().ToShortTimeString();
+                cell.DetailTextLabel.Text = item.NumberOfPeople.ToString() + " Attending";
 				if (!item.ScheduleOnly)
 				{
 					cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 					cell.TextLabel.TextColor = UIColor.White;
 					cell.DetailTextLabel.TextColor = UIColor.White;
 				}
-				else//(item.EndTime < DateTime.Now)
+				else
 				{
 					cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 					cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 					cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 				}
-				/*else
-                {
-                    cell.BackgroundColor = UIColor.White;
-                    cell.TextLabel.TextColor = UIColor.Black;
-                    cell.DetailTextLabel.TextColor = UIColor.Black;
-                    cell.DetailTextLabel.Text = "Upcoming";
-                }*/
 			}
 			return cell;
 		}
