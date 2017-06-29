@@ -74,6 +74,13 @@ namespace HBS.ITAG
 
 		public void SubmitSurveyClick()
 		{
+            survey.knowledgeable = 0;
+            survey.preparedness = 0;
+            survey.understandability = 0;
+            survey.usefulness = 0;
+            survey.overall = 0;
+            survey.otherComments = "";
+            //Store.Instance.AddSurvey(survey);
 			this.DismissViewController(true, null);
 		}
     }
