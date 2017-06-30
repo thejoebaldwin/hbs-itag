@@ -42,15 +42,18 @@ namespace HBS.ITAG
 
 		public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
 		{
-			tableView.DeselectRow(indexPath, true);
-			Event tempEvent = TableItems[indexPath.Row];
-			Store.Instance.SelectedEvent = tempEvent;
-			if (!Store.Instance.SelectedEvent.ScheduleOnly)
-			{
-				//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-                MyEventsViewController temp = (MyEventsViewController)parent;
-                parent.PresentViewController(temp.parent.eventDetailViewController, true, null);
-			}
+            tableView.DeselectRow(indexPath, true);
+            if(TableItems.Count != 0)
+            {
+				Event tempEvent = TableItems[indexPath.Row];
+				Store.Instance.SelectedEvent = tempEvent;
+				if (!Store.Instance.SelectedEvent.ScheduleOnly)
+				{
+					//EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
+					MyEventsViewController temp = (MyEventsViewController)parent;
+					parent.PresentViewController(temp.parent.eventDetailViewController, true, null);
+				}
+            }
 		}
 
 		public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)

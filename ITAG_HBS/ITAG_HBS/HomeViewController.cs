@@ -14,7 +14,6 @@ namespace HBS.ITAG
     public partial class HomeViewController : UIViewController
     {
         //TODO MAKE TO DO LIST POPULATE LIKE FAVORITES!
-        List<Event> toDoList = new List<Event>();
         partial void NotifySwitchClicked(UISwitch sender)
         {
             Store.Instance.Notify = NotifySwitch.On;
@@ -90,6 +89,7 @@ namespace HBS.ITAG
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            Store.Instance.ToDoList = new List<Event>();
 
             NotifySwitch.On = Store.Instance.Notify;
 
@@ -98,12 +98,12 @@ namespace HBS.ITAG
 
 			day1ScheduleController = (Day1ScheduleController)this.Storyboard.InstantiateViewController("Day1ScheduleController");
             day1ScheduleController.parent = this;
-			day2ScheduleController = (Day2ScheduleController)this.Storyboard.InstantiateViewController("Day2ScheduleController");
-            day2ScheduleController.parent = this;
-			day3ScheduleController = (Day3ScheduleController)this.Storyboard.InstantiateViewController("Day3ScheduleController");
-            day3ScheduleController.parent = this;
-			day4ScheduleController = (Day4ScheduleController)this.Storyboard.InstantiateViewController("Day4ScheduleController");
-            day4ScheduleController.parent = this;
+			//day2ScheduleController = (Day2ScheduleController)this.Storyboard.InstantiateViewController("Day2ScheduleController");
+            //day2ScheduleController.parent = this;
+			//day3ScheduleController = (Day3ScheduleController)this.Storyboard.InstantiateViewController("Day3ScheduleController");
+            //day3ScheduleController.parent = this;
+			//day4ScheduleController = (Day4ScheduleController)this.Storyboard.InstantiateViewController("Day4ScheduleController");
+            //day4ScheduleController.parent = this;
 			myEventsController = (MyEventsViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
 			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");
@@ -137,7 +137,7 @@ namespace HBS.ITAG
         {
             //TODO make toDoList find the events needed to get surveys for
 			
-			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
+			ToDoTableViewSource data = new ToDoTableViewSource(Store.Instance.ToDoList);
             HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
             HotEventData.parent = this;
@@ -216,9 +216,9 @@ namespace HBS.ITAG
                    if (tempEvent != null)
                    {
                         OnRegionExit(tempEvent);
-                        if(!toDoList.Contains(tempEvent))
+                        if(!Store.Instance.ToDoList.Contains(tempEvent))
 	                    {
-	                        toDoList.Add(tempEvent);
+	                        Store.Instance.ToDoList.Add(tempEvent);
 	                    }
                         Store.Instance.RemovePerson(tempEvent);
                         ReloadData();

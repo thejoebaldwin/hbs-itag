@@ -217,6 +217,7 @@ namespace HBS.ITAG.Model
         private string _notify = "true";
 
         public Event SelectedEvent { get; set; }
+        public List<Event> ToDoList { get; set; }
 
 		private Store() { }
 		private static Store instance;
@@ -452,7 +453,7 @@ namespace HBS.ITAG.Model
 			string endTime = newEvent.EndTime.ToString();
 
 			string json = "{\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
-			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";
+			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";//,"number_of_people": "<number_of_people>"
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<schedule_only>", newEvent.ScheduleOnly.ToString().ToLower());
@@ -465,6 +466,7 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<summary>", newEvent.Summary);
 			json = json.Replace("<presenter>", newEvent.Presenter);
 			json = json.Replace("<event_web_id>", newEvent.EventWebId);
+            //json = json.Replace("<number_of_people>", newEvent.NumberOfPeople.ToString());
 
 			_Completion = completion;
 			PostDataWithOperation("events", json, "POST");
@@ -543,7 +545,7 @@ namespace HBS.ITAG.Model
 			string endTime = updatedEvent.EndTime.ToString();
 
 			string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
-			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";
+			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";//,"number_of_people": "<number_of_people>"
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<event_id>", updatedEvent.Id);
@@ -557,6 +559,7 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<summary>", updatedEvent.Summary);
 			json = json.Replace("<presenter>", updatedEvent.Presenter);
 			json = json.Replace("<event_web_id>", updatedEvent.EventWebId);
+            //json = json.Replace("<number_of_people>", updatedEvent.NumberOfPeople.ToString());
 
 
 			_Completion = completion;
@@ -773,7 +776,6 @@ namespace HBS.ITAG.Model
 							break;
 						}
 				}
-
 			}
 			catch (Exception ex)
 			{

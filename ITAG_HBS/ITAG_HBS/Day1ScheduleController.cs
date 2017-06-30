@@ -3,7 +3,7 @@ using HBS.ITAG.Model; 
 namespace HBS.ITAG {     public partial class Day1ScheduleController : UIViewController     {
         partial void June20ButtonClick(UIButton sender)
         {
-            June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June20Button.TitleLabel.TextColor = UIColor.White;  			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+            June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June20Button.TitleLabel.TextColor = UIColor.White; 			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
             June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
             June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
             June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
@@ -26,7 +26,6 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
 			June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-
 			June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June23Button.SetTitleColor(UIColor.White, UIControlState.Normal);
   
