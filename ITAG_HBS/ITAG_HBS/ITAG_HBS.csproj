@@ -175,26 +175,14 @@
       <DependentUpon>HomeViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="UIColorExtension.cs" />
-    <Compile Include="Day1ScheduleController.cs" />
-    <Compile Include="Day1ScheduleController.designer.cs">
-      <DependentUpon>Day1ScheduleController.cs</DependentUpon>
+    <Compile Include="ScheduleController.cs" />
+    <Compile Include="ScheduleController.designer.cs">
+      <DependentUpon>ScheduleController.cs</DependentUpon>
     </Compile>
     <Compile Include="FavoritesTableViewSource.cs" />
     <Compile Include="PickerViewController.cs" />
     <Compile Include="PickerViewController.designer.cs">
       <DependentUpon>PickerViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Day2ScheduleController.cs" />
-    <Compile Include="Day2ScheduleController.designer.cs">
-      <DependentUpon>Day2ScheduleController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Day3ScheduleController.cs" />
-    <Compile Include="Day3ScheduleController.designer.cs">
-      <DependentUpon>Day3ScheduleController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Day4ScheduleController.cs" />
-    <Compile Include="Day4ScheduleController.designer.cs">
-      <DependentUpon>Day4ScheduleController.cs</DependentUpon>
     </Compile>
     <Compile Include="PreviousTableViewSource.cs" />
     <Compile Include="EventDetailController.cs" />
