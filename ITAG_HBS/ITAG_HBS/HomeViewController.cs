@@ -38,10 +38,7 @@ namespace HBS.ITAG
 
 		const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-		public Day1ScheduleController day1ScheduleController { get; set; }
-		public Day2ScheduleController day2ScheduleController { get; set; }
-		public Day3ScheduleController day3ScheduleController { get; set; }
-		public Day4ScheduleController day4ScheduleController { get; set; }
+		public ScheduleController ScheduleController { get; set; }
         public MyEventsViewController myEventsController { get; set; }
 		public AppFeaturesViewController aboutViewController { get; set; }
         public EventDetailController eventDetailViewController { get; set; }
@@ -58,33 +55,13 @@ namespace HBS.ITAG
 
         public void NavigateToSchedule()
         {
-			this.PresentViewController(day1ScheduleController, false, null);
+			this.PresentViewController(ScheduleController, false, null);
         }
 
         public void NavigateToMyEvents()
         {
 			this.PresentViewController(myEventsController, false, null);
         }
-
-        public void NavigationScheduleJune20()
-        {
-			this.PresentViewController(day1ScheduleController, false, null);
-        }
-
-		public void NavigationScheduleJune21()
-		{
-			this.PresentViewController(day2ScheduleController, false, null);
-		}
-
-		public void NavigationScheduleJune22()
-		{
-			this.PresentViewController(day3ScheduleController, false, null);
-		}
-
-		public void NavigationScheduleJune23()
-		{
-			this.PresentViewController(day4ScheduleController, false, null);
-		}
 
         public override void ViewDidLoad()
         {
@@ -96,14 +73,8 @@ namespace HBS.ITAG
 			var settings = UIUserNotificationSettings.GetSettingsForTypes(UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound, null);
 			UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 
-			day1ScheduleController = (Day1ScheduleController)this.Storyboard.InstantiateViewController("Day1ScheduleController");
-            day1ScheduleController.parent = this;
-			//day2ScheduleController = (Day2ScheduleController)this.Storyboard.InstantiateViewController("Day2ScheduleController");
-            //day2ScheduleController.parent = this;
-			//day3ScheduleController = (Day3ScheduleController)this.Storyboard.InstantiateViewController("Day3ScheduleController");
-            //day3ScheduleController.parent = this;
-			//day4ScheduleController = (Day4ScheduleController)this.Storyboard.InstantiateViewController("Day4ScheduleController");
-            //day4ScheduleController.parent = this;
+			ScheduleController = (ScheduleController)this.Storyboard.InstantiateViewController("ScheduleController");
+            ScheduleController.parent = this;
 			myEventsController = (MyEventsViewController)this.Storyboard.InstantiateViewController("DataViewController");
             myEventsController.parent = this;
 			eventDetailViewController = (EventDetailController)this.Storyboard.InstantiateViewController("EventDetailController");

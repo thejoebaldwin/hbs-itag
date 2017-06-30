@@ -1,6 +1,6 @@
 using Foundation; using System; using UIKit; using ITAG_HBS; using HBS.ITAG; using System.Collections.Generic;
 using HBS.ITAG.Model; 
-namespace HBS.ITAG {     public partial class Day1ScheduleController : UIViewController     {
+namespace HBS.ITAG {     public partial class ScheduleController : UIViewController     {
         partial void June20ButtonClick(UIButton sender)
         {
             June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June20Button.TitleLabel.TextColor = UIColor.White; 			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
@@ -12,14 +12,12 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
 			ReloadData();
         }          private DateTime CurrentTrackDate;
         partial void PreviousTrackButtonClick(UIButton sender)
-        {
-                         rightSwipeDetected();
+        {             rightSwipeDetected();
         }          partial void NextTrackButtonClick(UIButton sender)
         {
             leftSwipeDetected();
         }          partial void June23ButtonClick(UIButton sender)
         {
-			//this.DismissViewController(false, new Action(parent.NavigationScheduleJune23));
 			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
@@ -27,10 +25,7 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
 			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-			June23Button.SetTitleColor(UIColor.White, UIControlState.Normal);
-  
-			//cell.BackgroundColor = 
-			//cell.TextLabel.TextColor = UIColor.White; 
+			June23Button.SetTitleColor(UIColor.White, UIControlState.Normal); 
 			currentTrack = 0;
 			CurrentTrackDate = DateTime.Parse("6/23/17");             ReloadData();
         }          partial void June22ButtonClick(UIButton sender)
@@ -38,11 +33,9 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
 			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-			June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-
+            June21Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-			June22Button.SetTitleColor(UIColor.White, UIControlState.Normal);
-			             June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
+			June22Button.SetTitleColor(UIColor.White, UIControlState.Normal);             June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52); 
 			currentTrack = 0;
 			CurrentTrackDate = DateTime.Parse("6/22/17");
@@ -50,13 +43,11 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
         }          partial void June21ButtonClick(UIButton sender)
         {
 			June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-			             June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
-              June21Button.SetTitleColor(UIColor.White, UIControlState.Normal); 
+			June20Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June21Button.SetTitleColor(UIColor.White, UIControlState.Normal);
 			June22Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			June22Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			June23Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-			June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			June23Button.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52); 
 			currentTrack = 0;
             CurrentTrackDate = DateTime.Parse("6/21/17");
 			ReloadData();
@@ -69,7 +60,7 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
         //pick track here
         int currentTrack = 0;         List<Track> tracks = new List<Track>();
 
-        public HomeViewController parent { get; set; }          public string DataObject         {             get; set;         }          public Day1ScheduleController (IntPtr handle) : base (handle)         {         }           private void ReloadData()         {
+        public HomeViewController parent { get; set; }          public string DataObject         {             get; set;         }          public ScheduleController (IntPtr handle) : base (handle)         {         }           private void ReloadData()         {
           
 			//get tracks for day 1
 			tracks = new List<Track>();
@@ -103,10 +94,10 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
             //get events for current track              List<Event> trackEvents = new List<Event>();
             if (tracks.Count == 0)
             {
-                Day1TrackName.Text = string.Empty;
+                TrackName.Text = string.Empty;
                 tracks.Add(new Track("No Tracks Today", "-1", DateTime.Today, ""));
             }             else             {
-				Day1TrackName.Text = tracks[currentTrack].Name;
+				TrackName.Text = tracks[currentTrack].Name;
 
 				trackEvents = new List<Event>();
 				foreach (var e in Store.Instance.Events)
@@ -119,9 +110,9 @@ namespace HBS.ITAG {     public partial class Day1ScheduleController : UIVie
            
 			ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);
 			data.parent = (UIViewController)this;
-			DayOne.Source = data;
-			DayOne.ReloadData();         }
-         public override void ViewDidLoad()         {             base.ViewDidLoad();             // Perform any additional setup after loading the view, typically from a nib.              UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);             RightArrow.NumberOfTapsRequired = 1;             D1RightArrow.AddGestureRecognizer(RightArrow);
+			ScheduleTable.Source = data;
+			ScheduleTable.ReloadData();         }
+         public override void ViewDidLoad()         {             base.ViewDidLoad();             // Perform any additional setup after loading the view, typically from a nib.             UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);             RightArrow.NumberOfTapsRequired = 1;             D1RightArrow.AddGestureRecognizer(RightArrow);
 
 			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);             LeftArrow.NumberOfTapsRequired = 1;
 			D1LeftArrow.AddGestureRecognizer(LeftArrow);              CurrentTrackDate = DateTime.Parse("06/20/17");

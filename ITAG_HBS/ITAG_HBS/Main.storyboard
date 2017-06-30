@@ -761,12 +761,12 @@
         <!--Title-->
         <scene sceneID="2931">
             <objects>
-                <viewController id="2932" customClass="Day1ScheduleController" sceneMemberID="viewController" storyboardIdentifier="Day1ScheduleController">
+                <viewController id="2932" customClass="ScheduleController" sceneMemberID="viewController" storyboardIdentifier="ScheduleController">
                     <view key="view" contentMode="scaleToFill" id="2956">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Day 1 Track Name" textAlignment="center" selectable="NO" id="3088">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Track Name" textAlignment="center" selectable="NO" id="3088">
                                 <rect key="frame" x="0.0" y="60" width="375" height="40"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -914,8 +914,8 @@
                     <connections>
                         <outlet property="D1LeftArrow" destination="16723" id="name-outlet-16723"/>
                         <outlet property="D1RightArrow" destination="16724" id="name-outlet-16724"/>
-                        <outlet property="Day1TrackName" destination="3088" id="name-outlet-3088"/>
-                        <outlet property="DayOne" destination="15106" id="name-outlet-15106"/>
+                        <outlet property="TrackName" destination="3088" id="name-outlet-3088"/>
+                        <outlet property="ScheduleTable" destination="15106" id="name-outlet-15106"/>
                         <outlet property="HomeButton" destination="2959" id="name-outlet-2959"/>
                         <outlet property="MyEventsButton" destination="2963" id="name-outlet-2963"/>
                         <outlet property="ScheduleButton" destination="2962" id="name-outlet-2962"/>

@@ -11,8 +11,8 @@ using UIKit;
 
 namespace HBS.ITAG
 {
-    [Register ("Day1ScheduleController")]
-    partial class Day1ScheduleController
+    [Register ("ScheduleController")]
+    partial class ScheduleController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -24,11 +24,7 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextView Day1TrackName { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView DayOne { get; set; }
+        UIKit.UITableView ScheduleTable { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -65,6 +61,10 @@ namespace HBS.ITAG
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ScheduleButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView TrackName { get; set; }
 
         [Action ("HomeButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -110,14 +110,9 @@ namespace HBS.ITAG
                 D1RightArrow = null;
             }
 
-            if (Day1TrackName != null) {
-                Day1TrackName.Dispose ();
-                Day1TrackName = null;
-            }
-
-            if (DayOne != null) {
-                DayOne.Dispose ();
-                DayOne = null;
+            if (ScheduleTable != null) {
+                ScheduleTable.Dispose ();
+                ScheduleTable = null;
             }
 
             if (HomeButton != null) {
@@ -163,6 +158,11 @@ namespace HBS.ITAG
             if (ScheduleButton != null) {
                 ScheduleButton.Dispose ();
                 ScheduleButton = null;
+            }
+
+            if (TrackName != null) {
+                TrackName.Dispose ();
+                TrackName = null;
             }
         }
     }
