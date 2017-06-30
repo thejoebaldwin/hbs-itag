@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+  <TextView
+      android:text="Survey for:    "
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveytextView1"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52"
+      android:textSize="25dp"
+      android:textStyle="bold" />
+  <View
+      android:layout_width="fill_parent"
+      android:layout_height="2dp"
+      android:background="#bf1e2d"
+      android:layout_marginTop="10dp" />
+  <TextView
+      android:text="Question Number One:"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyQuestion1"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52" />
+  <SeekBar
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/seekBar1"
+      android:max="4"
+      android:progress="2"
+      android:layout_marginTop="20dp"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp" />
+  <TextView
+      android:text="1                    2                    3                    4                   5"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textView1"
+      android:layout_gravity="center"
+      android:gravity="center_horizontal"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:textColor="#0e1d52" />
+  <TextView
+      android:text="Question Number Two:"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyQuestion2"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52" />
+  <SeekBar
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/seekBar2"
+      android:max="4"
+      android:progress="2"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:layout_marginTop="20dp" />
+  <TextView
+      android:text="1                    2                    3                    4                   5"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textView2"
+      android:layout_gravity="center"
+      android:gravity="center_horizontal"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:textColor="#0e1d52" />
+  <TextView
+      android:text="Question Number Three:"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyQuestion3"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52" />
+  <SeekBar
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/seekBar3"
+      android:max="4"
+      android:progress="2"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:layout_marginTop="20dp" />
+  <TextView
+      android:text="1                    2                    3                    4                   5"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textView3"
+      android:layout_gravity="center"
+      android:gravity="center_horizontal"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:textColor="#0e1d52" />
+  <TextView
+      android:text="Question Number Four:"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyQuestion4"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52" />
+  <SeekBar
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/seekBar4"
+      android:max="4"
+      android:progress="2"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:layout_marginTop="20dp" />
+  <TextView
+      android:text="1                    2                    3                    4                   5"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/textView4"
+      android:layout_gravity="center"
+      android:gravity="center_horizontal"
+      android:layout_marginLeft="10dp"
+      android:layout_marginRight="10dp"
+      android:textColor="#0e1d52" />
+  <TextView
+      android:text="Other Comments (Optional):"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyOtherComments"
+      android:layout_marginLeft="20dp"
+      android:layout_marginTop="15dp"
+      android:textColor="#0e1d52" />
+  <EditText
+      android:id="@+id/SurevyEdittext"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:background="@android:drawable/editbox_background"
+      android:backgroundTint="#99a1ac"
+      android:layout_gravity="center"
+      android:layout_marginTop="5dp"
+      android:width="350dp"
+      android:height="60dp" />
+  <Button
+      android:text="Done"
+      android:textColor="#ffffff"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/SurveyDoneButton"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="20dp"
+      android:layout_marginRight="20dp"
+      android:background="#0e1d52" />
+</LinearLayout>

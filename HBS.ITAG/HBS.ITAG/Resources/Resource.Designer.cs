@@ -2547,6 +2547,30 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700d1
 			public const int MEtextViewNoPrevious = 2131165393;
 			
+			// aapt resource value: 0x7f0700fd
+			public const int SurevyEdittext = 2131165437;
+			
+			// aapt resource value: 0x7f0700fe
+			public const int SurveyDoneButton = 2131165438;
+			
+			// aapt resource value: 0x7f0700fc
+			public const int SurveyOtherComments = 2131165436;
+			
+			// aapt resource value: 0x7f0700f0
+			public const int SurveyQuestion1 = 2131165424;
+			
+			// aapt resource value: 0x7f0700f3
+			public const int SurveyQuestion2 = 2131165427;
+			
+			// aapt resource value: 0x7f0700f6
+			public const int SurveyQuestion3 = 2131165430;
+			
+			// aapt resource value: 0x7f0700f9
+			public const int SurveyQuestion4 = 2131165433;
+			
+			// aapt resource value: 0x7f0700ef
+			public const int SurveytextView1 = 2131165423;
+			
 			// aapt resource value: 0x7f070073
 			public const int Title = 2131165299;
 			
@@ -3009,6 +3033,18 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070067
 			public const int search_voice_btn = 2131165287;
 			
+			// aapt resource value: 0x7f0700f1
+			public const int seekBar1 = 2131165425;
+			
+			// aapt resource value: 0x7f0700f4
+			public const int seekBar2 = 2131165428;
+			
+			// aapt resource value: 0x7f0700f7
+			public const int seekBar3 = 2131165431;
+			
+			// aapt resource value: 0x7f0700fa
+			public const int seekBar4 = 2131165434;
+			
 			// aapt resource value: 0x7f070068
 			public const int select_dialog_listview = 2131165288;
 			
@@ -3071,6 +3107,18 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
+			
+			// aapt resource value: 0x7f0700f2
+			public const int textView1 = 2131165426;
+			
+			// aapt resource value: 0x7f0700f5
+			public const int textView2 = 2131165429;
+			
+			// aapt resource value: 0x7f0700f8
+			public const int textView3 = 2131165432;
+			
+			// aapt resource value: 0x7f0700fb
+			public const int textView4 = 2131165435;
 			
 			// aapt resource value: 0x7f0700dd
 			public const int time = 2131165405;
@@ -3395,6 +3443,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f030043
 			public const int support_simple_spinner_dropdown_item = 2130903107;
+			
+			// aapt resource value: 0x7f030044
+			public const int Survey = 2130903108;
 			
 			static Layout()
 			{
