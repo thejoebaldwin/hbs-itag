@@ -17,20 +17,80 @@ namespace HBS.ITAG
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
         /*
-        public override StartCommandResult OnStartCommand(Android.Content.Intent intent, StartCommandFlags flags, int startId)
+        public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
             new Task(() => {
+                beaconManager = new BeaconManager(this);
+                beaconManager.SetBackgroundScanPeriod(1000, 1);
+
+                beaconManager.EnteredRegion += (sender, e) =>
+               {
+                    if (Store.Instance.Notify)
+                    {
+                        Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+
+                        if (tempEvent != null)
+                        {
+                            OnRegionEnter(tempEvent);
+                        }
+                    }
+                };
+
+                beaconManager.ExitedRegion += (sender, e) =>
+                {
+                    if (Store.Instance.Notify)
+                    {
+
+                        Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+
+                        if (tempEvent != null)
+                        {
+                            OnRegionExit(tempEvent);
+                        }
+                    }
+                };
+
                 beaconManager.Connect(this);
+                Intent tempIntent = new Intent(this, typeof(SimpleService));
+                SendBroadcast(tempIntent);
             }).Start();
             return StartCommandResult.Sticky;
-        }
+        }  */
 
+        /*
         void StartServiceInForeground()
         {
-            var ongoing = new Notification(Resource.Drawable.Icon, "Notification");
-            var pendingIntent = PendingIntent.GetActivity(this, 0, new Intent(this, typeof(MainActivity)), 0);
-            ongoing.SetLatestEventInfo(this, "Notification", "SimpleService is running in the foreground", pendingIntent);
+            beaconManager = new BeaconManager(this);
+            beaconManager.SetBackgroundScanPeriod(1000, 1);
 
+            beaconManager.EnteredRegion += (sender, e) =>
+            {
+                if (Store.Instance.Notify)
+                {
+                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+            };
+
+            beaconManager.ExitedRegion += (sender, e) =>
+            {
+                if (Store.Instance.Notify)
+                {
+
+                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+
+                    if (tempEvent != null)
+                    {
+                        OnRegionExit(tempEvent);
+                    }
+                }
+            };
+
+            beaconManager.Connect(this);
             StartForeground((int)NotificationFlags.AutoCancel, null);
         }*/
 
@@ -152,8 +212,13 @@ namespace HBS.ITAG
         public override void OnDestroy()
         {
             beaconManager.Disconnect();
-            base.OnDestroy();
+            //    //SendBroadcast(new Intent(this, typeof(SimpleService)));
+            //    Console.WriteLine("Here");
+            //    MyBroadcastReceiver temp = new MyBroadcastReceiver();
+            //    Intent tempIntent = new Intent(this, typeof(SimpleService));
+            //    temp.OnReceive(this , tempIntent);
+            //    SendBroadcast(tempIntent);
+                base.OnDestroy();
         }
-
     }
 }
