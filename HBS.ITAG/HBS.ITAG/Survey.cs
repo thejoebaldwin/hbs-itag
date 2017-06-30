@@ -52,6 +52,14 @@ namespace HBS.ITAG
             done.Click += (object sender, EventArgs e) =>
             {
                 // Send off survey results
+                String seekBar1Answer = seekBar1.Progress.ToString();
+                String seekBar2Answer = seekBar2.Progress.ToString();
+                String seekBar3Answer = seekBar3.Progress.ToString();
+                String seekBar4Answer = seekBar4.Progress.ToString();
+                String commentsAnswer = comments.Text;
+
+
+                StartActivity(typeof(Home));
             };
         }
 
