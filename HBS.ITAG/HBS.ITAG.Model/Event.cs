@@ -24,6 +24,7 @@ namespace HBS.ITAG.Model
 		public DateTime LastExitNotified { get; set; }
 		public int Track { get; set; }
         public bool Favorited { get; set; }
+        public int NumberOfPeople { get; set; }
 
         public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, string eventWebId, string trackId, string locationId, bool scheduleOnly)
         {
@@ -40,6 +41,7 @@ namespace HBS.ITAG.Model
             Favorited = false;
             LastEntryNotified = DateTime.Now.AddMinutes(-30);
             LastExitNotified = DateTime.Now.AddMinutes(-30);
+            NumberOfPeople = 0;
         }
 
         public static Event FromJson(string json)

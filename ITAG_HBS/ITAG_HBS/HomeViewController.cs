@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿using System;
 using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
@@ -7,11 +7,14 @@ using Estimote;
 using HBS.ITAG;
 
 using CoreLocation;
+using System.Collections.Generic;
 
 namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
     public partial class HomeViewController : UIViewController
     {
+        //TODO MAKE TO DO LIST POPULATE LIKE FAVORITES!
+        List<Event> toDoList = new List<Event>();
         partial void NotifySwitchClicked(UISwitch sender)
         {
             Store.Instance.Notify = NotifySwitch.On;
@@ -24,7 +27,6 @@ namespace HBS.ITAG
 
         partial void EventsButtonClick(UIButton sender)
         {
-            //This will now be changed to survey page
             NavigateToMyEvents();
         }
 
@@ -32,7 +34,6 @@ namespace HBS.ITAG
         {
             NavigateToSchedule();
         }
-
 
         BeaconManager beaconManager;
 
@@ -135,12 +136,20 @@ namespace HBS.ITAG
         public void ReloadData()
         {
             //TODO make toDoList find the events needed to get surveys for
-			var toDoList = Store.Instance.Events;
+			
 			ToDoTableViewSource data = new ToDoTableViewSource(toDoList);
+            HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
-          
+            HotEventData.parent = this;
+
             ToDoTableView.Source = data;
             ToDoTableView.ReloadData();
+            HotEventTableView.Source = HotEventData;
+            HotEventTableView.ReloadData();
+
+            //TODO figure out how to make badgeIcon number the number of surveys to complete
+            //var badgeIcons = new UILocalNotification();
+            //badgeIcons.ApplicationIconBadgeNumber = toDoList.Count;
         }
 
         public override void ViewDidAppear(bool animated)
@@ -206,7 +215,13 @@ namespace HBS.ITAG
                    Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
                    if (tempEvent != null)
                    {
-                       OnRegionExit(tempEvent);
+                        OnRegionExit(tempEvent);
+                        if(!toDoList.Contains(tempEvent))
+	                    {
+	                        toDoList.Add(tempEvent);
+	                    }
+                        Store.Instance.RemovePerson(tempEvent);
+                        ReloadData();
                    }
                }
 		   };
@@ -220,10 +235,13 @@ namespace HBS.ITAG
                     Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
                     if (tempEvent != null)
                     {
+                        Store.Instance.AddPerson(tempEvent);
                         OnRegionEnter(tempEvent);
+                        ReloadData();
                     }
                 }
-             };          });
+             };
+            });
         }
 
         private void OnSessionAddComplete(string message)
@@ -287,12 +305,12 @@ namespace HBS.ITAG
                     Store.Instance.SelectedEvent = tempEvent;
                     var notification = new UILocalNotification();
                     notification.FireDate = NSDate.FromTimeIntervalSinceNow(0);
-                    string message = string.Format("You are near an event in progress:{0}", tempEvent.Name);
+                    string message = string.Format("You are near an event in progress: {0}", tempEvent.Name);
                     // configure the alert
                     notification.AlertAction = "You are near an event!";
                     notification.AlertBody = message;
                     // modify the badge
-                    notification.ApplicationIconBadgeNumber = 1;
+                    notification.ApplicationIconBadgeNumber = 0;
                     // set the sound to be the default sound
                     notification.SoundName = UILocalNotification.DefaultSoundName;
                     // schedule it

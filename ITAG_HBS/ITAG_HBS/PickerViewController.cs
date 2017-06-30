@@ -63,6 +63,32 @@ namespace HBS.ITAG
         {
             base.ViewDidLoad();
 
+			PositionTitle.Started += (sender, e) =>
+			{
+				View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y - 75, View.Frame.Size.Width, View.Frame.Size.Height);
+                AgeTextView.Editable = false;
+                GenderTextView.Editable = false;
+                TechFocusTextView.Editable = false;
+                OrganizationTextView.Editable = false;
+				AgeTextView.Selectable = false;
+				GenderTextView.Selectable = false;
+				TechFocusTextView.Selectable = false;
+				OrganizationTextView.Selectable = false;
+			};
+
+            PositionTitle.Ended += (sender, e) =>
+            {
+                View.Frame = new CoreGraphics.CGRect(View.Frame.X, View.Frame.Y + 75, View.Frame.Size.Width, View.Frame.Size.Height);
+                AgeTextView.Editable = true;
+                GenderTextView.Editable = true;
+                TechFocusTextView.Editable = true;
+                OrganizationTextView.Editable = true;
+                AgeTextView.Selectable = true;
+                GenderTextView.Selectable = true;
+                TechFocusTextView.Selectable = true;
+                OrganizationTextView.Selectable = true;
+            };
+
             UIToolbar toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, (float)this.View.Frame.Size.Width, 44.0f));
             toolbar.TintColor = UIColor.White;
             toolbar.BarStyle = UIBarStyle.Black;
@@ -83,13 +109,12 @@ namespace HBS.ITAG
 					{
 						this.TechFocusTextView.Text = techFoci[(int)this.TechFocusPickerView.SelectedRowInComponent(0)];
 					}
-					else
+					else if(this.OrganizationTextView.ResignFirstResponder())
 					{
 						this.OrganizationTextView.Text = organizations[(int)this.OrganizationPickerView.SelectedRowInComponent(0)];
 					}
 
                     this.PositionTitle.ResignFirstResponder();
-                    var uno = this.AgeTextView.ResignFirstResponder();
                     this.AgeTextView.ResignFirstResponder();
 					this.GenderTextView.ResignFirstResponder();
 					this.TechFocusTextView.ResignFirstResponder();
