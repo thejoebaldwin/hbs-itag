@@ -116,9 +116,7 @@ namespace HBS.ITAG
             HotEventTableView.Source = HotEventData;
             HotEventTableView.ReloadData();
 
-            //TODO figure out how to make badgeIcon number the number of surveys to complete
-            //var badgeIcons = new UILocalNotification();
-            //badgeIcons.ApplicationIconBadgeNumber = toDoList.Count;
+            UIApplication.SharedApplication.ApplicationIconBadgeNumber = Store.Instance.ToDoList.Count;
         }
 
         public override void ViewDidAppear(bool animated)
