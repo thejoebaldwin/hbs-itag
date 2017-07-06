@@ -89,7 +89,6 @@ namespace HBS.ITAG.Model
 
             string summary = data["summary"];
             //string numberOfPeople = data["number_of_people"];
-            //TODO do we need something for surveys?
             return new Event(name, id, startTime, endTime, presenter, summary, eventWebId, trackId, locationId, scheduleOnly);
         }
     }

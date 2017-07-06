@@ -179,8 +179,8 @@ namespace HBS.ITAG
             survey.UserDeviceId = UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString();
             survey.EventId = Store.Instance.SelectedEvent.Id;
             survey.Email = EmailTextView.Text;
-            Store.Instance.ToDoList.Remove(Store.Instance.SelectedEvent);
-            //TODO Send Survey to Back End
+            Store.Instance.DeleteToDo(Store.Instance.SelectedEvent);
+            //Store.Instance.ToDoList.Remove(Store.Instance.SelectedEvent);
             Store.Instance.AddSurvey(survey, AddSurveyComplete);
             this.DismissViewController(true, null);
 		}

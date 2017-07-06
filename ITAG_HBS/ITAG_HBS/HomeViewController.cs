@@ -11,7 +11,6 @@ namespace HBS.ITAG
 { //THIS IS FOR THE HOME PAGE//
     public partial class HomeViewController : UIViewController
     {
-        //TODO MAKE TO DO LIST POPULATE LIKE FAVORITES!
         partial void NotifySwitchClicked(UISwitch sender)
         {
             Store.Instance.Notify = NotifySwitch.On;
@@ -104,8 +103,7 @@ namespace HBS.ITAG
 
         public void ReloadData()
         {
-            //TODO make toDoList find the events needed to get surveys for
-			
+            //TODO make toDoList find the events needed to get surveys for (load like favorites)
 			ToDoTableViewSource data = new ToDoTableViewSource(Store.Instance.ToDoList);
             HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
@@ -183,10 +181,12 @@ namespace HBS.ITAG
                    if (tempEvent != null)
                    {
                         OnRegionExit(tempEvent);
+                            //TODO How much time required to give them a survey
                         if(!Store.Instance.ToDoList.Contains(tempEvent))
 	                    {
-	                        Store.Instance.ToDoList.Add(tempEvent);
+	                        Store.Instance.AddToDo(tempEvent);
 	                    }
+                            //TODO link with back end
                         Store.Instance.RemovePerson(tempEvent);
                         ReloadData();
                    }

@@ -93,19 +93,12 @@ namespace HBS.ITAG
                     cell.TextLabel.TextColor = UIColor.White;
                     cell.DetailTextLabel.TextColor = UIColor.White;
                 }
-                else//(item.EndTime < DateTime.Now)
+                else
                 {
                     cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
                     cell.TextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
                     cell.DetailTextLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
                 }
-                /*else
-                {
-                    cell.BackgroundColor = UIColor.White;
-                    cell.TextLabel.TextColor = UIColor.Black;
-                    cell.DetailTextLabel.TextColor = UIColor.Black;
-                    cell.DetailTextLabel.Text = "Upcoming";
-                }*/
             }
             return cell;
 		}

@@ -206,6 +206,7 @@ namespace HBS.ITAG.Model
         private List<Track> _arrTracks;
         private List<User> _arrUsers;
         private List<string> _arrFavoriteIds;
+        private List<string> _arrToDoListIds;
         private string _userId;
         private string _surveyId;
 
@@ -255,8 +256,11 @@ namespace HBS.ITAG.Model
 		{
 			_arrFavoriteIds = new List<string>();
 			string favorites = string.Empty;
+            _arrToDoListIds = new List<string>();
+            string toDoEventIds = string.Empty;
 #if __IOS__
             favorites = NSUserDefaults.StandardUserDefaults.StringForKey("favorites");
+            toDoEventIds = NSUserDefaults.StandardUserDefaults.StringForKey("toDoIds");
 #endif
 			if (favorites == null)
 			{
@@ -267,7 +271,26 @@ namespace HBS.ITAG.Model
 			{
 				_arrFavoriteIds.Add(arrFavorites[i]);
 			}
+            if(toDoEventIds == null)
+            {
+                toDoEventIds = string.Empty;
+            }
+            string[] toDoIds = toDoEventIds.Split(',');
+            for (int i = 0; i < toDoIds.Length; i++)
+            {
+                _arrToDoListIds.Add(toDoIds[i]);
+            }
 		}
+
+        public void InitializeToDoList(string toDoIds)
+        {
+            _arrToDoListIds = new List<string>();
+            string[] arrToDoIds = toDoIds.Split((','));
+            for (int i = 0; i < arrToDoIds.Length; i++)
+            {
+                _arrToDoListIds.Add(arrToDoIds[i]);
+            }
+        }
 
 		public void InitializeFavorites(string favorites)
 		{
@@ -278,6 +301,20 @@ namespace HBS.ITAG.Model
 				_arrFavoriteIds.Add(arrFavorites[i]);
 			}
 		}
+
+        public bool IsToDo(Event toDoEvent)
+        {
+            bool isToDo = false;
+            for (int i = 0; i < _arrToDoListIds.Count; i++)
+            {
+                if(_arrToDoListIds[i] == toDoEvent.Id)
+                {
+                    isToDo = true;
+                    break;
+                }
+            }
+            return isToDo;
+        }
 
 		public bool IsFavorite(Event favoriteEvent)
 		{
@@ -293,6 +330,30 @@ namespace HBS.ITAG.Model
 			return isFavorite;
 		}
 
+		public void AddToDo(Event toDoEvent)
+		{
+            ToDoList.Add(toDoEvent);
+			if (!_arrToDoListIds.Contains(toDoEvent.Id))
+			{
+				_arrToDoListIds.Add(toDoEvent.Id);
+			}
+			string toDoIds = string.Empty;
+			for (int i = 0; i < _arrToDoListIds.Count; i++)
+			{
+				if (toDoIds != string.Empty) toDoIds += ",";
+				toDoIds += _arrToDoListIds[i];
+			}
+#if __MOBILE__
+			// Xamarin iOS or Android-specific code
+			//var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+			//var somePref = prefs.GetBoolean("PrefName", false);
+#endif
+#if __IOS__
+			// iOS-specific code
+			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
+			NSUserDefaults.StandardUserDefaults.Synchronize();
+#endif
+		}
 
 		public void AddFavorite(Event favoriteEvent)
 		{
@@ -319,6 +380,30 @@ namespace HBS.ITAG.Model
             NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 
+#endif
+		}
+
+		public void DeleteToDo(Event toDoEvent)
+		{
+            ToDoList.Remove(toDoEvent);
+			if (_arrToDoListIds.Contains(toDoEvent.Id))
+			{
+				_arrToDoListIds.Remove(toDoEvent.Id);
+			}
+
+			string toDoIds = string.Empty;
+			for (int i = 0; i < _arrToDoListIds.Count; i++)
+			{
+				if (toDoIds != string.Empty) toDoIds += ",";
+				toDoIds += _arrToDoListIds[i];
+			}
+
+#if __MOBILE__
+			// Xamarin iOS or Android-specific code
+#endif
+#if __IOS__
+			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
+			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
 		}
 
@@ -769,6 +854,11 @@ namespace HBS.ITAG.Model
 								{
 									tempEvent.Favorited = true;
 								}
+                                if(IsToDo(tempEvent))
+                                {
+                                    ToDoList.Add(tempEvent);
+                                }
+                                _arrToDoListIds.Add(tempEvent.Id);
 								_arrEvents.Add(tempEvent);
 							}
 							break;
