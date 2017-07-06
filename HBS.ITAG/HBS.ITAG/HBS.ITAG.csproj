@@ -132,6 +132,7 @@
     <Compile Include="scheduleAdapter.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="SimpleService.cs" />
+    <Compile Include="Survey.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
@@ -168,6 +169,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\scheduleListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Survey.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
