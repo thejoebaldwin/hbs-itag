@@ -21,8 +21,8 @@ namespace HBS.ITAG.Model
         public string LocationId { get; set; }
         public string EventWebId { get; set; }
         public DateTime LastEntryNotified { get; set; }
-		public DateTime LastExitNotified { get; set; }
-		public int Track { get; set; }
+        public DateTime LastExitNotified { get; set; }
+        public int Track { get; set; }
         public bool Favorited { get; set; }
         public int NumberOfPeople { get; set; }
 
@@ -41,8 +41,26 @@ namespace HBS.ITAG.Model
             Favorited = false;
             LastEntryNotified = DateTime.Now.AddMinutes(-30);
             LastExitNotified = DateTime.Now.AddMinutes(-30);
-            //NumberOfPeople = 0;
+            NumberOfPeople = 0;
         }
+
+		public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, string eventWebId, string trackId, string locationId, bool scheduleOnly, List<EventSurvey> surveys)
+		{
+			Name = name;
+			Id = id;
+			StartTime = startTime;
+			EndTime = endTime;
+			Presenter = presenter;
+			Summary = summary;
+			EventWebId = eventWebId;
+			TrackId = trackId;
+			LocationId = locationId;
+			ScheduleOnly = scheduleOnly;
+			Favorited = false;
+			LastEntryNotified = DateTime.Now.AddMinutes(-30);
+			LastExitNotified = DateTime.Now.AddMinutes(-30);
+			NumberOfPeople = 0;
+		}
 
         public static Event FromJson(string json)
         {
@@ -71,6 +89,7 @@ namespace HBS.ITAG.Model
 
             string summary = data["summary"];
             //string numberOfPeople = data["number_of_people"];
+            //TODO do we need something for surveys?
             return new Event(name, id, startTime, endTime, presenter, summary, eventWebId, trackId, locationId, scheduleOnly);
         }
     }

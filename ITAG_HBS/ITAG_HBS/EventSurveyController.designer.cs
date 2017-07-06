@@ -16,6 +16,10 @@ namespace HBS.ITAG
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField EmailTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView EventName { get; set; }
 
         [Outlet]
@@ -28,7 +32,15 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UISlider QuestionFourRating { get; set; }
+        UIKit.UITextView QuestionFour { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView QuestionFourTextView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView QuestionOne { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -36,7 +48,15 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView QuestionThree { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider QuestionThreeRating { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextView QuestionTwo { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -46,8 +66,17 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SubmitButton { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView YesNoQuestionPicker { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (EmailTextView != null) {
+                EmailTextView.Dispose ();
+                EmailTextView = null;
+            }
+
             if (EventName != null) {
                 EventName.Dispose ();
                 EventName = null;
@@ -63,9 +92,19 @@ namespace HBS.ITAG
                 Q1Numbers = null;
             }
 
-            if (QuestionFourRating != null) {
-                QuestionFourRating.Dispose ();
-                QuestionFourRating = null;
+            if (QuestionFour != null) {
+                QuestionFour.Dispose ();
+                QuestionFour = null;
+            }
+
+            if (QuestionFourTextView != null) {
+                QuestionFourTextView.Dispose ();
+                QuestionFourTextView = null;
+            }
+
+            if (QuestionOne != null) {
+                QuestionOne.Dispose ();
+                QuestionOne = null;
             }
 
             if (QuestionOneRating != null) {
@@ -73,9 +112,19 @@ namespace HBS.ITAG
                 QuestionOneRating = null;
             }
 
+            if (QuestionThree != null) {
+                QuestionThree.Dispose ();
+                QuestionThree = null;
+            }
+
             if (QuestionThreeRating != null) {
                 QuestionThreeRating.Dispose ();
                 QuestionThreeRating = null;
+            }
+
+            if (QuestionTwo != null) {
+                QuestionTwo.Dispose ();
+                QuestionTwo = null;
             }
 
             if (QuestionTwoRating != null) {
@@ -86,6 +135,11 @@ namespace HBS.ITAG
             if (SubmitButton != null) {
                 SubmitButton.Dispose ();
                 SubmitButton = null;
+            }
+
+            if (YesNoQuestionPicker != null) {
+                YesNoQuestionPicker.Dispose ();
+                YesNoQuestionPicker = null;
             }
         }
     }

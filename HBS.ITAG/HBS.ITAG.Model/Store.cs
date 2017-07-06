@@ -7,7 +7,6 @@ using System.Globalization;
 using HBS.ITAG.Model;
 using HBS.ITAG;
 
-
 #if __IOS__
 using ITAG_HBS;
 using Foundation;
@@ -18,7 +17,6 @@ namespace HBS.ITAG.Model
 {
 	public class Utilities
 	{
-
 		public static String[] ParseJsonArray(string responseData)
 		{
 			responseData = responseData.Replace("[", string.Empty);
@@ -191,10 +189,7 @@ namespace HBS.ITAG.Model
 
 			return result;
 		}
-
-
 	}
-
 
     public class Store
     {
@@ -212,6 +207,7 @@ namespace HBS.ITAG.Model
         private List<User> _arrUsers;
         private List<string> _arrFavoriteIds;
         private string _userId;
+        private string _surveyId;
 
         private string _deviceId;
         private string _notify = "true";
@@ -241,12 +237,18 @@ namespace HBS.ITAG.Model
 
         public void AddPerson(Event eventAddingPeople)
         {
+            //TODO Connect to Back end
             eventAddingPeople.NumberOfPeople++;
         }
 
         public void RemovePerson(Event eventRemovingPeople)
         {
+            //TODO Connect to Back end
             eventRemovingPeople.NumberOfPeople--;
+            if(eventRemovingPeople.NumberOfPeople < 0)
+            {
+                eventRemovingPeople.NumberOfPeople = 0;
+            }
         }
 
 		public void Init()
@@ -466,7 +468,7 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<summary>", newEvent.Summary);
 			json = json.Replace("<presenter>", newEvent.Presenter);
 			json = json.Replace("<event_web_id>", newEvent.EventWebId);
-            //json = json.Replace("<number_of_people>", newEvent.NumberOfPeople.ToString());
+            json = json.Replace("<number_of_people>", 0.ToString());
 
 			_Completion = completion;
 			PostDataWithOperation("events", json, "POST");
@@ -527,6 +529,28 @@ namespace HBS.ITAG.Model
 			PostDataWithOperation("users", json, "POST");
 		}
 
+		public void AddSurvey(EventSurvey newSurvey, Action completion)
+		{
+			_Operation = "add_survey";
+
+			string json = "{\"survey_id\":\"<survey_id>\", \"question_one_rating\":\"<question_one_rating>\", \"question_two_rating\":\"<question_two_rating>\",";
+			json += "\"question_three_rating\":\"<question_three_rating>\",\"question_four_answer\":\"<question_four_answer>\",";
+			json += "\"other_comments\":\"<other_comments>\",\"user_device_id\":\"<user_device_id>\",\"email\":\"<email>\",\"event_id\":\"<event_id>\"}";
+
+            json = json.Replace("<survey_id>", newSurvey.SurveyId); 
+			json = json.Replace("<question_one_rating>", newSurvey.QuestionOneRating.ToString());
+			json = json.Replace("<question_two_rating>", newSurvey.QuestionTwoRating.ToString());
+			json = json.Replace("<question_three_rating>", newSurvey.QuestionThreeRating.ToString());
+			json = json.Replace("<question_four_answer>", newSurvey.QuestionFourAnswer.ToString());
+			json = json.Replace("<other_comments>", newSurvey.OtherComments);
+			json = json.Replace("<user_device_id>", newSurvey.UserDeviceId);
+			json = json.Replace("<event_id>", newSurvey.EventId);
+            json = json.Replace("<email>", newSurvey.Email);
+
+			_Completion = completion;
+			PostDataWithOperation("surveys", json, "POST");
+		}
+
 		public void DeleteEvent(Event updatedEvent, Action completion)
 		{
 			_Operation = "delete_event";
@@ -578,6 +602,22 @@ namespace HBS.ITAG.Model
             {
                 return true;
             }
+#endif
+			return false;
+		}
+
+		public bool SurveyCreated()
+		{
+#if __IOS__
+			string survey_id = NSUserDefaults.StandardUserDefaults.StringForKey("survey_id");
+			if (survey_id == null || survey_id == string.Empty)
+			{
+				return false;
+			}
+			else
+			{
+				return true;
+			}
 #endif
 			return false;
 		}
@@ -744,6 +784,21 @@ namespace HBS.ITAG.Model
 #if __IOS__
                                 NSUserDefaults.StandardUserDefaults.SetString(_userId, "user_id");
                                 NSUserDefaults.StandardUserDefaults.Synchronize();
+#endif
+
+							}
+							break;
+						}
+					case "add_survey":
+						{
+							Dictionary<string, string> data = Utilities.ParseJson(response_json);
+							_surveyId = "-1";
+							if (data["status"] == "success")
+							{
+								_surveyId = data["survey_id"];
+#if __IOS__
+								NSUserDefaults.StandardUserDefaults.SetString(_surveyId, "survey_id");
+								NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
 
 							}

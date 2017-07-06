@@ -3,9 +3,7 @@ using Foundation;
 using UIKit;
 using HBS.ITAG.Model;
 using Estimote;
-
 using HBS.ITAG;
-
 using CoreLocation;
 using System.Collections.Generic;
 
