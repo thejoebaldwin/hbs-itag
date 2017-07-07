@@ -6,7 +6,8 @@
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<application android:label="ITAG Conference 2017" android:icon="@drawable/itag_icon">
+  <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+  <application android:label="ITAG Conference 2017" android:icon="@drawable/itag_icon">
     android:name=".MyApplication"
     android:allowBackup="true"
   </application>

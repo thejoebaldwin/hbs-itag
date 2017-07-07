@@ -19,6 +19,7 @@ namespace HBS.ITAG
         List<Event> HottestEvent;
         List<Event> events;
 
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -33,6 +34,7 @@ namespace HBS.ITAG
             HottestEvent = new List<Event>();
             favoritedEvents = new List<Event>();
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
+            TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
 
             // Nav bar code
@@ -67,11 +69,15 @@ namespace HBS.ITAG
             {
                 StartActivity(typeof(AppFeatures));
             };
-            
+
+            contactNumber.Click += delegate {
+                var uri = Android.Net.Uri.Parse("tel:(515) 223-1800");
+                var intent = new Intent(Intent.ActionDial, uri);
+                StartActivity(intent);
+            };
             // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
             StartService(new Intent(this, typeof(SimpleService)));
-
 
             // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
@@ -113,7 +119,6 @@ namespace HBS.ITAG
             events = new List<Event>(Store.Instance.Events);
             favoritedEvents = new List<Event>();
             HottestEvent = new List<Event>();
-
             foreach (var e in events)
             {
                 if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
