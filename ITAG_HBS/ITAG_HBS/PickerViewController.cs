@@ -28,6 +28,7 @@ namespace HBS.ITAG
 			"66 to 70",
 			"70 and Above"
 		};
+
         public List<string> genders = new List<string>
         {
 			"Male",
@@ -35,6 +36,7 @@ namespace HBS.ITAG
 			"Other",
 			"Prefer Not to Respond"
         };
+
         public List<string> techFoci = new List<string>
         {
 			"IT",
@@ -42,6 +44,7 @@ namespace HBS.ITAG
 			"Both",
 			"None"
         };
+
         public List<string> organizations = new List<string>
         {
 			"IGIC",
@@ -57,6 +60,7 @@ namespace HBS.ITAG
 
 		public PickerViewController(IntPtr handle) : base(handle)
         {
+            
 		}
 
         public override void ViewDidLoad()
@@ -123,11 +127,11 @@ namespace HBS.ITAG
              };
             this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
             this.PositionTitle.InputAccessoryView = toolbar;
-
             this.AgePickerView.RemoveFromSuperview();
             this.AgeTextView.InputView = AgePickerView;
             this.AgeTextView.InputAccessoryView = toolbar;
             var agePickerViewModel = new AgeModel(ages);
+
             agePickerViewModel.ageChanged += (sender, e) =>
             {
                 AgeTextView.Text = agePickerViewModel.selectedAge;
@@ -138,13 +142,12 @@ namespace HBS.ITAG
             this.GenderTextView.InputView = GenderPickerView;
             this.GenderTextView.InputAccessoryView = toolbar;
             var genderPickerViewModel = new GenderModel(genders);
+
             genderPickerViewModel.genderChanged += (sender, e) =>
             {
                 GenderTextView.Text = genderPickerViewModel.selectedGender;
             };
             GenderPickerView.Model = genderPickerViewModel;
-
-
             //Uncomment below code and create TextView and Picker view to include State on Survey Page
 
             //this.StatePickerView.RemoveFromSuperview();
@@ -171,6 +174,7 @@ namespace HBS.ITAG
             this.OrganizationTextView.InputView = OrganizationPickerView;
             this.OrganizationTextView.InputAccessoryView = toolbar;
             var organizationPickerViewModel = new OrganizationModel(organizations);
+
             organizationPickerViewModel.organizationChanged += (sender, e) =>
             {
                 OrganizationTextView.Text = organizationPickerViewModel.selectedOrganization;

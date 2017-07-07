@@ -12,7 +12,6 @@ namespace HBS.ITAG
 			// Note: this .ctor should not contain any initialization logic.
 		}
 
-
 		public AppFeaturesViewController() : base("AboutViewController", null)
         {
         }

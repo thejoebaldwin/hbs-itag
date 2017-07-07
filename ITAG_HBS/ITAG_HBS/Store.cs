@@ -8,10 +8,8 @@ namespace HBS.ITAG
     public class StoreOld
     {
 		private static StoreOld instance;
-
         //public List<Event> Events;
         //public List<Track> Tracks;
-
 		private StoreOld() { }
 
 		public static StoreOld Instance
@@ -65,17 +63,12 @@ namespace HBS.ITAG
 			}
 		}
 */
-
-
 		public void Init()
         {
             //get tracks
             //get events
           //  LoadTracksFromFile();
             //LoadEventsFromFile();
-
-
-
         }
     }
 }
