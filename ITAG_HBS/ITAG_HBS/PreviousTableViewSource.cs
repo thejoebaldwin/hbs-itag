@@ -23,7 +23,6 @@ namespace HBS.ITAG
 					FilteredItems.Add((previousitems[i]));
 				}
 			}
-
             TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((y, x) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
         }
@@ -70,6 +69,7 @@ namespace HBS.ITAG
                 cell.TextLabel.AdjustsFontSizeToFitWidth = true;
                 cell.Selected = false;
             }
+
             else
             {
 				Event item = TableItems[indexPath.Row];
@@ -82,14 +82,12 @@ namespace HBS.ITAG
 					cell.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 					cell.TextLabel.TextColor = UIColor.White;
 					cell.DetailTextLabel.TextColor = UIColor.White;
-
 				}
 				else if (item.ScheduleOnly)
 				{
 					//cell.BackgroundColor = ITAG.HBS.UIColorExtension.FromHex(0x99A1AC);
 					//cell.TextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
 					//cell.DetailTextLabel.TextColor = ITAG.HBS.UIColorExtension.FromHex(0x0E1D52);
-
 				}
 				else
 				{

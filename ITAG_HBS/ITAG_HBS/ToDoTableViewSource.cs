@@ -35,6 +35,7 @@ namespace HBS.ITAG
 			{
 				return 1;
 			}
+
 			else
 			{
 				return TableItems.Count;
@@ -51,7 +52,6 @@ namespace HBS.ITAG
 				if (!Store.Instance.SelectedEvent.ScheduleOnly)
 				{
                     //EventDetailController tempEventDetail = (EventDetailController)parent.Storyboard.InstantiateViewController("EventDetailController");
-
                     EventSurveyController tempEventSurvey = null;
                     if(parent.GetType() == typeof(HomeViewController))
                     {

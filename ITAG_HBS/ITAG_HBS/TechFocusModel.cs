@@ -38,8 +38,6 @@ namespace HBS.ITAG
     }
 }
 
-
-
 //public class TechFocusModel : UIPickerViewModel
 //{
 //	public static string[] TechFocus = new string[] {

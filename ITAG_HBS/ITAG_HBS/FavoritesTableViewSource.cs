@@ -23,7 +23,6 @@ namespace HBS.ITAG
                     FilteredItems.Add((items[i]));
                 }
             }
-
             TableItems = new List<Event>(FilteredItems);
             TableItems.Sort((x, y) => x.StartTime.Ticks.CompareTo(y.StartTime.Ticks));
 		}
