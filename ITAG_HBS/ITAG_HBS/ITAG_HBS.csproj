@@ -138,9 +138,7 @@
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
@@ -202,7 +200,6 @@
     <Compile Include="EventSurveyController.designer.cs">
       <DependentUpon>EventSurveyController.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventSurvey.cs" />
     <Compile Include="ToDoTableViewSource.cs" />
     <Compile Include="HotEventTableViewSource.cs" />
   </ItemGroup>
