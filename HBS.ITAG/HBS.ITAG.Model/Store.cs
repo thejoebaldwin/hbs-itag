@@ -332,24 +332,30 @@ namespace HBS.ITAG.Model
 
 		public void AddToDo(Event toDoEvent)
 		{
-            ToDoList.Add(toDoEvent);
 			if (!_arrToDoListIds.Contains(toDoEvent.Id))
 			{
 				_arrToDoListIds.Add(toDoEvent.Id);
+                if(!ToDoList.Contains(toDoEvent))
+                {
+                    ToDoList.Add(toDoEvent);
+                }
 			}
 			string toDoIds = string.Empty;
 			for (int i = 0; i < _arrToDoListIds.Count; i++)
 			{
-				if (toDoIds != string.Empty) toDoIds += ",";
+                if (toDoIds != string.Empty)
+                {
+			        toDoIds += ",";
+                }
 				toDoIds += _arrToDoListIds[i];
 			}
 #if __MOBILE__
-			// Xamarin iOS or Android-specific code
-			//var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-			//var somePref = prefs.GetBoolean("PrefName", false);
+            // Xamarin iOS or Android-specific code
+            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            //var somePref = prefs.GetBoolean("PrefName", false);
 #endif
 #if __IOS__
-			// iOS-specific code
+            // iOS-specific code
 			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
 			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
@@ -365,7 +371,10 @@ namespace HBS.ITAG.Model
 			string favorites = string.Empty;
 			for (int i = 0; i < _arrFavoriteIds.Count; i++)
 			{
-				if (favorites != string.Empty) favorites += ",";
+				if (favorites != string.Empty)
+                {
+                    favorites += ",";
+                }
 				favorites += _arrFavoriteIds[i];
 			}
 
@@ -385,10 +394,13 @@ namespace HBS.ITAG.Model
 
 		public void DeleteToDo(Event toDoEvent)
 		{
-            ToDoList.Remove(toDoEvent);
 			if (_arrToDoListIds.Contains(toDoEvent.Id))
 			{
 				_arrToDoListIds.Remove(toDoEvent.Id);
+                if(ToDoList.Contains(toDoEvent))
+                {
+                    ToDoList.Remove(toDoEvent);
+                }
 			}
 
 			string toDoIds = string.Empty;
@@ -858,7 +870,6 @@ namespace HBS.ITAG.Model
                                 {
                                     ToDoList.Add(tempEvent);
                                 }
-                                _arrToDoListIds.Add(tempEvent.Id);
 								_arrEvents.Add(tempEvent);
 							}
 							break;
