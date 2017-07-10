@@ -2571,6 +2571,12 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070105
 			public const int SurveyDoneButton = 2131165445;
 			
+			// aapt resource value: 0x7f070107
+			public const int SurveyEventTime = 2131165447;
+			
+			// aapt resource value: 0x7f070106
+			public const int SurveyName = 2131165446;
+			
 			// aapt resource value: 0x7f070103
 			public const int SurveyOtherComments = 2131165443;
 			
@@ -3474,6 +3480,9 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f030045
 			public const int Survey = 2130903109;
 			
+			// aapt resource value: 0x7f030046
+			public const int SurveyListView = 2130903110;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -3492,6 +3501,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f080032
 			public const int Hello = 2131230770;
+			
+			// aapt resource value: 0x7f080039
+			public const int HotelName = 2131230777;
 			
 			// aapt resource value: 0x7f080035
 			public const int Info1 = 2131230773;

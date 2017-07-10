@@ -134,6 +134,7 @@
     <Compile Include="Session.cs" />
     <Compile Include="SimpleService.cs" />
     <Compile Include="Survey.cs" />
+    <Compile Include="SurveyAdapter.cs" />
     <Compile Include="Track.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utilities.cs" />
@@ -176,6 +177,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\HottestEventListView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\SurveyListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -80,7 +80,8 @@ namespace HBS.ITAG
 
             //Make hotel website link
             TextView weblink = FindViewById<TextView>(Resource.Id.HotelName);
-            weblink.TextFormatted = Html.FromHtml("" + "<a href=https://iowacountiesit.org/itag-conference/schedule/ >West Des Moines Sheraton</a>");
+            string HotelName = "<a href='http://www.starwoodhotels.com/sheraton/property/overview/index.html?propertyID=1557&language=en_US'> West Des Moines Sheraton </a>";
+            weblink.TextFormatted = Html.FromHtml(HotelName);
             weblink.MovementMethod = LinkMovementMethod.Instance;
 
             // Makes phone number clickable
@@ -155,10 +156,6 @@ namespace HBS.ITAG
                 Surveys.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
             }
 
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(Application.Context, Surveys);
-            SurveyList.Adapter = adapter;
-            SurveyList.ItemClick += favoriteClick;
-
             if (HottestEvent.Count == 0)
             {
                 HottestEvent.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
@@ -167,6 +164,10 @@ namespace HBS.ITAG
             HotEventAdapter HotAdapter = new HotEventAdapter(Application.Context, HottestEvent);
             HottestEventList.Adapter = HotAdapter;
             HottestEventList.ItemClick += HotClick;
+
+            SurveyAdapter SurveyAdapter = new SurveyAdapter(Application.Context, Surveys);
+            SurveyList.Adapter = SurveyAdapter;
+            SurveyList.ItemClick += SurveyClick;
         } 
         
         private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
@@ -186,6 +187,14 @@ namespace HBS.ITAG
                 Intent i = new Intent(Application.Context, typeof(EventDetails));
                 i.SetFlags(ActivityFlags.ReorderToFront);
                 StartActivity(i);
+        }
+
+        private void SurveyClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            Store.Instance.SelectedEvent = Surveys[e.Position];
+            Intent i = new Intent(Application.Context, typeof(EventDetails));
+            i.SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(i);
         }
     }
 }
