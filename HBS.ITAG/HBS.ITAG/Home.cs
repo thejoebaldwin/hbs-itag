@@ -6,6 +6,9 @@ using Android.OS;
 using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
+using Android.Text.Method;
+using System.Globalization;
+using Android.Text;
 using Android.Support.V4.Content;
 
 namespace HBS.ITAG
@@ -75,11 +78,18 @@ namespace HBS.ITAG
                 StartActivity(typeof(AppFeatures));
             };
 
+            //Make hotel website link
+            TextView weblink = FindViewById<TextView>(Resource.Id.HotelName);
+            weblink.TextFormatted = Html.FromHtml("" + "<a href=https://iowacountiesit.org/itag-conference/schedule/ >West Des Moines Sheraton</a>");
+            weblink.MovementMethod = LinkMovementMethod.Instance;
+
+            // Makes phone number clickable
             contactNumber.Click += delegate {
                 var uri = Android.Net.Uri.Parse("tel:(515) 223-1800");
                 var intent = new Intent(Intent.ActionDial, uri);
                 StartActivity(intent);
             };
+
             // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
             StartService(new Intent(this, typeof(SimpleService)));
