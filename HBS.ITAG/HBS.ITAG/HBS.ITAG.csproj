@@ -119,6 +119,7 @@
     <Compile Include="Event.cs" />
     <Compile Include="EventDetails.cs" />
     <Compile Include="Home.cs" />
+    <Compile Include="HotEventAdapter.cs" />
     <Compile Include="JsonCallTester.cs" />
     <Compile Include="MyBootReceiver.cs" />
     <Compile Include="MyBroadcastReceiver.cs" />
@@ -172,6 +173,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Survey.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\HottestEventListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

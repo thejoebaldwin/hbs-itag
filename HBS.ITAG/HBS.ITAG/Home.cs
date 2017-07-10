@@ -16,9 +16,9 @@ namespace HBS.ITAG
     [Activity(Label = "Home", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class Home : Activity
     {
-        ListView favoritedList;
+        ListView SurveyList;
         ListView HottestEventList;
-        List<Event> favoritedEvents;
+        List<Event> Surveys;
         List<Event> HottestEvent;
         List<Event> events;
 
@@ -32,10 +32,10 @@ namespace HBS.ITAG
             ImageView appFeatures = FindViewById<ImageView>(Resource.Id.app_features);
             ImageView itagIcon = FindViewById<ImageView>(Resource.Id.itag_icon);
             TextView favoritesHeader = FindViewById<TextView>(Resource.Id.favorites_header);
-            favoritedList = FindViewById<ListView>(Resource.Id.favoritedList);
+            SurveyList = FindViewById<ListView>(Resource.Id.favoritedList);
             HottestEventList = FindViewById<ListView>(Resource.Id.HottestEventList);
             HottestEvent = new List<Event>();
-            favoritedEvents = new List<Event>();
+            Surveys = new List<Event>();
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
@@ -132,45 +132,60 @@ namespace HBS.ITAG
         private void LoadData()
         {
             events = new List<Event>(Store.Instance.Events);
-            favoritedEvents = new List<Event>();
+            Surveys = new List<Event>();
             HottestEvent = new List<Event>();
             foreach (var e in events)
             {
-                if (e.Favorited && e.EndTime.Ticks >= DateTime.Now.Ticks)
+                if(e.NumberOfPeople > 0)
                 {
-                    favoritedEvents.Add(e);
-                    HottestEvent.Add(e);
+                    if (HottestEvent == null)
+                    {
+                        HottestEvent.Add(e);
+                    }
+                    else if (e.NumberOfPeople > HottestEvent[0].NumberOfPeople)
+                    {
+                        HottestEvent.Remove(HottestEvent[0]);
+                        HottestEvent.Add(e);
+                    }
                 }
             }
 
-            if (favoritedEvents.Count == 0)
+            if (Surveys.Count == 0)
             {
-                favoritedEvents.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
+                Surveys.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
             }
 
-            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(Application.Context, favoritedEvents);
-            favoritedList.Adapter = adapter;
-            favoritedList.ItemClick += favoriteClick;
+            MyEventsFavoritesListViewAdapter adapter = new MyEventsFavoritesListViewAdapter(Application.Context, Surveys);
+            SurveyList.Adapter = adapter;
+            SurveyList.ItemClick += favoriteClick;
 
             if (HottestEvent.Count == 0)
             {
                 HottestEvent.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
             }
 
-            MyEventsFavoritesListViewAdapter adapter2 = new MyEventsFavoritesListViewAdapter(Application.Context, HottestEvent);
-            HottestEventList.Adapter = adapter2;
-            HottestEventList.ItemClick += favoriteClick;
+            HotEventAdapter HotAdapter = new HotEventAdapter(Application.Context, HottestEvent);
+            HottestEventList.Adapter = HotAdapter;
+            HottestEventList.ItemClick += HotClick;
         } 
         
         private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
         {
-            if (!favoritedEvents[e.Position].ScheduleOnly)
+            if (!Surveys[e.Position].ScheduleOnly)
             {
-                Store.Instance.SelectedEvent = favoritedEvents[e.Position];
+                Store.Instance.SelectedEvent = Surveys[e.Position];
 				Intent i = new Intent(Application.Context, typeof(EventDetails));
 				i.SetFlags(ActivityFlags.ReorderToFront);
 				StartActivity(i);
             }
+        }
+
+        private void HotClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+                Store.Instance.SelectedEvent = HottestEvent[e.Position];
+                Intent i = new Intent(Application.Context, typeof(EventDetails));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
         }
     }
 }
