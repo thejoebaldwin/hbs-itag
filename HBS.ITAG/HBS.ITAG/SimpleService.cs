@@ -123,6 +123,11 @@ namespace HBS.ITAG
                     if (tempEvent != null)
                     {
                         OnRegionExit(tempEvent);
+
+                        if (!Store.Instance.ToDoList.Contains(tempEvent))
+                        {
+                            Store.Instance.AddToDo(tempEvent);
+                        }
                     }
                 }
             };

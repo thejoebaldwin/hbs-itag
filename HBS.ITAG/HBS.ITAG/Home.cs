@@ -192,9 +192,10 @@ namespace HBS.ITAG
         private void SurveyClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             Store.Instance.SelectedEvent = Surveys[e.Position];
-            Intent i = new Intent(Application.Context, typeof(EventDetails));
+            Intent i = new Intent(Application.Context, typeof(Survey));
             i.SetFlags(ActivityFlags.ReorderToFront);
             StartActivity(i);
+
         }
     }
 }

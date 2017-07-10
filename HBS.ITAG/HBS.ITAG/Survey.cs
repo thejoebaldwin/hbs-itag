@@ -26,6 +26,7 @@ namespace HBS.ITAG
         EditText email;
         Spinner emailNotifications;
         Button done;
+        EventSurvey survey;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -42,6 +43,7 @@ namespace HBS.ITAG
             email = FindViewById<EditText>(Resource.Id.SurevyEmailEdittext);
             emailNotifications = FindViewById<Spinner>(Resource.Id.SurveySpinner);
             done = FindViewById<Button>(Resource.Id.SurveyDoneButton);
+            survey = new EventSurvey();
 
             // Set Event Name at Top
             // TODO: change this to a more reliable solution
@@ -57,14 +59,28 @@ namespace HBS.ITAG
             done.Click += (object sender, EventArgs e) =>
             {
                 // Send off survey results
-                String seekBar1Answer = seekBar1.Progress.ToString();
-                String seekBar2Answer = seekBar2.Progress.ToString();
-                String seekBar3Answer = seekBar3.Progress.ToString();
-                String commentsAnswer = comments.Text;
-
+                survey.QuestionOneRating = seekBar1.Progress;
+                survey.QuestionTwoRating = seekBar2.Progress;
+                survey.QuestionThreeRating = seekBar3.Progress;
+                survey.OtherComments = comments.Text;
+                if (email != null && email.Text != "")
+                {
+                    survey.Email = email.Text;
+                    survey.QuestionFourAnswer = "Yes";
+                }
+                else
+                {
+                    survey.QuestionFourAnswer = "No";
+                }
+                Store.Instance.DeleteToDo(Store.Instance.SelectedEvent);
+                Store.Instance.AddSurvey(survey, AddSurveyComplete);
 
                 StartActivity(typeof(Home));
             };
+
+            void AddSurveyComplete(string message)
+            {
+            }
         }
 
         private void EmailNotifications_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)

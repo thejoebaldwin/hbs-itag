@@ -378,15 +378,17 @@ namespace HBS.ITAG.Model
 				favorites += _arrFavoriteIds[i];
 			}
 
-			//return favorites;
+           
+
+                //return favorites;
 #if __MOBILE__
-            // Xamarin iOS or Android-specific code
-            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-            //var somePref = prefs.GetBoolean("PrefName", false);
+                // Xamarin iOS or Android-specific code
+                //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+                //var somePref = prefs.GetBoolean("PrefName", false);
 #endif
 #if __IOS__
-            // iOS-specific code
-            NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+                // iOS-specific code
+                NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 
 #endif
