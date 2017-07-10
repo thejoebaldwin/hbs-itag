@@ -11,6 +11,7 @@ using Android.Views;
 using Android.Widget;
 using HBS.ITAG.Model;
 using Java.Util;
+using static Android.App.ActionBar;
 
 namespace HBS.ITAG
 {
@@ -71,17 +72,15 @@ namespace HBS.ITAG
             if (emailNotifications.SelectedItem.ToString().Equals("Yes"))
             {
                 email.Visibility = ViewStates.Visible;
-                email.Gravity = GravityFlags.CenterHorizontal;
+                ViewGroup.MarginLayoutParams temp = (RelativeLayout.LayoutParams)emailNotifications.LayoutParameters;
+                temp.SetMargins(50, 0, 0, 0);
             }
             else
             {
                 email.Visibility = ViewStates.Gone;
+                ViewGroup.MarginLayoutParams temp = (RelativeLayout.LayoutParams)emailNotifications.LayoutParameters;
+                temp.SetMargins(0, 0, 0, 0);
             }
-        }
-
-        private void EmailNotifications_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         public void OnProgressChanged(SeekBar seekBar, int progress, bool fromUser)

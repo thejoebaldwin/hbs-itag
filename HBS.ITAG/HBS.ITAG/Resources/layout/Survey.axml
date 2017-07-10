@@ -111,10 +111,10 @@
     <RelativeLayout
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center">
         <Spinner
-            android:layout_width="150dp"
-            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:id="@+id/SurveySpinner"
             android:entries="@array/YesNo"
@@ -123,9 +123,11 @@
             android:popupBackground="#0e1d52" />
         <EditText
             android:id="@+id/SurevyEmailEdittext"
-            android:layout_width="150dp"
+            android:hint="Insert Email"
+            android:layout_width="250dp"
             android:layout_marginLeft="20dp"
-            android:layout_height="40dp"
+            android:layout_height="45dp"
+            android:gravity="center"
             android:background="@android:drawable/editbox_background"
             android:backgroundTint="#99a1ac"
             android:visibility="gone"
