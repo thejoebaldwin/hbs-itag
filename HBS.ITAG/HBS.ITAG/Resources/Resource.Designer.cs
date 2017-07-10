@@ -108,17 +108,20 @@ namespace HBS.ITAG
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f0d0002
-			public const int Age = 2131558402;
-			
 			// aapt resource value: 0x7f0d0003
-			public const int Gender = 2131558403;
+			public const int Age = 2131558403;
 			
-			// aapt resource value: 0x7f0d0001
-			public const int Organization = 2131558401;
+			// aapt resource value: 0x7f0d0004
+			public const int Gender = 2131558404;
+			
+			// aapt resource value: 0x7f0d0002
+			public const int Organization = 2131558402;
 			
 			// aapt resource value: 0x7f0d0000
 			public const int TechFocus = 2131558400;
+			
+			// aapt resource value: 0x7f0d0001
+			public const int YesNo = 2131558401;
 			
 			static Array()
 			{
@@ -2553,6 +2556,9 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070100
 			public const int SurevyEdittext = 2131165440;
 			
+			// aapt resource value: 0x7f0700fe
+			public const int SurevyEmailEdittext = 2131165438;
+			
 			// aapt resource value: 0x7f070101
 			public const int SurveyDoneButton = 2131165441;
 			
@@ -2570,6 +2576,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f0700fc
 			public const int SurveyQuestion4 = 2131165436;
+			
+			// aapt resource value: 0x7f0700fd
+			public const int SurveySpinner = 2131165437;
 			
 			// aapt resource value: 0x7f0700f2
 			public const int SurveytextView1 = 2131165426;
@@ -3051,9 +3060,6 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700fa
 			public const int seekBar3 = 2131165434;
 			
-			// aapt resource value: 0x7f0700fd
-			public const int seekBar4 = 2131165437;
-			
 			// aapt resource value: 0x7f070068
 			public const int select_dialog_listview = 2131165288;
 			
@@ -3125,9 +3131,6 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f0700fb
 			public const int textView3 = 2131165435;
-			
-			// aapt resource value: 0x7f0700fe
-			public const int textView4 = 2131165438;
 			
 			// aapt resource value: 0x7f0700e0
 			public const int time = 2131165408;

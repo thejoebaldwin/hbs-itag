@@ -37,6 +37,11 @@ namespace HBS.ITAG
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
 
+            itagIcon.Click += (sender, e) =>
+            {
+                StartActivity(typeof(Survey));
+            };
+
             // Nav bar code
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 

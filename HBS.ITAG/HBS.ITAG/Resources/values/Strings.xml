@@ -10,6 +10,11 @@
     <item>Both</item>
     <item>Neither</item>
   </string-array>
+  <string-array name="YesNo">
+    <item>(Choose One)</item>
+    <item>Yes</item>
+    <item>No</item>
+  </string-array>
   <string-array name="Organization">
     <item>(Choose One)</item>
     <item>IGIC</item>
