@@ -10,5 +10,14 @@
   <application android:label="ITAG Conference 2017" android:icon="@drawable/itag_icon">
     android:name=".MyApplication"
     android:allowBackup="true"
+    
+    <receiver android:name="MyBroadcastReceiver" >
+    <intent-filter>
+      <action android:name="android.intent.action.BOOT_COMPLETED" />
+    </intent-filter>
+  </receiver>
+
+    <receiver/>
+    
   </application>
 </manifest>

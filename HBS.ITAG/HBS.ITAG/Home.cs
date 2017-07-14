@@ -93,7 +93,10 @@ namespace HBS.ITAG
 
             // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
+
+            
             StartService(new Intent(this, typeof(SimpleService)));
+            //SendBroadcast(new Intent(Application.Context, typeof(SimpleService)));
 
             // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {

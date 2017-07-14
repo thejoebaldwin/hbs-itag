@@ -19,7 +19,8 @@ namespace HBS.ITAG
         public override void OnReceive(Context context, Intent intent)
         {
             // Do stuff here when device reboots.
-            context.StartService(intent);
+            context.ApplicationContext.StartService(new Intent(context, typeof(SimpleService)));
+            Toast.MakeText(context, " Boot Intent-action: " + intent.Action, ToastLength.Long).Show();
         }
     }
 }
