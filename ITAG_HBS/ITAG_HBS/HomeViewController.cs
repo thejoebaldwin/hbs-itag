@@ -103,7 +103,6 @@ namespace HBS.ITAG
 
         public void ReloadData()
         {
-            //TODO make toDoList find the events needed to get surveys for (load like favorites)
 			ToDoTableViewSource data = new ToDoTableViewSource(Store.Instance.ToDoList);
             HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
@@ -141,6 +140,15 @@ namespace HBS.ITAG
 
 		private void LoadLocationsComplete(string message)
 		{
+            foreach(var e in Store.Instance.Events)
+            {
+                Store.Instance.UpdateEvent(e, AddPeoplesInitializer);
+            }
+            var eventor = new Event("DELETE ME", "-1", DateTime.Now, DateTime.Now, "Me", "", "", "", "", false, 0);
+            Store.Instance.AddEvent(eventor, AddPeoplesInitializer);
+
+            Store.Instance.GetEvents(AddPeoplesInitializer);
+
             //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
             //TURN OFF LOADING INDICATOR
 
@@ -152,6 +160,10 @@ namespace HBS.ITAG
                 InitializeBeacons();
             }
 		}
+
+        private void AddPeoplesInitializer(string message)
+        {
+        }
 
         private void InitializeBeacons()
         {
