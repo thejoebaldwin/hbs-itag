@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eventItem"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150px"
+    android:background="@drawable/primaryBox">
+  <TextView
+      android:text="Text"
+      android:textColor="@android:color/white"
+      android:layout_height="40dp"
+      android:layout_width="fill_parent"
+      android:gravity="center"
+      android:id="@+id/HotEventName"
+      android:textSize="10dp"
+      android:paddingTop="20px"
+      android:layout_marginBottom="-10dp" />
+  <TextView
+      android:text="subtext"
+      android:textColor="@android:color/white"
+      android:layout_height="25dp"
+      android:layout_width="fill_parent"
+      android:gravity="center"
+      android:id="@+id/Attendee"
+      android:layout_marginBottom="17.5dp"
+      android:textSize="10dp" />
+</LinearLayout>

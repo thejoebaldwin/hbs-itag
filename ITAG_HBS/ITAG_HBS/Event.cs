@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace HBS.ITAG
 {
     public class EventOld
@@ -49,7 +48,5 @@ namespace HBS.ITAG
 
             return new EventOld(name, id, startTime, endTime, presenter, summary, track, eventWebId, scheduleOnly);
         }
-
-
     }
 }

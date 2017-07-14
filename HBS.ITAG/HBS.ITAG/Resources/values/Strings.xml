@@ -10,6 +10,11 @@
     <item>Both</item>
     <item>Neither</item>
   </string-array>
+  <string-array name="YesNo">
+    <item>(Choose One)</item>
+    <item>Yes</item>
+    <item>No</item>
+  </string-array>
   <string-array name="Organization">
     <item>(Choose One)</item>
     <item>IGIC</item>
@@ -45,8 +50,8 @@
   <string name="conferenceDetails">
     2017 ITAG Conference\n
     Tuesday, June 20 - Friday, June 23\n
-    West Des Moines Sheraton\n
-    1800 50th Street, West Des Moines, IA 50266\n
-    Contact Number: 515-223-1800
   </string>
+  <string name="contactNumber">Contact Number: (515) 223-1800</string>
+  <string name="HotelName">West Des Moines Sheraton<a href="http://google.com"></a>
+</string>
 </resources>

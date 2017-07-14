@@ -108,17 +108,20 @@ namespace HBS.ITAG
 		public partial class Array
 		{
 			
-			// aapt resource value: 0x7f0d0002
-			public const int Age = 2131558402;
-			
 			// aapt resource value: 0x7f0d0003
-			public const int Gender = 2131558403;
+			public const int Age = 2131558403;
 			
-			// aapt resource value: 0x7f0d0001
-			public const int Organization = 2131558401;
+			// aapt resource value: 0x7f0d0004
+			public const int Gender = 2131558404;
+			
+			// aapt resource value: 0x7f0d0002
+			public const int Organization = 2131558402;
 			
 			// aapt resource value: 0x7f0d0000
 			public const int TechFocus = 2131558400;
+			
+			// aapt resource value: 0x7f0d0001
+			public const int YesNo = 2131558401;
 			
 			static Array()
 			{
@@ -2400,6 +2403,9 @@ namespace HBS.ITAG
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f0700b4
+			public const int Attendee = 2131165364;
+			
 			// aapt resource value: 0x7f070071
 			public const int BluetoothMsg = 2131165297;
 			
@@ -2499,83 +2505,104 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07007a
 			public const int Header3 = 2131165306;
 			
+			// aapt resource value: 0x7f0700b3
+			public const int HotEventName = 2131165363;
+			
+			// aapt resource value: 0x7f0700ab
+			public const int HotelName = 2131165355;
+			
+			// aapt resource value: 0x7f0700a6
+			public const int HottestEventList = 2131165350;
+			
 			// aapt resource value: 0x7f070077
 			public const int Info1 = 2131165303;
 			
 			// aapt resource value: 0x7f07007b
 			public const int Info2 = 2131165307;
 			
-			// aapt resource value: 0x7f0700ad
-			public const int JCTtextView1 = 2131165357;
+			// aapt resource value: 0x7f0700b5
+			public const int JCTtextView1 = 2131165365;
 			
-			// aapt resource value: 0x7f0700ae
-			public const int JCTtextView2 = 2131165358;
+			// aapt resource value: 0x7f0700b6
+			public const int JCTtextView2 = 2131165366;
 			
-			// aapt resource value: 0x7f0700af
-			public const int JCTtextView3 = 2131165359;
+			// aapt resource value: 0x7f0700b7
+			public const int JCTtextView3 = 2131165367;
 			
-			// aapt resource value: 0x7f0700b0
-			public const int JCTtextView4 = 2131165360;
-			
-			// aapt resource value: 0x7f0700cb
-			public const int MElistView1 = 2131165387;
-			
-			// aapt resource value: 0x7f0700cf
-			public const int MElistView2 = 2131165391;
+			// aapt resource value: 0x7f0700b8
+			public const int JCTtextView4 = 2131165368;
 			
 			// aapt resource value: 0x7f0700d3
-			public const int MElistViewTextView1 = 2131165395;
+			public const int MElistView1 = 2131165395;
+			
+			// aapt resource value: 0x7f0700d7
+			public const int MElistView2 = 2131165399;
+			
+			// aapt resource value: 0x7f0700da
+			public const int MElistViewTextView1 = 2131165402;
+			
+			// aapt resource value: 0x7f0700dc
+			public const int MElistViewTextView2 = 2131165404;
+			
+			// aapt resource value: 0x7f0700d4
+			public const int MEnoFavoritesImage = 2131165396;
+			
+			// aapt resource value: 0x7f0700d8
+			public const int MEnoPreviousImage = 2131165400;
+			
+			// aapt resource value: 0x7f0700d2
+			public const int MEtextView2 = 2131165394;
+			
+			// aapt resource value: 0x7f0700d6
+			public const int MEtextView6 = 2131165398;
 			
 			// aapt resource value: 0x7f0700d5
-			public const int MElistViewTextView2 = 2131165397;
+			public const int MEtextViewNoFavorites = 2131165397;
 			
-			// aapt resource value: 0x7f0700cc
-			public const int MEnoFavoritesImage = 2131165388;
+			// aapt resource value: 0x7f0700d9
+			public const int MEtextViewNoPrevious = 2131165401;
 			
-			// aapt resource value: 0x7f0700d0
-			public const int MEnoPreviousImage = 2131165392;
+			// aapt resource value: 0x7f070104
+			public const int SurevyEdittext = 2131165444;
 			
-			// aapt resource value: 0x7f0700ca
-			public const int MEtextView2 = 2131165386;
+			// aapt resource value: 0x7f070102
+			public const int SurevyEmailEdittext = 2131165442;
 			
-			// aapt resource value: 0x7f0700ce
-			public const int MEtextView6 = 2131165390;
+			// aapt resource value: 0x7f070105
+			public const int SurveyDoneButton = 2131165445;
 			
-			// aapt resource value: 0x7f0700cd
-			public const int MEtextViewNoFavorites = 2131165389;
+			// aapt resource value: 0x7f070107
+			public const int SurveyEventTime = 2131165447;
 			
-			// aapt resource value: 0x7f0700d1
-			public const int MEtextViewNoPrevious = 2131165393;
+			// aapt resource value: 0x7f070106
+			public const int SurveyName = 2131165446;
+			
+			// aapt resource value: 0x7f070103
+			public const int SurveyOtherComments = 2131165443;
+			
+			// aapt resource value: 0x7f0700f7
+			public const int SurveyQuestion1 = 2131165431;
+			
+			// aapt resource value: 0x7f0700fa
+			public const int SurveyQuestion2 = 2131165434;
 			
 			// aapt resource value: 0x7f0700fd
-			public const int SurevyEdittext = 2131165437;
+			public const int SurveyQuestion3 = 2131165437;
 			
-			// aapt resource value: 0x7f0700fe
-			public const int SurveyDoneButton = 2131165438;
+			// aapt resource value: 0x7f070100
+			public const int SurveyQuestion4 = 2131165440;
 			
-			// aapt resource value: 0x7f0700fc
-			public const int SurveyOtherComments = 2131165436;
-			
-			// aapt resource value: 0x7f0700f0
-			public const int SurveyQuestion1 = 2131165424;
-			
-			// aapt resource value: 0x7f0700f3
-			public const int SurveyQuestion2 = 2131165427;
+			// aapt resource value: 0x7f070101
+			public const int SurveySpinner = 2131165441;
 			
 			// aapt resource value: 0x7f0700f6
-			public const int SurveyQuestion3 = 2131165430;
-			
-			// aapt resource value: 0x7f0700f9
-			public const int SurveyQuestion4 = 2131165433;
-			
-			// aapt resource value: 0x7f0700ef
-			public const int SurveytextView1 = 2131165423;
+			public const int SurveytextView1 = 2131165430;
 			
 			// aapt resource value: 0x7f070073
 			public const int Title = 2131165299;
 			
-			// aapt resource value: 0x7f0700d7
-			public const int action0 = 2131165399;
+			// aapt resource value: 0x7f0700de
+			public const int action0 = 2131165406;
 			
 			// aapt resource value: 0x7f07005a
 			public const int action_bar = 2131165274;
@@ -2601,8 +2628,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07005b
 			public const int action_context_bar = 2131165275;
 			
-			// aapt resource value: 0x7f0700db
-			public const int action_divider = 2131165403;
+			// aapt resource value: 0x7f0700e2
+			public const int action_divider = 2131165410;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -2649,11 +2676,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070044
 			public const int buttonPanel = 2131165252;
 			
-			// aapt resource value: 0x7f0700ab
-			public const int calendar = 2131165355;
+			// aapt resource value: 0x7f0700b0
+			public const int calendar = 2131165360;
 			
-			// aapt resource value: 0x7f0700d8
-			public const int cancel_action = 2131165400;
+			// aapt resource value: 0x7f0700df
+			public const int cancel_action = 2131165407;
 			
 			// aapt resource value: 0x7f07002b
 			public const int center = 2131165227;
@@ -2667,8 +2694,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070052
 			public const int checkbox = 2131165266;
 			
-			// aapt resource value: 0x7f0700de
-			public const int chronometer = 2131165406;
+			// aapt resource value: 0x7f0700e5
+			public const int chronometer = 2131165413;
 			
 			// aapt resource value: 0x7f070033
 			public const int clip_horizontal = 2131165235;
@@ -2679,8 +2706,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07001f
 			public const int collapseActionView = 2131165215;
 			
-			// aapt resource value: 0x7f0700a8
-			public const int conference_details = 2131165352;
+			// aapt resource value: 0x7f0700ac
+			public const int conference_address = 2131165356;
+			
+			// aapt resource value: 0x7f0700aa
+			public const int conference_details = 2131165354;
+			
+			// aapt resource value: 0x7f0700ad
+			public const int contactnumber = 2131165357;
 			
 			// aapt resource value: 0x7f07004a
 			public const int contentPanel = 2131165258;
@@ -2691,17 +2724,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07004f
 			public const int customPanel = 2131165263;
 			
-			// aapt resource value: 0x7f0700e7
-			public const int day_four_btn = 2131165415;
+			// aapt resource value: 0x7f0700ee
+			public const int day_four_btn = 2131165422;
 			
-			// aapt resource value: 0x7f0700e4
-			public const int day_one_btn = 2131165412;
+			// aapt resource value: 0x7f0700eb
+			public const int day_one_btn = 2131165419;
 			
-			// aapt resource value: 0x7f0700e6
-			public const int day_three_btn = 2131165414;
+			// aapt resource value: 0x7f0700ed
+			public const int day_three_btn = 2131165421;
 			
-			// aapt resource value: 0x7f0700e5
-			public const int day_two_btn = 2131165413;
+			// aapt resource value: 0x7f0700ec
+			public const int day_two_btn = 2131165420;
 			
 			// aapt resource value: 0x7f070058
 			public const int decor_content_parent = 2131165272;
@@ -2727,14 +2760,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07000e
 			public const int disableHome = 2131165198;
 			
-			// aapt resource value: 0x7f0700ec
-			public const int e = 2131165420;
+			// aapt resource value: 0x7f0700f3
+			public const int e = 2131165427;
 			
-			// aapt resource value: 0x7f0700ed
-			public const int eName = 2131165421;
+			// aapt resource value: 0x7f0700f4
+			public const int eName = 2131165428;
 			
-			// aapt resource value: 0x7f0700ee
-			public const int eTime = 2131165422;
+			// aapt resource value: 0x7f0700f5
+			public const int eTime = 2131165429;
 			
 			// aapt resource value: 0x7f07005c
 			public const int edit_query = 2131165276;
@@ -2742,8 +2775,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07001c
 			public const int end = 2131165212;
 			
-			// aapt resource value: 0x7f0700e3
-			public const int end_padder = 2131165411;
+			// aapt resource value: 0x7f0700ea
+			public const int end_padder = 2131165418;
 			
 			// aapt resource value: 0x7f070023
 			public const int enterAlways = 2131165219;
@@ -2754,11 +2787,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07009c
 			public const int eventDay = 2131165340;
 			
-			// aapt resource value: 0x7f0700d2
-			public const int eventItem = 2131165394;
+			// aapt resource value: 0x7f0700b2
+			public const int eventItem = 2131165362;
 			
-			// aapt resource value: 0x7f0700eb
-			public const int eventList = 2131165419;
+			// aapt resource value: 0x7f0700f2
+			public const int eventList = 2131165426;
 			
 			// aapt resource value: 0x7f070025
 			public const int exitUntilCollapsed = 2131165221;
@@ -2769,14 +2802,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070051
 			public const int expanded_menu = 2131165265;
 			
-			// aapt resource value: 0x7f0700d4
-			public const int faveEventTime = 2131165396;
+			// aapt resource value: 0x7f0700db
+			public const int faveEventTime = 2131165403;
 			
-			// aapt resource value: 0x7f0700a6
-			public const int favoritedList = 2131165350;
+			// aapt resource value: 0x7f0700a8
+			public const int favoritedList = 2131165352;
 			
-			// aapt resource value: 0x7f0700a5
-			public const int favorites_header = 2131165349;
+			// aapt resource value: 0x7f0700a7
+			public const int favorites_header = 2131165351;
 			
 			// aapt resource value: 0x7f070035
 			public const int fill = 2131165237;
@@ -2811,8 +2844,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07000f
 			public const int homeAsUp = 2131165199;
 			
-			// aapt resource value: 0x7f0700aa
-			public const int house = 2131165354;
+			// aapt resource value: 0x7f0700a5
+			public const int hottestevents_header = 2131165349;
+			
+			// aapt resource value: 0x7f0700af
+			public const int house = 2131165359;
 			
 			// aapt resource value: 0x7f070042
 			public const int icon = 2131165250;
@@ -2823,8 +2859,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07003f
 			public const int image = 2131165247;
 			
-			// aapt resource value: 0x7f0700e2
-			public const int info = 2131165410;
+			// aapt resource value: 0x7f0700e9
+			public const int info = 2131165417;
 			
 			// aapt resource value: 0x7f0700a3
 			public const int itag_icon = 2131165347;
@@ -2838,17 +2874,17 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
 			
-			// aapt resource value: 0x7f0700e8
-			public const int leftArrow = 2131165416;
+			// aapt resource value: 0x7f0700ef
+			public const int leftArrow = 2131165423;
 			
-			// aapt resource value: 0x7f0700dc
-			public const int line1 = 2131165404;
+			// aapt resource value: 0x7f0700e3
+			public const int line1 = 2131165411;
 			
-			// aapt resource value: 0x7f0700e0
-			public const int line3 = 2131165408;
+			// aapt resource value: 0x7f0700e7
+			public const int line3 = 2131165415;
 			
-			// aapt resource value: 0x7f0700a9
-			public const int linearLayout1 = 2131165353;
+			// aapt resource value: 0x7f0700ae
+			public const int linearLayout1 = 2131165358;
 			
 			// aapt resource value: 0x7f07000b
 			public const int listMode = 2131165195;
@@ -2859,8 +2895,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07006c
 			public const int llAlertTextContainer = 2131165292;
 			
-			// aapt resource value: 0x7f0700da
-			public const int media_actions = 2131165402;
+			// aapt resource value: 0x7f0700e1
+			public const int media_actions = 2131165409;
 			
 			// aapt resource value: 0x7f07001d
 			public const int middle = 2131165213;
@@ -2868,77 +2904,77 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070037
 			public const int mini = 2131165239;
 			
-			// aapt resource value: 0x7f0700bc
-			public const int mr_art = 2131165372;
-			
-			// aapt resource value: 0x7f0700b1
-			public const int mr_chooser_list = 2131165361;
-			
-			// aapt resource value: 0x7f0700b4
-			public const int mr_chooser_route_desc = 2131165364;
-			
-			// aapt resource value: 0x7f0700b2
-			public const int mr_chooser_route_icon = 2131165362;
-			
-			// aapt resource value: 0x7f0700b3
-			public const int mr_chooser_route_name = 2131165363;
+			// aapt resource value: 0x7f0700c4
+			public const int mr_art = 2131165380;
 			
 			// aapt resource value: 0x7f0700b9
-			public const int mr_close = 2131165369;
+			public const int mr_chooser_list = 2131165369;
 			
-			// aapt resource value: 0x7f0700bf
-			public const int mr_control_divider = 2131165375;
-			
-			// aapt resource value: 0x7f0700c5
-			public const int mr_control_play_pause = 2131165381;
-			
-			// aapt resource value: 0x7f0700c8
-			public const int mr_control_subtitle = 2131165384;
-			
-			// aapt resource value: 0x7f0700c7
-			public const int mr_control_title = 2131165383;
-			
-			// aapt resource value: 0x7f0700c6
-			public const int mr_control_title_container = 2131165382;
+			// aapt resource value: 0x7f0700bc
+			public const int mr_chooser_route_desc = 2131165372;
 			
 			// aapt resource value: 0x7f0700ba
-			public const int mr_custom_control = 2131165370;
+			public const int mr_chooser_route_icon = 2131165370;
 			
 			// aapt resource value: 0x7f0700bb
-			public const int mr_default_control = 2131165371;
-			
-			// aapt resource value: 0x7f0700b6
-			public const int mr_dialog_area = 2131165366;
-			
-			// aapt resource value: 0x7f0700b5
-			public const int mr_expandable_area = 2131165365;
-			
-			// aapt resource value: 0x7f0700c9
-			public const int mr_group_expand_collapse = 2131165385;
-			
-			// aapt resource value: 0x7f0700bd
-			public const int mr_media_main_control = 2131165373;
-			
-			// aapt resource value: 0x7f0700b8
-			public const int mr_name = 2131165368;
-			
-			// aapt resource value: 0x7f0700be
-			public const int mr_playback_control = 2131165374;
-			
-			// aapt resource value: 0x7f0700b7
-			public const int mr_title_bar = 2131165367;
-			
-			// aapt resource value: 0x7f0700c0
-			public const int mr_volume_control = 2131165376;
+			public const int mr_chooser_route_name = 2131165371;
 			
 			// aapt resource value: 0x7f0700c1
-			public const int mr_volume_group_list = 2131165377;
+			public const int mr_close = 2131165377;
+			
+			// aapt resource value: 0x7f0700c7
+			public const int mr_control_divider = 2131165383;
+			
+			// aapt resource value: 0x7f0700cd
+			public const int mr_control_play_pause = 2131165389;
+			
+			// aapt resource value: 0x7f0700d0
+			public const int mr_control_subtitle = 2131165392;
+			
+			// aapt resource value: 0x7f0700cf
+			public const int mr_control_title = 2131165391;
+			
+			// aapt resource value: 0x7f0700ce
+			public const int mr_control_title_container = 2131165390;
+			
+			// aapt resource value: 0x7f0700c2
+			public const int mr_custom_control = 2131165378;
 			
 			// aapt resource value: 0x7f0700c3
-			public const int mr_volume_item_icon = 2131165379;
+			public const int mr_default_control = 2131165379;
 			
-			// aapt resource value: 0x7f0700c4
-			public const int mr_volume_slider = 2131165380;
+			// aapt resource value: 0x7f0700be
+			public const int mr_dialog_area = 2131165374;
+			
+			// aapt resource value: 0x7f0700bd
+			public const int mr_expandable_area = 2131165373;
+			
+			// aapt resource value: 0x7f0700d1
+			public const int mr_group_expand_collapse = 2131165393;
+			
+			// aapt resource value: 0x7f0700c5
+			public const int mr_media_main_control = 2131165381;
+			
+			// aapt resource value: 0x7f0700c0
+			public const int mr_name = 2131165376;
+			
+			// aapt resource value: 0x7f0700c6
+			public const int mr_playback_control = 2131165382;
+			
+			// aapt resource value: 0x7f0700bf
+			public const int mr_title_bar = 2131165375;
+			
+			// aapt resource value: 0x7f0700c8
+			public const int mr_volume_control = 2131165384;
+			
+			// aapt resource value: 0x7f0700c9
+			public const int mr_volume_group_list = 2131165385;
+			
+			// aapt resource value: 0x7f0700cb
+			public const int mr_volume_item_icon = 2131165387;
+			
+			// aapt resource value: 0x7f0700cc
+			public const int mr_volume_slider = 2131165388;
 			
 			// aapt resource value: 0x7f070016
 			public const int multiply = 2131165206;
@@ -2964,11 +3000,11 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070029
 			public const int pin = 2131165225;
 			
-			// aapt resource value: 0x7f0700d6
-			public const int prevEventTime = 2131165398;
+			// aapt resource value: 0x7f0700dd
+			public const int prevEventTime = 2131165405;
 			
-			// aapt resource value: 0x7f0700ac
-			public const int profileimage = 2131165356;
+			// aapt resource value: 0x7f0700b1
+			public const int profileimage = 2131165361;
 			
 			// aapt resource value: 0x7f070006
 			public const int progress_circular = 2131165190;
@@ -2982,8 +3018,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
 			
-			// aapt resource value: 0x7f0700ea
-			public const int rightArrow = 2131165418;
+			// aapt resource value: 0x7f0700f1
+			public const int rightArrow = 2131165425;
 			
 			// aapt resource value: 0x7f070017
 			public const int screen = 2131165207;
@@ -3033,17 +3069,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070067
 			public const int search_voice_btn = 2131165287;
 			
-			// aapt resource value: 0x7f0700f1
-			public const int seekBar1 = 2131165425;
+			// aapt resource value: 0x7f0700f8
+			public const int seekBar1 = 2131165432;
 			
-			// aapt resource value: 0x7f0700f4
-			public const int seekBar2 = 2131165428;
+			// aapt resource value: 0x7f0700fb
+			public const int seekBar2 = 2131165435;
 			
-			// aapt resource value: 0x7f0700f7
-			public const int seekBar3 = 2131165431;
-			
-			// aapt resource value: 0x7f0700fa
-			public const int seekBar4 = 2131165434;
+			// aapt resource value: 0x7f0700fe
+			public const int seekBar3 = 2131165438;
 			
 			// aapt resource value: 0x7f070068
 			public const int select_dialog_listview = 2131165288;
@@ -3087,41 +3120,38 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070031
 			public const int start = 2131165233;
 			
-			// aapt resource value: 0x7f0700d9
-			public const int status_bar_latest_event_content = 2131165401;
+			// aapt resource value: 0x7f0700e0
+			public const int status_bar_latest_event_content = 2131165408;
 			
 			// aapt resource value: 0x7f070065
 			public const int submit_area = 2131165285;
 			
-			// aapt resource value: 0x7f0700a7
-			public const int switch1 = 2131165351;
+			// aapt resource value: 0x7f0700a9
+			public const int switch1 = 2131165353;
 			
 			// aapt resource value: 0x7f07000d
 			public const int tabMode = 2131165197;
 			
-			// aapt resource value: 0x7f0700e1
-			public const int text = 2131165409;
+			// aapt resource value: 0x7f0700e8
+			public const int text = 2131165416;
 			
-			// aapt resource value: 0x7f0700df
-			public const int text2 = 2131165407;
+			// aapt resource value: 0x7f0700e6
+			public const int text2 = 2131165414;
 			
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
 			
-			// aapt resource value: 0x7f0700f2
-			public const int textView1 = 2131165426;
+			// aapt resource value: 0x7f0700f9
+			public const int textView1 = 2131165433;
 			
-			// aapt resource value: 0x7f0700f5
-			public const int textView2 = 2131165429;
+			// aapt resource value: 0x7f0700fc
+			public const int textView2 = 2131165436;
 			
-			// aapt resource value: 0x7f0700f8
-			public const int textView3 = 2131165432;
+			// aapt resource value: 0x7f0700ff
+			public const int textView3 = 2131165439;
 			
-			// aapt resource value: 0x7f0700fb
-			public const int textView4 = 2131165435;
-			
-			// aapt resource value: 0x7f0700dd
-			public const int time = 2131165405;
+			// aapt resource value: 0x7f0700e4
+			public const int time = 2131165412;
 			
 			// aapt resource value: 0x7f070043
 			public const int title = 2131165251;
@@ -3138,8 +3168,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07008b
 			public const int touch_outside = 2131165323;
 			
-			// aapt resource value: 0x7f0700e9
-			public const int track_title = 2131165417;
+			// aapt resource value: 0x7f0700f0
+			public const int track_title = 2131165424;
 			
 			// aapt resource value: 0x7f07006e
 			public const int tvText = 2131165294;
@@ -3156,8 +3186,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07000a
 			public const int view_offset_helper = 2131165194;
 			
-			// aapt resource value: 0x7f0700c2
-			public const int volume_item_container = 2131165378;
+			// aapt resource value: 0x7f0700ca
+			public const int volume_item_container = 2131165386;
 			
 			// aapt resource value: 0x7f070022
 			public const int withText = 2131165218;
@@ -3370,82 +3400,88 @@ namespace HBS.ITAG
 			public const int Home = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int JsonCallTester = 2130903083;
+			public const int HottestEventListView = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int Main = 2130903084;
+			public const int JsonCallTester = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int mr_chooser_dialog = 2130903085;
+			public const int Main = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int mr_chooser_list_item = 2130903086;
+			public const int mr_chooser_dialog = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int mr_controller_material_dialog_b = 2130903087;
+			public const int mr_chooser_list_item = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int mr_controller_volume_item = 2130903088;
+			public const int mr_controller_material_dialog_b = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int mr_playback_control = 2130903089;
+			public const int mr_controller_volume_item = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int mr_volume_control = 2130903090;
+			public const int mr_playback_control = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int MyEvents = 2130903091;
+			public const int mr_volume_control = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int MyEventsFavoritesListView = 2130903092;
+			public const int MyEvents = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int MyEventsPreviousEventsListView = 2130903093;
+			public const int MyEventsFavoritesListView = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int notification_media_action = 2130903094;
+			public const int MyEventsPreviousEventsListView = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int notification_media_cancel_action = 2130903095;
+			public const int notification_media_action = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_template_big_media = 2130903096;
+			public const int notification_media_cancel_action = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_template_big_media_narrow = 2130903097;
+			public const int notification_template_big_media = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_template_lines = 2130903098;
+			public const int notification_template_big_media_narrow = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_template_media = 2130903099;
+			public const int notification_template_lines = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_template_part_chronometer = 2130903100;
+			public const int notification_template_media = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_template_part_time = 2130903101;
+			public const int notification_template_part_chronometer = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int Schedule = 2130903102;
+			public const int notification_template_part_time = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int scheduleListView = 2130903103;
+			public const int Schedule = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int select_dialog_item_material = 2130903104;
+			public const int scheduleListView = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int select_dialog_multichoice_material = 2130903105;
+			public const int select_dialog_item_material = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int select_dialog_singlechoice_material = 2130903106;
+			public const int select_dialog_multichoice_material = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int support_simple_spinner_dropdown_item = 2130903107;
+			public const int select_dialog_singlechoice_material = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int Survey = 2130903108;
+			public const int support_simple_spinner_dropdown_item = 2130903108;
+			
+			// aapt resource value: 0x7f030045
+			public const int Survey = 2130903109;
+			
+			// aapt resource value: 0x7f030046
+			public const int SurveyListView = 2130903110;
 			
 			static Layout()
 			{
@@ -3465,6 +3501,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f080032
 			public const int Hello = 2131230770;
+			
+			// aapt resource value: 0x7f080039
+			public const int HotelName = 2131230777;
 			
 			// aapt resource value: 0x7f080035
 			public const int Info1 = 2131230773;
@@ -3540,6 +3579,9 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f080037
 			public const int conferenceDetails = 2131230775;
+			
+			// aapt resource value: 0x7f080038
+			public const int contactNumber = 2131230776;
 			
 			// aapt resource value: 0x7f080026
 			public const int error_no_bluetooth_enabled = 2131230758;

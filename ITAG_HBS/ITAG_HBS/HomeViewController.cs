@@ -8,7 +8,7 @@ using CoreLocation;
 using System.Collections.Generic;
 
 namespace HBS.ITAG
-{ //THIS IS FOR THE HOME PAGE//
+{
     public partial class HomeViewController : UIViewController
     {
         partial void NotifySwitchClicked(UISwitch sender)
@@ -78,7 +78,6 @@ namespace HBS.ITAG
             eventDetailViewController.parent = this;
             eventSurveyController = (EventSurveyController)this.Storyboard.InstantiateViewController("EventSurveyController");
             eventSurveyController.parent = this;
-
             aboutViewController = (AppFeaturesViewController)this.Storyboard.InstantiateViewController("AboutViewController");
 
 			HotelName.UserInteractionEnabled = true;
@@ -151,7 +150,6 @@ namespace HBS.ITAG
 
             //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
             //TURN OFF LOADING INDICATOR
-
             //now load events because we have all the data
             ReloadData();
             initialized = true;
@@ -181,7 +179,6 @@ namespace HBS.ITAG
                 beaconRegion.NotifyEntryStateOnDisplay = true;
                 beaconManager.StartMonitoringForRegion(beaconRegion);
             }
-            
             //on region exit
 		    beaconManager.ExitedRegion += (sender, e) =>
 		   {
@@ -311,7 +308,6 @@ namespace HBS.ITAG
                         {
                             if (this.PresentedViewController != null)
                             {
-
                                 this.PresentedViewController.PresentViewController(eventDetailViewController, true, null);
                             }
                             else

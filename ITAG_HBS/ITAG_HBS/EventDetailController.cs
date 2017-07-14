@@ -47,12 +47,11 @@ namespace HBS.ITAG
 
             //ReminderText.UserInteractionEnabled = true;
 
-           // UITapGestureRecognizer Reminder = new UITapGestureRecognizer(ReminderClick);
-           // Reminder.NumberOfTapsRequired = 1;
-           // ReminderText.AddGestureRecognizer(Reminder);
+            // UITapGestureRecognizer Reminder = new UITapGestureRecognizer(ReminderClick);
+            // Reminder.NumberOfTapsRequired = 1;
+            // ReminderText.AddGestureRecognizer(Reminder);
 
-
-			// Perform any additional setup after loading the view, typically from a nib.
+		    // Perform any additional setup after loading the view, typically from a nib.
 		}
 
         public void RefreshPage()
@@ -77,14 +76,12 @@ namespace HBS.ITAG
 			{
 				GrayStar.Highlighted = false;
 			}
-			
         }
 
         public override void ViewDidAppear(bool animated)
         {
             base.ViewDidAppear(animated);
             RefreshPage();
-
         }
 
         private void StarClick()
@@ -100,10 +97,8 @@ namespace HBS.ITAG
 				Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
                 ReminderClick();
             }
-
 			//parent.ReloadData();
 			//parent.myEventsController.ReloadData();
-
         }
 
 		private void FavoritedClick()
@@ -117,7 +112,6 @@ namespace HBS.ITAG
 			UITapGestureRecognizer Unfavoritedtapgesture = new UITapGestureRecognizer(UnfavoritedClick);
 			Unfavoritedtapgesture.NumberOfTapsRequired = 1;
 			GrayStar.AddGestureRecognizer(Unfavoritedtapgesture);
-
 		}
 		public void UnfavoritedClick()
 		{

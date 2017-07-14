@@ -13,9 +13,6 @@ namespace ITAG_HBS
 		const string CLOUD_APP_ID = "itag-conference-2017-360"; //"YOUR-APP-ID";
 		const string CLOUD_APP_TOKEN = "9b7e22b2f2ea4e89363c05634b4ee3a5"; //"YOUR-APP-TOKEN";
 	
-
-
-
 		public override UIWindow Window
         {
             get;
@@ -33,7 +30,6 @@ namespace ITAG_HBS
 			Config.Setup(CLOUD_APP_ID, CLOUD_APP_TOKEN);
 			//Config.EnableMonitoringAnalytics(true);
 			//Config.EnableRangingAnalytics(true);
-
 			return true;
         }
 
