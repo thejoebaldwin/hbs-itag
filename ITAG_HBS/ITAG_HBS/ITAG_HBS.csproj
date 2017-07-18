@@ -217,6 +217,7 @@
     <BundleResource Include="Resources\right_arrow.png" />
     <BundleResource Include="Resources\unfavoritedstar.png" />
     <BundleResource Include="Resources\favoritedstar.png" />
+    <BundleResource Include="Resources\maplayout.PNG" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="estimotesdkios">
