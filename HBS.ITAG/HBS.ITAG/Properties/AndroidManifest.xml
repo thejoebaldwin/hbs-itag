@@ -4,18 +4,11 @@
 	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
-  <application android:label="ITAG Conference 2017" android:icon="@drawable/itag_icon">
+	<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<application android:label="ITAG Conference 2017" android:icon="@drawable/wifiTower">
     android:name=".MyApplication"
     android:allowBackup="true"
-    
-    <receiver android:name="MyBroadcastReceiver" >
-    <intent-filter>
-      <action android:name="android.intent.action.BOOT_COMPLETED" />
-    </intent-filter>
-  </receiver>
-    
-  </application>
+    </application>
 </manifest>

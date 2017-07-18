@@ -7,9 +7,7 @@ using Android.Widget;
 using HBS.ITAG.Model;
 using EstimoteSdk;
 using Android.Text.Method;
-using System.Globalization;
 using Android.Text;
-using Android.Support.V4.Content;
 
 namespace HBS.ITAG
 {
@@ -95,8 +93,8 @@ namespace HBS.ITAG
             Store.Instance.GetTracks(LoadTracksComplete);
 
             
-            StartService(new Intent(this, typeof(SimpleService)));
-            //SendBroadcast(new Intent(Application.Context, typeof(SimpleService)));
+            //StartService(new Intent(this, typeof(SimpleService)));
+            SendBroadcast(new Intent(Application.Context, typeof(SimpleService)));
 
             // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
