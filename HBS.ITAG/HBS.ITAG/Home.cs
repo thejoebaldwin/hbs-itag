@@ -135,6 +135,7 @@ namespace HBS.ITAG
 
         private void LoadData()
         {
+            
             events = new List<Event>(Store.Instance.Events);
             Surveys = new List<Event>();
             HottestEvent = new List<Event>();
