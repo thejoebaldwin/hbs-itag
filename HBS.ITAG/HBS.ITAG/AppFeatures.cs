@@ -20,6 +20,7 @@ namespace HBS.ITAG
             base.OnCreate(savedInstanceState);
             RequestWindowFeature(WindowFeatures.NoTitle);
             SetContentView(Resource.Layout.AppFeatures);
+
             Button BluetoothMsg = FindViewById<Button>(Resource.Id.BluetoothMsg);
 
             ImageView WifiTowerPicture = FindViewById<ImageView>(Resource.Id.bluetoothimage);
@@ -29,6 +30,21 @@ namespace HBS.ITAG
             TextView Header2 = FindViewById<TextView>(Resource.Id.Header2);
             ImageView Blueprintimage = FindViewById<ImageView>(Resource.Id.blueprintexample);
             TextView Header3 = FindViewById<TextView>(Resource.Id.Header3);
+
+            
+
+        BluetoothMsg.Click += (sender, e) =>
+            {
+                Android.Bluetooth.BluetoothAdapter bluetoothAdapter = Android.Bluetooth.BluetoothAdapter.DefaultAdapter;
+
+                if (bluetoothAdapter != null)
+                {
+                    bluetoothAdapter.Enable();
+                }
+                //Intent BluetoothClick = new Intent();
+                //StartActivity(BluetoothClick);
+            };
+           
 
         }
     }

@@ -104,7 +104,7 @@
     <GridLayout>
         <TextView
             android:id="@+id/Header3"
-            android:text="Why it's helpful"
+            android:text="Why is it helpful?"
             android:textStyle="bold"
             android:textColor="@android:color/black"
             android:textAppearance="?android:attr/textAppearanceMedium"

@@ -12,13 +12,14 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [BroadcastReceiver(Enabled = true)]
-    [IntentFilter(new[] { Intent.ActionBootCompleted })]
+    [BroadcastReceiver(Enabled = true, Exported = true)]
+    [IntentFilter(new[] { Android.Content.Intent.ActionBootCompleted })]
     public class MyBootReceiver : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)
         {
             // Do stuff here when device reboots.
+            //context.ApplicationContext.StartService(new Intent(context, typeof(SimpleService)));
             context.ApplicationContext.StartService(new Intent(context, typeof(SimpleService)));
             Toast.MakeText(context, " Boot Intent-action: " + intent.Action, ToastLength.Long).Show();
         }
