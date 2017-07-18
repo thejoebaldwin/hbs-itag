@@ -12,14 +12,14 @@ using Android.Widget;
 
 namespace HBS.ITAG
 {
-    [BroadcastReceiver(Enabled = true)]
-    [IntentFilter(new[] { "SimpleService" })]
+    [BroadcastReceiver(Enabled = true, Exported = true)]
     public class MyBroadcastReceiver : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)
         {
             // Do stuff here
             context.StartService(intent);
+            Toast.MakeText(context, "Intent-action: " + intent.Action, ToastLength.Long).Show();
         }
     }
 }

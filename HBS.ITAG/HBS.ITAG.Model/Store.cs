@@ -136,8 +136,6 @@ namespace HBS.ITAG.Model
 						data[entry.Key] = realValue;
 					}
 				}
-
-
 				return data;
 			}
 			catch (Exception ex)
@@ -186,7 +184,6 @@ namespace HBS.ITAG.Model
 					String.Format("about {0} years ago", timeSpan.Days / 365) :
 					"about a year ago";
 			}
-
 			return result;
 		}
 	}
@@ -390,7 +387,6 @@ namespace HBS.ITAG.Model
                 // iOS-specific code
                 NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
-
 #endif
 		}
 
@@ -445,7 +441,6 @@ namespace HBS.ITAG.Model
 #endif
 		}
 
-
 		public User CurrentUser { get; set; }
 
 		public string AccessToken
@@ -463,7 +458,6 @@ namespace HBS.ITAG.Model
 			get { return _arrTracks; }
 		}
 
-
 		public List<User> Users
 		{
 			get { return _arrUsers; }
@@ -474,14 +468,11 @@ namespace HBS.ITAG.Model
 			get { return _arrLocations; }
 		}
 
-
-
 		public Store(string connectionUrl)
 		{
 			_ConnectionUrl = connectionUrl;
 			ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 		}
-
 
 		public Event ProximityEvent(string major, string minor)
 		{
@@ -550,11 +541,11 @@ namespace HBS.ITAG.Model
 		{
 			_Operation = "add_event";
 
-			string startTime = newEvent.StartTime.ToString();
-			string endTime = newEvent.EndTime.ToString();
+			string startTime = newEvent.StartTime.ToUniversalTime().ToString();
+			string endTime = newEvent.EndTime.ToUniversalTime().ToString();
 
 			string json = "{\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
-			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";//,"number_of_people": "<number_of_people>"
+            json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<schedule_only>", newEvent.ScheduleOnly.ToString().ToLower());
@@ -567,7 +558,7 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<summary>", newEvent.Summary);
 			json = json.Replace("<presenter>", newEvent.Presenter);
 			json = json.Replace("<event_web_id>", newEvent.EventWebId);
-            json = json.Replace("<number_of_people>", 0.ToString());
+            json = json.Replace("<number_of_people>", newEvent.NumberOfPeople.ToString());
 
 			_Completion = completion;
 			PostDataWithOperation("events", json, "POST");
@@ -664,11 +655,11 @@ namespace HBS.ITAG.Model
 		{
 			_Operation = "update_event";
 
-			string startTime = updatedEvent.StartTime.ToString();
-			string endTime = updatedEvent.EndTime.ToString();
+			string startTime = updatedEvent.StartTime.ToUniversalTime().ToString();
+			string endTime = updatedEvent.EndTime.ToUniversalTime().ToString();
 
 			string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
-			json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",";//,"number_of_people": "<number_of_people>"
+            json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<event_id>", updatedEvent.Id);
@@ -682,7 +673,7 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<summary>", updatedEvent.Summary);
 			json = json.Replace("<presenter>", updatedEvent.Presenter);
 			json = json.Replace("<event_web_id>", updatedEvent.EventWebId);
-            //json = json.Replace("<number_of_people>", updatedEvent.NumberOfPeople.ToString());
+            json = json.Replace("<number_of_people>", updatedEvent.NumberOfPeople.ToString());
 
 
 			_Completion = completion;
@@ -818,9 +809,6 @@ namespace HBS.ITAG.Model
 			}
 		}
 
-
-
-
 		private void EndResponse(IAsyncResult result)
 		{
 			//_request.EndGetResponse(result);
@@ -831,17 +819,12 @@ namespace HBS.ITAG.Model
 			_Completion(response_json);
 		}
 
-
-
-
-
 		private void processResponse(string response_json)
 		{
 			try
 			{
 				switch (_Operation)
 				{
-
 					case "get_tracks":
 						{
 							Dictionary<string, string> data = Utilities.ParseJson(response_json);
@@ -888,7 +871,6 @@ namespace HBS.ITAG.Model
                                 NSUserDefaults.StandardUserDefaults.SetString(_userId, "user_id");
                                 NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-
 							}
 							break;
 						}
@@ -903,7 +885,6 @@ namespace HBS.ITAG.Model
 								NSUserDefaults.StandardUserDefaults.SetString(_surveyId, "survey_id");
 								NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-
 							}
 							break;
 						}

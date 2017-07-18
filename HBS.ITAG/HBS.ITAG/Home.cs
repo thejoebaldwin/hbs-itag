@@ -93,7 +93,10 @@ namespace HBS.ITAG
 
             // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
+
+            
             StartService(new Intent(this, typeof(SimpleService)));
+            //SendBroadcast(new Intent(Application.Context, typeof(SimpleService)));
 
             // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {
@@ -132,6 +135,7 @@ namespace HBS.ITAG
 
         private void LoadData()
         {
+            
             events = new List<Event>(Store.Instance.Events);
             Surveys = new List<Event>();
             HottestEvent = new List<Event>();

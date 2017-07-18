@@ -62,6 +62,46 @@ namespace HBS.ITAG.Model
 			NumberOfPeople = 0;
 		}
 
+		public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, string eventWebId, string trackId, string locationId, bool scheduleOnly, int numberOfPeople)
+		{
+			Name = name;
+			Id = id;
+			StartTime = startTime;
+			EndTime = endTime;
+			Presenter = presenter;
+			Summary = summary;
+			EventWebId = eventWebId;
+			TrackId = trackId;
+			LocationId = locationId;
+			ScheduleOnly = scheduleOnly;
+			Favorited = false;
+			LastEntryNotified = DateTime.Now.AddMinutes(-30);
+			LastExitNotified = DateTime.Now.AddMinutes(-30);
+            NumberOfPeople = numberOfPeople;
+		}
+
+		//public Event(string name, string id, DateTime startTime, DateTime endTime, string presenter, string summary, string eventWebId, string trackId, string locationId, bool scheduleOnly, List<EventSurvey> surveys ,int numberOfPeople)
+		//{
+		//	Name = name;
+		//	Id = id;
+		//	StartTime = startTime;
+		//	EndTime = endTime;
+		//	Presenter = presenter;
+		//	Summary = summary;
+		//	EventWebId = eventWebId;
+		//	TrackId = trackId;
+		//	LocationId = locationId;
+		//	ScheduleOnly = scheduleOnly;
+		//	Favorited = false;
+		//	LastEntryNotified = DateTime.Now.AddMinutes(-30);
+		//	LastExitNotified = DateTime.Now.AddMinutes(-30);
+		//	NumberOfPeople = numberOfPeople;
+		//}
+
+        public Event()
+        {
+        }
+
         public static Event FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Model.Utilities.ParseJson(json);
@@ -88,8 +128,8 @@ namespace HBS.ITAG.Model
             }
 
             string summary = data["summary"];
-            //string numberOfPeople = data["number_of_people"];
-            return new Event(name, id, startTime, endTime, presenter, summary, eventWebId, trackId, locationId, scheduleOnly);
+            int numberOfPeople = 0;//Int32.Parse(data["number_of_people"]);
+            return new Event(name, id, startTime, endTime, presenter, summary, eventWebId, trackId, locationId, scheduleOnly, numberOfPeople);
         }
     }
 }

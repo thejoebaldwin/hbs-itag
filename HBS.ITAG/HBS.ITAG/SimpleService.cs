@@ -124,10 +124,11 @@ namespace HBS.ITAG
                     {
                         OnRegionExit(tempEvent);
 
+                        /*
                         if (!Store.Instance.ToDoList.Contains(tempEvent))
                         {
                             Store.Instance.AddToDo(tempEvent);
-                        }
+                        }*/
                     }
                 }
             };
@@ -158,9 +159,11 @@ namespace HBS.ITAG
         public void OnRegionEnter(Event tempEvent)
         {
             Store.Instance.SelectedEvent = tempEvent;
+            Intent oldIntent = new Intent(this, typeof(Home));
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
+            stackBuilder.AddNextIntent(oldIntent);
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
@@ -217,13 +220,15 @@ namespace HBS.ITAG
         public override void OnDestroy()
         {
             beaconManager.Disconnect();
-            //    //SendBroadcast(new Intent(this, typeof(SimpleService)));
+            //SendBroadcast(new Intent(this, typeof(SimpleService)));
             //    Console.WriteLine("Here");
             //    MyBroadcastReceiver temp = new MyBroadcastReceiver();
             //    Intent tempIntent = new Intent(this, typeof(SimpleService));
             //    temp.OnReceive(this , tempIntent);
             //    SendBroadcast(tempIntent);
-                base.OnDestroy();
+            //Intent intent = new Intent(Application.Context, typeof(SimpleService));
+            //SendBroadcast(intent);
+            base.OnDestroy();
         }
     }
 }
