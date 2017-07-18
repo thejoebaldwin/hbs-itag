@@ -1,8 +1,6 @@
 using Foundation;
 using System;
 using UIKit;
-using HBS.ITAG;
-using ITAG_HBS;
 using System.Collections.Generic;
 using HBS.ITAG.Model;
 using System.Globalization;
