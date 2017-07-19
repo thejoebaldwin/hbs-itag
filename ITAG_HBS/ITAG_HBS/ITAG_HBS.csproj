@@ -143,7 +143,6 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="MyEventsViewController.xib" />
-    <InterfaceDefinition Include="FavoritesViewController.xib" />
     <InterfaceDefinition Include="PickerViewController.xib" />
     <InterfaceDefinition Include="AppFeaturesViewController.xib" />
   </ItemGroup>

@@ -91,6 +91,7 @@ namespace HBS.ITAG
 			};
 
             this.EmailTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.EmailTextView.KeyboardType = UIKeyboardType.ASCIICapable;
             this.EmailTextView.InputAccessoryView = toolbar;
 			this.OtherComments.KeyboardAppearance = UIKeyboardAppearance.Dark;
             this.OtherComments.InputAccessoryView = toolbar;
