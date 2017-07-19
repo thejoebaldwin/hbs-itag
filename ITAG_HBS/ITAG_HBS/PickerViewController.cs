@@ -125,6 +125,11 @@ namespace HBS.ITAG
 					this.OrganizationTextView.ResignFirstResponder();
                 })
              };
+
+            this.AgeTextView.TintColor = UIColor.Clear;
+            this.GenderTextView.TintColor = UIColor.Clear;
+            this.TechFocusTextView.TintColor = UIColor.Clear;
+            this.OrganizationTextView.TintColor = UIColor.Clear;
             this.PositionTitle.KeyboardAppearance = UIKeyboardAppearance.Dark;
             this.PositionTitle.KeyboardType = UIKeyboardType.ASCIICapable;
             this.PositionTitle.InputAccessoryView = toolbar;
