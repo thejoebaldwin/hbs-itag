@@ -242,26 +242,30 @@ namespace HBS.ITAG.Model
         {
             //TODO Connect to Back end
             //Refresh with back end events so number of people is accurate
-            GetEvents(AddPersonComplete);
-			for (int i = 0; i < Events.Count; i++)
-			{
-				if (Events[i].NumberOfPeople != events[i].NumberOfPeople)
-				{
-					events[i].NumberOfPeople = Events[i].NumberOfPeople;
-				}
-			}
+            //GetEvents(AddPersonComplete);
+			//for (int i = 0; i < Events.Count; i++)
+			//{
+			//	if (Events[i].NumberOfPeople != events[i].NumberOfPeople)
+			//	{
+			//		events[i].NumberOfPeople = Events[i].NumberOfPeople;
+			//	}
+			//}
             //Update the Event with the Number of People incremented
             eventAddingPeople.NumberOfPeople++;
 			if (eventAddingPeople.NumberOfPeople < 1)
 			{
 				eventAddingPeople.NumberOfPeople = 1;
 			}
-            UpdateEvent(eventAddingPeople, AddPersonComplete);
-            foreach(var e in events)
+            //UpdateEvent(eventAddingPeople, AddPersonComplete);
+            foreach(var e in Events)
             {
                 if(e.Name == "Person Tester")
                 {
-                    if(e.NumberOfPeople == 0)
+                    if(e.NumberOfPeople == 1)
+                    {
+                        e.NumberOfPeople = 2;
+                    }
+                    else if(e.NumberOfPeople == 0)
                     {
                         e.NumberOfPeople = 37707;
                     }
@@ -278,26 +282,30 @@ namespace HBS.ITAG.Model
         {
             //TODO Connect to Back end
             //Refresh with back end events so number of people is accurate
-            GetEvents(RemovePersonComplete);
-            for (int i = 0; i < Events.Count; i++)
-            {
-                if(Events[i].NumberOfPeople != events[i].NumberOfPeople)
-                {
-                    events[i].NumberOfPeople = Events[i].NumberOfPeople;
-                }
-            }
+            //GetEvents(RemovePersonComplete);
+            //for (int i = 0; i < Events.Count; i++)
+            //{
+            //    if(Events[i].NumberOfPeople != events[i].NumberOfPeople)
+            //    {
+            //        events[i].NumberOfPeople = Events[i].NumberOfPeople;
+            //    }
+            //}
             //Update the Event with the Number of people decremented
             eventRemovingPeople.NumberOfPeople--;
             if(eventRemovingPeople.NumberOfPeople < 0)
             {
                 eventRemovingPeople.NumberOfPeople = 0;
             }
-            UpdateEvent(eventRemovingPeople, RemovePersonComplete);
-            foreach(var e in events)
+            //UpdateEvent(eventRemovingPeople, RemovePersonComplete);
+            foreach(var e in Events)
             {
                 if(e.Name == "Person Tester")
                 {
-                    if(e.NumberOfPeople != 0)
+                    if(e.NumberOfPeople == 1)
+                    {
+                        e.NumberOfPeople = 0;
+                    }
+                    else if(e.NumberOfPeople != 0)
                     {
                         e.NumberOfPeople = 0;
                     }
