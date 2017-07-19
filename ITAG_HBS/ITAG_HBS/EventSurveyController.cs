@@ -94,6 +94,7 @@ namespace HBS.ITAG
             this.EmailTextView.KeyboardType = UIKeyboardType.ASCIICapable;
             this.EmailTextView.InputAccessoryView = toolbar;
 			this.OtherComments.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.OtherComments.KeyboardType = UIKeyboardType.ASCIICapable;
             this.OtherComments.InputAccessoryView = toolbar;
 
             YesNoQuestionPicker.Model = QuestionFourViewModel;
