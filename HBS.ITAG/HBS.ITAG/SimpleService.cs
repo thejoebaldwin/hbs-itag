@@ -15,7 +15,7 @@ namespace HBS.ITAG
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         
-        // Runs the beacon code when app is closed
+        // Runs the beacon code even when app is closed
         void StartServiceInForeground()
         {
             beaconManager = new BeaconManager(this);
@@ -63,42 +63,6 @@ namespace HBS.ITAG
         public override void OnCreate()
         {
             base.OnCreate();
-            beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 1);
-
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-                    
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
-
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-
-                        /*
-                        if (!Store.Instance.ToDoList.Contains(tempEvent))
-                        {
-                            Store.Instance.AddToDo(tempEvent);
-                        }*/
-                    }
-                }
-            };
-            beaconManager.Connect(this);
             StartServiceInForeground();
         }
         
