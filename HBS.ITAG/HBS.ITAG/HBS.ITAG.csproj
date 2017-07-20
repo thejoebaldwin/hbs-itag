@@ -121,8 +121,6 @@
     <Compile Include="Home.cs" />
     <Compile Include="HotEventAdapter.cs" />
     <Compile Include="JsonCallTester.cs" />
-    <Compile Include="MyBootReceiver.cs" />
-    <Compile Include="MyBroadcastReceiver.cs" />
     <Compile Include="MyEventsFavoritesListViewAdapter.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyEvents.cs" />

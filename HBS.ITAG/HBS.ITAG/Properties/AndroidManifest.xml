@@ -11,20 +11,11 @@
 	<application android:label="ITAG Conference 2017" android:icon="@drawable/wifiTower">
     android:name=".MyApplication"
     android:allowBackup="true"
-	<service 
-    android:name="net.hbs.itag.SimpleService" 
-    android:stopWithTask="false"
-    android:exported="true"
-    android:enabled="true"/>
-    <receiver
-    android:name="net.hbs.itag.MyBroadcastReceiver"
+	<service
+    android:name="net.hbs.itag.SimpleService"
     android:stopWithTask="false"
     android:exported="true"
     android:enabled="true">
-      <intent-filter>
-        <action android:name="net.hbs.itag.TRANSMOGRIFY" />
-        <action android:name="net.hbs.itag.test" />
-      </intent-filter>
-    </receiver>
+  </service>
     </application>
 </manifest>
