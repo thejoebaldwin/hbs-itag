@@ -11,7 +11,7 @@ namespace HBS.ITAG
     [Service(Exported = true, Name = "net.hbs.itag.SimpleService")]
     public class SimpleService : Service, BeaconManager.IServiceReadyCallback
     {
-
+        public static bool AppClosed = false;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         
@@ -64,6 +64,7 @@ namespace HBS.ITAG
         public override void OnCreate()
         {
             base.OnCreate();
+            AppClosed = false;
             StartServiceInForeground();
         }
         
@@ -89,11 +90,11 @@ namespace HBS.ITAG
         public void OnRegionEnter(Event tempEvent)
         {
             Store.Instance.SelectedEvent = tempEvent;
-            Intent newIntent2 = new Intent(this, typeof(Home));
+            //Intent newIntent2 = new Intent(this, typeof(Home));
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-            stackBuilder.AddNextIntent(newIntent2);
+            //stackBuilder.AddNextIntent(newIntent2);
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
@@ -141,6 +142,11 @@ namespace HBS.ITAG
         {
             // This is a started service, not a bound service, so we just return null.
             return null;
+        }
+
+        public override void OnTaskRemoved(Intent rootIntent)
+        {
+            AppClosed = true;
         }
 
         public override void OnDestroy()

@@ -3,11 +3,8 @@ using Android.Widget;
 using Android.OS;
 using System;
 using Android.Views;
-using System.Collections;
 using Android.Content;
 using HBS.ITAG.Model;
-using EstimoteSdk;
-using Android;
 
 namespace HBS.ITAG
 {
