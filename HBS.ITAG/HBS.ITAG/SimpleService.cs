@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace HBS.ITAG
 {
-    [Service]
+    [Service(Exported = true, Name = "net.hbs.itag.SimpleService")]
     public class SimpleService : Service, BeaconManager.IServiceReadyCallback
     {
 
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-        
+        /*
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
             
@@ -53,9 +53,9 @@ namespace HBS.ITAG
                 beaconManager.Connect(this);
                
             return StartCommandResult.Sticky;
-        }  
+        }  */
 
-        /*
+        
         void StartServiceInForeground()
         {
             beaconManager = new BeaconManager(this);
@@ -89,8 +89,19 @@ namespace HBS.ITAG
             };
 
             beaconManager.Connect(this);
-            StartForeground((int)NotificationFlags.AutoCancel, null);
-        }*/
+
+            Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
+            .SetAutoCancel(true)
+            .SetContentTitle("Itag Conference")
+            .SetSmallIcon(Resource.Drawable.itag_icon)
+            .SetContentText("Locating Beacons are Active.")
+            .SetVisibility((int)NotificationVisibility.Secret);
+            //builder.Build()
+
+            Notification test = new Notification();
+
+            StartForeground((int)NotificationFlags.AutoCancel, test);
+        }
 
         public override void OnCreate()
         {
@@ -130,8 +141,8 @@ namespace HBS.ITAG
                     }
                 }
             };
-
             beaconManager.Connect(this);
+            StartServiceInForeground();
         }
         
         public void OnServiceReady()
@@ -214,6 +225,7 @@ namespace HBS.ITAG
             return null;
         }
 
+        /*
         public override void OnTaskRemoved(Intent intent)
         {
             //SimpleService service = this;
@@ -221,8 +233,9 @@ namespace HBS.ITAG
             //var test = new Intent("test");
             //SendBroadcast(test);
             //service.SendStickyBroadcast(test);
-            beaconManager.Disconnect();
-        }
+            //beaconManager.Disconnect();
+            
+        }*/
 
         public override void OnDestroy()
         {
@@ -233,7 +246,7 @@ namespace HBS.ITAG
             //    Intent tempIntent = new Intent(this, typeof(SimpleService));
             //    temp.OnReceive(this , tempIntent);
             //    SendBroadcast(tempIntent);
-            //SimpleService service = new SimpleService();
+            //SimpleService service = this;
             //var test = new Intent("test");
             //SendBroadcast(test);
             //service.SendStickyBroadcast(test);
