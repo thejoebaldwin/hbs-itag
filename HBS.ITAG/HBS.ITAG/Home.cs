@@ -8,6 +8,7 @@ using HBS.ITAG.Model;
 using EstimoteSdk;
 using Android.Text.Method;
 using Android.Text;
+using Android.Support.V4.Content;
 
 namespace HBS.ITAG
 {
@@ -92,9 +93,13 @@ namespace HBS.ITAG
             // Initializes Beacons and Data
             Store.Instance.GetTracks(LoadTracksComplete);
 
-            
-            //StartService(new Intent(this, typeof(SimpleService)));
-            SendBroadcast(new Intent(Application.Context, typeof(SimpleService)));
+            //SimpleService service = new SimpleService();
+            //var test = new Intent("test");
+            StartService(new Intent(this, typeof(SimpleService)));
+            //SendBroadcast(test);
+
+            //var intent2 = new Intent(this, typeof(MyBootReceiver));
+            //this.SendBroadcast(intent2);
 
             // Notification Toggle
             notificationSwitch.CheckedChange += delegate (object sender, CompoundButton.CheckedChangeEventArgs e) {

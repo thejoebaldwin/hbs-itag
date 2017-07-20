@@ -16,10 +16,10 @@ namespace HBS.ITAG
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
 
-        /*
+        
         public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
         {
-            new Task(() => {
+            
                 beaconManager = new BeaconManager(this);
                 beaconManager.SetBackgroundScanPeriod(1000, 1);
 
@@ -51,11 +51,9 @@ namespace HBS.ITAG
                 };
 
                 beaconManager.Connect(this);
-                Intent tempIntent = new Intent(this, typeof(SimpleService));
-                SendBroadcast(tempIntent);
-            }).Start();
+               
             return StartCommandResult.Sticky;
-        }  */
+        }  
 
         /*
         void StartServiceInForeground()
@@ -216,6 +214,15 @@ namespace HBS.ITAG
             return null;
         }
 
+        public override void OnTaskRemoved(Intent intent)
+        {
+            //SimpleService service = this;
+            //StartService(new Intent(this, typeof(SimpleService)));
+            //var test = new Intent("test");
+            //SendBroadcast(test);
+            //service.SendStickyBroadcast(test);
+            beaconManager.Disconnect();
+        }
 
         public override void OnDestroy()
         {
@@ -226,8 +233,10 @@ namespace HBS.ITAG
             //    Intent tempIntent = new Intent(this, typeof(SimpleService));
             //    temp.OnReceive(this , tempIntent);
             //    SendBroadcast(tempIntent);
-            //Intent intent = new Intent(Application.Context, typeof(SimpleService));
-            //SendBroadcast(intent);
+            //SimpleService service = new SimpleService();
+            //var test = new Intent("test");
+            //SendBroadcast(test);
+            //service.SendStickyBroadcast(test);
             base.OnDestroy();
         }
     }
