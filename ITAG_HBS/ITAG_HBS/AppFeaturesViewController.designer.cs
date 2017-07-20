@@ -30,10 +30,6 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void BackButtonClick (UIKit.UIButton sender);
 
-		[Action("BackArrowClick:")]
-		[GeneratedCode("iOS Designer", "1.0")]
-		partial void BackArrowClick(UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (BackArrow != null) {

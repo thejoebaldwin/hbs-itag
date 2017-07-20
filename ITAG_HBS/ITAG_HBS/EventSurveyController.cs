@@ -90,9 +90,12 @@ namespace HBS.ITAG
 				}
 			};
 
+            this.QuestionFourTextView.TintColor = UIColor.Clear;
             this.EmailTextView.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.EmailTextView.KeyboardType = UIKeyboardType.ASCIICapable;
             this.EmailTextView.InputAccessoryView = toolbar;
 			this.OtherComments.KeyboardAppearance = UIKeyboardAppearance.Dark;
+            this.OtherComments.KeyboardType = UIKeyboardType.ASCIICapable;
             this.OtherComments.InputAccessoryView = toolbar;
 
             YesNoQuestionPicker.Model = QuestionFourViewModel;

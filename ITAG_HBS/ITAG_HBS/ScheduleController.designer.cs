@@ -24,10 +24,6 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView ScheduleTable { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton HomeButton { get; set; }
 
         [Outlet]
@@ -61,6 +57,10 @@ namespace HBS.ITAG
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton ScheduleButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView ScheduleTable { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -110,11 +110,6 @@ namespace HBS.ITAG
                 D1RightArrow = null;
             }
 
-            if (ScheduleTable != null) {
-                ScheduleTable.Dispose ();
-                ScheduleTable = null;
-            }
-
             if (HomeButton != null) {
                 HomeButton.Dispose ();
                 HomeButton = null;
@@ -158,6 +153,11 @@ namespace HBS.ITAG
             if (ScheduleButton != null) {
                 ScheduleButton.Dispose ();
                 ScheduleButton = null;
+            }
+
+            if (ScheduleTable != null) {
+                ScheduleTable.Dispose ();
+                ScheduleTable = null;
             }
 
             if (TrackName != null) {

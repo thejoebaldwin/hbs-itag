@@ -60,6 +60,23 @@ namespace HBS.ITAG
 			this.PresentViewController(myEventsController, false, null);
         }
 
+        //For Testing Number Of People
+        public void LogoClicked()
+        {
+            //Toggle testEvent number of Persons
+            if(Store.Instance.testEvent.NumberOfPeople == 0)
+            {
+                Store.Instance.AddPerson(Store.Instance.testEvent);
+                //testEvent.NumberOfPeople = 72;
+            }
+            else
+            {
+                Store.Instance.RemovePerson(Store.Instance.testEvent);
+                //testEvent.NumberOfPeople = 0;
+            }
+            ReloadData();
+        }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -84,6 +101,13 @@ namespace HBS.ITAG
             UITapGestureRecognizer HotelMapGesture = new UITapGestureRecognizer(HotelMapClick);
             HotelMapGesture.NumberOfTapsRequired = 1;
             HotelName.AddGestureRecognizer(HotelMapGesture);
+
+            //ForTesting
+            Logo.UserInteractionEnabled = true;
+            UITapGestureRecognizer LogoClick = new UITapGestureRecognizer(LogoClicked);
+            LogoClick.NumberOfTapsRequired = 1;
+            Logo.AddGestureRecognizer(LogoClick);
+
 
             PhoneNumber.UserInteractionEnabled = true;
             UITapGestureRecognizer CallGesture = new UITapGestureRecognizer(CallClick);
@@ -139,14 +163,15 @@ namespace HBS.ITAG
 
 		private void LoadLocationsComplete(string message)
 		{
+            //GetTestEvent
             foreach(var e in Store.Instance.Events)
             {
-                Store.Instance.UpdateEvent(e, AddPeoplesInitializer);
+                if (e.Name == "Person Tester")
+                {
+                    Store.Instance.testEvent = e;
+                    break;
+                }
             }
-            var eventor = new Event("DELETE ME", "-1", DateTime.Now, DateTime.Now, "Me", "", "", "", "", false, 0);
-            Store.Instance.AddEvent(eventor, AddPeoplesInitializer);
-
-            Store.Instance.GetEvents(AddPeoplesInitializer);
 
             //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
             //TURN OFF LOADING INDICATOR

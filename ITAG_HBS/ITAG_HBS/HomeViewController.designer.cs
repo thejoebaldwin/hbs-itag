@@ -31,6 +31,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView Logo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton MyEventsButton { get; set; }
 
         [Outlet]
@@ -85,6 +89,11 @@ namespace HBS.ITAG
             if (HotEventTableView != null) {
                 HotEventTableView.Dispose ();
                 HotEventTableView = null;
+            }
+
+            if (Logo != null) {
+                Logo.Dispose ();
+                Logo = null;
             }
 
             if (MyEventsButton != null) {
