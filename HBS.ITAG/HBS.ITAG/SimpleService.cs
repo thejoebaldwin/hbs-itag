@@ -45,6 +45,7 @@ namespace HBS.ITAG
                     {
                         OnRegionExit(tempEvent);
 
+                        // TODO: Set up back end so this isn't always a null reference
                         /*
                         if (!Store.Instance.ToDoList.Contains(tempEvent))
                         {
@@ -88,11 +89,11 @@ namespace HBS.ITAG
         public void OnRegionEnter(Event tempEvent)
         {
             Store.Instance.SelectedEvent = tempEvent;
-            Intent oldIntent = new Intent(this, typeof(Home));
+            Intent newIntent2 = new Intent(this, typeof(Home));
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-            stackBuilder.AddNextIntent(oldIntent);
+            stackBuilder.AddNextIntent(newIntent2);
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 

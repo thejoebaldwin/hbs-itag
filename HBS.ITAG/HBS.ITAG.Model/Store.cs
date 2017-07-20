@@ -7,6 +7,11 @@ using System.Globalization;
 using HBS.ITAG.Model;
 using HBS.ITAG;
 
+#if __ANDROID__
+using Android.App;
+using Android.Content;
+#endif
+
 #if __IOS__
 using ITAG_HBS;
 using Foundation;
@@ -328,6 +333,12 @@ namespace HBS.ITAG.Model
 			string favorites = string.Empty;
             _arrToDoListIds = new List<string>();
             string toDoEventIds = string.Empty;
+
+#if __ANDROID__
+           var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+           favorites = prefs.GetString("favorites", string.Empty);
+#endif
+
 #if __IOS__
             favorites = NSUserDefaults.StandardUserDefaults.StringForKey("favorites");
             toDoEventIds = NSUserDefaults.StandardUserDefaults.StringForKey("toDoIds");
@@ -420,19 +431,18 @@ namespace HBS.ITAG.Model
                 }
 				toDoIds += _arrToDoListIds[i];
 			}
-#if __MOBILE__
-            // Xamarin iOS or Android-specific code
-            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-            //var somePref = prefs.GetBoolean("PrefName", false);
+#if __ANDROID__
+            var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            toDoIds = prefs.GetString("toDoIds", string.Empty);
 #endif
+
 #if __IOS__
-            // iOS-specific code
 			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
 			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
-		public void AddFavorite(Event favoriteEvent)
+        public void AddFavorite(Event favoriteEvent)
 		{
 			favoriteEvent.Favorited = true;
 			if (!_arrFavoriteIds.Contains(favoriteEvent.Id))
@@ -452,17 +462,17 @@ namespace HBS.ITAG.Model
            
 
                 //return favorites;
-#if __MOBILE__
-                // Xamarin iOS or Android-specific code
-                //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-                //var somePref = prefs.GetBoolean("PrefName", false);
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("MyApp", favorites);
+            prefEditor.Commit();
 #endif
 #if __IOS__
-                // iOS-specific code
-                NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+            NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
 		public void DeleteToDo(Event toDoEvent)
 		{
@@ -482,16 +492,20 @@ namespace HBS.ITAG.Model
 				toDoIds += _arrToDoListIds[i];
 			}
 
-#if __MOBILE__
-			// Xamarin iOS or Android-specific code
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("toDoIds", toDoIds);
+            prefEditor.Commit();
 #endif
+
 #if __IOS__
 			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
 			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
-		public void DeleteFavorite(Event favoriteEvent)
+        public void DeleteFavorite(Event favoriteEvent)
 		{
 			favoriteEvent.Favorited = false;
 			if (_arrFavoriteIds.Contains(favoriteEvent.Id))
@@ -506,14 +520,17 @@ namespace HBS.ITAG.Model
 				favorites += _arrFavoriteIds[i];
 			}
 
-#if __MOBILE__
-            // Xamarin iOS or Android-specific code
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("MyApp", favorites);
+            prefEditor.Commit();
 #endif
 #if __IOS__
             NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
 		public User CurrentUser { get; set; }
 
