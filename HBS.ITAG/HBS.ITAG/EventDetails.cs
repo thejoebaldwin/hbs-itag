@@ -89,9 +89,19 @@ namespace HBS.ITAG
             RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.EventDetails);
-            
         }
-        
 
+        public override void OnBackPressed()
+        {
+            if ( SimpleService.AppClosed )
+            {
+            Intent i = new Intent(Application.Context, typeof(Home));
+            i.SetFlags(ActivityFlags.ReorderToFront);
+            StartActivity(i);
+            } else
+            {
+                base.OnBackPressed();
+            }
+        }
     }
 }

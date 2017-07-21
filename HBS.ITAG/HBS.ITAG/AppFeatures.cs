@@ -41,8 +41,6 @@ namespace HBS.ITAG
                 {
                     bluetoothAdapter.Enable();
                 }
-                //Intent BluetoothClick = new Intent();
-                //StartActivity(BluetoothClick);
             };
            
 
