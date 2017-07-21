@@ -5,59 +5,17 @@ using Android.OS;
 using Android.Widget;
 using EstimoteSdk;
 using HBS.ITAG.Model;
-using System.Threading.Tasks;
 
 namespace HBS.ITAG
 {
-    [Service]
+    [Service(Exported = true, Name = "net.hbs.itag.SimpleService")]
     public class SimpleService : Service, BeaconManager.IServiceReadyCallback
     {
-
+        public static bool AppClosed = false;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
-
-        /*
-        public override StartCommandResult OnStartCommand(Intent intent, StartCommandFlags flags, int startId)
-        {
-            new Task(() => {
-                beaconManager = new BeaconManager(this);
-                beaconManager.SetBackgroundScanPeriod(1000, 1);
-
-                beaconManager.EnteredRegion += (sender, e) =>
-               {
-                    if (Store.Instance.Notify)
-                    {
-                        Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-
-                        if (tempEvent != null)
-                        {
-                            OnRegionEnter(tempEvent);
-                        }
-                    }
-                };
-
-                beaconManager.ExitedRegion += (sender, e) =>
-                {
-                    if (Store.Instance.Notify)
-                    {
-
-                        Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
-                        if (tempEvent != null)
-                        {
-                            OnRegionExit(tempEvent);
-                        }
-                    }
-                };
-
-                beaconManager.Connect(this);
-                Intent tempIntent = new Intent(this, typeof(SimpleService));
-                SendBroadcast(tempIntent);
-            }).Start();
-            return StartCommandResult.Sticky;
-        }  */
-
-        /*
+        
+        // Runs the beacon code even when app is closed
         void StartServiceInForeground()
         {
             beaconManager = new BeaconManager(this);
@@ -86,44 +44,8 @@ namespace HBS.ITAG
                     if (tempEvent != null)
                     {
                         OnRegionExit(tempEvent);
-                    }
-                }
-            };
 
-            beaconManager.Connect(this);
-            StartForeground((int)NotificationFlags.AutoCancel, null);
-        }*/
-
-        public override void OnCreate()
-        {
-            base.OnCreate();
-            beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 1);
-
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-                    
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
-
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-
+                        // TODO: Set up back end so this isn't always a null reference
                         /*
                         if (!Store.Instance.ToDoList.Contains(tempEvent))
                         {
@@ -134,6 +56,16 @@ namespace HBS.ITAG
             };
 
             beaconManager.Connect(this);
+
+            Notification temp = new Notification();
+            StartForeground((int)NotificationFlags.AutoCancel, temp);
+        }
+
+        public override void OnCreate()
+        {
+            base.OnCreate();
+            AppClosed = false;
+            StartServiceInForeground();
         }
         
         public void OnServiceReady()
@@ -143,7 +75,6 @@ namespace HBS.ITAG
 
         private void InitializeBeacons()
         {
-            //run on main thread
             //loop through all location entries
             Region beaconRegionTest = new Region("test", null, null, null);
             beaconManager.StartMonitoring(beaconRegionTest);
@@ -159,11 +90,11 @@ namespace HBS.ITAG
         public void OnRegionEnter(Event tempEvent)
         {
             Store.Instance.SelectedEvent = tempEvent;
-            Intent oldIntent = new Intent(this, typeof(Home));
+            //Intent newIntent2 = new Intent(this, typeof(Home));
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-            stackBuilder.AddNextIntent(oldIntent);
+            //stackBuilder.AddNextIntent(newIntent2);
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
@@ -185,9 +116,6 @@ namespace HBS.ITAG
             //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
             if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
             {
-                //TODO: If app open, ask user if they want to see the information
-                //      if app closed, add notification that event is in range
-
                 tempEvent.LastEntryNotified = DateTime.Now;
                 Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
             }
@@ -216,18 +144,14 @@ namespace HBS.ITAG
             return null;
         }
 
+        public override void OnTaskRemoved(Intent rootIntent)
+        {
+            AppClosed = true;
+        }
 
         public override void OnDestroy()
         {
             beaconManager.Disconnect();
-            //SendBroadcast(new Intent(this, typeof(SimpleService)));
-            //    Console.WriteLine("Here");
-            //    MyBroadcastReceiver temp = new MyBroadcastReceiver();
-            //    Intent tempIntent = new Intent(this, typeof(SimpleService));
-            //    temp.OnReceive(this , tempIntent);
-            //    SendBroadcast(tempIntent);
-            //Intent intent = new Intent(Application.Context, typeof(SimpleService));
-            //SendBroadcast(intent);
             base.OnDestroy();
         }
     }

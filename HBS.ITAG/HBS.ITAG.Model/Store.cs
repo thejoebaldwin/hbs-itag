@@ -7,6 +7,11 @@ using System.Globalization;
 using HBS.ITAG.Model;
 using HBS.ITAG;
 
+#if __ANDROID__
+using Android.App;
+using Android.Content;
+#endif
+
 #if __IOS__
 using ITAG_HBS;
 using Foundation;
@@ -211,6 +216,11 @@ namespace HBS.ITAG.Model
         private string _notify = "true";
 
         public Event SelectedEvent { get; set; }
+
+        //TempVar
+        public Event testEvent { get; set; }
+        public List<Event> events { get; set; }
+
         public List<Event> ToDoList { get; set; }
 
 		private Store() { }
@@ -236,18 +246,86 @@ namespace HBS.ITAG.Model
         public void AddPerson(Event eventAddingPeople)
         {
             //TODO Connect to Back end
+            //Refresh with back end events so number of people is accurate
+            //GetEvents(AddPersonComplete);
+			//for (int i = 0; i < Events.Count; i++)
+			//{
+			//	if (Events[i].NumberOfPeople != events[i].NumberOfPeople)
+			//	{
+			//		events[i].NumberOfPeople = Events[i].NumberOfPeople;
+			//	}
+			//}
+            //Update the Event with the Number of People incremented
             eventAddingPeople.NumberOfPeople++;
+			if (eventAddingPeople.NumberOfPeople < 1)
+			{
+				eventAddingPeople.NumberOfPeople = 1;
+			}
+            //UpdateEvent(eventAddingPeople, AddPersonComplete);
+            foreach(var e in Events)
+            {
+                if(e.Name == "Person Tester")
+                {
+                    if(e.NumberOfPeople == 1)
+                    {
+                        e.NumberOfPeople = 2;
+                    }
+                    else if(e.NumberOfPeople == 0)
+                    {
+                        e.NumberOfPeople = 37707;
+                    }
+                    testEvent = e;
+                }
+            }
+        }
+
+        public void AddPersonComplete(string message)
+        {
         }
 
         public void RemovePerson(Event eventRemovingPeople)
         {
             //TODO Connect to Back end
+            //Refresh with back end events so number of people is accurate
+            //GetEvents(RemovePersonComplete);
+            //for (int i = 0; i < Events.Count; i++)
+            //{
+            //    if(Events[i].NumberOfPeople != events[i].NumberOfPeople)
+            //    {
+            //        events[i].NumberOfPeople = Events[i].NumberOfPeople;
+            //    }
+            //}
+            //Update the Event with the Number of people decremented
             eventRemovingPeople.NumberOfPeople--;
             if(eventRemovingPeople.NumberOfPeople < 0)
             {
                 eventRemovingPeople.NumberOfPeople = 0;
             }
+            //UpdateEvent(eventRemovingPeople, RemovePersonComplete);
+            foreach(var e in Events)
+            {
+                if(e.Name == "Person Tester")
+                {
+                    if(e.NumberOfPeople == 1)
+                    {
+                        e.NumberOfPeople = 0;
+                    }
+                    else if(e.NumberOfPeople != 0)
+                    {
+                        e.NumberOfPeople = 0;
+                    }
+					if (!ToDoList.Contains(e))
+					{
+						AddToDo(e);
+					}
+                    testEvent = e;
+                }
+            }
         }
+
+		public void RemovePersonComplete(string message)
+		{
+		}
 
 		public void Init()
 		{
@@ -255,6 +333,12 @@ namespace HBS.ITAG.Model
 			string favorites = string.Empty;
             _arrToDoListIds = new List<string>();
             string toDoEventIds = string.Empty;
+
+#if __ANDROID__
+           var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+           favorites = prefs.GetString("favorites", string.Empty);
+#endif
+
 #if __IOS__
             favorites = NSUserDefaults.StandardUserDefaults.StringForKey("favorites");
             toDoEventIds = NSUserDefaults.StandardUserDefaults.StringForKey("toDoIds");
@@ -272,6 +356,7 @@ namespace HBS.ITAG.Model
             {
                 toDoEventIds = string.Empty;
             }
+            //toDoEventIds = ""; //Comment this out
             string[] toDoIds = toDoEventIds.Split(',');
             for (int i = 0; i < toDoIds.Length; i++)
             {
@@ -346,19 +431,18 @@ namespace HBS.ITAG.Model
                 }
 				toDoIds += _arrToDoListIds[i];
 			}
-#if __MOBILE__
-            // Xamarin iOS or Android-specific code
-            //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-            //var somePref = prefs.GetBoolean("PrefName", false);
+#if __ANDROID__
+            var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            toDoIds = prefs.GetString("toDoIds", string.Empty);
 #endif
+
 #if __IOS__
-            // iOS-specific code
 			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
 			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
-		public void AddFavorite(Event favoriteEvent)
+        public void AddFavorite(Event favoriteEvent)
 		{
 			favoriteEvent.Favorited = true;
 			if (!_arrFavoriteIds.Contains(favoriteEvent.Id))
@@ -378,17 +462,17 @@ namespace HBS.ITAG.Model
            
 
                 //return favorites;
-#if __MOBILE__
-                // Xamarin iOS or Android-specific code
-                //var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
-                //var somePref = prefs.GetBoolean("PrefName", false);
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("MyApp", favorites);
+            prefEditor.Commit();
 #endif
 #if __IOS__
-                // iOS-specific code
-                NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
+            NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
 		public void DeleteToDo(Event toDoEvent)
 		{
@@ -408,16 +492,20 @@ namespace HBS.ITAG.Model
 				toDoIds += _arrToDoListIds[i];
 			}
 
-#if __MOBILE__
-			// Xamarin iOS or Android-specific code
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("toDoIds", toDoIds);
+            prefEditor.Commit();
 #endif
+
 #if __IOS__
 			NSUserDefaults.StandardUserDefaults.SetString(toDoIds, "toDoIds");
 			NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
-		public void DeleteFavorite(Event favoriteEvent)
+        public void DeleteFavorite(Event favoriteEvent)
 		{
 			favoriteEvent.Favorited = false;
 			if (_arrFavoriteIds.Contains(favoriteEvent.Id))
@@ -432,14 +520,17 @@ namespace HBS.ITAG.Model
 				favorites += _arrFavoriteIds[i];
 			}
 
-#if __MOBILE__
-            // Xamarin iOS or Android-specific code
+#if __ANDROID__
+            var prefs = Android.App.Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
+            var prefEditor = prefs.Edit();
+            prefEditor.PutString("MyApp", favorites);
+            prefEditor.Commit();
 #endif
 #if __IOS__
             NSUserDefaults.StandardUserDefaults.SetString(favorites, "favorites");
             NSUserDefaults.StandardUserDefaults.Synchronize();
 #endif
-		}
+        }
 
 		public User CurrentUser { get; set; }
 
@@ -544,12 +635,12 @@ namespace HBS.ITAG.Model
 			string startTime = newEvent.StartTime.ToUniversalTime().ToString();
 			string endTime = newEvent.EndTime.ToUniversalTime().ToString();
 
-			string json = "{\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
+			string json = "{\"schedule_only\": \"<schedule_only>\",\"event_id\": \"<event_id>\",";
             json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<schedule_only>", newEvent.ScheduleOnly.ToString().ToLower());
-			json = json.Replace("<event_web_id>", newEvent.EventWebId);
+			json = json.Replace("<event_id>", newEvent.Id);
 			json = json.Replace("<name>", newEvent.Name);
 			json = json.Replace("<end_time>", endTime);
 			json = json.Replace("<start_time>", startTime);
@@ -658,13 +749,12 @@ namespace HBS.ITAG.Model
 			string startTime = updatedEvent.StartTime.ToUniversalTime().ToString();
 			string endTime = updatedEvent.EndTime.ToUniversalTime().ToString();
 
-			string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",\"event_web_id\": \"<event_web_id>\",";
+			string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",";
             json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
 			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<event_id>", updatedEvent.Id);
 			json = json.Replace("<schedule_only>", updatedEvent.ScheduleOnly.ToString().ToLower());
-			json = json.Replace("<event_web_id>", updatedEvent.EventWebId);
 			json = json.Replace("<name>", updatedEvent.Name);
 			json = json.Replace("<end_time>", endTime);
 			json = json.Replace("<start_time>", startTime);
@@ -674,7 +764,6 @@ namespace HBS.ITAG.Model
 			json = json.Replace("<presenter>", updatedEvent.Presenter);
 			json = json.Replace("<event_web_id>", updatedEvent.EventWebId);
             json = json.Replace("<number_of_people>", updatedEvent.NumberOfPeople.ToString());
-
 
 			_Completion = completion;
 			PostDataWithOperation("events", json, "PUT");

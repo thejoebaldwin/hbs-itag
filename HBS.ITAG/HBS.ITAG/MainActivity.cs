@@ -3,11 +3,8 @@ using Android.Widget;
 using Android.OS;
 using System;
 using Android.Views;
-using System.Collections;
 using Android.Content;
 using HBS.ITAG.Model;
-using EstimoteSdk;
-using Android;
 
 namespace HBS.ITAG
 {
@@ -62,13 +59,17 @@ namespace HBS.ITAG
                     var prefEditor = prefs.Edit();
                     prefEditor.PutBoolean("PrefName", surveyDone );
                     prefEditor.Commit();
-                    
-                    StartActivity(typeof(Home));
+
+                    Intent i = new Intent(Application.Context, typeof(Home));
+                    i.SetFlags(ActivityFlags.ReorderToFront);
+                    StartActivity(i);
                 };
             }
             else
             {
-                StartActivity(typeof(Home));
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             }
         }
 

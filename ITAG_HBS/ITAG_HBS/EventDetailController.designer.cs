@@ -14,13 +14,13 @@ namespace HBS.ITAG
     [Register ("EventDetailController")]
     partial class EventDetailController
     {
-		[Outlet]
-		[GeneratedCode("iOS Designer", "1.0")]
-		UIKit.UIButton BackEventArrow { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackEventArrow { get; set; }
 
-		[Outlet]
-		[GeneratedCode("iOS Designer", "1.0")]
-		UIKit.UIButton BackEventButton { get; set; }
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton BackEventButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -46,16 +46,22 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel LinkToDescription { get; set; }
 
-        [Action ("BackEventButtonClick:")]
+        [Action ("HomeButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BackEventButtonClick (UIKit.UIButton sender);
+        partial void HomeButtonClick (UIKit.UIButton sender);
 
-		[Action("BackEventArrowClick:")]
-		[GeneratedCode("iOS Designer", "1.0")]
-		partial void BackEventArrowClick(UIKit.UIButton sender);
-
-		void ReleaseDesignerOutlets ()
+        void ReleaseDesignerOutlets ()
         {
+            if (BackEventArrow != null) {
+                BackEventArrow.Dispose ();
+                BackEventArrow = null;
+            }
+
+            if (BackEventButton != null) {
+                BackEventButton.Dispose ();
+                BackEventButton = null;
+            }
+
             if (EventDay != null) {
                 EventDay.Dispose ();
                 EventDay = null;
@@ -85,18 +91,6 @@ namespace HBS.ITAG
                 LinkToDescription.Dispose ();
                 LinkToDescription = null;
             }
-
-            if (BackEventArrow != null)
-			{
-                BackEventArrow.Dispose();
-                BackEventArrow = null;
-			}
-
-            if (BackEventButton != null)
-			{
-                BackEventButton.Dispose();
-                BackEventButton = null;
-			}
         }
     }
 }
