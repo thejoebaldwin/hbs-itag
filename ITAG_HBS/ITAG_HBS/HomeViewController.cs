@@ -64,15 +64,28 @@ namespace HBS.ITAG
         public void LogoClicked()
         {
             //Toggle testEvent number of Persons
-            if(Store.Instance.testEvent.NumberOfPeople == 0)
+            Store.Instance.RefreshEventAttendees(refreshEventsComplete);
+            if(Store.Instance.clicked)
             {
-                Store.Instance.AddPerson(Store.Instance.testEvent);
-                //testEvent.NumberOfPeople = 72;
+                Store.Instance.clicked = false;
+				foreach (var e in Store.Instance.Events)
+				{
+					if (e.Id == Store.Instance.testEvent.Id)
+					{
+						Store.Instance.RemovePerson(e);
+					}
+				}
             }
             else
             {
-                Store.Instance.RemovePerson(Store.Instance.testEvent);
-                //testEvent.NumberOfPeople = 0;
+                Store.Instance.clicked = true;
+				foreach (var e in Store.Instance.Events)
+				{
+					if (e.Id == Store.Instance.testEvent.Id)
+					{
+						Store.Instance.AddPerson(e);
+					}
+				}
             }
             ReloadData();
         }
@@ -126,6 +139,7 @@ namespace HBS.ITAG
 
         public void ReloadData()
         {
+            //TODO Store.Instance.GetEvents(refreshEventsComplete);
 			ToDoTableViewSource data = new ToDoTableViewSource(Store.Instance.ToDoList);
             HotEventTableViewSource HotEventData = new HotEventTableViewSource(Store.Instance.Events);
 			data.parent = this;
@@ -139,8 +153,13 @@ namespace HBS.ITAG
             UIApplication.SharedApplication.ApplicationIconBadgeNumber = Store.Instance.ToDoList.Count;
         }
 
+        public void refreshEventsComplete(string message)
+        {
+        }
+
         public override void ViewDidAppear(bool animated)
         {
+            Store.Instance.RefreshEventAttendees(refreshEventsComplete);
             ReloadData();
             if (!Store.Instance.UserCreated())
             {
@@ -154,6 +173,7 @@ namespace HBS.ITAG
 		private void LoadTracksComplete(string message)
 		{
 			Store.Instance.GetEvents(LoadEventsComplete);
+            //Store.Instance.UpdateEventArray();
 		}
 
         private void LoadEventsComplete(string message)
@@ -162,17 +182,7 @@ namespace HBS.ITAG
         }
 
 		private void LoadLocationsComplete(string message)
-		{
-            //GetTestEvent
-            foreach(var e in Store.Instance.Events)
-            {
-                if (e.Name == "Person Tester")
-                {
-                    Store.Instance.testEvent = e;
-                    break;
-                }
-            }
-
+        {
             //TODO: HERE IS WHERE WE WOULD INITIALIZE ESTIMOTES SDK
             //TURN OFF LOADING INDICATOR
             //now load events because we have all the data
@@ -184,6 +194,7 @@ namespace HBS.ITAG
             }
 		}
 
+        //TODO delete once done.. just an empty callback for initializing
         private void AddPeoplesInitializer(string message)
         {
         }
@@ -207,6 +218,7 @@ namespace HBS.ITAG
             //on region exit
 		    beaconManager.ExitedRegion += (sender, e) =>
 		   {
+               Store.Instance.RefreshEventAttendees(refreshEventsComplete);
                if (Store.Instance.Notify)
                {
                    Estimote.ExitedRegionEventArgs f = e;
@@ -226,9 +238,10 @@ namespace HBS.ITAG
                    }
                }
 		   };
-            //on region enter
+            //on region enter 
 			beaconManager.EnteredRegion += (sender, e) =>
 			{
+                Store.Instance.RefreshEventAttendees(refreshEventsComplete);
                 if (Store.Instance.Notify)
                 {
                     Estimote.EnteredRegionEventArgs f = e;
