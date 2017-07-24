@@ -533,12 +533,6 @@ namespace HBS.ITAG.Model
             get { return _arrEvents; }
         }
 
-        //TODO
-        public void UpdateEventArray()
-        {
-            _arrEvents = new List<Event>(_events);
-        }
-
 		public List<Track> Tracks
 		{
 			get { return _arrTracks; }

@@ -1,6 +1,7 @@
 using Foundation; using System; using UIKit; using ITAG_HBS; using HBS.ITAG; using System.Collections.Generic;
-using HBS.ITAG.Model; 
+using HBS.ITAG.Model; using CoreGraphics; using System.Threading.Tasks; 
 namespace HBS.ITAG {     public partial class ScheduleController : UIViewController     {
+		protected LoadingPage loadPop = null; 
         partial void June20ButtonClick(UIButton sender)
         {
             June20Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             June20Button.TitleLabel.TextColor = UIColor.White; 			June21Button.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
@@ -105,7 +106,8 @@ namespace HBS.ITAG {     public partial class ScheduleController : UIViewCon
 			data.parent = (UIViewController)this;
 			ScheduleTable.Source = data;
 			ScheduleTable.ReloadData();         }
-         public override void ViewDidLoad()         {             base.ViewDidLoad();             // Perform any additional setup after loading the view, typically from a nib.             UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);             RightArrow.NumberOfTapsRequired = 1;             D1RightArrow.AddGestureRecognizer(RightArrow);
+         public override void ViewDidLoad()         {             base.ViewDidLoad();
+             // Perform any additional setup after loading the view, typically from a nib.             UISwipeGestureRecognizer leftSwipe = new UISwipeGestureRecognizer(leftSwipeDetected);             leftSwipe.Direction = UISwipeGestureRecognizerDirection.Left;             View.AddGestureRecognizer(leftSwipe);              UISwipeGestureRecognizer rightSwipe = new UISwipeGestureRecognizer(rightSwipeDetected);             rightSwipe.Direction = UISwipeGestureRecognizerDirection.Right;             View.AddGestureRecognizer(rightSwipe);              UITapGestureRecognizer RightArrow = new UITapGestureRecognizer(leftSwipeDetected);             RightArrow.NumberOfTapsRequired = 1;             D1RightArrow.AddGestureRecognizer(RightArrow);
 
 			UITapGestureRecognizer LeftArrow = new UITapGestureRecognizer(rightSwipeDetected);             LeftArrow.NumberOfTapsRequired = 1;
 			D1LeftArrow.AddGestureRecognizer(LeftArrow);              CurrentTrackDate = DateTime.Parse("06/20/17");
@@ -117,4 +119,4 @@ namespace HBS.ITAG {     public partial class ScheduleController : UIViewCon
 			{
 				currentTrack--;                 ReloadData();
 			}             else             {                 return;             }
-		}          public override void DidReceiveMemoryWarning()         {             base.DidReceiveMemoryWarning();             // Release any cached data, images, etc that aren't in use.         }          public override void ViewWillAppear(bool animated)         {             base.ViewWillAppear(animated);         }     } } 
+		}          public override void DidReceiveMemoryWarning()         {             base.DidReceiveMemoryWarning();             // Release any cached data, images, etc that aren't in use.         }     } } 
