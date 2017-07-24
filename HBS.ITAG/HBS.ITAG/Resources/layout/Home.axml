@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
-  <TextView
+    <TextView
         android:text="Text"
         android:textColor="#000000"
         android:textSize="18dp"
@@ -13,7 +13,7 @@
         android:id="@+id/textViewTest" />
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
+        android:layout_width="374.0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="0.0dp">
         <ImageView
@@ -36,7 +36,7 @@
             android:background="#FFFFFF"
             android:layout_marginLeft="0.0dp"
             android:translationY="30px"
-            android:translationX="90px" />
+            android:translationX="75px" />
     </LinearLayout>
     <TextView
         android:id="@+id/hottestevents_header"

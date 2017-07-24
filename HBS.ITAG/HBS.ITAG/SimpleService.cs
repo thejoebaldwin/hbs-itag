@@ -48,7 +48,12 @@ namespace HBS.ITAG
                     if (tempEvent != null)
                     {
                         Store.Instance.RemovePerson(tempEvent);
+                        if (!Store.Instance.ToDoList.Contains(tempEvent))
+                        {
+                            Store.Instance.AddToDo(tempEvent);
+                        }
                         OnRegionExit(tempEvent);
+                        
 
                         // TODO: Set up back end so this isn't always a null reference
                         /*
