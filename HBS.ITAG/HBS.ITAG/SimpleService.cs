@@ -64,47 +64,7 @@ namespace HBS.ITAG
         public override void OnCreate()
         {
             base.OnCreate();
-            AppClosed = false;
-            StopForeground(true);
-
-            beaconManager = new BeaconManager(this);
-            beaconManager.SetBackgroundScanPeriod(1000, 1);
-
-            beaconManager.EnteredRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionEnter(tempEvent);
-                    }
-                }
-            };
-
-            beaconManager.ExitedRegion += (sender, e) =>
-            {
-                if (Store.Instance.Notify)
-                {
-
-                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
-                    if (tempEvent != null)
-                    {
-                        OnRegionExit(tempEvent);
-
-                        // TODO: Set up back end so this isn't always a null reference
-                        /*
-                        if (!Store.Instance.ToDoList.Contains(tempEvent))
-                        {
-                            Store.Instance.AddToDo(tempEvent);
-                        }*/
-                    }
-                }
-            };
-
-            beaconManager.Connect(this);
+            StartServiceInForeground();
         }
         
         public void OnServiceReady()
@@ -181,7 +141,6 @@ namespace HBS.ITAG
         public override void OnTaskRemoved(Intent rootIntent)
         {
             AppClosed = true;
-            StartServiceInForeground();
         }
 
         public override void OnDestroy()
