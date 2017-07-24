@@ -66,7 +66,7 @@ namespace HBS.ITAG
             base.OnCreate();
             AppClosed = false;
             StartServiceInForeground();
-            StopForeground(true);
+            //StopForeground(true);
         }
         
         public void OnServiceReady()
