@@ -135,7 +135,7 @@ namespace HBS.ITAG
             events = new List<Event>(Store.Instance.Events);
             Surveys = new List<Event>();
             HottestEvent = new List<Event>();
-            foreach (var e in events)
+           /* foreach (var e in events)
             {
                 if(e.NumberOfPeople > 0)
                 {
@@ -149,7 +149,7 @@ namespace HBS.ITAG
                         HottestEvent.Add(e);
                     }
                 }
-            }
+            }*/
 
             if (Surveys.Count == 0)
             {

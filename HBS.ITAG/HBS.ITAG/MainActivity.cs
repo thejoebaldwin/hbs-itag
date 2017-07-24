@@ -5,6 +5,8 @@ using System;
 using Android.Views;
 using Android.Content;
 using HBS.ITAG.Model;
+using Android.Telecom;
+using Android.Graphics;
 
 namespace HBS.ITAG
 {
@@ -36,33 +38,80 @@ namespace HBS.ITAG
                 techFocus.SetSelection(0);
                 age.SetSelection(0);
                 gender.SetSelection(0);
-                
 
-                done.Click += (object sender, EventArgs e) =>
+               
+
+            done.Click += (object sender, EventArgs e) =>
                 {
+                    if (age.SelectedItem.ToString().Trim().Equals("Choose One")|| organization.SelectedItem.ToString().Trim().Equals("Choose One")|| gender.SelectedItem.ToString().Trim().Equals("Choose One")|| techFocus.SelectedItem.ToString().Trim().Equals("Choose One"))
+                    {
+                        if(age.SelectedItem.ToString().Trim().Equals("Choose One"))
+                        {
+                            age.SetBackgroundColor(Android.Graphics.Color.ParseColor("#FF0000"));
+                            Toast.MakeText(this, "Please select a valid age", ToastLength.Short).Show();
+                        }
+
+                        if (gender.SelectedItem.ToString().Trim().Equals("Choose One"))
+                        {
+                            gender.SetBackgroundColor(Android.Graphics.Color.ParseColor("#FF0000"));
+                            Toast.MakeText(this, "Please select a valid gender", ToastLength.Short).Show();
+                        }
+
+                        if (organization.SelectedItem.ToString().Trim().Equals("Choose One"))
+                        {
+                            organization.SetBackgroundColor(Android.Graphics.Color.ParseColor("#FF0000"));
+                            Toast.MakeText(this, "Please select a valid organization", ToastLength.Short).Show();
+                        }
+
+                        if (techFocus.SelectedItem.ToString().Trim().Equals("Choose One"))
+                        {
+                            techFocus.SetBackgroundColor(Android.Graphics.Color.ParseColor("#FF0000"));
+                            Toast.MakeText(this, "Please select a valid technical focus", ToastLength.Short).Show();
+                        }
+                    }
+
+
+                   /* if (organization.SelectedItem.ToString().Trim().Equals("Choose One"))
+                    {
+                        Toast.MakeText(this, "Please select a valid organization", ToastLength.Short).Show();
+                    }
+
+                    if (gender.SelectedItem.ToString().Trim().Equals("Choose One"))
+                    {
+                        Toast.MakeText(this, "Please select a valid gender", ToastLength.Short).Show();
+                    }
+
+                    if (techFocus.SelectedItem.ToString().Trim().Equals("Choose One"))
+                    {
+                        Toast.MakeText(this, "Please select a valid technical focus", ToastLength.Short).Show();
+                    }
+                    */
                     // Gets data from survey
-                    String ageAnswer = age.SelectedItem.ToString();
-                    String genderAnswer = gender.SelectedItem.ToString();
-                    String techFocusAnswer = techFocus.SelectedItem.ToString();
-                    String organizationAnswer = organization.SelectedItem.ToString();
-                    String jobTitleAnswer = jobTitle.Text;
+                    else
+                    {
+                        String ageAnswer = age.SelectedItem.ToString();
+                        String genderAnswer = gender.SelectedItem.ToString();
+                        String techFocusAnswer = techFocus.SelectedItem.ToString();
+                        String organizationAnswer = organization.SelectedItem.ToString();
+                        String jobTitleAnswer = jobTitle.Text;
 
-                    
-                    Store.Instance.AddUser(
-                        new User("-1", ageAnswer, 
-                        genderAnswer, techFocusAnswer, 
-                        organizationAnswer, jobTitleAnswer, 
-                        "Android", Android.OS.Build.Serial), AddUserComplete);
-                        
-                    
-                    surveyDone = true;
-                    var prefEditor = prefs.Edit();
-                    prefEditor.PutBoolean("PrefName", surveyDone );
-                    prefEditor.Commit();
 
-                    Intent i = new Intent(Application.Context, typeof(Home));
-                    i.SetFlags(ActivityFlags.ReorderToFront);
-                    StartActivity(i);
+                        Store.Instance.AddUser(
+                            new User("-1", ageAnswer,
+                            genderAnswer, techFocusAnswer,
+                            organizationAnswer, jobTitleAnswer,
+                            "Android", Android.OS.Build.Serial), AddUserComplete);
+
+
+                        surveyDone = true;
+                        var prefEditor = prefs.Edit();
+                        prefEditor.PutBoolean("PrefName", surveyDone);
+                        prefEditor.Commit();
+
+                        Intent i = new Intent(Application.Context, typeof(Home));
+                        i.SetFlags(ActivityFlags.ReorderToFront);
+                        StartActivity(i);
+                    }
                 };
             }
             else
