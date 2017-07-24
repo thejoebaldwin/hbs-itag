@@ -21,7 +21,8 @@ namespace HBS.ITAG
         List<Event> HottestEvent;
         List<Event> events;
 
-        
+        BeaconManager beaconManager;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -232,6 +233,18 @@ namespace HBS.ITAG
                 //make notification here
                 tempEvent.LastEntryNotified = DateTime.Now;
                 Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
+            }
+        }
+
+        public void OnRegionExit(Event tempEvent)
+        {
+            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+
+            if(minutesSinceLastNotification >5)
+            {
+                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
+                tempEvent.LastExitNotified = DateTime.Now;
             }
         }
     }
