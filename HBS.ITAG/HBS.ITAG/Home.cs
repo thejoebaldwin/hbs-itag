@@ -39,8 +39,6 @@ namespace HBS.ITAG
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
 
-            Store.Instance.RefreshEventAttendees(refreshEventsComplete);
-
             itagIcon.Click += (sender, e) =>
             {
                 StartActivity(typeof(Survey));
@@ -111,6 +109,7 @@ namespace HBS.ITAG
 
         protected override void OnResume()
         {
+            Store.Instance.RefreshEventAttendees(refreshEventsComplete);
             base.OnResume();
             LoadData();
         }
