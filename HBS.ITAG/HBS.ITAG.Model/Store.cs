@@ -217,9 +217,11 @@ namespace HBS.ITAG.Model
 
         public Event SelectedEvent { get; set; }
 
-        //TempVar
+        //TODO delete when done testing
         public Event testEvent { get; set; }
-        public List<Event> events { get; set; }
+        public bool clicked = false;
+
+        public List<Event> _events { get; set; }
 
         public List<Event> ToDoList { get; set; }
 
@@ -235,8 +237,8 @@ namespace HBS.ITAG.Model
 					//do not put trailing / on url
 					//uncomment for local node.js server
 					//instance = new Store("https://localhost:8080");
-					instance = new Store("https://hbs-itag-test.azurewebsites.net");
-					//instance = new Store("https://hbs-itag.azurewebsites.net");
+					//instance = new Store("https://hbs-itag-test.azurewebsites.net");
+					instance = new Store("https://hbs-itag.azurewebsites.net");
 					instance.Init();
 				}
 				return instance;
@@ -246,37 +248,23 @@ namespace HBS.ITAG.Model
         public void AddPerson(Event eventAddingPeople)
         {
             //TODO Connect to Back end
-            //Refresh with back end events so number of people is accurate
-            //GetEvents(AddPersonComplete);
-			//for (int i = 0; i < Events.Count; i++)
-			//{
-			//	if (Events[i].NumberOfPeople != events[i].NumberOfPeople)
-			//	{
-			//		events[i].NumberOfPeople = Events[i].NumberOfPeople;
-			//	}
-			//}
             //Update the Event with the Number of People incremented
             eventAddingPeople.NumberOfPeople++;
 			if (eventAddingPeople.NumberOfPeople < 1)
 			{
 				eventAddingPeople.NumberOfPeople = 1;
 			}
-            //UpdateEvent(eventAddingPeople, AddPersonComplete);
+
+            //TODO eventually delete... this is for testing on ITAG click
             foreach(var e in Events)
             {
                 if(e.Name == "Person Tester")
                 {
-                    if(e.NumberOfPeople == 1)
-                    {
-                        e.NumberOfPeople = 2;
-                    }
-                    else if(e.NumberOfPeople == 0)
-                    {
-                        e.NumberOfPeople = 37707;
-                    }
                     testEvent = e;
                 }
             }
+
+            UpdateEvent(eventAddingPeople, AddPersonComplete);
         }
 
         public void AddPersonComplete(string message)
@@ -286,46 +274,47 @@ namespace HBS.ITAG.Model
         public void RemovePerson(Event eventRemovingPeople)
         {
             //TODO Connect to Back end
-            //Refresh with back end events so number of people is accurate
-            //GetEvents(RemovePersonComplete);
-            //for (int i = 0; i < Events.Count; i++)
-            //{
-            //    if(Events[i].NumberOfPeople != events[i].NumberOfPeople)
-            //    {
-            //        events[i].NumberOfPeople = Events[i].NumberOfPeople;
-            //    }
-            //}
+
+            //var tmper = GetEvent(eventRemovingPeople);
+
             //Update the Event with the Number of people decremented
             eventRemovingPeople.NumberOfPeople--;
             if(eventRemovingPeople.NumberOfPeople < 0)
             {
                 eventRemovingPeople.NumberOfPeople = 0;
             }
-            //UpdateEvent(eventRemovingPeople, RemovePersonComplete);
+
+			if (!ToDoList.Contains(eventRemovingPeople))
+			{
+				AddToDo(eventRemovingPeople);
+			}
+
+            //TODO eventually delete...this is for testing on ITAG click
             foreach(var e in Events)
             {
                 if(e.Name == "Person Tester")
                 {
-                    if(e.NumberOfPeople == 1)
-                    {
-                        e.NumberOfPeople = 0;
-                    }
-                    else if(e.NumberOfPeople != 0)
-                    {
-                        e.NumberOfPeople = 0;
-                    }
-					if (!ToDoList.Contains(e))
-					{
-						AddToDo(e);
-					}
                     testEvent = e;
                 }
             }
+
+            UpdateEvent(eventRemovingPeople, RemovePersonComplete);
         }
 
 		public void RemovePersonComplete(string message)
 		{
 		}
+
+        //TODO
+        public Event GetEvent(Event _event)
+        {
+            foreach(var e in Events)
+            {
+                //if(e.)
+                return e;
+            }
+            return _event;
+        }
 
 		public void Init()
 		{
@@ -429,7 +418,7 @@ namespace HBS.ITAG.Model
                 {
 			        toDoIds += ",";
                 }
-				toDoIds += _arrToDoListIds[i];
+				toDoIds += _arrToDoListIds[i];//
 			}
 #if __ANDROID__
             var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
@@ -540,9 +529,15 @@ namespace HBS.ITAG.Model
 		}
 
 		public List<Event> Events
-		{
-			get { return _arrEvents; }
-		}
+        {
+            get { return _arrEvents; }
+        }
+
+        //TODO
+        public void UpdateEventArray()
+        {
+            _arrEvents = new List<Event>(_events);
+        }
 
 		public List<Track> Tracks
 		{
@@ -696,7 +691,7 @@ namespace HBS.ITAG.Model
 		{
 			_Operation = "add_user";
 			string json = "{\"user_id\":\"<user_id>\", \"gender\":\"<gender>\", \"age\":\"<age>\",\"tech_focus\":\"<tech_focus>\", \"organization\":\"<organization>\" ,\"state\":\"<state>\",";
-			json += "\"position_title\":\"<position_title>\",\"device_type\":\"<device_type>\",\"device_id\":\"<device_id>\"    }";
+			json += "\"position_title\":\"<position_title>\",\"device_type\":\"<device_type>\",\"device_id\":\"<device_id>\" }";
 			json = json.Replace("<user_id>", newUser.Id);
 			json = json.Replace("<gender>", newUser.Gender);
 			json = json.Replace("<age>", newUser.Age);
@@ -746,12 +741,12 @@ namespace HBS.ITAG.Model
 		{
 			_Operation = "update_event";
 
-			string startTime = updatedEvent.StartTime.ToUniversalTime().ToString();
-			string endTime = updatedEvent.EndTime.ToUniversalTime().ToString();
+            string startTime = updatedEvent.StartTime.ToUniversalTime().ToString();
+            string endTime = updatedEvent.EndTime.ToUniversalTime().ToString();
 
-			string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",";
-            json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
-			json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
+            string json = "{\"event_id\":\"<event_id>\",\"schedule_only\": \"<schedule_only>\",";
+                     json += "\"name\": \"<name>\",\"end_time\": \"<end_time>\",\"start_time\": \"<start_time>\",\"track_id\": \"<track_id>\",\"number_of_people\": \"<number_of_people>\",";
+            json += "\"location_id\":\"<location_id>\", \"summary\":\"<summary>\", \"presenter\":\"<presenter>\", \"event_web_id\":\"<event_web_id>\"}";
 
 			json = json.Replace("<event_id>", updatedEvent.Id);
 			json = json.Replace("<schedule_only>", updatedEvent.ScheduleOnly.ToString().ToLower());
@@ -843,6 +838,14 @@ namespace HBS.ITAG.Model
 			PostDataWithOperation("events", string.Empty, "GET");
 		}
 
+        //TODO
+        public void RefreshEventAttendees(Action completion)
+        {
+            _Completion = completion;
+            _Operation = "refresh_events";
+            PostDataWithOperation("events", string.Empty, "GET");
+        }
+
 		public void GetTracks(Action completion)
 		{
 			_Completion = completion;
@@ -932,7 +935,9 @@ namespace HBS.ITAG.Model
 							Dictionary<string, string> data = Utilities.ParseJson(response_json);
 							string events = data["events"];
 							string[] arrJson = Utilities.ParseJsonArray(events);
+
 							_arrEvents = new List<Event>();
+                            _events = new List<Event>();
 							for (int i = 0; i < arrJson.Length; i++)
 							{
 								Event tempEvent = Event.FromJson(arrJson[i]);
@@ -944,8 +949,36 @@ namespace HBS.ITAG.Model
                                 {
                                     ToDoList.Add(tempEvent);
                                 }
+                                if(tempEvent.Name == "Person Tester")
+                                {
+                                    testEvent = tempEvent;
+                                }
+                                _events.Add(tempEvent);
 								_arrEvents.Add(tempEvent);
 							}
+							break;
+						}
+					case "refresh_events":
+						{
+							Dictionary<string, string> data = Utilities.ParseJson(response_json);
+							string events = data["events"];
+							string[] arrJson = Utilities.ParseJsonArray(events);
+							_events = new List<Event>();
+							for (int i = 0; i < arrJson.Length; i++)
+							{
+								Event tempEvent = Event.FromJson(arrJson[i]);
+								if (tempEvent.Name == "Person Tester")
+								{
+									testEvent = tempEvent;
+								}
+								_events.Add(tempEvent);
+							}
+                            var j = 0;
+                            foreach(var e in _events)
+                            {
+                                _arrEvents[j].NumberOfPeople = e.NumberOfPeople;
+                                j++;
+                            }
 							break;
 						}
 					case "add_user":

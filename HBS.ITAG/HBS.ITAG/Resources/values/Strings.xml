@@ -4,26 +4,26 @@
     <string name="ApplicationName">HBS.ITAG</string>
   <string name="surveyDescription">Help us enhance your experience! Please take the time to fill out the information below. We will not share your information with anyone else.</string>
   <string-array name="TechFocus">
-    <item>(Choose One)</item>
+    <item>Choose One</item>
     <item>IT</item>
     <item>GIS</item>
     <item>Both</item>
     <item>Neither</item>
   </string-array>
   <string-array name="YesNo">
-    <item>(Choose One)</item>
+    <item>Choose One</item>
     <item>Yes</item>
     <item>No</item>
   </string-array>
   <string-array name="Organization">
-    <item>(Choose One)</item>
+    <item>Choose One</item>
     <item>IGIC</item>
     <item>ICIT</item>
     <item>Both</item>
     <item>Neither</item>
   </string-array>
   <string-array name="Age">
-    <item>(Choose One)</item> 
+    <item>Choose One</item> 
     <item>16 and Under</item>
     <item>17 to 20</item>
     <item>21 to 25</item>
@@ -39,7 +39,7 @@
     <item>70 and Above</item>
   </string-array>
   <string-array name="Gender">
-    <item>(Choose One)</item>
+    <item>Choose One</item>
     <item>Male</item>
     <item>Female</item>
     <item>Other</item>

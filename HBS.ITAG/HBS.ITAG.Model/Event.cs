@@ -9,6 +9,7 @@ namespace HBS.ITAG.Model
     public class Event
     {
         private Event @event;
+        private Event e;
 
         public string Name { get; set; }
         public string Id { get; set; }
@@ -102,6 +103,21 @@ namespace HBS.ITAG.Model
         {
         }
 
+        public Event(Event e)
+        {
+            this.Name = e.Name;
+            this.EndTime = e.EndTime;
+            this.StartTime = e.StartTime;
+            this.EventWebId = e.EventWebId;
+            this.Id = e.Id;
+            this.Presenter = e.Presenter;
+            this.LocationId = e.LocationId;
+            this.ScheduleOnly = e.ScheduleOnly;
+            this.Favorited = e.Favorited;
+            this.Summary = e.Summary;
+            this.NumberOfPeople = e.NumberOfPeople;
+        }
+
         public static Event FromJson(string json)
         {
             System.Collections.Generic.Dictionary<string, string> data = HBS.ITAG.Model.Utilities.ParseJson(json);
@@ -128,7 +144,7 @@ namespace HBS.ITAG.Model
             }
 
             string summary = data["summary"];
-            int numberOfPeople = 0;//Int32.Parse(data["number_of_people"]);
+            int numberOfPeople = Int32.Parse(data["number_of_people"]);
             return new Event(name, id, startTime, endTime, presenter, summary, eventWebId, trackId, locationId, scheduleOnly, numberOfPeople);
         }
     }

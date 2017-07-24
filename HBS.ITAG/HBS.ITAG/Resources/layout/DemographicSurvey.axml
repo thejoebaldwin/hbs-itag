@@ -146,7 +146,7 @@
         <TextView
             android:text="Position/Job Title (Optional)"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
+            android:layout_width="291.5dp"
             android:layout_height="wrap_content"
             android:id="@+id/DStextView5"
             android:layout_below="@id/DSedittext"
