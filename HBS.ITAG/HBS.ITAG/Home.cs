@@ -135,13 +135,13 @@ namespace HBS.ITAG
             events = new List<Event>(Store.Instance.Events);
             Surveys = new List<Event>();
             HottestEvent = new List<Event>();
-            /*
+    
             foreach (var e in events)
             {
                 if(e.NumberOfPeople > 0)
                 {
                     
-                    if (HottestEvent == null)
+                    if (HottestEvent == null || HottestEvent.Count == 0)
                     {
                         HottestEvent.Add(e);
                     }
@@ -151,7 +151,8 @@ namespace HBS.ITAG
                         HottestEvent.Add(e);
                     }
                 }
-            }*/
+            }
+
 
             if (Surveys.Count == 0)
             {
@@ -198,6 +199,18 @@ namespace HBS.ITAG
             i.SetFlags(ActivityFlags.ReorderToFront);
             StartActivity(i);
 
+        }
+
+        public void OnRegionEnter(Event tempEvent)
+        {
+            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
+            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
+
+            if(Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification >5)
+            {
+                Store.Instance.SelectedEvent = tempEvent;
+                //make notification here
+            }
         }
     }
 }
