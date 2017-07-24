@@ -29,6 +29,7 @@ namespace HBS.ITAG
 
                     if (tempEvent != null)
                     {
+                        Store.Instance.AddPerson(tempEvent);
                         OnRegionEnter(tempEvent);
                     }
                 }
@@ -43,6 +44,7 @@ namespace HBS.ITAG
 
                     if (tempEvent != null)
                     {
+                        Store.Instance.RemovePerson(tempEvent);
                         OnRegionExit(tempEvent);
 
                         // TODO: Set up back end so this isn't always a null reference
