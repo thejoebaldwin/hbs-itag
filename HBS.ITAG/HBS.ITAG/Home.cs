@@ -39,6 +39,8 @@ namespace HBS.ITAG
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
 
+            Store.Instance.RefreshEventAttendees(refreshEventsComplete);
+
             itagIcon.Click += (sender, e) =>
             {
                 StartActivity(typeof(Survey));
@@ -201,6 +203,15 @@ namespace HBS.ITAG
 
         }
 
+        private void OnSessionAddComplete(string message)
+        {
+
+        }
+
+        public void refreshEventsComplete(string message)
+        {
+
+        }
         public void OnRegionEnter(Event tempEvent)
         {
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
@@ -210,6 +221,8 @@ namespace HBS.ITAG
             {
                 Store.Instance.SelectedEvent = tempEvent;
                 //make notification here
+                tempEvent.LastEntryNotified = DateTime.Now;
+                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
             }
         }
     }
