@@ -4934,15 +4934,13 @@ namespace HBS.ITAG
 			// aapt resource value: 5
 			public const int ActionBar_titleTextStyle = 5;
 			
-			public static int[] ActionBarLayout = new int[]
-			{
+			public static int[] ActionBarLayout = new int[] {
 					16842931};
 			
 			// aapt resource value: 0
 			public const int ActionBarLayout_android_layout_gravity = 0;
 			
-			public static int[] ActionMenuItemView = new int[]
-			{
+			public static int[] ActionMenuItemView = new int[] {
 					16843071};
 			
 			// aapt resource value: 0

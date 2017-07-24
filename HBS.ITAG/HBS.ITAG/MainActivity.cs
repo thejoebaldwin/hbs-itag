@@ -18,7 +18,7 @@ namespace HBS.ITAG
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
 
-
+            SimpleService.AppClosed = false;
 
             // Checks if user has completed survey
             bool surveyDone = false;

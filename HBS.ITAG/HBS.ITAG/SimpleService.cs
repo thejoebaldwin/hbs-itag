@@ -11,14 +11,13 @@ namespace HBS.ITAG
     [Service(Exported = true, Name = "net.hbs.itag.SimpleService")]
     public class SimpleService : Service, BeaconManager.IServiceReadyCallback
     {
-        public static bool AppClosed = false;
+        public static bool AppClosed;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         
         // Runs the beacon code even when app is closed
         void StartServiceInForeground()
         {
-            AppClosed = true;
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
 
@@ -181,6 +180,7 @@ namespace HBS.ITAG
 
         public override void OnTaskRemoved(Intent rootIntent)
         {
+            AppClosed = true;
             StartServiceInForeground();
         }
 

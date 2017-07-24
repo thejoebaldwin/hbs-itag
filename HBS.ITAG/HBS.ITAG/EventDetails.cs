@@ -95,9 +95,10 @@ namespace HBS.ITAG
         {
             if ( SimpleService.AppClosed )
             {
-            Intent i = new Intent(Application.Context, typeof(Home));
-            i.SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(i);
+                SimpleService.AppClosed = false;
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             } else
             {
                 base.OnBackPressed();
