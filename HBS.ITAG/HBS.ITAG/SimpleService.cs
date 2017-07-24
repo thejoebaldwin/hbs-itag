@@ -66,6 +66,7 @@ namespace HBS.ITAG
             base.OnCreate();
             AppClosed = false;
             StartServiceInForeground();
+            //StopForeground(true);
         }
         
         public void OnServiceReady()
@@ -75,7 +76,7 @@ namespace HBS.ITAG
 
         private void InitializeBeacons()
         {
-            //loop through all location entries
+            //Loop through all location entries
             Region beaconRegionTest = new Region("test", null, null, null);
             beaconManager.StartMonitoring(beaconRegionTest);
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
@@ -90,11 +91,9 @@ namespace HBS.ITAG
         public void OnRegionEnter(Event tempEvent)
         {
             Store.Instance.SelectedEvent = tempEvent;
-            //Intent newIntent2 = new Intent(this, typeof(Home));
             Intent newIntent = new Intent(this, typeof(EventDetails));
             Android.Support.V4.App.TaskStackBuilder stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(this);
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
-            //stackBuilder.AddNextIntent(newIntent2);
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
@@ -113,7 +112,7 @@ namespace HBS.ITAG
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
             minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
 
-            //don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
+            //Don't notify twice in a row and don't repeat the same notification more than once in 10 minutes
             if (Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification > 5)
             {
                 tempEvent.LastEntryNotified = DateTime.Now;
@@ -133,10 +132,7 @@ namespace HBS.ITAG
             }
         }
 
-        public void OnSessionAddComplete(string message)
-        {
-
-        }
+        public void OnSessionAddComplete(string message) { }
         
         public override IBinder OnBind(Intent intent)
         {
