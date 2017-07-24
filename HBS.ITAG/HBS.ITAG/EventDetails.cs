@@ -66,7 +66,7 @@ namespace HBS.ITAG
 
 
 			button.Click += (object sender, EventArgs e) =>
-				{
+			{
 					if (Store.Instance.SelectedEvent.Favorited)
 					{
 						Store.Instance.SelectedEvent.Favorited = false;
@@ -81,7 +81,7 @@ namespace HBS.ITAG
 						button.SetImageDrawable(GetDrawable(17301516));
 						Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
 					}
-				};
+			};
 		}
 
         protected override void OnCreate(Bundle savedInstanceState)
