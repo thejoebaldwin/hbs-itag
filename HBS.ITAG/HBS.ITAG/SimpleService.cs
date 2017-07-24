@@ -18,6 +18,7 @@ namespace HBS.ITAG
         // Runs the beacon code even when app is closed
         void StartServiceInForeground()
         {
+            AppClosed = true;
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
 
@@ -65,8 +66,46 @@ namespace HBS.ITAG
         {
             base.OnCreate();
             AppClosed = false;
-            StartServiceInForeground();
-            //StopForeground(true);
+            StopForeground(true);
+
+            beaconManager = new BeaconManager(this);
+            beaconManager.SetBackgroundScanPeriod(1000, 1);
+
+            beaconManager.EnteredRegion += (sender, e) =>
+            {
+                if (Store.Instance.Notify)
+                {
+                    Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
+
+                    if (tempEvent != null)
+                    {
+                        OnRegionEnter(tempEvent);
+                    }
+                }
+            };
+
+            beaconManager.ExitedRegion += (sender, e) =>
+            {
+                if (Store.Instance.Notify)
+                {
+
+                    Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+
+                    if (tempEvent != null)
+                    {
+                        OnRegionExit(tempEvent);
+
+                        // TODO: Set up back end so this isn't always a null reference
+                        /*
+                        if (!Store.Instance.ToDoList.Contains(tempEvent))
+                        {
+                            Store.Instance.AddToDo(tempEvent);
+                        }*/
+                    }
+                }
+            };
+
+            beaconManager.Connect(this);
         }
         
         public void OnServiceReady()
@@ -142,7 +181,7 @@ namespace HBS.ITAG
 
         public override void OnTaskRemoved(Intent rootIntent)
         {
-            AppClosed = true;
+            StartServiceInForeground();
         }
 
         public override void OnDestroy()
