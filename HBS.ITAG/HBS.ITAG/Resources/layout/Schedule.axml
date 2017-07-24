@@ -42,7 +42,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="60dp">
+        android:layout_height="55.0dp">
         <ImageView
             android:id="@+id/leftArrow"
             android:src="@drawable/left_arrow"
@@ -80,7 +80,7 @@
         android:id="@+id/eventList"
         android:layout_gravity="center"
         android:layout_width="fill_parent"
-        android:layout_height="440dp" />
+        android:layout_height="396dp" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dip"
