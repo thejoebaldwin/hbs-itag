@@ -283,11 +283,14 @@ namespace HBS.ITAG.Model
             {
                 eventRemovingPeople.NumberOfPeople = 0;
             }
+            if(ToDoList != null)
+            {
+			    if (!ToDoList.Contains(eventRemovingPeople))
+			    {
+				    AddToDo(eventRemovingPeople);
+			    }
 
-			if (!ToDoList.Contains(eventRemovingPeople))
-			{
-				AddToDo(eventRemovingPeople);
-			}
+            }
 
             //TODO eventually delete...this is for testing on ITAG click
             foreach(var e in Events)
