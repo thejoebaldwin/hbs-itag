@@ -14,8 +14,11 @@ namespace HBS.ITAG
 {
     class HotEventAdapter : BaseAdapter<Event>
     {
-        private List<Event> tableItems;
+        List<Event> tableItems;
+        Event hotEvent;
         private Context mContext;
+
+        string CellIdentifier = "TableCell";
 
         public override int Count
         {
@@ -26,6 +29,26 @@ namespace HBS.ITAG
         {
             tableItems = events;
             mContext = context;
+
+            foreach(var item in tableItems)
+            {
+                if(item.Name == "Person Tester")
+                {
+                    //
+                }
+
+                if(item.NumberOfPeople != 0)
+                {
+                    if(hotEvent == null)
+                    {
+                        hotEvent = item;
+                    }
+                    else if (item.NumberOfPeople > hotEvent.NumberOfPeople)
+                    {
+                        hotEvent = item;
+                    }
+                }
+            }
         }
 
         public override Event this[int position]
@@ -50,15 +73,29 @@ namespace HBS.ITAG
             LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.eventItem);
             TextView eventName = row.FindViewById<TextView>(Resource.Id.HotEventName);
             TextView Attendees = row.FindViewById<TextView>(Resource.Id.Attendee);
-            if (tableItems[position].Name == null)
+            if (hotEvent == null)
             {
                 eventName.Text = "Nobody is attending any events yet";
                 Attendees.Text = "";
             }
+
             else
             {
+                Event item = hotEvent;
                 eventName.Text = tableItems[position].Name;
                 Attendees.Text = tableItems[position].NumberOfPeople.ToString() + " Attending";
+                if(!item.ScheduleOnly)
+                {
+                    row.SetBackgroundColor(Android.Graphics.Color.ParseColor("#0e1d52"));
+                    eventName.SetTextColor(Android.Graphics.Color.White);
+                    Attendees.SetTextColor(Android.Graphics.Color.White);
+                }
+                else
+                {
+                    row.SetBackgroundColor(Android.Graphics.Color.ParseColor("#99a1ac"));
+                    eventName.SetTextColor(Android.Graphics.Color.ParseColor("#0e1d52"));
+                    Attendees.SetTextColor(Android.Graphics.Color.ParseColor("#0e1d52"));
+                }
             }
 
             if (tableItems[position].ScheduleOnly)
