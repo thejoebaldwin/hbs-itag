@@ -6,11 +6,15 @@ using Estimote;
 using HBS.ITAG;
 using CoreLocation;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace HBS.ITAG
 {
     public partial class HomeViewController : UIViewController
     {
+        protected LoadingPage loadPop = null;
+
+        //bool doneload;
         partial void NotifySwitchClicked(UISwitch sender)
         {
             Store.Instance.Notify = NotifySwitch.On;
@@ -52,11 +56,19 @@ namespace HBS.ITAG
 
         public void NavigateToSchedule()
         {
+			var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
+                          //show the loading overlay on the UI thread using the correct orientation sizing
+			loadPop = new LoadingPage(bounds);
+            View.Add(loadPop);
 			this.PresentViewController(ScheduleController, false, null);
         }
 
         public void NavigateToMyEvents()
         {
+			var bounds = UIScreen.MainScreen.Bounds; // portrait bounds
+													 //show the loading overlay on the UI thread using the correct orientation sizing
+			loadPop = new LoadingPage(bounds);
+			View.Add(loadPop);
 			this.PresentViewController(myEventsController, false, null);
         }
 
@@ -155,6 +167,7 @@ namespace HBS.ITAG
 
         public void refreshEventsComplete(string message)
         {
+            loadPop.Hide();
         }
 
         public override void ViewDidAppear(bool animated)

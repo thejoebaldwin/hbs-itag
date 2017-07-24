@@ -126,6 +126,7 @@ namespace HBS.ITAG
                 })
              };
 
+            //tint color is for the cursor of the textviews
             this.AgeTextView.TintColor = UIColor.Clear;
             this.GenderTextView.TintColor = UIColor.Clear;
             this.TechFocusTextView.TintColor = UIColor.Clear;

@@ -72,14 +72,14 @@ namespace HBS.ITAG
 						Store.Instance.SelectedEvent.Favorited = false;
 						Toast.MakeText(this, "Removed from Favorites", ToastLength.Short).Show();
 						button.SetImageDrawable(GetDrawable(17301515));
-						//OldStore.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
+						Store.Instance.DeleteFavorite(Store.Instance.SelectedEvent);
 					}
 					else
 					{
 						Store.Instance.SelectedEvent.Favorited = true;
 						Toast.MakeText(this, "Added to Favorites", ToastLength.Short).Show();
 						button.SetImageDrawable(GetDrawable(17301516));
-						//OldStore.Instance.AddFavorite(Store.Instance.SelectedEvent);
+						Store.Instance.AddFavorite(Store.Instance.SelectedEvent);
 					}
 				};
 		}
@@ -95,9 +95,10 @@ namespace HBS.ITAG
         {
             if ( SimpleService.AppClosed )
             {
-            Intent i = new Intent(Application.Context, typeof(Home));
-            i.SetFlags(ActivityFlags.ReorderToFront);
-            StartActivity(i);
+                SimpleService.AppClosed = false;
+                Intent i = new Intent(Application.Context, typeof(Home));
+                i.SetFlags(ActivityFlags.ReorderToFront);
+                StartActivity(i);
             } else
             {
                 base.OnBackPressed();

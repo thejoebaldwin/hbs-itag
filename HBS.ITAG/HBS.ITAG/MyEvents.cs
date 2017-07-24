@@ -103,7 +103,6 @@ namespace HBS.ITAG
             RequestWindowFeature(Android.Views.WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.MyEvents);
-            LoadData();
 
             // Code for nav bar
 

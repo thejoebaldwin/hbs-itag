@@ -18,6 +18,8 @@ namespace HBS.ITAG
             base.OnCreate(bundle);
             RequestWindowFeature(WindowFeatures.NoTitle);
 
+            SimpleService.AppClosed = false;
+
             // Checks if user has completed survey
             bool surveyDone = false;
             var prefs = Application.Context.GetSharedPreferences("MyApp", FileCreationMode.Private);
@@ -121,11 +123,7 @@ namespace HBS.ITAG
                 StartActivity(i);
             }
         }
-
-        private void AddUserComplete(string message)
-        {
-        }
-
+        private void AddUserComplete(string message) { }
     }
 }
 
