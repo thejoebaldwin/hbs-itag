@@ -4,6 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white">
+  <TextView
+        android:text="Text"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewTest" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
@@ -106,7 +113,7 @@
             android:layout_marginTop="0.0dp"
             android:layout_marginBottom="0.0dp"
             android:text="@string/HotelName"
-            android:textColorLink="@android:color/black"/>
+            android:textColorLink="@android:color/black" />
         <TextView
             android:id="@+id/conference_address"
             android:layout_width="fill_parent"

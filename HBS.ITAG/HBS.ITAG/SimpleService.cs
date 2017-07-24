@@ -12,6 +12,7 @@ namespace HBS.ITAG
     public class SimpleService : Service, BeaconManager.IServiceReadyCallback
     {
         public static bool AppClosed;
+        public static string current_Event;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
         
@@ -27,6 +28,7 @@ namespace HBS.ITAG
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.Region.Major.ToString(), e.Region.Minor.ToString());
 
+
                     if (tempEvent != null)
                     {
                         OnRegionEnter(tempEvent);
@@ -41,6 +43,7 @@ namespace HBS.ITAG
 
                     Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
 
+                    current_Event = "no event selected";
                     if (tempEvent != null)
                     {
                         OnRegionExit(tempEvent);
@@ -94,6 +97,8 @@ namespace HBS.ITAG
             stackBuilder.AddParentStack(Java.Lang.Class.FromType(typeof(EventDetails)));
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+
+            current_Event = tempEvent.Name;
 
             Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
             .SetAutoCancel(true)

@@ -44,6 +44,16 @@ namespace HBS.ITAG
                 StartActivity(typeof(Survey));
             };
 
+            TextView currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
+
+            currentEvent.Click += (sender, e) =>
+            {
+                string label = "You are at : " + SimpleService.current_Event + ".";
+                char[] labelArray = label.ToCharArray();
+                int temp = label.Length;
+                currentEvent.SetText(labelArray, 0, temp);
+            };
+
             // Nav bar code
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
 
