@@ -2562,41 +2562,41 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700da
 			public const int MEtextViewNoPrevious = 2131165402;
 			
-			// aapt resource value: 0x7f070106
-			public const int SurevyEdittext = 2131165446;
-			
-			// aapt resource value: 0x7f070104
-			public const int SurevyEmailEdittext = 2131165444;
-			
-			// aapt resource value: 0x7f070107
-			public const int SurveyDoneButton = 2131165447;
-			
-			// aapt resource value: 0x7f070109
-			public const int SurveyEventTime = 2131165449;
-			
-			// aapt resource value: 0x7f070108
-			public const int SurveyName = 2131165448;
-			
 			// aapt resource value: 0x7f070105
-			public const int SurveyOtherComments = 2131165445;
-			
-			// aapt resource value: 0x7f0700f9
-			public const int SurveyQuestion1 = 2131165433;
-			
-			// aapt resource value: 0x7f0700fc
-			public const int SurveyQuestion2 = 2131165436;
-			
-			// aapt resource value: 0x7f0700ff
-			public const int SurveyQuestion3 = 2131165439;
-			
-			// aapt resource value: 0x7f070102
-			public const int SurveyQuestion4 = 2131165442;
+			public const int SurevyEdittext = 2131165445;
 			
 			// aapt resource value: 0x7f070103
-			public const int SurveySpinner = 2131165443;
+			public const int SurevyEmailEdittext = 2131165443;
+			
+			// aapt resource value: 0x7f070106
+			public const int SurveyDoneButton = 2131165446;
+			
+			// aapt resource value: 0x7f070108
+			public const int SurveyEventTime = 2131165448;
+			
+			// aapt resource value: 0x7f070107
+			public const int SurveyName = 2131165447;
+			
+			// aapt resource value: 0x7f070104
+			public const int SurveyOtherComments = 2131165444;
 			
 			// aapt resource value: 0x7f0700f8
-			public const int SurveytextView1 = 2131165432;
+			public const int SurveyQuestion1 = 2131165432;
+			
+			// aapt resource value: 0x7f0700fb
+			public const int SurveyQuestion2 = 2131165435;
+			
+			// aapt resource value: 0x7f0700fe
+			public const int SurveyQuestion3 = 2131165438;
+			
+			// aapt resource value: 0x7f070101
+			public const int SurveyQuestion4 = 2131165441;
+			
+			// aapt resource value: 0x7f070102
+			public const int SurveySpinner = 2131165442;
+			
+			// aapt resource value: 0x7f0700f7
+			public const int SurveytextView1 = 2131165431;
 			
 			// aapt resource value: 0x7f070073
 			public const int Title = 2131165299;
@@ -2760,14 +2760,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07000e
 			public const int disableHome = 2131165198;
 			
+			// aapt resource value: 0x7f0700f4
+			public const int e = 2131165428;
+			
 			// aapt resource value: 0x7f0700f5
-			public const int e = 2131165429;
+			public const int eName = 2131165429;
 			
 			// aapt resource value: 0x7f0700f6
-			public const int eName = 2131165430;
-			
-			// aapt resource value: 0x7f0700f7
-			public const int eTime = 2131165431;
+			public const int eTime = 2131165430;
 			
 			// aapt resource value: 0x7f07005c
 			public const int edit_query = 2131165276;
@@ -2790,8 +2790,8 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f0700b3
 			public const int eventItem = 2131165363;
 			
-			// aapt resource value: 0x7f0700f4
-			public const int eventList = 2131165428;
+			// aapt resource value: 0x7f0700f3
+			public const int eventList = 2131165427;
 			
 			// aapt resource value: 0x7f070025
 			public const int exitUntilCollapsed = 2131165221;
@@ -2885,9 +2885,6 @@ namespace HBS.ITAG
 			
 			// aapt resource value: 0x7f0700af
 			public const int linearLayout1 = 2131165359;
-			
-			// aapt resource value: 0x7f0700f3
-			public const int linearLayout2 = 2131165427;
 			
 			// aapt resource value: 0x7f07000b
 			public const int listMode = 2131165195;
@@ -3072,14 +3069,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f070067
 			public const int search_voice_btn = 2131165287;
 			
-			// aapt resource value: 0x7f0700fa
-			public const int seekBar1 = 2131165434;
+			// aapt resource value: 0x7f0700f9
+			public const int seekBar1 = 2131165433;
 			
-			// aapt resource value: 0x7f0700fd
-			public const int seekBar2 = 2131165437;
+			// aapt resource value: 0x7f0700fc
+			public const int seekBar2 = 2131165436;
 			
-			// aapt resource value: 0x7f070100
-			public const int seekBar3 = 2131165440;
+			// aapt resource value: 0x7f0700ff
+			public const int seekBar3 = 2131165439;
 			
 			// aapt resource value: 0x7f070068
 			public const int select_dialog_listview = 2131165288;
@@ -3144,14 +3141,14 @@ namespace HBS.ITAG
 			// aapt resource value: 0x7f07004d
 			public const int textSpacerNoButtons = 2131165261;
 			
-			// aapt resource value: 0x7f0700fb
-			public const int textView1 = 2131165435;
+			// aapt resource value: 0x7f0700fa
+			public const int textView1 = 2131165434;
 			
-			// aapt resource value: 0x7f0700fe
-			public const int textView2 = 2131165438;
+			// aapt resource value: 0x7f0700fd
+			public const int textView2 = 2131165437;
 			
-			// aapt resource value: 0x7f070101
-			public const int textView3 = 2131165441;
+			// aapt resource value: 0x7f070100
+			public const int textView3 = 2131165440;
 			
 			// aapt resource value: 0x7f0700a3
 			public const int textViewTest = 2131165347;
