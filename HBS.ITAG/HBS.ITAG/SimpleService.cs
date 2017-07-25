@@ -39,21 +39,20 @@ namespace HBS.ITAG
 
             beaconManager.ExitedRegion += (sender, e) =>
             {
+               
                 if (Store.Instance.Notify)
                 {
-
                     Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
-
                     current_Event = "no event selected";
+
                     if (tempEvent != null)
                     {
-                        Store.Instance.RemovePerson(tempEvent);
+                        OnRegionExit(tempEvent);
                         if (!Store.Instance.ToDoList.Contains(tempEvent))
                         {
                             Store.Instance.AddToDo(tempEvent);
                         }
-                        OnRegionExit(tempEvent);
-                        
+                        Store.Instance.RemovePerson(tempEvent);
 
                         // TODO: Set up back end so this isn't always a null reference
                         /*
