@@ -39,6 +39,7 @@ namespace HBS.ITAG
             TextView conferenceDetails = FindViewById<TextView>(Resource.Id.conference_details);
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
+            Store.Instance.ToDoList = new List<Event>();
 
             itagIcon.Click += (sender, e) =>
             {
@@ -165,11 +166,20 @@ namespace HBS.ITAG
                 }
             }
 
+            foreach (var e in events)
+            {
+                if (Store.Instance.ToDoList.Contains(e))
+                {
+                    Surveys.Add(e);
+                }
+            }
+
 
             if (Surveys.Count == 0)
             {
                 Surveys.Add(new Event(null, null, DateTime.Parse("6/24/2017"), DateTime.Parse("6/24/2017"), null, null, null, null, null, true));
             }
+            
 
             if (HottestEvent.Count == 0)
             {
@@ -222,6 +232,7 @@ namespace HBS.ITAG
         {
 
         }
+        /*
         public void OnRegionEnter(Event tempEvent)
         {
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
@@ -246,6 +257,6 @@ namespace HBS.ITAG
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
                 tempEvent.LastExitNotified = DateTime.Now;
             }
-        }
+        }*/
     }
 }
