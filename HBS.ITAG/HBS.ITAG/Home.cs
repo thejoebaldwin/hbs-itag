@@ -20,9 +20,8 @@ namespace HBS.ITAG
         List<Event> Surveys;
         List<Event> HottestEvent;
         List<Event> events;
-
-        BeaconManager beaconManager;
-
+        public static TextView currentEvent;
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -46,15 +45,7 @@ namespace HBS.ITAG
                 StartActivity(typeof(Survey));
             };
 
-            TextView currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
-
-            currentEvent.Click += (sender, e) =>
-            {
-                string label = "You are at : " + SimpleService.current_Event + ".";
-                char[] labelArray = label.ToCharArray();
-                int temp = label.Length;
-                currentEvent.SetText(labelArray, 0, temp);
-            };
+            currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
 
             // Nav bar code
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
@@ -142,7 +133,7 @@ namespace HBS.ITAG
             RunOnUiThread(() => LoadData());
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             
             events = new List<Event>(Store.Instance.Events);
@@ -232,7 +223,7 @@ namespace HBS.ITAG
         {
 
         }
-        /*
+        
         public void OnRegionEnter(Event tempEvent)
         {
             int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
@@ -257,6 +248,6 @@ namespace HBS.ITAG
                 Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
                 tempEvent.LastExitNotified = DateTime.Now;
             }
-        }*/
+        }
     }
 }
