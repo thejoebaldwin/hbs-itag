@@ -3,10 +3,10 @@
     android:id="@+id/eventItem"
     android:layout_width="fill_parent"
     android:background="@drawable/primaryBox"
-    android:layout_height="170px">
+    android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="170px"
+        android:layout_height="70dp"
         android:layout_centerHorizontal="true">
         <TextView
             android:text="Text"

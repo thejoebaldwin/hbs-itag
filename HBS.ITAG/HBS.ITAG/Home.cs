@@ -20,10 +20,12 @@ namespace HBS.ITAG
         List<Event> Surveys;
         List<Event> HottestEvent;
         List<Event> events;
-        public static TextView currentEvent;
-        public static string current_Event;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
+
+        // Used for Debugging
+        public static TextView currentEvent;
+        public static string current_Event;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -43,7 +45,8 @@ namespace HBS.ITAG
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
             Store.Instance.ToDoList = new List<Event>();
 
-            currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
+            // Dispay used for debugging
+            //currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
 
             // Nav bar code
             ImageButton Homeimagebutton = FindViewById<ImageButton>(Resource.Id.house);
@@ -121,11 +124,12 @@ namespace HBS.ITAG
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
 
-                    current_Event = "no event selected";
+                    // Dispay used for debugging
+                    /* current_Event = "no event selected";
                     string label = "You are not currently at an event.";
                     char[] labelArray = label.ToCharArray();
                     int temp2 = label.Length;
-                    Home.currentEvent.SetText(labelArray, 0, temp2);
+                    Home.currentEvent.SetText(labelArray, 0, temp2);*/
 
                     if (tempEvent != null)
                     {
@@ -282,11 +286,12 @@ namespace HBS.ITAG
             stackBuilder.AddNextIntent(newIntent);
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
-            current_Event = tempEvent.Name;
+            // Dispay used for debugging
+            /* current_Event = tempEvent.Name;
             string label = "You are at : " + current_Event + ".";
             char[] labelArray = label.ToCharArray();
             int temp = label.Length;
-            Home.currentEvent.SetText(labelArray, 0, temp);
+            Home.currentEvent.SetText(labelArray, 0, temp); */
 
             Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
             .SetAutoCancel(true)
