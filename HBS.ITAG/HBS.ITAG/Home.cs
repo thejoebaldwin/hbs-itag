@@ -21,8 +21,6 @@ namespace HBS.ITAG
         List<Event> HottestEvent;
         List<Event> events;
         public static TextView currentEvent;
-
-        public static bool AppClosed;
         public static string current_Event;
         BeaconManager beaconManager;
         const string PROXIMITY_UUID = "B9407F30-F5F8-466E-AFF9-25556B57FE6D";
@@ -44,12 +42,6 @@ namespace HBS.ITAG
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
             Store.Instance.ToDoList = new List<Event>();
-
-            itagIcon.Click += (sender, e) =>
-            {
-                StartActivity(typeof(Survey));
-            };
-
             currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
 
             // Nav bar code
@@ -102,6 +94,7 @@ namespace HBS.ITAG
             StopService(new Intent(this, typeof(SimpleService)));
             Store.Instance.GetTracks(LoadTracksComplete);
 
+            // Runs the beacon code within OnCreate to allow HomePage displays to update in real-time
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
 
@@ -146,6 +139,8 @@ namespace HBS.ITAG
                 }
             };
             beaconManager.Connect(this);
+
+            // Runs beacon code in the background
             StartService(new Intent(this, typeof(SimpleService)));
 
 
