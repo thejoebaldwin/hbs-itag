@@ -30,7 +30,7 @@ namespace HBS.ITAG
             seekBar1 = FindViewById<SeekBar>(Resource.Id.seekBar1);
             seekBar2 = FindViewById<SeekBar>(Resource.Id.seekBar2);
             seekBar3 = FindViewById<SeekBar>(Resource.Id.seekBar3);
-            eventName = FindViewById<TextView>(Resource.Id.SurveytextView1);
+            eventName = FindViewById<TextView>(Resource.Id.SurveytextViewEventName);
             comments = FindViewById<EditText>(Resource.Id.SurevyEdittext);
             email = FindViewById<EditText>(Resource.Id.SurevyEmailEdittext);
             emailNotifications = FindViewById<Spinner>(Resource.Id.SurveySpinner);
@@ -47,6 +47,7 @@ namespace HBS.ITAG
             seekBar3.SetOnSeekBarChangeListener(this);
           
             emailNotifications.ItemSelected += EmailNotifications_ItemSelected;
+            eventName.Text = Store.Instance.SelectedEvent.Name;
 
             done.Click += (object sender, EventArgs e) =>
             {

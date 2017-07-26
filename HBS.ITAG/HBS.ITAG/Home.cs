@@ -42,6 +42,7 @@ namespace HBS.ITAG
             TextView contactNumber = FindViewById<TextView>(Resource.Id.contactnumber);
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
             Store.Instance.ToDoList = new List<Event>();
+
             currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
 
             // Nav bar code
