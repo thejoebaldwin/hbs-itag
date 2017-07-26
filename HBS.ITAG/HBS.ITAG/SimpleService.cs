@@ -43,7 +43,12 @@ namespace HBS.ITAG
                 if (Store.Instance.Notify)
                 {
                     Event tempEvent = Store.Instance.ProximityEvent(e.P0.Major.ToString(), e.P0.Minor.ToString());
+
                     current_Event = "no event selected";
+                    string label = "You are not currently at an event.";
+                    char[] labelArray = label.ToCharArray();
+                    int temp2 = label.Length;
+                    Home.currentEvent.SetText(labelArray, 0, temp2);
 
                     if (tempEvent != null)
                     {
@@ -53,16 +58,11 @@ namespace HBS.ITAG
                             Store.Instance.AddToDo(tempEvent);
                         }
                         Store.Instance.RemovePerson(tempEvent);
-
-                        // TODO: Set up back end so this isn't always a null reference
-                        /*
-                        if (!Store.Instance.ToDoList.Contains(tempEvent))
-                        {
-                            Store.Instance.AddToDo(tempEvent);
-                        }*/
                     }
                 }
             };
+
+
 
             beaconManager.Connect(this);
 
@@ -105,6 +105,10 @@ namespace HBS.ITAG
             PendingIntent resultPendingIntent = stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
 
             current_Event = tempEvent.Name;
+            string label = "You are at : " + current_Event + ".";
+            char[] labelArray = label.ToCharArray();
+            int temp = label.Length;
+            Home.currentEvent.SetText(labelArray, 0, temp);
 
             Android.Support.V4.App.NotificationCompat.Builder builder = new Android.Support.V4.App.NotificationCompat.Builder(this)
             .SetAutoCancel(true)
