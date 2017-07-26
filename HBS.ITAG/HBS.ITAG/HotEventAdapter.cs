@@ -70,7 +70,7 @@ namespace HBS.ITAG
                 row = LayoutInflater.From(mContext).Inflate(Resource.Layout.HottestEventListView, null, false);
                 //LayoutInflater inflater = (LayoutInflater)mContext.GetSystemService(Context.LayoutInflaterService);
             }
-            LinearLayout eventItem = row.FindViewById<LinearLayout>(Resource.Id.eventItem);
+            RelativeLayout eventItem = row.FindViewById<RelativeLayout>(Resource.Id.eventItem);
             TextView eventName = row.FindViewById<TextView>(Resource.Id.HotEventName);
             TextView Attendees = row.FindViewById<TextView>(Resource.Id.Attendee);
             if (hotEvent == null)
