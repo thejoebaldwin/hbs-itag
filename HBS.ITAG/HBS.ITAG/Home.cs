@@ -40,11 +40,6 @@ namespace HBS.ITAG
             Switch notificationSwitch = FindViewById<Switch>(Resource.Id.switch1);
             Store.Instance.ToDoList = new List<Event>();
 
-            itagIcon.Click += (sender, e) =>
-            {
-                StartActivity(typeof(Survey));
-            };
-
             currentEvent = FindViewById<TextView>(Resource.Id.textViewTest);
 
             // Nav bar code
