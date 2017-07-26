@@ -171,6 +171,7 @@ namespace HBS.ITAG
                 if (Store.Instance.ToDoList.Contains(e))
                 {
                     Surveys.Add(e);
+                    SurveyList.ItemClick += SurveyClick;
                 }
             }
 
@@ -192,19 +193,7 @@ namespace HBS.ITAG
 
             SurveyAdapter SurveyAdapter = new SurveyAdapter(Application.Context, Surveys);
             SurveyList.Adapter = SurveyAdapter;
-            SurveyList.ItemClick += SurveyClick;
         } 
-        
-        private void favoriteClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            if (!Surveys[e.Position].ScheduleOnly)
-            {
-                Store.Instance.SelectedEvent = Surveys[e.Position];
-				Intent i = new Intent(Application.Context, typeof(EventDetails));
-				i.SetFlags(ActivityFlags.ReorderToFront);
-				StartActivity(i);
-            }
-        }
 
         private void HotClick(object sender, AdapterView.ItemClickEventArgs e)
         {
@@ -232,31 +221,5 @@ namespace HBS.ITAG
         {
 
         }
-        /*
-        public void OnRegionEnter(Event tempEvent)
-        {
-            int minutesSinceLastNotification = (tempEvent.LastEntryNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-
-            if(Store.Instance.SelectedEvent != tempEvent && minutesSinceLastNotification >5)
-            {
-                Store.Instance.SelectedEvent = tempEvent;
-                //make notification here
-                tempEvent.LastEntryNotified = DateTime.Now;
-                Store.Instance.AddSession(tempEvent.Id, true, OnSessionAddComplete);
-            }
-        }
-
-        public void OnRegionExit(Event tempEvent)
-        {
-            int minutesSinceLastNotification = (tempEvent.LastExitNotified - DateTime.Now).Minutes;
-            minutesSinceLastNotification = Math.Abs(minutesSinceLastNotification);
-
-            if(minutesSinceLastNotification >5)
-            {
-                Store.Instance.AddSession(tempEvent.Id, false, OnSessionAddComplete);
-                tempEvent.LastExitNotified = DateTime.Now;
-            }
-        }*/
     }
 }
