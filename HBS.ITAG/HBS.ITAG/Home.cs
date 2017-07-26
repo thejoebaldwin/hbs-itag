@@ -99,8 +99,8 @@ namespace HBS.ITAG
             };
 
             // Initializes Beacons and Data
+            StopService(new Intent(this, typeof(SimpleService)));
             Store.Instance.GetTracks(LoadTracksComplete);
-            StartService(new Intent(this, typeof(SimpleService)));
 
             beaconManager = new BeaconManager(this);
             beaconManager.SetBackgroundScanPeriod(1000, 1);
@@ -145,10 +145,8 @@ namespace HBS.ITAG
                     }
                 }
             };
-
-
-
             beaconManager.Connect(this);
+            StartService(new Intent(this, typeof(SimpleService)));
 
 
             // Notification Toggle
@@ -156,11 +154,13 @@ namespace HBS.ITAG
                  if (!notificationSwitch.Checked)
                  {
                     StopService(new Intent(this, typeof(SimpleService)));
-                 }
+                    beaconManager.Disconnect();
+                }
                  else
                  {
                     StartService(new Intent(this, typeof(SimpleService)));
-                 }
+                    beaconManager.Connect(this);
+                }
             };
         }
 
