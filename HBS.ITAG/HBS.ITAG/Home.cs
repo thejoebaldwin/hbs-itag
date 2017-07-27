@@ -8,7 +8,6 @@ using HBS.ITAG.Model;
 using EstimoteSdk;
 using Android.Text.Method;
 using Android.Text;
-using Android.Support.V4.Content;
 
 namespace HBS.ITAG
 {
