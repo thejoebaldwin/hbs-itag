@@ -10,14 +10,10 @@ namespace HBS.ITAG.Model
 
         public string Name { get; set; }
         public string Id { get; set; }
-   
         public string BeaconGuid { get; set; }
-
         public string Minor { get; set; }
         public string Major { get; set; }
-
         public string Nickname { get; set; }
-
 
         public Location(string name, string id, string beaconGuid, string nickname, string minor, string major)
         {
