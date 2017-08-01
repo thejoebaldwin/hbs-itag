@@ -4,23 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
-    <TextView
-        android:text="Survey for:    "
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SurveytextView1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:textColor="#0e1d52"
-        android:textSize="25dp"
-        android:textStyle="bold" />
+        android:background="#ffffff">
+        <TextView
+            android:text="Survey for:    "
+            android:layout_width="124.0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/SurveytextView1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#0e1d52"
+            android:textSize="25dp"
+            android:layout_marginRight="0.0dp" />
+        <TextView
+            android:text="Insert Event Here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/SurveytextViewEventName"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:textColor="#0e1d52"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginRight="0.0dp" />
+    </LinearLayout>
     <View
         android:layout_width="fill_parent"
         android:layout_height="2dp"
         android:background="#bf1e2d"
         android:layout_marginTop="10dp" />
     <TextView
-        android:text="Question Number One:"
+        android:text="How would you rate the overall peresentation?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SurveyQuestion1"
@@ -47,7 +64,7 @@
         android:layout_marginRight="10dp"
         android:textColor="#0e1d52" />
     <TextView
-        android:text="Question Number Two:"
+        android:text="How would you rate the location of the presentation?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SurveyQuestion2"
@@ -74,7 +91,7 @@
         android:layout_marginRight="10dp"
         android:textColor="#0e1d52" />
     <TextView
-        android:text="Question Number Three:"
+        android:text="How likely are you to recommend this event to a peer?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/SurveyQuestion3"

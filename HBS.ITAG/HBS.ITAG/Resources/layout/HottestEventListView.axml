@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/eventItem"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="150px"
-    android:background="@drawable/primaryBox">
-  <TextView
-      android:text="Text"
-      android:textColor="@android:color/white"
-      android:layout_height="40dp"
-      android:layout_width="fill_parent"
-      android:gravity="center"
-      android:id="@+id/HotEventName"
-      android:textSize="10dp"
-      android:paddingTop="20px"
-      android:layout_marginBottom="-10dp" />
-  <TextView
-      android:text="subtext"
-      android:textColor="@android:color/white"
-      android:layout_height="25dp"
-      android:layout_width="fill_parent"
-      android:gravity="center"
-      android:id="@+id/Attendee"
-      android:layout_marginBottom="17.5dp"
-      android:textSize="10dp" />
-</LinearLayout>
+    android:layout_width="fill_parent"
+    android:background="@drawable/primaryBox"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:text="Text"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:id="@+id/HotEventName"
+            android:textSize="14dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+        <TextView
+            android:text="subtext"
+            android:layout_toRightOf="@id/HotEventName"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/Attendee"
+            android:textSize="12dp"
+            android:layout_marginLeft="20.0dp"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>
