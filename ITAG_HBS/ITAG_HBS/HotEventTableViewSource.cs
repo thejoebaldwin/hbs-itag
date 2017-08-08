@@ -19,7 +19,7 @@ namespace HBS.ITAG
 			TableItems = items;
             foreach(var item in TableItems)
             {
-                if(item.Name == "Person Tester")
+                if(item.Name == "Estimote Beacon")
                 {
                     //
                 }

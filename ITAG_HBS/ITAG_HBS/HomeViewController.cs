@@ -85,6 +85,7 @@ namespace HBS.ITAG
 					if (e.Id == Store.Instance.testEvent.Id)
 					{
 						Store.Instance.RemovePerson(e);
+                        testLabel.Text = "";
 					}
 				}
             }
@@ -97,6 +98,7 @@ namespace HBS.ITAG
 					{
 						Store.Instance.AddPerson(e);
 					}
+                    testLabel.Text = "";
 				}
             }
             ReloadData();
@@ -237,6 +239,14 @@ namespace HBS.ITAG
                    Estimote.ExitedRegionEventArgs f = e;
                    CLBeaconRegion region = f.Region;
                    Event tempEvent = Store.Instance.ProximityEvent(region.Major.StringValue, region.Minor.StringValue);
+                   if(tempEvent.Name == testLabel.Text)
+                    {
+                       testLabel.Text = "";
+                    }
+                   else
+                    {
+                       testLabel.Text = "connected to diff event still";        
+                    }
                    if (tempEvent != null)
                    {
                         OnRegionExit(tempEvent);
