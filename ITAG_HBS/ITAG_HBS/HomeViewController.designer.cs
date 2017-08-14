@@ -51,6 +51,10 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel testLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITableView ToDoTableView { get; set; }
 
         [Action ("AboutButtonClick:")]
@@ -114,6 +118,11 @@ namespace HBS.ITAG
             if (ScheduleButton != null) {
                 ScheduleButton.Dispose ();
                 ScheduleButton = null;
+            }
+
+            if (testLabel != null) {
+                testLabel.Dispose ();
+                testLabel = null;
             }
 
             if (ToDoTableView != null) {
