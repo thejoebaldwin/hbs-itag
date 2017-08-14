@@ -100,9 +100,9 @@ namespace HBS.ITAG
 
             YesNoQuestionPicker.Model = QuestionFourViewModel;
 
-            QuestionOneRating.Value = 3;
-            QuestionTwoRating.Value = 3;
-            QuestionThreeRating.Value = 3;
+            //QuestionOneRating.Value = 3;
+            //QuestionTwoRating.Value = 3;
+            //QuestionThreeRating.Value = 3;
             QuestionFourViewModel.selectedAnswer = "No";
             OtherComments.Text = "";
 			OtherComments.Layer.BorderColor = UIColorExtension.FromHex(0x0E1D52).CGColor;
@@ -155,9 +155,9 @@ namespace HBS.ITAG
 		public void RefreshPage()
 		{
             EventName.Text = Store.Instance.SelectedEvent.Name;
-			QuestionOneRating.Value = 3;
-			QuestionTwoRating.Value = 3;
-			QuestionThreeRating.Value = 3;
+			//QuestionOneRating.Value = 3;
+			//QuestionTwoRating.Value = 3;
+			//QuestionThreeRating.Value = 3;
 			OtherComments.Text = "";
 			OtherComments.Layer.BorderColor = UIColorExtension.FromHex(0x0E1D52).CGColor;
 			OtherComments.Layer.BorderWidth = 1;
@@ -174,10 +174,10 @@ namespace HBS.ITAG
 				QuestionFourTextView.Frame = new CoreGraphics.CGRect(QuestionFourTextView.Frame.X + 100, QuestionFourTextView.Frame.Y, QuestionFourTextView.Frame.Size.Width, QuestionFourTextView.Frame.Size.Height);
 				EmailTextView.Hidden = true;
 			}
-            survey.QuestionOneRating = (int) QuestionOneRating.Value;
-            survey.QuestionTwoRating = (int) QuestionTwoRating.Value;
-            survey.QuestionThreeRating = (int) QuestionThreeRating.Value;
-            survey.QuestionFourAnswer = options[(int)YesNoQuestionPicker.SelectedRowInComponent(0)];
+            //survey.QuestionOneAnswer = QuestionOneRating;
+            //survey.QuestionTwoAnswer = (int) QuestionTwoRating;
+            //survey.QuestionThreeAnswer = (int) QuestionThreeRating;
+            //survey.QuestionFourAnswer = options[(int)YesNoQuestionPicker.SelectedRowInComponent(0)];
             survey.OtherComments = OtherComments.Text;
             survey.UserDeviceId = UIKit.UIDevice.CurrentDevice.IdentifierForVendor.AsString();
             survey.EventId = Store.Instance.SelectedEvent.Id;

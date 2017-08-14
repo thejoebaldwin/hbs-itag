@@ -706,15 +706,20 @@ namespace HBS.ITAG.Model
 		{
 			_Operation = "add_survey";
 
-			string json = "{\"survey_id\":\"<survey_id>\", \"question_one_rating\":\"<question_one_rating>\", \"question_two_rating\":\"<question_two_rating>\",";
-			json += "\"question_three_rating\":\"<question_three_rating>\",\"question_four_answer\":\"<question_four_answer>\",";
+			string json = "{\"survey_id\":\"<survey_id>\", \"question\":\"<question>\",";
+            //json += "\"question_three_rating\":\"<question_three_rating>\",\"question_four_answer\":\"<question_four_answer>\",";
+            json += "\"type\":\"<type>\",\"options\",:\"<options>\",\"booth_id\":\"<booth_id>\",\"order_index\":\"<order_index>\",";
 			json += "\"other_comments\":\"<other_comments>\",\"user_device_id\":\"<user_device_id>\",\"email\":\"<email>\",\"event_id\":\"<event_id>\"}";
 
             json = json.Replace("<survey_id>", newSurvey.SurveyId); 
-			json = json.Replace("<question_one_rating>", newSurvey.QuestionOneRating.ToString());
-			json = json.Replace("<question_two_rating>", newSurvey.QuestionTwoRating.ToString());
-			json = json.Replace("<question_three_rating>", newSurvey.QuestionThreeRating.ToString());
-			json = json.Replace("<question_four_answer>", newSurvey.QuestionFourAnswer.ToString());
+            json = json.Replace("<question>", newSurvey.Question.ToString());
+            json = json.Replace("<type>", newSurvey.Type.ToString());
+            json = json.Replace("<options>", newSurvey.Options.ToString());
+            json = json.Replace("<booth_id>", newSurvey.BoothId.ToString());
+            json = json.Replace("<order_index>", newSurvey.OrderIndex.ToString());
+   //         json = json.Replace("<question_two_rating>", newSurvey.QuestionTwoAnswer.ToString());
+   //         json = json.Replace("<question_three_rating>", newSurvey.QuestionThreeAnswer.ToString());
+			//json = json.Replace("<question_four_answer>", newSurvey.QuestionFourAnswer.ToString());
 			json = json.Replace("<other_comments>", newSurvey.OtherComments);
 			json = json.Replace("<user_device_id>", newSurvey.UserDeviceId);
 			json = json.Replace("<event_id>", newSurvey.EventId);
