@@ -90,9 +90,9 @@ namespace HBS.ITAG
             for (int i = 0; i < Store.Instance.Locations.Count; i++)
             {
                 Location tempLocation = Store.Instance.Locations[i];
-                Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
+                //TODO Throwing Error Region beaconRegion = new Region(tempLocation.Nickname, tempLocation.BeaconGuid, System.Convert.ToInt32(tempLocation.Major), System.Convert.ToInt32(tempLocation.Minor));
                 Console.WriteLine(tempLocation.Nickname + " " + tempLocation.BeaconGuid + " " + tempLocation.Major + " " + tempLocation.Minor);
-                beaconManager.StartMonitoring(beaconRegion);
+                //TODO Throwing Error beaconManager.StartMonitoring(beaconRegion);
             }
         }
 

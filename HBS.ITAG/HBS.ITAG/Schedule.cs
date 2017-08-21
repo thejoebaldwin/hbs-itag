@@ -23,6 +23,7 @@ namespace HBS.ITAG
         private int d4track;
         private bool d1, d2, d3, d4;
         private ListView scheduleList;
+        private List<DateTime> listOfTrackDates = new List<DateTime>();
 
         ImageView leftArrow;
         ImageView rightArrow;
@@ -84,11 +85,21 @@ namespace HBS.ITAG
             RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Schedule);
+            listOfTrackDates = new List<DateTime>();
+            foreach(var t in Store.Instance.Tracks)
+            {
+                if(!listOfTrackDates.Contains(t.TrackDate.Date))
+                {
+                    listOfTrackDates.Add(t.TrackDate.Date);
+                }
+            }
+            listOfTrackDates.Sort((x, y) => x.Ticks.CompareTo(y.Ticks));
 
             gestureDetector = new GestureDetector(this);
 
-            CurrentTrackDate = DateTime.Parse("6/20/2017");
+            CurrentTrackDate = listOfTrackDates[0];
             CurrentTrack = 0;
+
             d1track = 0;
             d2track = 0;
             d3track = 0;
@@ -105,6 +116,12 @@ namespace HBS.ITAG
             day2btn = FindViewById<Button>(Resource.Id.day_two_btn);
             day3btn = FindViewById<Button>(Resource.Id.day_three_btn);
             day4btn = FindViewById<Button>(Resource.Id.day_four_btn);
+
+            day1btn.Text = listOfTrackDates[0].Month + "/" + listOfTrackDates[0].Day;
+            day2btn.Text = listOfTrackDates[1].Month + "/" + listOfTrackDates[1].Day;
+            day3btn.Text = listOfTrackDates[2].Month + "/" + listOfTrackDates[2].Day;
+            day4btn.Text = listOfTrackDates[3].Month + "/" + listOfTrackDates[3].Day;
+
             trackTitle = FindViewById<TextView>(Resource.Id.track_title);
             ReloadData();
 
@@ -186,7 +203,7 @@ namespace HBS.ITAG
 
         private void day1btnClick()
         {
-            CurrentTrackDate = DateTime.Parse("6/20/2017");
+            CurrentTrackDate = listOfTrackDates[0];
             day1btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
@@ -219,7 +236,7 @@ namespace HBS.ITAG
 
         private void day2btnClick()
         {
-            CurrentTrackDate = DateTime.Parse("6/21/2017");
+            CurrentTrackDate = listOfTrackDates[1];
             day1btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day2btn.SetBackgroundResource(Resource.Drawable.selected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
@@ -252,7 +269,7 @@ namespace HBS.ITAG
 
         private void day3btnClick()
         {
-            CurrentTrackDate = DateTime.Parse("6/22/2017");
+            CurrentTrackDate = listOfTrackDates[2];
             day1btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.selected_day);
@@ -285,7 +302,7 @@ namespace HBS.ITAG
 
         private void day4btnClick()
         {
-            CurrentTrackDate = DateTime.Parse("6/23/2017");
+            CurrentTrackDate = listOfTrackDates[3];
             day1btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day2btn.SetBackgroundResource(Resource.Drawable.unselected_day);
             day3btn.SetBackgroundResource(Resource.Drawable.unselected_day);
@@ -321,7 +338,7 @@ namespace HBS.ITAG
             tracks = new List<Track>();
             foreach (var t in Store.Instance.Tracks)
             {
-                if (t.TrackDate == CurrentTrackDate)
+                if (t.TrackDate.Date == CurrentTrackDate.Date)
                 {
                     tracks.Add(t);
                 }
