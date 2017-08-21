@@ -236,9 +236,9 @@ namespace HBS.ITAG.Model
 				{
 					//do not put trailing / on url
 					//uncomment for local node.js server
-					//instance = new Store("https://localhost:8080");
-					instance = new Store("https://hbs-itag-test.azurewebsites.net");
-					//instance = new Store("http://hbs-itag.azurewebsites.net");
+					instance = new Store("https://localhost:8080");
+					//instance = new Store("https://hbs-itag-test.azurewebsites.net");
+					instance = new Store("http://hbs-itag.azurewebsites.net");
 					instance.Init();
 				}
 				return instance;
