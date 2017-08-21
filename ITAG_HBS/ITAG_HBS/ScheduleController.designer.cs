@@ -64,6 +64,22 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Tab1Label { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Tab2Label { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Tab3Label { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel Tab4Label { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextView TrackName { get; set; }
 
         [Action ("HomeButtonClick:")]
@@ -158,6 +174,26 @@ namespace HBS.ITAG
             if (ScheduleTable != null) {
                 ScheduleTable.Dispose ();
                 ScheduleTable = null;
+            }
+
+            if (Tab1Label != null) {
+                Tab1Label.Dispose ();
+                Tab1Label = null;
+            }
+
+            if (Tab2Label != null) {
+                Tab2Label.Dispose ();
+                Tab2Label = null;
+            }
+
+            if (Tab3Label != null) {
+                Tab3Label.Dispose ();
+                Tab3Label = null;
+            }
+
+            if (Tab4Label != null) {
+                Tab4Label.Dispose ();
+                Tab4Label = null;
             }
 
             if (TrackName != null) {
