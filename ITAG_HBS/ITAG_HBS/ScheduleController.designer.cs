@@ -24,23 +24,15 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton FirstTab { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton FourthTab { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton HomeButton { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton June20Button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton June21Button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton June22Button { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton June23Button { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -64,19 +56,11 @@ namespace HBS.ITAG
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Tab1Label { get; set; }
+        UIKit.UIButton SecondTab { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Tab2Label { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Tab3Label { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel Tab4Label { get; set; }
+        UIKit.UIButton ThirdTab { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -86,21 +70,21 @@ namespace HBS.ITAG
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void HomeButtonClick (UIKit.UIButton sender);
 
-        [Action ("June20ButtonClick:")]
+        [Action ("FirstTabClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void June20ButtonClick (UIKit.UIButton sender);
+        partial void FirstTabClick (UIKit.UIButton sender);
 
-        [Action ("June21ButtonClick:")]
+        [Action ("SecondTabClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void June21ButtonClick (UIKit.UIButton sender);
+        partial void SecondTabClick (UIKit.UIButton sender);
 
-        [Action ("June22ButtonClick:")]
+        [Action ("ThirdTabClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void June22ButtonClick (UIKit.UIButton sender);
+        partial void ThirdTabClick (UIKit.UIButton sender);
 
-        [Action ("June23ButtonClick:")]
+        [Action ("FourthTabClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void June23ButtonClick (UIKit.UIButton sender);
+        partial void FourthTabClick (UIKit.UIButton sender);
 
         [Action ("MyEventsButtonClick:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -126,29 +110,19 @@ namespace HBS.ITAG
                 D1RightArrow = null;
             }
 
+            if (FirstTab != null) {
+                FirstTab.Dispose ();
+                FirstTab = null;
+            }
+
+            if (FourthTab != null) {
+                FourthTab.Dispose ();
+                FourthTab = null;
+            }
+
             if (HomeButton != null) {
                 HomeButton.Dispose ();
                 HomeButton = null;
-            }
-
-            if (June20Button != null) {
-                June20Button.Dispose ();
-                June20Button = null;
-            }
-
-            if (June21Button != null) {
-                June21Button.Dispose ();
-                June21Button = null;
-            }
-
-            if (June22Button != null) {
-                June22Button.Dispose ();
-                June22Button = null;
-            }
-
-            if (June23Button != null) {
-                June23Button.Dispose ();
-                June23Button = null;
             }
 
             if (MyEventsButton != null) {
@@ -176,24 +150,14 @@ namespace HBS.ITAG
                 ScheduleTable = null;
             }
 
-            if (Tab1Label != null) {
-                Tab1Label.Dispose ();
-                Tab1Label = null;
+            if (SecondTab != null) {
+                SecondTab.Dispose ();
+                SecondTab = null;
             }
 
-            if (Tab2Label != null) {
-                Tab2Label.Dispose ();
-                Tab2Label = null;
-            }
-
-            if (Tab3Label != null) {
-                Tab3Label.Dispose ();
-                Tab3Label = null;
-            }
-
-            if (Tab4Label != null) {
-                Tab4Label.Dispose ();
-                Tab4Label = null;
+            if (ThirdTab != null) {
+                ThirdTab.Dispose ();
+                ThirdTab = null;
             }
 
             if (TrackName != null) {
