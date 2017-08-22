@@ -46,19 +46,19 @@ namespace HBS.ITAG
 
             done.Click += (object sender, EventArgs e) =>
             {
-                // Send off survey results
-                survey.QuestionOneRating = seekBar1.Progress;
-                survey.QuestionTwoRating = seekBar2.Progress;
-                survey.QuestionThreeRating = seekBar3.Progress;
+                // TODO Send off survey results
+                //survey.QuestionOneRating = seekBar1.Progress;
+                //survey.QuestionTwoRating = seekBar2.Progress;
+                //survey.QuestionThreeRating = seekBar3.Progress;
                 survey.OtherComments = comments.Text;
                 if (email != null && email.Text != "")
                 {
                     survey.Email = email.Text;
-                    survey.QuestionFourAnswer = "Yes";
+                    //survey.QuestionFourAnswer = "Yes";
                 }
                 else
                 {
-                    survey.QuestionFourAnswer = "No";
+                    //survey.QuestionFourAnswer = "No";
                 }
                 Store.Instance.DeleteToDo(Store.Instance.SelectedEvent);
                 Store.Instance.AddSurvey(survey, AddSurveyComplete);
