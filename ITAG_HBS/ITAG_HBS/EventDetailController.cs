@@ -23,6 +23,7 @@ namespace HBS.ITAG
 			//Store.Instance.LoadEventsFromFile();
 			//Store.Instance.LoadTracksFromFile();
 
+            /*Sets Gestures and Allows Clickability*/
 			GrayStar.UserInteractionEnabled = true;
 			UITapGestureRecognizer Favoritedtapguesture = new UITapGestureRecognizer(StarClick);
 			Favoritedtapguesture.NumberOfTapsRequired = 1;

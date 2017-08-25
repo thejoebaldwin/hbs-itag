@@ -89,18 +89,18 @@ namespace HBS.ITAG
 					}
 				}
             }
-            else
-            {
-                Store.Instance.clicked = true;
-				foreach (var e in Store.Instance.Events)
-				{
-					if (e.Id == Store.Instance.testEvent.Id)
-					{
-						Store.Instance.AddPerson(e);
-					}
-                    testLabel.Text = "";
-				}
-            }
+    //        else
+    //        {
+    //            Store.Instance.clicked = true;
+				//foreach (var e in Store.Instance.Events)
+				//{
+				//	if (e.Id == Store.Instance.testEvent.Id)
+				//	{
+				//		Store.Instance.AddPerson(e);
+				//	}
+    //                testLabel.Text = "";
+				//}
+            //}
             ReloadData();
         }
 

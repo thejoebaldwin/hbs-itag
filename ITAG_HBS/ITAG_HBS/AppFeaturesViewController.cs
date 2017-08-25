@@ -37,6 +37,7 @@ namespace HBS.ITAG
 			// Perform any additional setup after loading the view, typically from a nib.
 		}
 
+        //Brings user to the settings->bluetooth page 
         private void BluetoothMsgClick()
         {
             UIApplication.SharedApplication.OpenUrl(new NSUrl(urlString:@"App-prefs:root=Bluetooth"));

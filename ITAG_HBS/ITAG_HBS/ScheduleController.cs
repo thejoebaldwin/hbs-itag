@@ -7,7 +7,7 @@ namespace HBS.ITAG {     public partial class ScheduleController : UIViewCon
             FirstTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             FirstTab.TitleLabel.TextColor = UIColor.White; 			SecondTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
             SecondTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             ThirdTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
             ThirdTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);             FourthTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-            FourthTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+            FourthTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52); 
 			currentTrack = 0;
             CurrentTrackDate = listOfTrackDates[0];
 			ReloadData();
@@ -22,7 +22,7 @@ namespace HBS.ITAG {     public partial class ScheduleController : UIViewCon
 			ThirdTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
 			ThirdTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
 			FourthTab.BackgroundColor = HBS.ITAG.UIColorExtension.FromHex(0x99A1AC);
-			FourthTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52);
+			FourthTab.TitleLabel.TextColor = HBS.ITAG.UIColorExtension.FromHex(0x0E1D52); 
 			currentTrack = 0;
             CurrentTrackDate = listOfTrackDates[1];
 			ReloadData();
@@ -111,7 +111,7 @@ namespace HBS.ITAG {     public partial class ScheduleController : UIViewCon
 				{
 					if (e.TrackId == tracks[currentTrack].Id)
 					{
-						trackEvents.Add(e);
+                        trackEvents.Add(e);
 					}
 				}             }
 			ScheduleTableViewSource data = new ScheduleTableViewSource(trackEvents);
